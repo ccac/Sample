@@ -1,0 +1,21 @@
+﻿<!--
+///////////////////////////////////////////////////////////////////////////////
+//
+//  App.xaml
+//
+// 
+// © 2008 Microsoft Corporation. All Rights Reserved.
+//
+// This file is licensed as part of the Silverlight 2 SDK, for details look here: 
+// http://go.microsoft.com/fwlink/?LinkID=111970&clcid=0x409
+//
+///////////////////////////////////////////////////////////////////////////////
+-->
+<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="WatermarkedTextBoxUnitTest.App"
+             >
+    <Application.Resources>
+        
+    </Application.Resources>
+</Application>

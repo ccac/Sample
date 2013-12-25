@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_AutoCompletedService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:49177/Service/AutoCompletedService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_AutoCompletedService"
+                contract="WCFAutoCompletedService.AutoCompletedService" name="BasicHttpBinding_AutoCompletedService" />
+        </client>
+    </system.serviceModel>
+</configuration>

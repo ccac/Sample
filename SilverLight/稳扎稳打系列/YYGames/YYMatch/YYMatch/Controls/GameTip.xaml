@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="YYMatch.Controls.GameTip"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="640" Height="480">
+    <Grid x:Name="root">
+        <!--灰色大背景-->
+        <Grid x:Name="grid" Background="Gray" Opacity="0.3">
+
+        </Grid>
+        <!--中心提示框-->
+        <Border Width="320" Height="240" BorderThickness="1" BorderBrush="Red">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80" />
+                    <RowDefinition />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="连 连 看" Grid.Row="0" Margin="10" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="Purple" />
+
+                <TextBlock Grid.Row="1" Margin="10 0" >
+                    <Run>计分规则</Run>
+                    <LineBreak />
+                    <Run>每消一对卡片加分：1 乘以 连击次数</Run>
+                    <LineBreak />
+                    <Run>每过一秒钟减分：1 分</Run>
+                    <LineBreak />
+                    <Run>过关、重排或失误：连击次数清零</Run>
+                </TextBlock>
+                <TextBlock x:Name="level" Text="级别：1" Grid.Row="2" HorizontalAlignment="Center" FontSize="22" Foreground="Red" />
+                <Button x:Name="btnStart" Content="开始游戏" Click="btnStart_Click" Grid.Row="3" Margin="8" Width="120"  />
+            </Grid>
+
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF48B4FD"/>
+                    <GradientStop Color="#FFADB7B9" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+    </Grid>
+
+</UserControl>

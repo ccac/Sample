@@ -1,0 +1,88 @@
+﻿#header
+{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+#wrap
+{
+    width: 100%;
+    height: auto;
+}
+#column1
+{
+    width: 200px;
+    left: 1em;
+    position: absolute;
+}
+#column2
+{
+    margin-left: 23em;
+    margin-right: 1em;
+    position: absolute;
+}
+/*站点的头*/
+#header
+{
+    border-top: 3px solid #B3B3FD;
+    border-bottom: 1px dotted #B3B3FD;
+    height: 3em;
+    margin-bottom : 1em;
+}
+#header .Title
+{
+    font: 190% normal;
+    color: #0303AB;
+    background-color: transparent;
+    float: left;
+    font-weight: bold;
+    margin-right: 2em;
+    margin-top: 0.3em;
+    margin-left: .8em;
+}
+#header .breadcrumb
+{
+    font: 90% normal;
+    color: #000000;
+    background-color: transparent;
+    float: right;
+    margin-right: 2em;
+    margin-top: 0.8em;
+    font-weight: bold;
+}
+
+
+body, table, tr, td
+{
+    margin: 0;
+    font-size: 12px;
+}
+
+input
+{
+    font-size: 12px;
+    color: #000000;
+    font-weight: normal;
+    background-color: #EEEEEE;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+
+select
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 90%;
+}
+
+textarea
+{
+    width: 200px;
+    height: 60px;
+}
+
+/*WebParts用*/
+.test1 { background-color:white; }
+.test2 { background-color:red; }

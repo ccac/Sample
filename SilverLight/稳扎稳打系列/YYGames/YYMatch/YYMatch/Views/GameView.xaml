@@ -1,0 +1,39 @@
+﻿<UserControl xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"  
+    x:Class="YYMatch.Views.GameView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:custom="clr-namespace:YYMatch.Controls"
+    xmlns:data="clr-namespace:YYMatch.ViewModels"
+    Width="640" Height="480">
+    <UserControl.Resources>
+        <data:GameViewModel x:Key="gameViewModel" />
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding Source={StaticResource gameViewModel}}">
+        <Canvas Width="640" Height="480">
+            <ListBox x:Name="container" Background="Transparent" BorderThickness="1"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 Width="640"
+                 Height="480"
+                 ItemsSource="{Binding Path=Cards}"
+                 ItemContainerStyle="{StaticResource myListBoxItem}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="38" Height="38">
+                            <custom:CardControl x:Name="cardControl"
+                                                ImageName="{Binding ImageName}" 
+                                                Tag="{Binding Position}" 
+                                                MouseLeftButtonDown="cardControl_MouseLeftButtonDown" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <toolkit:WrapPanel x:Name="containerWrapPanel" Width="640" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+            <Polyline x:Name="line" Stroke="Red" StrokeThickness="3" StrokeLineJoin="Round" Points="{Binding Path=Points}" />
+        </Canvas>
+    </Grid>
+</UserControl>

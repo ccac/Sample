@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="YYMatch.Views.ScoreboardView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:data="clr-namespace:YYMatch.ViewModels">
+    <UserControl.Resources>
+        <data:ScoreboardViewModel x:Key="scoreboardViewModel" />
+    </UserControl.Resources>
+    <Grid Height="30" VerticalAlignment="Top" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="5">
+            <HyperlinkButton Grid.Column="0" Content="作者：webabcd" NavigateUri="http://webabcd.cnblogs.com/" TargetName="_blank" Foreground="White" HorizontalAlignment="Left" Width="100" />
+        </StackPanel>
+        <StackPanel x:Name="panelScoreboard" Grid.Column="1" Orientation="Horizontal" Margin="5" DataContext="{Binding Source={StaticResource scoreboardViewModel}}">
+            <TextBlock Text="用时：" Foreground="White" Margin="30,0,0,0" />
+            <TextBlock Text="{Binding Time}" Foreground="White" />
+            <TextBlock Text="级别：" Foreground="White" Margin="30,0,0,0" />
+            <TextBlock Text="{Binding Level}" Foreground="White" />
+            <TextBlock Text="分数：" Foreground="White" Margin="30,0,0,0" />
+            <TextBlock Text="{Binding Score}" Foreground="White" />
+            <TextBlock x:Name="replace" Text="重新排列" Foreground="White" Margin="30,0,0,0" Cursor="Hand" MouseLeftButtonDown="replace_MouseLeftButtonDown" />
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,69 @@
+<Configuration>
+  <RecentFilesTracker>
+    <RecentFilesTracker>
+      <TrackedFile location="E:\My Document\Visual Studio Projects\AspectSharpTest\SillyAOP\SillyAOP\PropertyAspect.cfg" offset="166" line="0" column="0" />
+      <TrackedFile location="E:\My Document\Visual Studio Projects\AspectSharpTest\SillyAOP\SillyAOP\Interceptors\PrinterInterceptor.cs" offset="81" line="0" column="0" />
+      <TrackedFile location="E:\My Document\Visual Studio Projects\AspectSharpTest\SillyAOP\SillyAOP\Program.cs" offset="650" line="1" column="0" />
+      <TrackedFile location="E:\My Document\Visual Studio Projects\AspectSharpTest\SillyAOP\SillyAOP\Objects\Car.cs" offset="26" line="14" column="0" />
+      <TrackedFile location="E:\My Document\Visual Studio Projects\AspectSharpTest\SillyAOP\SillyAOP\AssemblyInfo.cs" offset="0" line="-1" column="-1" />
+      <TrackedFile location="E:\My Document\Visual Studio Projects\AspectSharpTest\SillyAOP\SillyAOP\Objects\Employer.cs" offset="101" line="0" column="0" />
+      <TrackedFile location="E:\My Document\Visual Studio Projects\AspectSharpTest\SillyAOP\SillyAOP\PropertyPrinter.cs" offset="486" line="6" column="17" />
+    </RecentFilesTracker>
+  </RecentFilesTracker>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Qualified:object">
+      <Item value="ToString" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SillyAOP.PropertyPrinter">
+      <Item value="Print" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Diagnostics.StackTrace">
+      <Item value="GetFrame" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.MethodInfo">
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:int">
+      <Item value="ToString" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.ParameterInfo">
+      <Item value="DefaultValue" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:string">
+      <Item value="PadRight" priority="0" />
+      <Item value="ToString" priority="3" />
+      <Item value="Substring" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.MethodBase">
+      <Item value="DeclaringType" priority="1" />
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@">
+      <Item value="ID" priority="1" />
+      <Item value="Name" priority="1" />
+      <Item value="WrapClass" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:AopAlliance.Intercept.IMethodInvocation">
+      <Item value="Method" priority="2" />
+      <Item value="GetType" priority="0" />
+      <Item value="StaticPart" priority="1" />
+      <Item value="Arguments" priority="2" />
+      <Item value="This" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.MemberInfo">
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Diagnostics.StackFrame">
+      <Item value="GetMethod" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="Name" priority="0" />
+      <Item value="GetProperty" priority="1" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean />
+  </SettingsComponent>
+</Configuration>

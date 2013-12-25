@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Silverlight20.Video.VideoPlayer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+    
+        <!--
+        Source - 需要播放的媒体地址
+        Stretch - 拉伸值 [System.Windows.Media.Stretch 枚举]。参见：本Demo的Shape/Shape.xaml
+        AutoPlay - 是否自动播放媒体
+        -->
+        <MediaElement x:Name="mediaElement"
+                Width="400" Height="200"
+                Source="http://download.microsoft.com/download/2/0/5/205d8c39-3d55-4032-8195-7b0e6eda4cb6/WinVideo-SL-InstallExperience.wmv" 
+                Stretch="Fill" 
+                AutoPlay="False">
+        </MediaElement>
+
+        <Button x:Name="play" Content="播放" Margin="5" Click="play_Click" />
+        <Button x:Name="pause" Content="暂停" Margin="5" Click="pause_Click" />
+        <Button x:Name="stop" Content="停止" Margin="5" Click="stop_Click" />
+        <Button x:Name="mute" Content="静音" Margin="5" Click="mute_Click" />
+
+        <Slider x:Name="playSlider" Minimum="0" Maximum="1" Margin="5" ToolTipService.ToolTip="播放进度" ValueChanged="playSlider_ValueChanged" />
+        <Slider x:Name="volumeSlider" Minimum="0" Maximum="1" Margin="5" ToolTipService.ToolTip="音量大小" ValueChanged="volumeSlider_ValueChanged" />
+        <Slider x:Name="balanceSlider" Minimum="-1" Maximum="1" Margin="5" ToolTipService.ToolTip="音量平衡" ValueChanged="balanceSlider_ValueChanged" />
+
+        <TextBlock x:Name="lblPlayTime" Margin="5" />
+        <TextBlock x:Name="lblVolume" Margin="5" />
+        <TextBlock x:Name="lblBalance" Margin="5" />
+
+        <TextBlock x:Name="lblDownloadProgress" Margin="5" />
+        <TextBlock x:Name="lblBufferingProgress" Margin="5" />
+        <TextBlock x:Name="lblDroppedFramesPerSecond" Margin="5" />
+        <TextBlock x:Name="lblState" Margin="5" />
+
+        <TextBlock x:Name="lblWidth" Margin="5" />
+        <TextBlock x:Name="lblHeight" Margin="5" />
+        <TextBlock x:Name="lblTotalTime" Margin="5" />
+        <TextBlock x:Name="lblBufferingTime" Margin="5" />
+
+    </StackPanel>
+</UserControl>

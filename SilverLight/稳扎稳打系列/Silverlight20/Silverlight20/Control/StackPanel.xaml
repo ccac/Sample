@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Silverlight20.Control.StackPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+
+        <!--
+        Orientation - StackPanel控件内对象的排列方向
+            Horizontal - 水平排列
+            Vertical - 垂直排列
+        -->
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="a" Margin="5" />
+            <TextBlock Text="b" Margin="5" />
+            <TextBlock Text="c" Margin="5" />
+        </StackPanel>
+        
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="a" Margin="5" />
+            <TextBlock Text="b" Margin="5" />
+            <TextBlock Text="c" Margin="5" />
+        </StackPanel>
+        
+    </StackPanel>
+</UserControl>

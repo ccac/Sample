@@ -1,0 +1,26 @@
+﻿<!--引用转换器所在的命名空间-->
+<UserControl x:Class="Silverlight20.Data.Conversion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:custom="clr-namespace:Silverlight20.Data">
+    
+    <UserControl.Resources>
+    
+        <!--在资源中声明转换器-->
+        <custom:ColorEnumToBrush x:Key="converter" />
+        
+    </UserControl.Resources>
+    
+    <StackPanel HorizontalAlignment="Left">
+
+        <!--
+        Converter - 用于指定转换器
+        ConverterParameter - 转换器所使用的参数
+        ConverterCulture - 转换器所使用的区域信息
+        -->
+        <Ellipse x:Name="ellipse" Width="100" Height="50" MouseLeftButtonDown="ellipse_MouseLeftButtonDown" 
+            Fill="{Binding ColorEnum, Converter={StaticResource converter}, ConverterParameter=10}" 
+        />
+
+    </StackPanel>
+</UserControl>

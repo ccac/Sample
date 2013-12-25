@@ -1,0 +1,445 @@
+﻿    
+     在微软的Silverlight 开源控件项目“Silverlight Toolkit”中，提供了一个自动完成输入框控件:AutoCompleteBox。  http://www.codeplex.com/Silverlight/
+     
+     该控件的功能就是完成类似于google,或baidu中的搜索输入框的提示（选项）等功能，如下图所示： 
+     
+     googleinputbox.gif
+     
+     
+     下面是AutoCompleteBox的运行效果图：
+     
+     http://media.jeff.wilcox.name/blog/AutoComplete/AutoCompleteBoxStocks.png
+     
+     
+     好的，下面就简要介绍一下这个控件的使用方法：
+     
+     首先，我们要新创建一个Silverlight的Application项目，然后要准备一个数据源，也就是当我们输入内容时，弹出的下拉列
+表框（这里就暂且这么说吧）中显示的相似的提示信息，这里为了方便起见，我直接用其源码示例中的硬编码类来表示数据源，当
+然后面还会介绍如何使用WCF来加载数据源信息，这里先创建一个Employee（雇员信息）类，如下:
+
+public sealed partial class Employee
+{
+    public string FirstName { get; set; }
+
+    public string LastName { get; set; }
+
+    public string DisplayName
+    {
+        get
+        {
+            return FirstName + " " + LastName;
+        }
+    }
+
+    public Employee()
+    {
+    }
+        
+    internal Employee(string firstName, string lastName)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+    }
+
+    public override string ToString()
+    {
+        return DisplayName;
+    }
+
+    #region Sample data
+
+    public static IEnumerable<Employee> AllExecutives
+    {
+        get
+        {
+            yield return new Employee("Walid", "Abu-Hadba");
+            yield return new Employee("J", "Allard");
+            yield return new Employee("Klaus", "Holse Andersen");
+            yield return new Employee("Nancy", "Anderson");
+            yield return new Employee("Brian", "Arbogast");
+            yield return new Employee("Orlando", "Ayala");
+            yield return new Employee("Robert J.", "Bach");
+            yield return new Employee("Martha", "Béjar");
+            yield return new Employee("Joe", "Belfiore");
+            yield return new Employee("Sue", "Bevington");
+            yield return new Employee("Frank H.", "Brod");
+            yield return new Employee("Brad", "Brooks");
+            yield return new Employee("Lisa", "Brummel");
+            yield return new Employee("Tom", "Burt");
+            yield return new Employee("Chris", "Capossela");
+            yield return new Employee("Scott", "Charney");
+            yield return new Employee("Debra", "Chrapaty");
+            yield return new Employee("Jean-Philippe", "Courtois");
+            yield return new Employee("Alain", "Crozier");
+            yield return new Employee("Kurt", "DelBene");
+            yield return new Employee("Michael", "Delman");
+            yield return new Employee("Joe", "DeVaan");
+            yield return new Employee("Gerri", "Elliott");
+            yield return new Employee("Stephen", "Elop");
+            yield return new Employee("Ben", "Fathi");
+            yield return new Employee("Grant", "George");
+            yield return new Employee("Tom", "Gibbons");
+            yield return new Employee("L. Michael", "Golden");
+            yield return new Employee("Alexander", "Gounares");
+            yield return new Employee("Steve", "Guggenheimer");
+            yield return new Employee("Anoop", "Gupta");
+            yield return new Employee("Tony", "Hey");
+            yield return new Employee("Yasuyuki", "Higuchi");
+            yield return new Employee("Roz", "Ho");
+            yield return new Employee("Kathleen", "Hogan");
+            yield return new Employee("Frank", "Holland");
+            yield return new Employee("Todd", "Holmdahl");
+            yield return new Employee("Darren", "Huston");
+            yield return new Employee("Rajesh", "Jha");
+            yield return new Employee("Chris", "Jones");
+            yield return new Employee("Erik", "Jorgensen");
+            yield return new Employee("Rich", "Kaplan");
+            yield return new Employee("Bob", "Kelly");
+            yield return new Employee("Jawad", "Khaki");
+            yield return new Employee("Shane", "Kim");
+            yield return new Employee("Peter", "Klein");
+            yield return new Employee("Mitchell L.", "Koch");
+            yield return new Employee("Ted", "Kummert");
+            yield return new Employee("Julie", "Larson-Green");
+            yield return new Employee("Antoine", "Leblond");
+            yield return new Employee("Andrew", "Lees");
+            yield return new Employee("John M.", "Lervik");
+            yield return new Employee("Lewis", "Levin");
+            yield return new Employee("Dan'l", "Lewin");
+            yield return new Employee("Moshe", "Lichtman");
+            yield return new Employee("Christopher", "Liddell");
+            yield return new Employee("Steve", "Liffick");
+            yield return new Employee("Brian", "MacDonald");
+            yield return new Employee("Ron", "Markezich");
+            yield return new Employee("Maria", "Martinez");
+            yield return new Employee("Mich", "Mathews");
+            yield return new Employee("Don A.", "Mattrick");
+            yield return new Employee("Joe", "Matz");
+            yield return new Employee("Brian", "McAndrews");
+            yield return new Employee("Richard", "McAniff");
+            yield return new Employee("Yusuf", "Mehdi");
+            yield return new Employee("Jim", "Minervino");
+            yield return new Employee("William H.", "Mitchell");
+            yield return new Employee("Jens Winther", "Moberg");
+            yield return new Employee("Mindy", "Mount");
+            yield return new Employee("Bob", "Muglia");
+            yield return new Employee("Craig", "Mundie");
+            yield return new Employee("Terry", "Myerson");
+            yield return new Employee("Satya", "Nadella");
+            yield return new Employee("Mike", "Nash");
+            yield return new Employee("Peter", "Neupert");
+            yield return new Employee("Ray", "Ozzie");
+            yield return new Employee("Gurdeep", "Singh Pall");
+            yield return new Employee("Michael", "Park");
+            yield return new Employee("Umberto", "Paolucci");
+            yield return new Employee("Sanjay", "Parthasarathy");
+            yield return new Employee("Pamela", "Passman");
+            yield return new Employee("Alain", "Peracca");
+            yield return new Employee("Todd", "Peters");
+            yield return new Employee("Joe", "Peterson");
+            yield return new Employee("Marshall C.", "Phelps, Jr.");
+            yield return new Employee("Scott", "Pitasky");
+            yield return new Employee("Will", "Poole");
+            yield return new Employee("Rick", "Rashid");
+            yield return new Employee("Tami", "Reller");
+            yield return new Employee("J.", "Ritchie");
+            yield return new Employee("Enrique", "Rodriguez");
+            yield return new Employee("Eduardo", "Rosini");
+            yield return new Employee("Jon", "Roskill");
+            yield return new Employee("Eric", "Rudder");
+            yield return new Employee("John", "Schappert");
+            yield return new Employee("Tony", "Scott");
+            yield return new Employee("Jeanne", "Sheldon");
+            yield return new Employee("Harry", "Shum");
+            yield return new Employee("Steven", "Sinofsky");
+            yield return new Employee("Brad", "Smith");
+            yield return new Employee("Mary E.", "Snapp");
+            yield return new Employee("Amitabh", "Srivastava");
+            yield return new Employee("Kirill", "Tatarinov");
+            yield return new Employee("Jeff", "Teper");
+            yield return new Employee("David", "Thompson");
+            yield return new Employee("Rick", "Thompson");
+            yield return new Employee("Brian", "Tobey");
+            yield return new Employee("David", "Treadwell");
+            yield return new Employee("B. Kevin", "Turner");
+            yield return new Employee("David", "Vaskevitch");
+            yield return new Employee("Bill", "Veghte");
+            yield return new Employee("Henry P.", "Vigil");
+            yield return new Employee("Robert", "Wahbe");
+            yield return new Employee("Todd", "Warren");
+            yield return new Employee("Allison", "Watson");
+            yield return new Employee("Blair", "Westlake");
+            yield return new Employee("Simon", "Witts");
+            yield return new Employee("Robert", "Youngjohns");
+            yield return new Employee("Ya-Qin", "Zhang");
+            yield return new Employee("George", "Zinn");
+        }
+    }
+    #endregion
+}
+
+public class SampleEmployeeCollection : ObjectCollection
+{
+    public SampleEmployeeCollection() : base(Employee.AllExecutives)
+    {}
+}
+
+
+    我们从代码中看到，Employee类的静态属性“AllExecutives”最终被绑定在SampleEmployeeCollection构造方法中。
+接着为了能够在XAML文件中使用AutoCompleteBox控件，还需要添加相应的DLL引用（请从下载源码包中获取相应的DLL文
+件并引用到项目中来），如下图所示：
+
+
+
+    完成了这一步之后，就是将相应的NameSpace添加到XAML的头部，以便于在XAML文件中进行控件定义，如下：
+    
+    xmlns:controls="clr-namespace:Microsoft.Windows.Controls;assembly=Microsoft.Windows.Controls"
+      
+      
+    接下来就是引用相应的数据源信息了，如下（SampleEmployeeCollection就是上面CS代码中的雇员信息类）：
+    
+    <UserControl.Resources>
+        <samples:SampleEmployeeCollection x:Key="SampleEmployees" />
+    </UserControl.Resources>
+    
+    这时该轮到AutoCompleteBox“闪亮登场”了：
+    
+<controls:AutoCompleteBox x:Name="autoComplete1" IsTextCompletionEnabled="True" Width="200" Height="25" Grid.Row="0"
+      Grid.Column="1" Margin="0+0,8+8" HorizontalAlignment="Left"  ItemsSource="{StaticResource SampleEmployees}"/>
+      
+      
+    我们运行一下，看看效果怎么样：
+    
+    istextcompletedable.gif
+    
+    代码很简单，不是吗？下面接着介绍一下上面有关该控件的两个属性：
+    
+    IsTextCompletionEnabled：该属性为True时，用于将当前被查询到的第一条记录的信息暂时放在控件的输入框中
+(text属性)，上图中已看到。
+
+    ItemsSource：用于绑定相应的数据源信息（{StaticResource SampleEmployees}）
+    
+    
+    当然如果将该属性设置为False时，则该控件在显示下拉列表时将不在输入框中设置第一条记录信息。这里为了提
+高一下难度，我们将会自定义一下“提示框”的样式，代码如下（注意其中的AutoCompleteBox.ItemTemplate部分代码）：
+
+<controls:AutoCompleteBox x:Name="autoComplete2" IsTextCompletionEnabled="False" Width="200" Height="25" Grid.Row="1"
+   Grid.Column="1" Margin="0+0,8+8" HorizontalAlignment="Left"  ItemsSource="{StaticResource SampleEmployees}">
+   <controls:AutoCompleteBox.ItemTemplate>
+     <DataTemplate>
+         <Grid Width="200">
+             <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="100" />
+                 <ColumnDefinition Width="100" />
+             </Grid.ColumnDefinitions>
+             <TextBlock  HorizontalAlignment="Left"  Foreground="Gray"  Text="{Binding FirstName}"  Grid.Column="0"  />
+             <TextBlock  HorizontalAlignment="Left"  Foreground="Gray"  Text="{Binding LastName}"  Grid.Column="1"  />
+         </Grid>
+     </DataTemplate>
+   </controls:AutoCompleteBox.ItemTemplate>
+</controls:AutoCompleteBox>
+
+    该控件的运行效果如下图所示：
+    
+    nottextcompletedable
+    
+    
+    
+    当然，该控件的模版方式还支持外部声明定义，并在控件内部进行引用（通过属性ItemTemplate绑定），下面首先
+是样式模版的定义：    
+    
+<StackPanel.Resources>
+    <!-- DataTemplate for airports -->
+    <DataTemplate x:Key="EmployeeDataTemplate">
+        <Grid Width="200">
+            <Grid.Background>
+                <SolidColorBrush Color="Blue" />
+            </Grid.Background>
+            <TextBlock Foreground="#22ffffff"  Margin="0+0,8+8" FontSize="14" Text="{Binding DisplayName}" />
+            <StackPanel HorizontalAlignment="Right" Margin="0+0,8+8">
+                <TextBlock HorizontalAlignment="Right" Foreground="White" 
+                   Text="{Binding FirstName}" Padding="2" />
+                <TextBlock HorizontalAlignment="Right" Foreground="White" 
+                   FontSize="12" Text="{Binding LastName}" Padding="2" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+</StackPanel.Resources>
+    
+    下面是将上述模版绑定到当前AutoCompleteBox挖件的声明代码(注意相应的ItemTemplate属性)：
+     <controls:AutoCompleteBox 
+                        x:Name="ArrivalAirport" 
+                        MinimumPrefixLength="1" 
+                        SearchMode="StartsWithCaseSensitive" 
+                        IsTextCompletionEnabled="False"
+                        Width="228" Height="25" 
+                        HorizontalAlignment="Left" Margin="0+0,8+8"
+                        ItemsSource="{StaticResource SampleEmployees}"
+                        ItemTemplate="{StaticResource EmployeeDataTemplate}" 
+                        />
+                        
+    其运行的效果如下图所示：
+    
+    othertemplate.gif
+    
+    
+    当然上面的控件声明代码中又引入了两个重要的属性，即:
+    
+    SearchMode：查询方式，其提供了对当前已输入字符的查询方式，有如下几种枚举值：
+    
+           StartsWithCaseSensitive：以大写已输入字符方式开始。
+           StartsWith：以已输入字符开始(不区别大小写)。
+           Contains:是否包含已输入字符
+           ContainsCaseSensitive:是否包含已输入大写字符.
+           Equals:是否字符相等
+           EqualsCaseSensitive:是否大写字符相等
+           ....
+           
+    MinimumPrefixLength:用于当输入的字符串达到该属性值时，才显示下拉列表框。
+    
+    
+    上面所演示的三种情况基本上就可以满足我们的日常开发需要了。当然该控件还提供了更强大的事件，接口
+属性，来提供更高级的使用方式：
+
+    1.对已输入的数据信息进行下拉列表数据自定义的事件。比如该控件提供了Populating来进行相应处理，比
+如我们在XAML中定义如下代码：
+
+<controls:AutoCompleteBox x:Name="NowAutoComplete" SearchMode="None" Width="200" Height="25" Grid.Column="1"
+       IsTextCompletionEnabled="True" Grid.Row="3" HorizontalAlignment="Left" Margin="0+0,0+12" />
+       
+    然后在后台的CS代码中进行下面的事件绑定：   
+    
+     NowAutoComplete.Populating += OnPopulatingSynchronous; 
+     
+    其相应的事件处理代码如下：
+    
+     private void OnPopulatingSynchronous(object sender, PopulatingEventArgs e)
+        {
+            AutoCompleteBox source = (AutoCompleteBox)sender;
+
+            source.ItemsSource = new string[]
+            {
+                e.Parameter + "后续内容1",
+                e.Parameter + "后续内容2",
+                e.Parameter + "后续内容3",
+            };           
+        }
+        
+     这时我们运行一下看看效果：
+    
+     customevent.gif
+
+   2.在其它控件（Datagrid）中嵌入该控件，代码如下（注意controls:AutoCompleteBox部分）：
+   
+<data:DataGrid x:Name="MyDataGrid" AutoGenerateColumns="False" Grid.Column="1" Width="290" Grid.Row="5" 
+    Margin="0+0,0+8" ItemsSource="{StaticResource SampleEmployees}">
+    <data:DataGrid.Columns>
+        <data:DataGridTemplateColumn Header="DisplayName">
+            <data:DataGridTemplateColumn.CellEditingTemplate>
+                <DataTemplate>
+                    <controls:AutoCompleteBox HorizontalAlignment="Left" Width="180" IsTabStop="True"
+                            ItemsSource="{StaticResource SampleEmployees}"
+                            Text="{Binding DisplayName, Mode=TwoWay}"/>
+                </DataTemplate>
+            </data:DataGridTemplateColumn.CellEditingTemplate>
+        </data:DataGridTemplateColumn>
+        <data:DataGridTextColumn Binding="{Binding FirstName}" Header="FirstName" />
+    </data:DataGrid.Columns>
+</data:DataGrid>
+    
+    
+    其运行如下图所示：
+    
+    buildindatagrid.gif
+    
+    
+    
+    最后，我们将话题深入一下，看看如何使用wcf来获取相应的下拉列表数据项。当然这里还是用到了之前
+讲过的事件“Populating”，不过之前我们还要先创建一个silverlight wcf,如下：
+
+    create_wcf_autocompletebox.gif
+    
+    当然，我们在WCF端还是用到了之前创建的Employee类文件（当然为了避免冲突改名为：EmployeeInfo）。
+另外在服务方法上使用下面代码来实现数据访问：
+
+[ServiceContract(Namespace = "")]
+ [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+ public class AutoCompletedService
+ {
+     [OperationContract]
+     public List<EmployeeInfo> GetEmployeeCollection(string name)
+     {
+         List<EmployeeInfo> EmpolyeeList = new List<EmployeeInfo>();
+         foreach (EmployeeInfo ei in (from employeeinfo in EmployeeInfo.AllExecutives
+                                      where employeeinfo.DisplayName.StartsWith(name)
+                                      select employeeinfo))
+         {
+             EmpolyeeList.Add(ei);
+         }
+         return EmpolyeeList;
+     }
+ }    
+    
+    
+    通过添加WEB服务引用的方式，系统会为我们创建相应的代码类文件，这里就不多说了。下面是Silverlight
+端的程序代码：
+
+void Page_Loaded(object sender, RoutedEventArgs e)
+{
+
+    WCFAutoComplete.IsTextCompletionEnabled = false;
+
+    WCFAutoComplete.SearchMode = AutoCompleteSearchMode.None;
+    WCFAutoComplete.Populating += (s, args) =>
+    {
+        args.Cancel = true;
+        AutoCompletedServiceClient acsc = new AutoCompletedServiceClient();
+        acsc.GetEmployeeCollectionCompleted += new EventHandler<GetEmployeeCollectionCompletedEventArgs>
+                                                    （acsc_GetEmployeeCollectionCompleted);
+        acsc.GetEmployeeCollectionAsync(args.Parameter, s);
+    };
+}
+
+    相应的返回数据事件处理代码如下：
+    
+void acsc_GetEmployeeCollectionCompleted(object sender, GetEmployeeCollectionCompletedEventArgs e)
+{
+    AutoCompleteBox acb = e.UserState as AutoCompleteBox;
+    if (acb != null && e.Error == null && !e.Cancelled)
+    {
+                    
+        if (e.Result.Count > 0)
+        {
+            List<string> employeeStrList = new List<string>();
+            foreach(EmployeeInfo employeeinfo in e.Result)
+            {
+                employeeStrList.Add(employeeinfo.FirstName + " " + employeeinfo.LastName);
+            }
+            acb.ItemsSource = employeeStrList;
+            acb.PopulateComplete();
+        }
+    }
+}
+
+
+    运行时的效果如下图所示：
+wcf_autocompletebox.gif
+
+    当然这里会有一个问题，就是当我对上面的代码“acb.ItemsSource = employeeStrList;”换成：
+“acb.ItemsSource = e.Result;”之后，会出现在下面列表中显示的数据是该类的类型type信息，我
+想这可能是该控件的一个BUG，即在异步情况下进行数据（源）绑定时信息类型不正确。当然如果您知
+道是什么问题并有解决方案的话，不妨通过我，这里表示感谢了。
+
+
+    好了，今天的内容就先到这里了。
+    
+    原文链接:http://www.cnblogs.com/daizhj/archive/2008/12/11/1352718.html
+
+    作者: daizhj, 代震军
+
+    Tags: silverlight,autocompletebox,自动完成输入框
+
+    网址: http://daizhj.cnblogs.com/
+    
+    
+    参考文档：AutoCompleteBox control: The missing guide   http://www.jeff.wilcox.name/2008/11/24/autocompletebox-missing-guide/

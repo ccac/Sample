@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:PropertyEditing="clr-namespace:Microsoft.Windows.Design.PropertyEditing;assembly=Microsoft.Windows.Design">
+    <DataTemplate x:Key="ColorsComboBox">
+        <ComboBox Text="{Binding StringValue}" IsEditable="True">
+            <ComboBoxItem Background="Red">Red</ComboBoxItem>
+            <ComboBoxItem Background="Blue">Blue</ComboBoxItem>
+            <ComboBoxItem Background="Green">Green</ComboBoxItem>
+            <ComboBoxItem Background="Yellow">Yellow</ComboBoxItem>
+            <ComboBoxItem Background="Black">Black</ComboBoxItem>
+        </ComboBox>
+    </DataTemplate>
+    <DataTemplate x:Key="SimpleTextBox">
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding StringValue}" />
+            <PropertyEditing:EditModeSwitchButton />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="HelloWorldListBox">
+        <ListBox SelectedItem="{Binding StringValue}">
+            <ListBox.ItemsSource>
+                <x:Array Type="{x:Type System:String}">
+                    <System:String>Hello</System:String>
+                    <System:String>World</System:String>
+                    <System:String>foo</System:String>
+                    <System:String>bar</System:String>
+                </x:Array>
+            </ListBox.ItemsSource>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DataTemplate>
+    <DataTemplate x:Key="MyCategoryEditor">
+        <TabControl>
+            <TabItem Header="MyStringProperty">
+                <TextBlock Text="{Binding Path=[MyStringProperty].PropertyValue.Value}" />
+            </TabItem>
+            <TabItem Header="MyIntProperty">
+                <TextBlock Text="{Binding Path=[MyIntProperty].PropertyValue.Value}" />
+            </TabItem>
+        </TabControl>
+    </DataTemplate>
+</ResourceDictionary>

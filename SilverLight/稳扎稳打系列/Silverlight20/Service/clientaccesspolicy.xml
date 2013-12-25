@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<access-policy>
+    <cross-domain-access>
+        <policy>
+            <allow-from http-request-headers="*">
+                <domain uri="*" />
+            </allow-from>
+            <grant-to>
+                <resource path="/" include-subpaths="true" />
+            </grant-to>
+        </policy>
+    </cross-domain-access>
+</access-policy>
+<!--
+System.Net 命名空间 和 System.Net.Sockets 命名空间的跨域调用，需要在目标域的根目录下配置策略文件
+Image 控件 和 MediaElement 控件所访问的跨域地址，不受策略文件的限制
+HTTP 调用 仅支持 GET 和 POST ，只有 200（确定） 和 404（未找到） 状态代码可用
+同域：同一子域、协议和端口。不符合以上任一条件则为跨域
+Silverlight 与 HTTP/HTTPS 的所有通信均为异步
+
+关于策略文件详见文档
+-->

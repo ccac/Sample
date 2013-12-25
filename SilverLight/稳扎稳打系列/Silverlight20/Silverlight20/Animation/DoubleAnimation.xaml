@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Silverlight20.Animation.DoubleAnimation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+    
+        <Rectangle x:Name="rectangle" Width="200" Height="100" Stroke="Black" StrokeThickness="6" RadiusX="25" RadiusY="25">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Silverlight20;component/Images/Logo.jpg" Stretch="Fill" />
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <StackPanel.Resources>
+            <BeginStoryboard x:Name="beginStoryboard">
+                <Storyboard x:Name="storyboard">
+
+                    <!--DoubleAnimation - 在两个 Double 值之间做线性内插动画处理-->
+                    <!--
+                    Storyboard.TargetName - 要进行动画处理的对象的名称
+                    Storyboard.TargetProperty - 要进行动画处理的对象的属性
+                    BeginTime - 时间线在被触发 BeginTime 的时间后才能开始播放
+                        TimeSpan - [-][日.]时:分:秒[.1位到7为的秒后的小数]（可为正；可为负；可为空；默认值为 0）
+                    From - 动画的起始值
+                    To - 动画的结束值
+                    By - 动画从起始值开始计算，所需变化的总量（To 优先于 By）
+                    Duration - 时间线的持续时间
+                        TimeSpan - [-][日.]时:分:秒[.1位到7为的秒后的小数]
+                        Automatic - 自动确定
+                        Forever - 无限长
+                    AutoReverse - 动画完成后是否要原路返回。默认值为 false
+                    RepeatBehavior - 动画重复播放的时间、次数或类型
+                        TimeSpan - [-][日.]时:分:秒[.1位到7为的秒后的小数]
+                        nx - 播放次数。1x, 2x, 3x ...
+                        Forever - 永久播放
+                    SpeedRatio - 时间线的速率的倍数。默认值 1
+                    FillBehavior - 动画结束后的行为 [System.Windows.Media.Animation.FillBehavior枚举]
+                        FillBehavior.HoldEnd - 动画结束后，保留动画属性的结束值。默认值
+                        FillBehavior.Stop - 动画结束后，恢复动画属性为其初始值
+                    -->
+                    <DoubleAnimation 
+                        Storyboard.TargetName="rectangle" 
+                        Storyboard.TargetProperty="Width"
+                        From="100"
+                        By="100"
+                        BeginTime="0:0:3"
+                        Duration="00:00:03"
+                        AutoReverse="False"
+                        RepeatBehavior="Forever">
+                    </DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </StackPanel.Resources>
+        
+    </StackPanel>
+</UserControl>

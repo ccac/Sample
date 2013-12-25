@@ -1,0 +1,284 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" InitialTargets="ValidateSolutionConfiguration;ValidateToolsVersions" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_SolutionProjectConfiguration>Debug|Mixed Platforms</_SolutionProjectConfiguration>
+    <_SolutionProjectToolsVersion>3.5</_SolutionProjectToolsVersion>
+    <_SolutionProjectCacheVersion>3.5</_SolutionProjectCacheVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <_SolutionProjectProjects Include="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ">
+    <SkipLevel0 Include="DynamicAnimationsDemo1" />
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+    <BuildLevel0 Include="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+    <BuildLevel0 Include="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ">
+    <SkipLevel0 Include="DynamicAnimationsDemo1" />
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+    <BuildLevel0 Include="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+  </ItemGroup>
+  <ItemGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+    <BuildLevel0 Include="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </BuildLevel0>
+  </ItemGroup>
+  <UsingTask TaskName="Microsoft.Build.Tasks.CreateTemporaryVCProject" AssemblyName="Microsoft.Build.Tasks.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <UsingTask TaskName="Microsoft.Build.Tasks.ResolveVCProjectOutput" AssemblyName="Microsoft.Build.Tasks.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <PropertyGroup Condition=" '$(Configuration)' == '' ">
+    <Configuration>Debug</Configuration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == '' ">
+    <Platform>Mixed Platforms</Platform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(AspNetConfiguration)' == '') ">
+    <AspNetConfiguration>$(Configuration)</AspNetConfiguration>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SolutionDir>C:\Users\Corey\Documents\Visual Studio 2008\Projects\DynamicAnimationsDemo1\</SolutionDir>
+    <SolutionExt>.sln</SolutionExt>
+    <SolutionFileName>DynamicAnimationsDemo1.sln</SolutionFileName>
+    <SolutionName>DynamicAnimationsDemo1</SolutionName>
+    <SolutionPath>C:\Users\Corey\Documents\Visual Studio 2008\Projects\DynamicAnimationsDemo1\DynamicAnimationsDemo1.sln</SolutionPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '2.0'">v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' != '2.0'">v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{4178D605-BCDA-4D3E-867C-D65F1FE44745}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945}">Debug|.NET</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{4178D605-BCDA-4D3E-867C-D65F1FE44745}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945}">Debug|.NET</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{4178D605-BCDA-4D3E-867C-D65F1FE44745}">Debug|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945}">Debug|.NET</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{4178D605-BCDA-4D3E-867C-D65F1FE44745}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945}">Debug|.NET</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{4178D605-BCDA-4D3E-867C-D65F1FE44745}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945}">Debug|.NET</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+    <CurrentSolutionConfigurationContents>
+      <SolutionConfiguration xmlns="">
+        <ProjectConfiguration Project="{4178D605-BCDA-4D3E-867C-D65F1FE44745}">Release|AnyCPU</ProjectConfiguration>
+        <ProjectConfiguration Project="{C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945}">Debug|.NET</ProjectConfiguration>
+      </SolutionConfiguration>
+    </CurrentSolutionConfigurationContents>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(AspNetConfiguration)' == 'Debug' ">
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetVirtualPath>/DynamicAnimationsDemo1Web</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetVirtualPath>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath>DynamicAnimationsDemo1Web\</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetTargetPath>PrecompiledWeb\DynamicAnimationsDemo1Web\</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetTargetPath>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetForce>true</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetForce>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetUpdateable>true</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetUpdateable>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDebug>True</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDebug>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyFile>
+    </Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyFile>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyContainer>
+    </Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyContainer>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDelaySign>
+    </Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDelaySign>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetAPTCA>
+    </Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetAPTCA>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetFixedNames>false</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetFixedNames>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetTargetPath Condition=" '$(OutDir)' != '' ">$(OutDir)_PublishedWebsites\DynamicAnimationsDemo1Web\</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetTargetPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(AspNetConfiguration)' == 'Release' ">
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetVirtualPath>/DynamicAnimationsDemo1Web</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetVirtualPath>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath>DynamicAnimationsDemo1Web\</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetTargetPath>PrecompiledWeb\DynamicAnimationsDemo1Web\</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetTargetPath>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetForce>true</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetForce>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetUpdateable>true</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetUpdateable>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDebug>False</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDebug>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyFile>
+    </Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyFile>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyContainer>
+    </Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyContainer>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDelaySign>
+    </Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDelaySign>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetAPTCA>
+    </Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetAPTCA>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetFixedNames>false</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetFixedNames>
+    <Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetTargetPath Condition=" '$(OutDir)' != '' ">$(OutDir)_PublishedWebsites\DynamicAnimationsDemo1Web\</Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetTargetPath>
+  </PropertyGroup>
+  <Target Name="ValidateSolutionConfiguration">
+    <Error Text="The specified solution configuration &quot;$(Configuration)|$(Platform)&quot; is invalid. Please specify a valid solution configuration using the Configuration and Platform properties (e.g. MSBuild.exe Solution.sln /p:Configuration=Debug /p:Platform=&quot;Any CPU&quot;) or leave those properties blank to use the default solution configuration." Code="MSB4126" HelpKeyword="MSBuild.SolutionInvalidSolutionConfiguration" Condition="('$(CurrentSolutionConfigurationContents)' == '') and ('$(SkipInvalidConfigurations)' != 'true')" />
+    <Warning Text="The specified solution configuration &quot;$(Configuration)|$(Platform)&quot; is invalid. Please specify a valid solution configuration using the Configuration and Platform properties (e.g. MSBuild.exe Solution.sln /p:Configuration=Debug /p:Platform=&quot;Any CPU&quot;) or leave those properties blank to use the default solution configuration." Code="MSB4126" HelpKeyword="MSBuild.SolutionInvalidSolutionConfiguration" Condition="('$(CurrentSolutionConfigurationContents)' == '') and ('$(SkipInvalidConfigurations)' == 'true')" />
+    <Message Text="Building solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="'$(CurrentSolutionConfigurationContents)' != ''" />
+  </Target>
+  <Target Name="ValidateToolsVersions">
+    <Error Text="The tools version &quot;$(MSBuildToolsVersion)&quot; of the solution does not support building projects with a different tools version." Code="MSB4149" HelpKeyword="MSBuild.SolutionToolsVersionDoesNotSupportProjectToolsVersion" Condition="'$(MSBuildToolsVersion)' == '2.0' and ('$(ProjectToolsVersion)' != '2.0' and '$(ProjectToolsVersion)' != '')" />
+  </Target>
+  <Target Name="DynamicAnimationsDemo1" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(DynamicAnimationsDemo1BuildOutput)">
+    <Message Text="The project &quot;DynamicAnimationsDemo1&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DynamicAnimationsDemo1BuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DynamicAnimationsDemo1BuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;DynamicAnimationsDemo1&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DynamicAnimationsDemo1BuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DynamicAnimationsDemo1BuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="DynamicAnimationsDemo1:Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;DynamicAnimationsDemo1&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Clean" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;DynamicAnimationsDemo1&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Clean" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="DynamicAnimationsDemo1:Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(DynamicAnimationsDemo1BuildOutput)">
+    <Message Text="The project &quot;DynamicAnimationsDemo1&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DynamicAnimationsDemo1BuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Rebuild" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DynamicAnimationsDemo1BuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;DynamicAnimationsDemo1&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DynamicAnimationsDemo1BuildOutput" />
+    </MSBuild>
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Rebuild" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') ">
+      <Output TaskParameter="TargetOutputs" ItemName="DynamicAnimationsDemo1BuildOutput" />
+    </MSBuild>
+  </Target>
+  <Target Name="DynamicAnimationsDemo1:Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <Message Text="The project &quot;DynamicAnimationsDemo1&quot; is not selected for building in solution configuration &quot;Debug|.NET&quot;." Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Publish" Properties="Configuration=Debug; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') " />
+    <Message Text="The project &quot;DynamicAnimationsDemo1&quot; is not selected for building in solution configuration &quot;Release|.NET&quot;." Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Any CPU') " />
+    <MSBuild Projects="DynamicAnimationsDemo1\DynamicAnimationsDemo1.csproj" Targets="Publish" Properties="Configuration=Release; Platform=AnyCPU; BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" Condition=" ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') " />
+  </Target>
+  <Target Name="GetFrameworkPathAndRedistList">
+    <GetFrameworkPath>
+      <Output TaskParameter="Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition="'$(MSBuildToolsVersion)' == '2.0'" />
+      <Output TaskParameter="FrameworkVersion35Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" '$(TargetFrameworkVersion)' == 'v3.5' and '$(MSBuildToolsVersion)' != '2.0'" />
+      <Output TaskParameter="FrameworkVersion30Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" ('$(TargetFrameworkVersion)' == 'v3.0' or '$(TargetFrameworkVersion)' == 'v3.5') and '$(MSBuildToolsVersion)' != '2.0'" />
+      <Output TaskParameter="FrameworkVersion20Path" ItemName="_CombinedTargetFrameworkDirectoriesItem" Condition=" ('$(TargetFrameworkVersion)' == 'v2.0' or '$(TargetFrameworkVersion)' == 'v3.0' or '$(TargetFrameworkVersion)' == 'v3.5') and '$(MSBuildToolsVersion)' != '2.0'" />
+    </GetFrameworkPath>
+    <CreateItem Include="@(_CombinedTargetFrameworkDirectoriesItem->'%(Identity)\RedistList\*.xml')">
+      <Output TaskParameter="Include" ItemName="InstalledAssemblyTables" />
+    </CreateItem>
+  </Target>
+  <Target Name="DynamicAnimationsDemo1Web" DependsOnTargets=";GetFrameworkPathAndRedistList" Condition=" ('$(CurrentSolutionConfigurationContents)' != '') and (false or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ) or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') )) ">
+    <CreateItem Include="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath)\Bin\*.refresh">
+      <Output TaskParameter="Include" ItemName="Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_RefreshFile" />
+    </CreateItem>
+    <ReadLinesFromFile File="%(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_RefreshFile.Identity)" Condition=" '%(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_RefreshFile.Identity)' != '' ">
+      <Output TaskParameter="Lines" ItemName="Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_ReferenceRelPath" />
+    </ReadLinesFromFile>
+    <CombinePath BasePath="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath)" Paths="@(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_ReferenceRelPath)">
+      <Output TaskParameter="CombinedPaths" ItemName="Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References" />
+    </CombinePath>
+    <Copy SourceFiles="@(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References->'%(FullPath)')" DestinationFolder="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath)\Bin\" Condition="!Exists('%(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References.Identity)')" ContinueOnError="true" />
+    <ResolveAssemblyReference Assemblies="@(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References->'%(FullPath)')" TargetFrameworkDirectories="@(_CombinedTargetFrameworkDirectoriesItem)" InstalledAssemblyTables="@(InstalledAssemblyTables)" SearchPaths="{RawFileName};{TargetFrameworkDirectory};{GAC}" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true" Condition="Exists('%(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References.Identity)')">
+      <Output TaskParameter="CopyLocalFiles" ItemName="Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_CopyLocalFiles" />
+    </ResolveAssemblyReference>
+    <Copy SourceFiles="@(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_CopyLocalFiles)" DestinationFiles="@(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_CopyLocalFiles->'$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath)\Bin\%(DestinationSubDirectory)%(Filename)%(Extension)')" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <AspNetCompiler VirtualPath="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetVirtualPath)" PhysicalPath="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath)" TargetPath="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetTargetPath)" Force="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetForce)" Updateable="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetUpdateable)" Debug="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDebug)" KeyFile="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyFile)" KeyContainer="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyContainer)" DelaySign="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDelaySign)" AllowPartiallyTrustedCallers="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetAPTCA)" FixedNames="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetFixedNames)" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <Message Text="Skipping because the &quot;$(AspNetConfiguration)&quot; configuration is not supported for this web project.  You can use the AspNetConfiguration property to override the configuration used for building web projects, by adding /p:AspNetConfiguration=&lt;value&gt; to the command line. Currently web projects only support Debug and Release configurations." Condition="!((false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release'))" />
+  </Target>
+  <Target Name="DynamicAnimationsDemo1Web:Clean" DependsOnTargets=";GetFrameworkPathAndRedistList">
+    <Message Text="Web projects do not support the &quot;Clean&quot; target.  Continuing with remaining projects ..." />
+  </Target>
+  <Target Name="DynamicAnimationsDemo1Web:Rebuild" DependsOnTargets=";GetFrameworkPathAndRedistList" Condition=" ('$(CurrentSolutionConfigurationContents)' != '') and (false or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == '.NET') ) or ( ('$(Configuration)' == 'Debug') and ('$(Platform)' == 'Mixed Platforms') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == '.NET') ) or ( ('$(Configuration)' == 'Release') and ('$(Platform)' == 'Mixed Platforms') )) ">
+    <CreateItem Include="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath)\Bin\*.refresh">
+      <Output TaskParameter="Include" ItemName="Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild_RefreshFile" />
+    </CreateItem>
+    <ReadLinesFromFile File="%(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild_RefreshFile.Identity)" Condition=" '%(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild_RefreshFile.Identity)' != '' ">
+      <Output TaskParameter="Lines" ItemName="Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild_ReferenceRelPath" />
+    </ReadLinesFromFile>
+    <CombinePath BasePath="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath)" Paths="@(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild_ReferenceRelPath)">
+      <Output TaskParameter="CombinedPaths" ItemName="Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild" />
+    </CombinePath>
+    <Copy SourceFiles="@(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild->'%(FullPath)')" DestinationFolder="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath)\Bin\" Condition="!Exists('%(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild.Identity)')" ContinueOnError="true" />
+    <ResolveAssemblyReference Assemblies="@(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild->'%(FullPath)')" TargetFrameworkDirectories="@(_CombinedTargetFrameworkDirectoriesItem)" InstalledAssemblyTables="@(InstalledAssemblyTables)" SearchPaths="{RawFileName};{TargetFrameworkDirectory};{GAC}" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true" Condition="Exists('%(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild.Identity)')">
+      <Output TaskParameter="CopyLocalFiles" ItemName="Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild_CopyLocalFiles" />
+    </ResolveAssemblyReference>
+    <Copy SourceFiles="@(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild_CopyLocalFiles)" DestinationFiles="@(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_References_Rebuild_CopyLocalFiles->'$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath)\Bin\%(DestinationSubDirectory)%(Filename)%(Extension)')" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <AspNetCompiler VirtualPath="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetVirtualPath)" PhysicalPath="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetPhysicalPath)" TargetPath="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetTargetPath)" Force="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetForce)" Updateable="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetUpdateable)" Debug="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDebug)" KeyFile="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyFile)" KeyContainer="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetKeyContainer)" DelaySign="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetDelaySign)" AllowPartiallyTrustedCallers="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetAPTCA)" FixedNames="$(Project_C4F9FB29-DB61-4EB9-A5FC-38A2C7F9A945_AspNetFixedNames)" Condition="(false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release')" />
+    <Message Text="Skipping because the &quot;$(AspNetConfiguration)&quot; configuration is not supported for this web project.  You can use the AspNetConfiguration property to override the configuration used for building web projects, by adding /p:AspNetConfiguration=&lt;value&gt; to the command line. Currently web projects only support Debug and Release configurations." Condition="!((false) or ('$(AspNetConfiguration)' == 'Debug') or ('$(AspNetConfiguration)' == 'Release'))" />
+  </Target>
+  <Target Name="DynamicAnimationsDemo1Web:Publish" DependsOnTargets=";GetFrameworkPathAndRedistList">
+    <Message Text="Web projects do not support the &quot;Publish&quot; target.  Continuing with remaining projects ..." />
+  </Target>
+  <Target Name="Build" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(CollectedBuildOutput)">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <CallTarget Targets="DynamicAnimationsDemo1Web" RunEachTargetSeparately="true" />
+  </Target>
+  <Target Name="Clean" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Clean" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <CallTarget Targets="DynamicAnimationsDemo1Web:Clean" RunEachTargetSeparately="true" />
+    <Delete Files="DynamicAnimationsDemo1.sln.cache" />
+  </Target>
+  <Target Name="Rebuild" Condition="'$(CurrentSolutionConfigurationContents)' != ''" Outputs="@(CollectedBuildOutput)">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Rebuild" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)">
+      <Output TaskParameter="TargetOutputs" ItemName="CollectedBuildOutput" />
+    </MSBuild>
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <CallTarget Targets="DynamicAnimationsDemo1Web:Rebuild" RunEachTargetSeparately="true" />
+  </Target>
+  <Target Name="Publish" Condition="'$(CurrentSolutionConfigurationContents)' != ''">
+    <MSBuild Condition="@(BuildLevel0) != ''" Projects="@(BuildLevel0)" Properties="Configuration=%(Configuration); Platform=%(Platform); BuildingSolutionFile=true; CurrentSolutionConfigurationContents=$(CurrentSolutionConfigurationContents); SolutionDir=$(SolutionDir); SolutionExt=$(SolutionExt); SolutionFileName=$(SolutionFileName); SolutionName=$(SolutionName); SolutionPath=$(SolutionPath)" Targets="Publish" ToolsVersion="$(ProjectToolsVersion)" BuildInParallel="true" UnloadProjectsOnCompletion="$(UnloadProjectsOnCompletion)" UseResultsCache="$(UseResultsCache)" />
+    <Message Text="The project &quot;%(SkipLevel0.Identity)&quot; is not selected for building in solution configuration &quot;$(Configuration)|$(Platform)&quot;." Condition="@(SkipLevel0) != ''" />
+    <Warning Text="The project configuration for project &quot;%(MissingConfigLevel0.Identity)&quot; was not specified in the solution file for the solution configuration &quot;$(Configuration)|$(Platform)&quot;." Code="MSB4121" HelpKeyword="MSBuild.SolutionProjectConfigurationMissing" Condition="@(MissingConfigLevel0) != ''" />
+    <CallTarget Targets="DynamicAnimationsDemo1Web:Publish" RunEachTargetSeparately="true" />
+  </Target>
+</Project>

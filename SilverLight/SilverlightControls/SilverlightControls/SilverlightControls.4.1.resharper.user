@@ -1,0 +1,219 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer>
+      <setting name="UsedSolutionBuilderID">0</setting>
+    </integer>
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="338C7F7F-3B0C-4376-8C53-858971D3F266/f:myOtherControl.cs" caret="0" scrollPosition="0|0" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:CustomInlineEditor.cs" caret="416" scrollPosition="0|14" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:CustomExtendedEditor.cs" caret="77" scrollPosition="0|0" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:CustomDialogEditor.cs" caret="99" scrollPosition="0|0" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.xaml" caret="1807" scrollPosition="0|19" />
+      <File id="338C7F7F-3B0C-4376-8C53-858971D3F266/f:myControl.cs" caret="0" scrollPosition="0|21" />
+      <File id="0F83ACBE-89A8-4EFE-9FB0-6BC5C0DC6FA7/f:Metadata.cs" caret="0" scrollPosition="0|36" />
+      <File id="FAC64406-67FA-407E-A1A3-7E27C00C3556/f:Metadata.cs" caret="543" scrollPosition="0|0" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.cs" caret="1173" scrollPosition="0|0" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="FAC64406-67FA-407E-A1A3-7E27C00C3556/f:Metadata.cs" caret="3998" scrollPosition="0|55" />
+      <File id="FAC64406-67FA-407E-A1A3-7E27C00C3556/f:Metadata.cs" caret="3455" scrollPosition="0|52" />
+      <File id="338C7F7F-3B0C-4376-8C53-858971D3F266/f:myControl.cs" caret="1518" scrollPosition="0|24" />
+      <File id="0F83ACBE-89A8-4EFE-9FB0-6BC5C0DC6FA7/f:Metadata.cs" caret="2496" scrollPosition="0|56" />
+      <File id="0F83ACBE-89A8-4EFE-9FB0-6BC5C0DC6FA7/f:Metadata.cs" caret="2271" scrollPosition="0|56" />
+      <File id="338C7F7F-3B0C-4376-8C53-858971D3F266/f:myControl.cs" caret="1518" scrollPosition="0|30" />
+      <File id="0F83ACBE-89A8-4EFE-9FB0-6BC5C0DC6FA7/f:Metadata.cs" caret="1709" scrollPosition="0|36" />
+      <File id="338C7F7F-3B0C-4376-8C53-858971D3F266/f:myControl.cs" caret="1521" scrollPosition="0|25" />
+      <File id="0F83ACBE-89A8-4EFE-9FB0-6BC5C0DC6FA7/f:Metadata.cs" caret="1436" scrollPosition="0|28" />
+      <File id="FAC64406-67FA-407E-A1A3-7E27C00C3556/f:Metadata.cs" caret="3995" scrollPosition="0|96" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.cs" caret="157" scrollPosition="0|0" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:CustomInlineEditor.cs" caret="206" scrollPosition="0|0" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.cs" caret="421" scrollPosition="0|11" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.cs" caret="421" scrollPosition="0|4" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.cs" caret="421" scrollPosition="0|4" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.cs" caret="791" scrollPosition="0|4" />
+      <File id="FAC64406-67FA-407E-A1A3-7E27C00C3556/f:Metadata.cs" caret="2365" scrollPosition="40|51" />
+      <File id="FAC64406-67FA-407E-A1A3-7E27C00C3556/f:Metadata.cs" caret="4235" scrollPosition="0|82" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.xaml" caret="1091" scrollPosition="0|0" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.cs" caret="847" scrollPosition="0|6" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.cs" caret="613" scrollPosition="0|7" />
+      <File id="FAC64406-67FA-407E-A1A3-7E27C00C3556/f:Metadata.cs" caret="1798" scrollPosition="0|32" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:CustomInlineEditor.cs" caret="952" scrollPosition="0|0" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:CustomInlineEditor.cs" caret="965" scrollPosition="0|9" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:CustomInlineEditor.cs" caret="733" scrollPosition="0|9" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:CustomInlineEditor.cs" caret="965" scrollPosition="0|15" />
+      <File id="FAC64406-67FA-407E-A1A3-7E27C00C3556/f:Metadata.cs" caret="1387" scrollPosition="0|32" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.xaml" caret="1962" scrollPosition="0|19" />
+      <File id="C1E9E2C8-BEA7-4112-BC49-11689C3ECCA9/f:EditorDictionary.cs" caret="1173" scrollPosition="0|20" />
+      <File id="FAC64406-67FA-407E-A1A3-7E27C00C3556/f:Metadata.cs" caret="2987" scrollPosition="0|47" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <CustomStartDirectory>
+    </CustomStartDirectory>
+    <UseShadowCopy>True</UseShadowCopy>
+    <UseCustomFolder>False</UseCustomFolder>
+    <EnableUnitTesting>True</EnableUnitTesting>
+    <Providers />
+  </UnitTestRunner>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="Control" priority="1" />
+      <Item value="public" priority="15" />
+      <Item value="string" priority="3" />
+      <Item value="DeveloperMetadataBuilder" priority="0" />
+      <Item value="this" priority="5" />
+      <Item value="AddTypeAttributes" priority="3" />
+      <Item value="typeof" priority="21" />
+      <Item value="myControl" priority="8" />
+      <Item value="new" priority="24" />
+      <Item value="DescriptionAttribute" priority="0" />
+      <Item value="AddMemberAttributes" priority="7" />
+      <Item value="DisplayNameAttribute" priority="2" />
+      <Item value="DefaultValueAttribute" priority="0" />
+      <Item value="PropertyMetadata" priority="0" />
+      <Item value="ReadOnlyAttribute" priority="0" />
+      <Item value="CategoryAttribute" priority="2" />
+      <Item value="BrowsableAttribute" priority="1" />
+      <Item value="EditorBrowsableAttribute" priority="0" />
+      <Item value="EditorBrowsableState" priority="0" />
+      <Item value="FontWeightConverter" priority="0" />
+      <Item value="DurationConverter" priority="1" />
+      <Item value="GridLengthConverter" priority="0" />
+      <Item value="ImageSourceConverter" priority="0" />
+      <Item value="ExpandableObjectConverter" priority="1" />
+      <Item value="BooleanConverter" priority="2" />
+      <Item value="TypeConverter" priority="1" />
+      <Item value="override" priority="14" />
+      <Item value="return" priority="14" />
+      <Item value="StandardValuesCollection" priority="0" />
+      <Item value="true" priority="5" />
+      <Item value="value" priority="3" />
+      <Item value="if" priority="1" />
+      <Item value="sourceType" priority="0" />
+      <Item value="else" priority="0" />
+      <Item value="myTypeConverter" priority="0" />
+      <Item value="TypeConverterAttribute" priority="0" />
+      <Item value="BindingFlags" priority="2" />
+      <Item value="PropertyOrderAttribute" priority="2" />
+      <Item value="PropertyOrder" priority="5" />
+      <Item value="Type" priority="1" />
+      <Item value="StyleTypedPropertyAttribute" priority="0" />
+      <Item value="StyleTargetType" priority="0" />
+      <Item value="ItemCollection" priority="0" />
+      <Item value="NewItemTypesAttribute" priority="0" />
+      <Item value="FactoryType" priority="0" />
+      <Item value="class" priority="3" />
+      <Item value="ItemsControl" priority="0" />
+      <Item value="NumberRangesAttribute" priority="1" />
+      <Item value="NumberIncrementsAttribute" priority="0" />
+      <Item value="NumberFormatAttribute" priority="0" />
+      <Item value="myOtherControl" priority="0" />
+      <Item value="ToolboxBrowsableAttribute" priority="0" />
+      <Item value="EditorAttribute" priority="0" />
+      <Item value="PropertyValueEditor" priority="2" />
+      <Item value="CustomInlineEditor" priority="0" />
+      <Item value="ResourceDictionary" priority="0" />
+      <Item value="DataTemplate" priority="5" />
+      <Item value="dictionary" priority="2" />
+      <Item value="as" priority="2" />
+      <Item value="EditorDictionary" priority="3" />
+      <Item value="static" priority="2" />
+      <Item value="void" priority="0" />
+      <Item value="UriHostNameType" priority="0" />
+      <Item value="UriKind" priority="0" />
+      <Item value="ExtendedPropertyValueEditor" priority="0" />
+      <Item value="CustomExtendedEditor" priority="1" />
+      <Item value="DateTime" priority="0" />
+      <Item value="object" priority="0" />
+      <Item value="bindingFlags" priority="0" />
+      <Item value="DialogPropertyValueEditor" priority="0" />
+      <Item value="CustomDialogEditor" priority="0" />
+      <Item value="CategoryEditor" priority="0" />
+      <Item value="null" priority="0" />
+      <Item value="CustomCategoryEditor" priority="0" />
+      <Item value="AddCustomAttributes" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SilverlightControls.Design.MetadataRegistration+DeveloperMetadataBuilder">
+      <Item value="AddTypeAttributes" priority="0" />
+      <Item value="AddCustomAttributes" priority="0" />
+      <Item value="AddCallback" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.ComponentModel.BrowsableAttribute">
+      <Item value="No" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.ComponentModel.EditorBrowsableState">
+      <Item value="Never" priority="0" />
+      <Item value="Advanced" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="ToUpper" priority="1" />
+      <Item value="ToLower" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@SilverlightControls.myControl">
+      <Item value="WidthProperty" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.DependencyProperty">
+      <Item value="ToString" priority="0" />
+      <Item value="GetType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="GetProperty" priority="1" />
+      <Item value="GetType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Reflection.BindingFlags">
+      <Item value="NonPublic" priority="1" />
+      <Item value="Instance" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Windows.Design.PropertyEditing.PropertyOrder">
+      <Item value="Default" priority="0" />
+      <Item value="Early" priority="1" />
+      <Item value="Late" priority="0" />
+      <Item value="CreateAfter" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.StyleTypedPropertyAttribute">
+      <Item value="StyleTargetType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Type">
+      <Item value="GetType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Windows.Design.PropertyEditing.PropertyValueEditor">
+      <Item value="CreateEditorAttribute" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SilverlightControls.Design.MetadataRegistration+CustomMetadataBuilder+CustomInlineEditor">
+      <Item value="InlineEditorTemplate" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SilverlightControls.Design.Editos.CustomInlineEditor">
+      <Item value="InlineEditorTemplate" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@SilverlightControls.Design.Editos.EditorDictionary">
+      <Item value="ColorsComboBox" priority="0" />
+      <Item value="MyCategoryEditor" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.UriKind">
+      <Item value="Absolute" priority="1" />
+      <Item value="Relative" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SilverlightControls.Design.Editos.CustomExtendedEditor">
+      <Item value="InlineEditorTemplate" priority="0" />
+      <Item value="ExtendedEditorTemplate" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Reflection.PropertyInfo">
+      <Item value="GetValue" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SilverlightControls.Design.Editos.CustomDialogEditor">
+      <Item value="DialogEditorTemplate" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

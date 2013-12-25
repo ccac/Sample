@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Silverlight20.Control.HyperlinkButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+
+        <!--
+        NavigateUri - 超级链接的目标地址
+        TargetName - 目标名
+        -->
+        <HyperlinkButton Content="http://webabcd.cnblogs.com" NavigateUri="http://webabcd.cnblogs.com/" HorizontalContentAlignment="Center" TargetName="_blank" Background="Black" Foreground="White" Margin="5" Width="200" />
+
+        <!--
+        HyperlinkButton.Content - 超级链接所显示的内容
+        -->
+        <HyperlinkButton NavigateUri="http://webabcd.cnblogs.com/" TargetName="_blank" Margin="5" Width="200">
+            <HyperlinkButton.Content>
+                <Image Source="/Silverlight20;component/Images/Logo.jpg" />
+            </HyperlinkButton.Content>
+        </HyperlinkButton>
+
+    </StackPanel>
+</UserControl>

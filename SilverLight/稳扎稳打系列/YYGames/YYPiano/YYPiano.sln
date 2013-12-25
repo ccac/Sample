@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YYPiano", "YYPiano\YYPiano.csproj", "{1D80B067-640F-4E6A-8A3D-9ED59359DFE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YYPiano.Web", "YYPiano.Web\YYPiano.Web.csproj", "{6EEF2516-8EA6-4D72-9313-86CA6E08D315}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D80B067-640F-4E6A-8A3D-9ED59359DFE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D80B067-640F-4E6A-8A3D-9ED59359DFE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D80B067-640F-4E6A-8A3D-9ED59359DFE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D80B067-640F-4E6A-8A3D-9ED59359DFE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EEF2516-8EA6-4D72-9313-86CA6E08D315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EEF2516-8EA6-4D72-9313-86CA6E08D315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EEF2516-8EA6-4D72-9313-86CA6E08D315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EEF2516-8EA6-4D72-9313-86CA6E08D315}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

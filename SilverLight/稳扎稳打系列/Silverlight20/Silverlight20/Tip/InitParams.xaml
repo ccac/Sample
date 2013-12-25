@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="Silverlight20.Tip.InitParams"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left" Margin="5">
+
+        <TextBlock x:Name="lblMsg" />
+
+        <!--以声明的方式读取应用程序级别的资源-->
+        <TextBlock Text="{StaticResource key2}"  />
+
+    </StackPanel>
+</UserControl>

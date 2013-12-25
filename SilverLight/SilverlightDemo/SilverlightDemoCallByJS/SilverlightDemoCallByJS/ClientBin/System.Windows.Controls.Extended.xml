@@ -1,0 +1,1645 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Windows.Controls.Extended</name>
+    </assembly>
+    <members>
+        <member name="T:System.Windows.Controls.MonthButton">
+            <summary>
+            Represents a button control used in Calendar Control, which reacts to the Click event.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.CalendarButtonBase">
+            <summary>
+            Represents the base class for all Button controls in a Calendar
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.CalendarButtonBase._isLoaded">
+            <summary>
+            True if the control has been loaded; false otherwise.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.CalendarButtonBase._isMouseCaptured">
+            <summary>
+            True if the mouse has been captured by this button, false otherwise.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.CalendarButtonBase._isSpaceKeyDown">
+            <summary>
+            True if the SPACE key is currently pressed, false otherwise.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.CalendarButtonBase._isMouseLeftButtonDown">
+            <summary>
+            True if the mouse's left button is currently down, false otherwise.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.CalendarButtonBase._mousePosition">
+            <summary>
+            Last known position of the mouse with respect to this Button.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.CalendarButtonBase._currentState">
+            <summary>
+            Current visual state of the button.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.CalendarButtonBase._suspendStateChanges">
+            <summary>
+            True if visual state changes are suspended; false otherwise.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.#ctor">
+            <summary>
+            Initializes a new instance of the ButtonBase class.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.UpdateVisualState">
+            <summary>
+            Update the current visual state of the button.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.ChangeVisualState">
+            <summary>
+            Change to the correct visual state for the button.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.ChangeVisualState(System.Windows.Media.Animation.Storyboard)">
+            <summary>
+            Change the visual state of the button.
+            </summary>
+            <param name="state">Next visual state of the button.</param>
+            <remarks>
+            This method should not be called by controls to force a change to
+            the current visual state.  UpdateVisualState is preferred because
+            it properly handles suspension of state changes.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.CaptureMouseInternal">
+            <summary>
+            Capture the mouse.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.ReleaseMouseCaptureInternal">
+            <summary>
+            Release mouse capture if we already had it.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnIsEnabledChanged(System.Boolean)">
+            <summary>
+            Called when the IsEnabled property changes.
+            </summary>
+            <param name="isEnabled">New value of the IsEnabled property.</param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnIsPressedChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the IsPressed property changes.
+            </summary>
+            <param name="e">
+            The data for DependencyPropertyChangedEventArgs.
+            </param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnGotFocus(System.Windows.RoutedEventArgs)">
+            <summary>
+            Responds to the GotFocus event.
+            </summary>
+            <param name="e">The event data for the GotFocus event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnLostFocus(System.Windows.RoutedEventArgs)">
+            <summary>
+            Responds to the LostFocus event.
+            </summary>
+            <param name="e">The event data for the LostFocus event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnKeyDown(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Responds to the KeyDown event.
+            </summary>
+            <param name="e">The event data for the KeyDown event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnKeyDownInternal(System.Windows.Input.Key)">
+            <summary>
+            Handles the KeyDown event for ButtonBase.
+            </summary>
+            <param name="key">
+            The keyboard key associated with the event.
+            </param>
+            <returns>True if the event was handled, false otherwise.</returns>
+            <remarks>
+            This method exists for the purpose of unit testing since we can't
+            set KeyEventArgs.Key to simulate key press events.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnKeyUp(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Responds to the KeyUp event.
+            </summary>
+            <param name="e">The event data for the KeyUp event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnKeyUpInternal(System.Windows.Input.Key)">
+            <summary>
+            Handles the KeyUp event for ButtonBase.
+            </summary>
+            <param name="key">The keyboard key associated with the event.</param>
+            <returns>True if the event was handled, false otherwise.</returns>
+            <remarks>
+            This method exists for the purpose of unit testing since we can't
+            set KeyEventArgs.Key to simulate key press events.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnMouseEnter(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Responds to the MouseEnter event.
+            </summary>
+            <param name="e">The event data for the MouseEnter event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnMouseLeave(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Responds to the MouseLeave event.
+            </summary>
+            <param name="e">The event data for the MouseLeave event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Responds to the MouseLeftButtonDown event.
+            </summary>
+            <param name="e">
+            The event data for the MouseLeftButtonDown event.
+            </param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Responds to the MouseLeftButtonUp event.
+            </summary>
+            <param name="e">
+            The event data for the MouseLeftButtonUp event.
+            </param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.OnMouseMove(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Responds to the MouseMove event.
+            </summary>
+            <param name="e">The event data for the MouseMove event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarButtonBase.IsValidMousePosition">
+            <summary>
+            Determine if the mouse is above the button based on its last known
+            position.
+            </summary>
+            <returns>
+            True if the mouse is considered above the button, false otherwise.
+            </returns>
+        </member>
+        <member name="M:System.Windows.Controls.MonthButton.OnApplyTemplate">
+            <summary>
+            Invoked whenever application code or an internal process, 
+            such as a rebuilding layout pass, calls the ApplyTemplate method.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.Resource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Calendar_MonthViewHeaderText">
+            <summary>
+              Looks up a localized string similar to {0}, {1}.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Calendar_OnAreDatesInPastSelectableChanged_InvalidValue">
+            <summary>
+              Looks up a localized string similar to Invalid SelectedDate value. SelectedDate cannot be in the past..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Calendar_OnDisplayDateChanged_InvalidValue">
+            <summary>
+              Looks up a localized string similar to Invalid DisplayDate value..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Calendar_OnDisplayDateEndChanged_InvalidValue">
+            <summary>
+              Looks up a localized string similar to Invalid DisplayDateEnd value..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Calendar_OnDisplayDateStartChanged_InvalidValue">
+            <summary>
+              Looks up a localized string similar to Invalid DisplayDateStart value..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Calendar_OnFirstDayOfWeekChanged_InvalidValue">
+            <summary>
+              Looks up a localized string similar to Invalid FirstDayOfWeek value..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Calendar_OnSelectableDateEndChanged_InvalidValue">
+            <summary>
+              Looks up a localized string similar to Invalid SelectableDateEnd value..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Calendar_OnSelectableDateStartChanged_InvalidValue">
+            <summary>
+              Looks up a localized string similar to Invalid SelectableDateStart value..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Calendar_OnSelectedDateChanged_InvalidValue">
+            <summary>
+              Looks up a localized string similar to Invalid SelectedDate value..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DatePicker_OnSelectedDateFormatChanged_InvalidValue">
+            <summary>
+              Looks up a localized string similar to Invalid DatePickerFormat value..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DatePicker_ParseTextBox_InvalidDate">
+            <summary>
+              Looks up a localized string similar to The Date value could not be parsed. It should be in the {0} format..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DatePicker_WatermarkText">
+            <summary>
+              Looks up a localized string similar to &lt;{0}&gt;.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.WatermarkedTextBox_DefaultWatermarkText">
+            <summary>
+              Looks up a localized string similar to &amp;lt;enter text here&amp;gt;.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.WatermarkedTextBox_TemplatePartIsOfIncorrectType">
+            <summary>
+              Looks up a localized string similar to The template part {0} is not an instance of {1}..
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.WatermarkedTextBox">
+            <summary>
+            WatermarkedTextBox is a specialized form of TextBox which displays custom visuals when its contents are empty
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.WatermarkedTextBox.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Controls.WatermarkedTextBox"/> class.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.WatermarkedTextBox.OnApplyTemplate">
+            <summary>
+            Called when template is applied to the control.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.WatermarkedTextBox.IsEnabledProperty">
+            <summary>
+            IsEnabled dependency property
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.WatermarkedTextBox.WatermarkProperty">
+            <summary>
+            Watermark dependency property
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.WatermarkedTextBox.OnIsEnabledPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when is enabled property is changed.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:System.Windows.Controls.WatermarkedTextBox.OnWatermarkPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when watermark property is changed.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="args">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:System.Windows.Controls.WatermarkedTextBox.IsEnabled">
+            <summary>
+            Gets or sets a value indicating whether this element is enabled in the user interface (UI).  This is a dependency property.
+            </summary>
+            <value></value>
+            <returns>true if the element is enabled; otherwise, false. The default value is true.</returns>
+        </member>
+        <member name="P:System.Windows.Controls.WatermarkedTextBox.ToolTip">
+            <summary>
+            Gets or sets the tool-tip object that is displayed for this element
+            in the user interface (UI).
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.WatermarkedTextBox.Watermark">
+            <summary>
+            Watermark content
+            </summary>
+            <value>The watermark.</value>
+        </member>
+        <member name="T:System.Windows.Controls.PreviewControl">
+            <summary>
+            Represents the control that shows a preview of the GridSplitter's redistribution of space between columns or rows of a Grid control
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.PreviewControl.#ctor">
+            <summary>
+            Instantiate the PreviewControl
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.PreviewControl.Bind(System.Windows.Controls.GridSplitter)">
+            <summary>
+            Bind the the dimensions of the preview control to the associated grid splitter
+            </summary>
+            <param name="gridSplitter">GridSplitter instance to target</param>
+        </member>
+        <member name="P:System.Windows.Controls.PreviewControl.OffsetX">
+            <summary>
+            Gets or sets the x-axis offset for the underlying render transform
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.PreviewControl.OffsetY">
+            <summary>
+            Gets or sets the y-axis offset for the underlying render transform
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DatePickerDateChangedEventArgs">
+            <summary>
+            Provides data for the DateSelected event. 
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePickerDateChangedEventArgs.AddedDate">
+            <summary>
+            Gets the newly selected date. 
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePickerDateChangedEventArgs.RemovedDate">
+            <summary>
+            Gets the previous selected date.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DragValidator">
+            <summary>
+            Class to encapsulate drag behavior for a UIElement
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DragValidator.#ctor(System.Windows.UIElement)">
+            <summary>
+            Create an instance of the DragValidator class
+            </summary>
+            <param name="targetElement">UIElement that represents the source of the drag operation</param>
+        </member>
+        <member name="M:System.Windows.Controls.DragValidator.TargetElement_MouseMove(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Handle the MouseMove event for the UIElement to update the drag operation
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DragValidator.TargetElement_MouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Handle the MouseLeftButtonUp event for the UIElement to complete the drag operation
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DragValidator.TargetElement_MouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Handle the MouseLeftButtonDown event for the UIElement to start a drag operation
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DragValidator.OnDragStarted">
+            <summary>
+            Invoke the DragStartedEvent handlers
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DragValidator.OnDragDelta(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Invoke the DragDeltaEvent handlers
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DragValidator.OnDragCompleted(System.Windows.Input.MouseEventArgs,System.Boolean)">
+            <summary>
+            Invoke the DragCompletedEvent handlers
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DragValidator.DragStartedEvent">
+            <summary>
+            Occurs when a drag operation has started 
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DragValidator.DragCompletedEvent">
+            <summary>
+            Occurs when a drag operation has completed
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DragValidator.DragDeltaEvent">
+            <summary>
+            Occurs when a drag operation has progressed
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DatePicker">
+            <summary>
+            Represents a control that allows the user to select a date.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.#ctor">
+            <summary>
+            Initializes a new instance of the DatePicker class. 
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.AreDatesInPastSelectableProperty">
+            <summary>
+            Identifies the AreDatesInPastSelectable dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnAreDatesInPastSelectableChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            AreDatesInPastSelectableProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its AreDatesInPastSelectable.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.CalendarStyleProperty">
+            <summary>
+            Identifies the CalendarStyle dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnCalendarStyleChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            CalendarStyleProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its CalendarStyle.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.DisplayDateProperty">
+            <summary>
+            Identifies the DisplayDate dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnDisplayDateChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            DisplayDateProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its DisplayDate.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.DisplayDateEndProperty">
+            <summary>
+            Identifies the DisplayDateEnd dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnDisplayDateEndChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            DisplayDateEndProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its DisplayDateEnd.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.DisplayDateStartProperty">
+            <summary>
+            Identifies the DisplayDateStart dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnDisplayDateStartChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            DisplayDateStartProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its DisplayDateStart.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.FirstDayOfWeekProperty">
+            <summary>
+            Identifies the FirstDayOfWeek dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnFirstDayOfWeekChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            FirstDayOfWeekProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its FirstDayOfWeek.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.IsDropDownOpenProperty">
+            <summary>
+            Identifies the IsDropDownOpen dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnIsDropDownOpenChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            IsDropDownOpenProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its IsDropDownOpen.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.IsEnabledProperty">
+            <summary>
+            Identifies the IsEnabled dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnIsEnabledPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            IsEnabledProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its IsEnabled.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.IsTodayHighlightedProperty">
+            <summary>
+            Identifies the IsTodayHighlighted dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnIsTodayHighlightedChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            IsTodayHighlightedProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its IsTodayHighlighted.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.SelectedDateProperty">
+            <summary>
+            Identifies the SelectedDate dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnSelectedDateChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectedDateProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its SelectedDate.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.SelectableDateEndProperty">
+            <summary>
+            Identifies the SelectableDateEnd dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnSelectableDateEndChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectableDateEndProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its SelectableDateEnd.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.SelectableDateStartProperty">
+            <summary>
+            Identifies the SelectableDateStart dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnSelectableDateStartChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectableDateStartProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its SelectableDateStart.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.SelectedDateFormatProperty">
+            <summary>
+            Identifies the SelectedDateFormat dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnSelectedDateFormatChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectedDateFormatProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its SelectedDateFormat.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DatePicker.TextProperty">
+            <summary>
+            Identifies the Text dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnTextChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            TextProperty property changed handler.
+            </summary>
+            <param name="d">DatePicker that changed its Text.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.GetValue(System.Windows.DependencyProperty)">
+            <summary>
+            Gets the value of any one of the DatePicker object's dependency properties.
+            </summary>
+            <param name="dp">The dependency property to get the value of.</param>
+            <returns>The value of the specified dependency property.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.ToString">
+            <summary>
+            Provides a text representation of the selected date.
+            </summary>
+            <returns>A text representation of the selected date, or an empty string if SelectedDate is a null reference.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnApplyTemplate">
+            <summary>
+            Builds the visual tree for the DatePicker control when a new template is applied.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.OnTextParseError(System.Windows.Controls.DatePickerTextParseErrorEventArgs)">
+            <summary>
+            Raises the TextParseError event.
+            </summary>
+            <param name="e">A DatePickerTextParseErrorEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DatePicker.ParseText(System.String,System.Windows.Controls.DatePickerFormat)">
+            <summary>
+            Input text is parsed in the correct format and changed into a DateTime object.
+            If the text can not be parsed TextParseError Event is thrown.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DatePicker.CalendarClosed">
+            <summary>
+            Occurs when the drop-down Calendar is closed.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DatePicker.CalendarOpened">
+            <summary>
+            Occurs when the drop-down Calendar is opened.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DatePicker.DateSelected">
+            <summary>
+            Occurs when a date is selected.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.DatePicker.TextParseError">
+            <summary>
+            Occurs when text entered into the DatePicker cannot be parsed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.AreDatesInPastSelectable">
+            <summary>
+            Gets or sets a value that indicates whether dates before Today are valid selections.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.CalendarStyle">
+            <summary>
+            Gets or sets the style that is used when rendering the calendar.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.DisplayDate">
+            <summary>
+            Gets or sets the date to display.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.DisplayDateEnd">
+            <summary>
+            Gets or sets the last date to be displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.DisplayDateStart">
+            <summary>
+            Gets or sets the first date to be displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.FirstDayOfWeek">
+            <summary>
+            Gets or sets the day that is considered the beginning of the week.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.IsDropDownOpen">
+            <summary>
+            Gets or sets a value that indicates whether the drop-down Calendar is open or closed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.IsEnabled">
+            <summary>
+            Gets or sets a value that indicates whether this element is enabled in the user interface (UI).
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.IsTodayHighlighted">
+            <summary>
+            Gets or sets a value that indicates whether the current date will be highlighted.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.SelectedDate">
+            <summary>
+            Gets or sets the currently selected date.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.SelectableDateEnd">
+            <summary>
+            Gets or sets the last date that can be selected. 
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.SelectableDateStart">
+            <summary>
+            Gets or sets the first date that can be selected.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.SelectedDateFormat">
+            <summary>
+            Gets or sets the format that is used to display the selected date.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.Text">
+            <summary>
+            Gets or sets the text that is displayed by the DatePicker.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePicker.ToolTip">
+            <summary>
+            Gets or sets the tool-tip object that is displayed for this element
+            in the user interface (UI).
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DayButton">
+            <summary>
+            Represents a button control used in Calendar Control, which reacts to the Click event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DayButton.OnApplyTemplate">
+            <summary>
+            Invoked whenever application code or an internal process, 
+            such as a rebuilding layout pass, calls the ApplyTemplate method.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DayButton.OnMouseEnter(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Responds to the MouseEnter event.
+            </summary>
+            <param name="e">The event data for the MouseEnter event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DayButton.OnMouseLeave(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Responds to the MouseLeave event.
+            </summary>
+            <param name="e">The event data for the MouseLeave event.</param>
+        </member>
+        <member name="T:System.Windows.Controls.Slider">
+            <summary>
+            Slider control lets the user select from a range of values by moving a slider.
+            Slider is used to enable to user to gradually modify a value (range selection).
+            Slider is an easy and natural interface for users, because it provides good visual feedback.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.#ctor">
+            <summary>
+            Constructor to setup the Slider class
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnApplyTemplate">
+            <summary>
+            Apply a template to the slider.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.Slider.OrientationProperty">
+            <summary>
+            Identifies the Orientation dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnOrientationPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            OrientationProperty property changed handler.
+            </summary>
+            <param name="d">Slider that changed Orientation.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Slider.IsFocusedProperty">
+            <summary>
+            Identifies the IsFocused dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnIsFocusedPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            IsFocusedProperty property changed handler.
+            </summary>
+            <param name="d">Slider that changed IsFocused.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnIsFocusChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the IsFocused property changes.
+            </summary>
+            <param name="e">
+            The data for DependencyPropertyChangedEventArgs.
+            </param>
+        </member>
+        <member name="F:System.Windows.Controls.Slider.IsDirectionReversedProperty">
+            <summary>
+            Identifies the IsDirectionReversed dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnIsDirectionReversedChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            IsDirectionReversedProperty property changed handler.
+            </summary>
+            <param name="d">Slider that changed IsDirectionReversed.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Slider.IsEnabledProperty">
+            <summary>
+            Identifies the IsEnabled dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnIsEnabledPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            IsEnabledProperty property changed handler.
+            </summary>
+            <param name="d">Slider that changed IsEnabled.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnIsEnabledChanged(System.Boolean)">
+            <summary>
+            Called when the IsEnabled property changes.
+            </summary>
+            <param name="isEnabled">New value of the IsEnabled property.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnValueChanged(System.Double,System.Double)">
+            <summary>
+            Called when the Value property changes.
+            </summary>
+            <param name="oldValue">Old value of the Value property.</param>
+            <param name="newValue">New value of the Value property.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnMinimumChanged(System.Double,System.Double)">
+            <summary>
+            Called when the Minimum property changes.
+            </summary>
+            <param name="oldMinimum">Old value of the Minimum property.</param>
+            <param name="newMinimum">New value of the Minimum property.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnMaximumChanged(System.Double,System.Double)">
+            <summary>
+            Called when the Maximum property changes.
+            </summary>
+            <param name="oldMaximum">Old value of the Maximum property.</param>
+            <param name="newMaximum">New value of the Maximum property.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnMouseEnter(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Responds to the MouseEnter event.
+            </summary>
+            <param name="e">The event data for the MouseEnter event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnMouseLeave(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Responds to the MouseLeave event.
+            </summary>
+            <param name="e">The event data for the MouseLeave event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Responds to the MouseLeftButtonDown event.
+            </summary>
+            <param name="e">The event data for the MouseLeftButtonDown event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Responds to the MouseLeftButtonUp event.
+            </summary>
+            <param name="e">The event data for the MouseLeftButtonUp event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnKeyPressed(System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Responds to the KeyPressed event.
+            </summary>
+            <param name="e">The event data for the KeyPressed event.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.UpdateVisualState">
+            <summary>
+            Update the current visual state of the slider.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.ChangeVisualState(System.Windows.Media.Animation.Storyboard)">
+            <summary>
+            Change the visual state of the thumb.
+            </summary>
+            <param name="state">Next visual state of the thumb.</param>
+            <remarks>
+            This method should not be called by controls to force a change to
+            the current visual state.  UpdateVisualState is preferred because
+            it properly handles suspension of state changes.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnThumbDragDelta(System.Windows.DragEventArgs)">
+            <summary>
+            Whenever the thumb gets dragged, we handle the event through
+            this function to update the current value depending upon the 
+            thumb drag delta.
+            </summary>
+            <param name="e">DragEventArgs</param>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.OnOrientationChanged">
+            <summary>
+            This code will run whenever Orientation changes, to change the template
+            being used to display this control.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Slider.UpdateTrackLayout">
+            <summary>
+            This method will take the current min, max, and value to
+            calculate and layout the current control measurements.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.Slider._currentState">
+            <summary>
+            Current state of the control
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.Slider._dragValue">
+            <summary>
+            Accumulates drag offsets in case the mouse drags off the end of the track.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.Orientation">
+            <summary>
+            Gets whether the Slider has an orientation of vertical or horizontal.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.IsFocused">
+            <summary>
+            Gets a value that determines whether this element has logical focus.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.IsDirectionReversed">
+            <summary>
+            Gets a value that determines whether the direction is reversed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.IsEnabled">
+            <summary>
+            Gets or sets a value that indicates whether this element is enabled
+            in the user interface (UI).
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.ElementRoot">
+            <summary>
+            Root of the thumb template.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.ElementHorizontalTemplate">
+            <summary>
+            Horizontal template root
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.ElementHorizontalLargeIncrease">
+            <summary>
+            Large increase repeat button
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.ElementHorizontalLargeDecrease">
+            <summary>
+            Large decrease repeat button
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.ElementHorizontalThumb">
+            <summary>
+            Thumb for dragging track
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.ElementVerticalTemplate">
+            <summary>
+            Vertical template root
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.ElementVerticalLargeIncrease">
+            <summary>
+            Large increase repeat button
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.ElementVerticalLargeDecrease">
+            <summary>
+            Large decrease repeat button
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.ElementVerticalThumb">
+            <summary>
+            Thumb for dragging track
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.ElementFocusVisual">
+            <summary>
+            Focus indicator of the Slider template.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.StateNormal">
+            <summary>
+            Transition into the Normal state in the Slider template.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.StateMouseOver">
+            <summary>
+            Transition into the MouseOver state in the Slider template.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.StateDisabled">
+            <summary>
+            Transition into the Disabled state in the Slider template.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Slider.IsMouseOver">
+            <summary>
+            Whether the mouse is currently over the control
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.CalendarDateChangedEventArgs">
+            <summary>
+            Provides data for the DateSelected and DisplayDateChanged events.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.CalendarDateChangedEventArgs.AddedDate">
+            <summary>
+            Gets the date to be newly displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.CalendarDateChangedEventArgs.RemovedDate">
+            <summary>
+            Gets the date that was previously displayed.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.CalendarMode">
+            <summary>
+            Specifies values for the different modes of operation of a Calendar. 
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.CalendarMode.Month">
+            <summary>
+            The Calendar displays a month at a time.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.CalendarMode.Year">
+            <summary>
+             The Calendar displays a year at a time.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.CalendarModeChangedEventArgs">
+            <summary>
+            Provides data for the DisplayModeChanged event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.CalendarModeChangedEventArgs.#ctor(System.Windows.Controls.CalendarMode,System.Windows.Controls.CalendarMode)">
+            <summary>
+            Initializes a new instance of the CalendarModeChangedEventArgs class.
+            </summary>
+            <param name="oldMode">Previous value of the property, prior to the event being raised.</param>
+            <param name="newMode">Current value of the property at the time of the event.</param>
+        </member>
+        <member name="P:System.Windows.Controls.CalendarModeChangedEventArgs.NewMode">
+            <summary>
+            Gets the new mode of the Calendar.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.CalendarModeChangedEventArgs.OldMode">
+            <summary>
+            Gets the previous mode of the Calendar.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.GridSplitter">
+            <summary>
+            Represents the control that redistributes space between columns or rows of a Grid control
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.GridSplitter.BackgroundProperty">
+            <summary>
+            Identifies the Background dependency property
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.GridSplitter.ShowsPreviewProperty">
+            <summary>
+            Identifies the ShowsPreview dependency property
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.GridSplitter.IsEnabledProperty">
+            <summary>
+            Identifies the IsEnabled dependency property
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.GridSplitter.PreviewStyleProperty">
+            <summary>
+            Identifies the PreviewStyle dependency property
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.OnIsEnabledChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Static handler for the IsEnabledChanged event to update the display state of the control
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Windows.Controls.GridSplitter"/> class
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.OnApplyTemplate">
+            <summary>
+            Called when template should be applied to the control
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.ShowStoryboard(System.Windows.Media.Animation.Storyboard)">
+            <summary>
+            Method to show the specified storyboard
+            </summary>
+            <param name="storyboard">Storyboard to show</param>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.ChangeVisualState">
+            <summary>
+            Method to change the visual state of the control
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.DragValidator_DragCompletedEvent(System.Object,System.Windows.DragCompletedEventArgs)">
+            <summary>
+            Handle the drag completed event to commit or cancel the resize operation in progress
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.DragValidator_DragDeltaEvent(System.Object,System.Windows.DragDeltaEventArgs)">
+            <summary>
+            Handle the drag delta event to update the UI for the resize operation in progress
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.DragValidator_DragStartedEvent(System.Object,System.Windows.DragStartedEventArgs)">
+            <summary>
+            Handle the drag started event to start a resize operation if the control is enabled
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.GridSplitter_KeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Handle the key down event to allow keyboard resizing or canceling a resize operation
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.KeyboardMoveSplitter(System.Double,System.Double)">
+            <summary>
+            Called by keyboard event handler to move the splitter if allowed
+            </summary>
+            <param name="horizontalChange">Horizontal amount to move the splitter</param>
+            <param name="verticalChange">Vertical amount to move the splitter</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.CreatePreviewLayer(System.Windows.Controls.Grid)">
+            <summary>
+            Creates the preview layer and adds it to the parent grid
+            </summary>
+            <param name="parentGrid">Grid to add the preview layer to</param>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.SetupPreview">
+            <summary>
+            Add the preview layer to the Grid if it is not there already and then show the preview control
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.RemovePreviewControl">
+            <summary>
+            Remove the preview control from the preview layer if it exists
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.InitializeData(System.Boolean)">
+            <summary>
+            Initialize the resizeData object to hold the information for the resize operation in progress
+            </summary>
+            <param name="showsPreview">Whether or not the preview should be shown</param>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.MoveSplitter(System.Double,System.Double)">
+            <summary>
+            Move the splitter and resize the affected columns or rows
+            </summary>
+            <param name="horizontalChange">Amount to resize horizontally</param>
+            <param name="verticalChange">Amount to resize vertically</param>
+            <remarks>Only one of horizontalChange or verticalChange will be non-zero.</remarks>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.SetupDefinitionsToResize">
+            <summary>
+            Determine which adjacent column or row definitions need to be included in the resize operation and set up resizeData accordingly
+            </summary>
+            <returns>True if it is a valid resize operation</returns>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.CancelResize">
+            <summary>
+            Cancel the resize operation in progress
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.GetActualLength(System.Windows.Controls.GridSplitter.DefinitionAbstraction)">
+            <summary>
+            Get the actual length of the given definition
+            </summary>
+            <param name="definition">Row or column definition to get the actual length for</param>
+            <returns>Height of a row definition or width of a column definition</returns>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.GetDeltaConstraints">
+            <summary>
+            Determine the max and min that the two definitions can be resized
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.GetEffectiveResizeBehavior(System.Windows.Controls.GridSplitter.GridResizeDirection)">
+            <summary>
+            Determine the resize behavior based on the given direction and alignment
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.GetEffectiveResizeDirection">
+            <summary>
+            Determine the resize direction based on the horizontal and vertical alignments
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.GetGridDefinition(System.Windows.Controls.Grid,System.Int32,System.Windows.Controls.GridSplitter.GridResizeDirection)">
+            <summary>
+            Create a DefinitionAbstraction instance for the given row or column index in the grid
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.SetLengths(System.Double,System.Double)">
+            <summary>
+            Set the lengths of the two definitions depending on the split behavior
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.SetDefinitionLength(System.Windows.Controls.GridSplitter.DefinitionAbstraction,System.Windows.GridLength)">
+            <summary>
+            Set the height/width of the given row/column
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.IsStar(System.Windows.Controls.GridSplitter.DefinitionAbstraction)">
+            <summary>
+            Determine if the given definition has its size set to the "*" value
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.GridSplitter.Background">
+            <summary>
+            Gets or sets a brush that describes the background of a control. This is a dependency property. 
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.GridSplitter.ShowsPreview">
+            <summary>
+            Gets or sets a value that indicates whether the GridSplitter control updates the column or row size as the user drags the control. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.GridSplitter.IsEnabled">
+            <summary>
+            Gets or sets a value indicating whether this element is enabled in the user interface (UI). This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.GridSplitter.PreviewStyle">
+            <summary>
+            Gets or sets the style that customizes the appearance, effects, or other style characteristics for the GridSplitter control preview indicator that is displayed when the ShowsPreview property is set to true. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.GridSplitter.HasKeyboardFocus">
+            <summary>
+            Gets whether or not the control has keyboard focus
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.GridSplitter.DoubleUtil">
+            <summary>
+            A collection of helper methods for working with double data types
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.GridSplitter.DoubleUtil.Epsilon">
+            <summary>
+            Epsilon is the smallest value such that 1.0+epsilon != 1.0. It can be used to determine the 
+            acceptable tolerance for rounding errors.
+            </summary>
+            <remarks>
+            Epsilon is normally 2.2204460492503131E-16, but Silverlight 2 uses floats so the effective
+            epsilon is really 1.192093E-07
+            </remarks>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.DoubleUtil.AreClose(System.Double,System.Double)">
+            <summary>
+            Determine if the two doubles are effectively equal within tolerances
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.GridSplitter.ResizeData">
+            <summary>
+            Type to hold the data for the resize operation in progress
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.GridSplitter.DefinitionAbstraction">
+            <summary>
+            Pretends to be the base class for RowDefinition and ClassDefinition types so that objects of either type can be treated as one.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.GridSplitter.DefinitionAbstraction.#ctor(System.Windows.DependencyObject)">
+            <summary>
+            Creates an instance of the DefinitionAbstraction class based on the given row or column definition
+            </summary>
+            <param name="definition">RowDefinition or ColumnDefinition instance</param>
+        </member>
+        <member name="P:System.Windows.Controls.GridSplitter.DefinitionAbstraction.AsRowDefinition">
+            <summary>
+            Gets the stored definition cast as a row definition
+            </summary>
+            <value>Null if not a RowDefinition</value>
+        </member>
+        <member name="P:System.Windows.Controls.GridSplitter.DefinitionAbstraction.AsColumnDefinition">
+            <summary>
+            Gets the stored definition cast as a column definition
+            </summary>
+            <value>Null if not a ColumnDefinition</value>
+        </member>
+        <member name="P:System.Windows.Controls.GridSplitter.DefinitionAbstraction.MaxSize">
+            <summary>
+            Gets the MaxHeight/MaxWidth for the row/column
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.GridSplitter.DefinitionAbstraction.MinSize">
+            <summary>
+            Gets the MinHeight/MinWidth for the row/column
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.GridSplitter.DefinitionAbstraction.Size">
+            <summary>
+            Gets the Height/Width for the row/column
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DatePickerTextParseErrorEventArgs">
+            <summary>
+            Provides data for the TextParseError event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DatePickerTextParseErrorEventArgs.#ctor(System.Exception,System.String)">
+            <summary>
+            Initializes a new instance of the DatePickerTextParseErrorEventArgs class. 
+            </summary>
+            <param name="exception">The exception that initially triggered the TextParseError event.</param>
+            <param name="text">The text being parsed.</param>
+        </member>
+        <member name="P:System.Windows.Controls.DatePickerTextParseErrorEventArgs.Exception">
+            <summary>
+            Gets the exception that initially triggered the TextParseError event.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePickerTextParseErrorEventArgs.Text">
+            <summary>
+            Gets the text being parsed when the TextParseError event was raised.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DatePickerTextParseErrorEventArgs.ThrowException">
+            <summary>
+            Gets or sets a value that indicates whether Exception should be thrown.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DatePickerFormat">
+            <summary>
+            Specifies date formats for a DatePicker.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DatePickerFormat.Long">
+            <summary>
+            Specifies that the date should be displayed using unabbreviated days of the week and month names.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DatePickerFormat.Short">
+            <summary>
+            Specifies that the date should be displayed using abbreviated days of the week and month names.
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.Calendar">
+            <summary>
+            Represents a control that enables a user to select a date by using a visual calendar display. 
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.#ctor">
+            <summary>
+            Initializes a new instance of the Calendar class.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.AreDatesInPastSelectableProperty">
+            <summary>
+            Identifies the AreDatesInPastSelectable dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnAreDatesInPastSelectableChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            AreDatesInPastSelectableProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its AreDatesInPastSelectable.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.DayStyleProperty">
+            <summary>
+            Identifies the DayStyle dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnDayStyleChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            DayStyleProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its DayStyle.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.DisplayDateProperty">
+            <summary>
+            Identifies the DisplayDate dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnDisplayDateChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            DisplayDateProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its DisplayDate.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.DisplayDateEndProperty">
+            <summary>
+            Identifies the DisplayDateEnd dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnDisplayDateEndChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            DisplayDateEndProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its DisplayDateEnd.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.DisplayDateStartProperty">
+            <summary>
+            Identifies the DisplayDateStart dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnDisplayDateStartChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            DisplayDateStartProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its DisplayDateStart.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.DisplayModeProperty">
+            <summary>
+            Identifies the DisplayMode dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnDisplayModePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            DisplayModeProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its DisplayMode.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.FirstDayOfWeekProperty">
+            <summary>
+            Identifies the FirstDayOfWeek dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnFirstDayOfWeekChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            FirstDayOfWeekProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its FirstDayOfWeek.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.IsEnabledProperty">
+            <summary>
+            Identifies the IsEnabled dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnIsEnabledPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            IsEnabledProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its IsEnabled.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.IsTodayHighlightedProperty">
+            <summary>
+            Identifies the IsTodayHighlighted dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnIsTodayHighlightedChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            IsTodayHighlightedProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its IsTodayHighlighted.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.MonthStyleProperty">
+            <summary>
+            Identifies the MonthStyle dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnMonthStyleChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            MonthStyleProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its MonthStyle.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.SelectedDateProperty">
+            <summary>
+            Identifies the SelectedDate dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnSelectedDateChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectedDateProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its SelectedDate.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.SelectableDateEndProperty">
+            <summary>
+            Identifies the SelectableDateEnd dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnSelectableDateEndChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectableDateEndProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its SelectableDateEnd.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.Calendar.SelectableDateStartProperty">
+            <summary>
+            Identifies the SelectableDateStart dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnSelectableDateStartChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectableDateStartProperty property changed handler.
+            </summary>
+            <param name="d">Calendar that changed its SelectableDateStart.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.GetValue(System.Windows.DependencyProperty)">
+            <summary>
+            Gets the value of any of the Calendar object's dependency properties.
+            </summary>
+            <param name="dp">The dependency property to get the value of.</param>
+            <returns>The value of the given dependency property.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.ToString">
+            <summary>
+            Provides a text representation of the selected date.
+            </summary>
+            <returns>A text representation of the selected date, or an empty string if SelectedDate is a null reference.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.Calendar.OnApplyTemplate">
+            <summary>
+            Invoked whenever application code or an internal process, 
+            such as a rebuilding layout pass, calls the ApplyTemplate method.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.Calendar.DateSelected">
+            <summary>
+            Occurs when a date is selected.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.Calendar.DisplayDateChanged">
+            <summary>
+            Occurs when the DisplayDate property is changed.
+            </summary>
+        </member>
+        <member name="E:System.Windows.Controls.Calendar.DisplayModeChanged">
+            <summary>
+            Occurs when the DisplayMode property is changed. 
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.AreDatesInPastSelectable">
+            <summary>
+            Gets or sets a value indicating whether dates before Today are valid selections.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.DayStyle">
+            <summary>
+            Gets or sets the style for displaying a day.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.DisplayDate">
+            <summary>
+            Gets or sets the date to display.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.DisplayDateEnd">
+            <summary>
+            Gets or sets the last date to be displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.DisplayDateStart">
+            <summary>
+            Gets or sets the first date to be displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.DisplayMode">
+            <summary>
+            Gets or sets a value indicating whether the calendar is displayed in months or years.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.FirstDayOfWeek">
+            <summary>
+            Gets or sets the day that is considered the beginning of the week.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.IsEnabled">
+            <summary>
+            Gets or sets a value indicating whether this calendar is enabled in the user interface (UI).
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.IsTodayHighlighted">
+            <summary>
+            Gets or sets a value indicating whether the current date is highlighted.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.MonthStyle">
+            <summary>
+            Gets or sets the style for displaying a month.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.SelectedDate">
+            <summary>
+            Gets or sets the currently selected date.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.SelectableDateEnd">
+            <summary>
+            Gets or sets the last date that can be selected. 
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Calendar.SelectableDateStart">
+            <summary>
+            Gets or sets the first date that can be selected.
+            </summary>
+        </member>
+    </members>
+</doc>

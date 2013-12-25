@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SplashScreen</title>
+    <style type="text/css">
+        html, body
+        {
+            height: 100%;
+            overflow: auto;
+        }
+        body
+        {
+            padding: 0;
+            margin: 0;
+        }
+        #silverlightControlHost
+        {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="silverlightControlHost">
+        <object id="xaml1" data="data:application/x-silverlight-2," type="application/x-silverlight-2"
+            width="100%" height="100%">
+            <param name="source" value="../ClientBin/Silverlight20.xap" />
+            
+            <!--下载 source 指定的 xap 的过程中所显示的 xaml 的地址-->
+            <param name="splashScreenSource" value="SplashScreen.xaml" />
+            
+            <!--下载 source 指定的 xap 的过程中所持续调用的事件-->
+            <param name="onSourceDownloadProgressChanged" value="onSourceDownloadProgressChanged" />
+            
+            <!--souce 指定的 xap 被完全下载后所触发的事件-->
+            <param name="onSourceDownloadComplete" value="onSourceDownloadComplete" />
+        </object>
+        <iframe style='visibility: hidden; height: 0; width: 0; border: 0px'></iframe>
+    </div>
+
+    <script type="text/javascript">
+    
+        function onSourceDownloadProgressChanged(sender, args) {
+            // progress 属性 - 下载进度（0 - 1 之间）
+            sender.findName("percent").Text = Math.round(args.progress * 10000) / 100 + "%";            
+        }
+
+        function onSourceDownloadComplete(sender, args) {
+            sender.findName("percent").Text = "100%";
+        }
+
+    </script>
+
+</body>
+</html>

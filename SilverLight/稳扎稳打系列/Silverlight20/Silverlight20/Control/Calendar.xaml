@@ -1,0 +1,48 @@
+﻿<!--
+Calendar控件的命名空间和其他控件一样，都是在System.Windows.Controls下
+但是其是在System.Windows.Controls.dll程序集中定义的
+所以要引入相应的xml命名空间
+-->
+<UserControl x:Class="Silverlight20.Control.Calendar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:basics="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls">
+    <StackPanel HorizontalAlignment="Left">
+        <TextBox x:Name="txtMsg" Margin="5"  />
+        
+        <!--
+        SelectedDatesChanged - 选中日期后所触发的事件
+        DisplayDateEnd - 此日期之后的日期不予显示 
+        DisplayDateStart - 此日期之前的日期不予显示
+        FirstDayOfWeek - 控件所显示的每星期的第一天为星期几 [System.DayOfWeek枚举]
+        DisplayMode - 控件的显示模式 [System.Windows.Controls.DisplayMode枚举]
+            DisplayMode.Month - 标题显示年月，内容显示日期。默认值
+            DisplayMode.Year - 标题显示年，内容显示月
+            DisplayMode.Decade - 标题显示一个十年的区间，内容显示年
+        IsTodayHighlighted - 是否高亮显示今天的日期
+        -->
+        <basics:Calendar x:Name="calendar" Margin="5" FirstDayOfWeek="Monday"
+            SelectedDatesChanged="calendar_SelectedDatesChanged">
+        </basics:Calendar>
+        
+        <StackPanel Orientation="Horizontal">
+            
+            <CheckBox Content="禁止选择今天以前的日期" Margin="5"
+                Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
+
+            <RadioButton GroupName="selectionMode" x:Name="SingleDate" Content="可选单一日期" Margin="5"               
+                Checked="selectionMode_Changed" />
+
+            <RadioButton GroupName="selectionMode" x:Name="None" Content="不可选日期" Margin="5"               
+                Checked="selectionMode_Changed" />
+
+            <RadioButton GroupName="selectionMode" x:Name="SingleRange" Content="可选连续日期（shift）" Margin="5"               
+                Checked="selectionMode_Changed" />
+
+            <RadioButton GroupName="selectionMode" x:Name="MultipleRange" Content="可选多个日期（ctrl）" Margin="5"               
+                Checked="selectionMode_Changed" />
+            
+        </StackPanel>
+        
+    </StackPanel>
+</UserControl>

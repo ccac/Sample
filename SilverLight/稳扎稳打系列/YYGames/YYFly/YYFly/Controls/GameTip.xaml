@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="YYFly.Controls.GameTip"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:custom="clr-namespace:YYFly.View"
+    Width="640" Height="480">
+    <Grid x:Name="root">
+        <!--灰色大背景-->
+        <Grid x:Name="grid" Background="Gray" Opacity="0.5">
+
+
+        </Grid>
+        <!--中心提示框-->
+        <Border Width="200" Height="150" BorderThickness="1" BorderBrush="Red">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <custom:Fly IsHitTestVisible="False" Grid.Row="0">
+                    <custom:Fly.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="0.8" ScaleY="0.8" />
+                        </TransformGroup>
+                    </custom:Fly.RenderTransform>
+                </custom:Fly>
+                <TextBlock Text="玩法：鼠标左键开火。" TextAlignment="Center" Grid.Row="1" />
+                <Button x:Name="btnStart" Content="开始游戏" Click="btnStart_Click" Grid.Row="2" Margin="5" />
+            </Grid>
+
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF48B4FD"/>
+                    <GradientStop Color="#FFADB7B9" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+    </Grid>
+</UserControl>

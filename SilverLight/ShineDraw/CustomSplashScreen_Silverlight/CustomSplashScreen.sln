@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomSplashScreen", "CustomSplashScreen\CustomSplashScreen.csproj", "{3E3C29F4-3D78-4C32-A276-28F945A021AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomSplashScreen.Web", "CustomSplashScreen.Web\CustomSplashScreen.Web.csproj", "{2012551B-0E12-4B50-B35A-DC7076F13733}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E3C29F4-3D78-4C32-A276-28F945A021AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E3C29F4-3D78-4C32-A276-28F945A021AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E3C29F4-3D78-4C32-A276-28F945A021AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E3C29F4-3D78-4C32-A276-28F945A021AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2012551B-0E12-4B50-B35A-DC7076F13733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2012551B-0E12-4B50-B35A-DC7076F13733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2012551B-0E12-4B50-B35A-DC7076F13733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2012551B-0E12-4B50-B35A-DC7076F13733}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

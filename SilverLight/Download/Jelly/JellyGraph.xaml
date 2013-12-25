@@ -1,0 +1,58 @@
+<Canvas Width="800" Height="300"
+	xmlns="http://schemas.microsoft.com/client/2007"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Loaded="slLoaded">
+
+	<Canvas.Background>
+		<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+			<GradientStop Color="#0c0c0c" Offset="0.0" />
+			<GradientStop Color="#171717" Offset="1.0" />
+		</LinearGradientBrush>
+	</Canvas.Background>
+
+	<Canvas Name="xAxis">
+		<Rectangle Width="51" Height="300" Fill="#75000000" />
+		<Line X1="50" X2="50" Y1="0" Y2="300" Stroke="#7F313131" StrokeThickness="2" />
+
+		<Canvas Name="xLabel1" Canvas.Top="273">
+			<TextBlock Name="xaLabelText1" Text="0" FontFamily="Verdana" FontSize="11"
+					   Canvas.Left="32" Foreground="#FFFFFF"/>
+			<Line X1="51" X2="800" Y1="7.5" Y2="7.5" Stroke="#48343434" StrokeThickness="1" />
+			<Path Fill="#7a7a7a" Data="M 50,3 l 4,4 -4,4" />
+		</Canvas>
+
+		<Canvas Name="xLabel2" Canvas.Top="208">
+			<TextBlock Name="xaLabelText2" Text="250" FontFamily="Verdana" FontSize="11"
+					   Canvas.Left="18" Foreground="#FFFFFF"/>
+			<Line X1="51" X2="800" Y1="7.5" Y2="7.5" Stroke="#48343434" StrokeThickness="1" />
+			<Path Fill="#7a7a7a" Data="M 50,3 l 4,4 -4,4" />
+		</Canvas>
+
+		<Canvas Name="xLabel3" Canvas.Top="143">
+			<TextBlock Name="xaLabelText3" Text="500" FontFamily="Verdana" FontSize="11"
+					   Canvas.Left="18" Foreground="#FFFFFF"/>
+			<Line X1="51" X2="800" Y1="7.5" Y2="7.5" Stroke="#48343434" StrokeThickness="1" />
+			<Path Fill="#7a7a7a" Data="M 50,3 l 4,4 -4,4" />
+		</Canvas>
+
+		<Canvas Name="xLabel4" Canvas.Top="78">
+			<TextBlock Name="xaLabelText4" Text="750" FontFamily="Verdana" FontSize="11"
+					   Canvas.Left="18" Foreground="#FFFFFF"/>
+			<Line X1="51" X2="800" Y1="7.5" Y2="7.5" Stroke="#48343434" StrokeThickness="1" />
+			<Path Fill="#7a7a7a" Data="M 50,3 l 4,4 -4,4" />
+		</Canvas>
+
+		<Canvas Name="xLabel5" Canvas.Top="13">
+			<TextBlock Name="xaLabelText5" Text="1000" FontFamily="Verdana" FontSize="11"
+					   Canvas.Left="12" Foreground="#FFFFFF"/>
+			<Line X1="51" X2="800" Y1="7.5" Y2="7.5" Stroke="#48343434" StrokeThickness="1" />
+			<Path Fill="#7a7a7a" Data="M 50,3 l 4,4 -4,4" />
+		</Canvas>
+	</Canvas>
+
+	<Canvas Name="graphArea" Canvas.Left="52" Width="748" Height="300">
+		<Canvas.Clip>
+			<RectangleGeometry Rect="0,0 748 300" />
+		</Canvas.Clip>
+	</Canvas>
+</Canvas>

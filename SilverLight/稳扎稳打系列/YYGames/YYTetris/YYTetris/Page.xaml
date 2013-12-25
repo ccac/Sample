@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="YYTetris.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    x:Name="uc" KeyDown="uc_KeyDown">
+    <Canvas x:Name="LayoutRoot" Width="640" Height="480" Background="Gray">
+        <HyperlinkButton Content="作者：webabcd" NavigateUri="http://webabcd.cnblogs.com" TargetName="_blank" />
+        <Canvas Canvas.Top="30" Canvas.Left="160">
+            <Border BorderBrush="AliceBlue" BorderThickness="3" CornerRadius="6" Padding="6">
+                <Border BorderBrush="AliceBlue" BorderThickness="1" CornerRadius="1">
+                    <Canvas x:Name="canvasBox" Background="Black" Width="200" Height="400" />
+                </Border>
+            </Border>
+            <Border BorderBrush="AliceBlue" BorderThickness="1" CornerRadius="1" Canvas.Top="0" Canvas.Left="240" >
+                <Canvas x:Name="canvasBoxPrev" Width="80" Height="80" />
+            </Border>
+            <StackPanel Canvas.Top="100" Canvas.Left="240">
+                <TextBlock Text="级别" Width="80" TextAlignment="Center" Margin="0 1" />
+                <TextBlock Text="{Binding Level}"  Width="80" TextAlignment="Center" Margin="0 1" Foreground="Firebrick" />
+                <TextBlock Text="行数" Width="80" TextAlignment="Center" Margin="0 1" />
+                <TextBlock Text="{Binding RemoveRowCount}"  Width="80" TextAlignment="Center" Margin="0 1" Foreground="Firebrick" />
+                <TextBlock Text="得分" Width="80" TextAlignment="Center" Margin="0 1" />
+                <TextBlock Text="{Binding Score}"  Width="80" TextAlignment="Center" Margin="0 1" Foreground="Firebrick" />
+                <Button x:Name="play" Content="开始游戏" Margin="0 20"  Click="start_Click" />
+                <TextBlock x:Name="gameOver" Text="Game Over" Width="80" TextAlignment="Center" Margin="0 1" Foreground="Firebrick" Visibility="Collapsed" />
+            </StackPanel>
+        </Canvas>
+
+    </Canvas>
+</UserControl>

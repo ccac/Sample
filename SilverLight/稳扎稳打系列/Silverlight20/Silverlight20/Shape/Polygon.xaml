@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="Silverlight20.Shape.Polygon"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+        
+        <!--多边形，闭合图形，起点与终点自动相连-->
+        <!--
+        Points - 构造路径所使用的点
+            空格分隔点坐标，逗号分隔X轴和Y轴坐标
+        -->
+        <Polygon Points="0,0 100,0 300,100 200,100 100,200" Stroke="Red" StrokeThickness="6" Fill="Yellow" />
+        
+    </StackPanel>
+</UserControl>

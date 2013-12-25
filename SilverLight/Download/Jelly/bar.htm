@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>Richard Z's JellyBar</title>
+<style type="text/css">
+body {
+    background: #0a0a0a;
+    color: white;
+    font-family: Segoe UI, Verdana, Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+}
+h1 {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+a {
+    color: #0088d9;
+}
+img {
+    border: 0px;
+}
+#container {
+    background: #111;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    width: 800px;
+    height: 100%;
+}
+#footer {
+    margin: 0px auto;
+    width: 800px;
+}
+#morejelly {
+    background: #111;
+    margin-top: 60px;
+    text-align: right;
+}
+#contact {
+    width: 800px;
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+}
+</style>
+    <script type="text/javascript" src="js/Silverlight.js"></script>
+<script type="text/javascript">
+var _sl = null, bodyLoadWasFaster = false;
+function createMySilverlightControl()
+{  
+    var obj = Silverlight.createObject(
+        "base.xaml",                      // Source property value.
+        parentElement,                      // DOM reference to hosting DIV tag.
+        "mySilverlightControl",             // Unique control id value.
+        {                                   // Control properties.
+            width:'800',                    // Width of rectangular region of control in pixels.
+            height:'300',                   // Height of rectangular region of control in pixels.
+            inplaceInstallPrompt:false,     // Determines whether to display in-place install prompt if invalid version detected.
+            background:'#0d0d0d',           // Background color of control.
+            isWindowless:'false',           // Determines whether to display control in Windowless mode.
+            framerate:'24',                 // MaxFrameRate property value.
+            version:'0.9'                   // Control version to use.
+        },
+        {
+            onError:null,                   // OnError property value -- event handler function name.
+            onLoad:null                     // OnLoad property value -- event handler function name.
+        },
+        null);                              // Context value -- event handler function name.
+}
+
+function Animation(type, data) {
+    if (data.targetName && data.targetProperty && data.to != null && data.duration) {
+        var properties = '';
+        
+        properties += ' Storyboard.TargetName="' + data.targetName + '"';
+        properties += ' Storyboard.TargetProperty="' + data.targetProperty + '"';
+        
+        if (data.beginTime)
+            properties += ' BeginTime="0:0:' + data.beginTime + '"';
+
+        if (data.from)
+            properties += ' From="' + data.from + '"';
+
+        properties += ' To="' + data.to + '"';
+        properties += ' Duration="0:0:' + data.duration + '"';
+        return '<' + type + 'Animation' + properties + ' />';
+    }
+    return '';
+}
+
+function DoubleAnimation(data) {
+    return Animation('Double', data);
+}
+
+function PointAnimation(data) {
+    return Animation('Point', data);
+}
+
+function slLoaded(sender, eventArgs)
+{
+    _sl = sender;
+    if (bodyLoadWasFaster) {
+        onLoaded();
+    }
+}
+
+function onLoaded()
+{
+  if (!_sl) {
+    bodyLoadWasFaster = true;
+    return;
+  }
+  // Retrieve a reference to the control.
+  var control = _sl.getHost();
+
+  var colours = [ '5F87CE' ]; //, '444444' ];
+
+  for (var group = 0; group < colours.length; ++group) {
+
+    var id = function(name, id) { return name + '_' + group + '_' + id; }
+    var values = [ 150 ];
+
+    var nodeCount = 21;
+    for (i = 1; i < nodeCount; ++i)
+    {
+        values[i] = Math.min(260,         //10 + 280 * (group + 1) / colours.length,
+                             Math.max(10, // + 280 * group / colours.length,
+                                      values[i-1] - 70 + Math.random()*141));
+
+        var x = i * 40;
+        // Draw the bar
+        var bar = control.content.createFromXaml(
+            '<Rectangle Name="' + id('barB',i) + '" Canvas.Left="' + (x-35) + '" Width="30"'
+          + '           Canvas.Top="' + (304 - values[i-1]) + '" Height="' + (values[i-1] + 5) + '"'
+          + '           RadiusX="2" RadiusY="2">'
+          + '   <Rectangle.Fill>'
+          + '       <SolidColorBrush Name="' + id('brushB',i) + '" Color="#7F004296" />'
+          + '   </Rectangle.Fill>'
+          
+          + '   <Rectangle.RenderTransform>'
+          + '       <ScaleTransform Name="' + id('barscaleB',i) + '" CenterY="' + values[i-1] + '" ScaleY="0.0" />'
+          + '   </Rectangle.RenderTransform>'
+          + '</Rectangle>'
+        );
+        _sl.children.add(bar);
+          
+
+        var bar = control.content.createFromXaml(
+            '<Rectangle Name="' + id('bar',i) + '" Canvas.Left="' + (x-36) + '" Width="30"'
+          + '           Canvas.Top="' + (300 - values[i-1]) + '" Height="' + (values[i-1] + 5) + '"'
+          + '           StrokeThickness="1" RadiusX="2" RadiusY="2"'
+          + '           MouseEnter="mouseenter" MouseLeave="mouseleave" Loaded="loadbar">'
+          
+          + '   <Rectangle.RenderTransform>'
+          + '     <TransformGroup>'
+          + '       <ScaleTransform Name="' + id('barscale',i) + '" CenterY="' + values[i-1] + '" ScaleY="0.0" />'
+          + '       <SkewTransform Name="' + id('barskew',i) + '" CenterX="15" />'
+          + '     </TransformGroup>'
+          + '   </Rectangle.RenderTransform>'
+
+          + '   <Rectangle.Stroke>'
+          + '       <SolidColorBrush Name="' + id('barStroke',i) + '" Color="#004baa" />'
+          + '   </Rectangle.Stroke>'
+          
+          + '   <Rectangle.Fill>'
+          + '       <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">'
+          + '           <GradientStop Name="' + id('grad1',i) + '" Color="#00baff" Offset="0.0" />'
+          + '           <GradientStop Name="' + id('grad2',i) + '" Color="#0046a6" Offset="1.0" />'
+          + '       </LinearGradientBrush>'
+          + '   </Rectangle.Fill>'
+
+          //////////////////////
+
+          // Animations
+
+          + '  <Rectangle.Resources>'
+
+          // Loaded animation (rise from the bottom)
+
+          + '    <Storyboard Name="' + id('load',i) + '" Completed="load2">'
+          +         DoubleAnimation({
+                      'targetName':     id('barscale', i),
+                      'targetProperty': 'ScaleY',
+                      'beginTime':      i/50,
+                      'duration':       0.3,
+                      'to':             1.1
+                    })
+          +         DoubleAnimation({
+                      'targetName':     id('barscaleB', i),
+                      'targetProperty': 'ScaleY',
+                      'beginTime':      i/50,
+                      'duration':       0.3,
+                      'to':             1.1
+                    })
+          + '    </Storyboard>'
+//          + '    <Storyboard Name="' + id('loadB',i) + '">'
+//          +         DoubleAnimation({
+//                      'targetName':     id('bar', i),
+//                      'targetProperty': '(Canvas.Left)',
+//                      'beginTime':      i/50,
+//                      'duration':       0.56,
+//                      'from':           (x-36)*3/4,
+//                      'to':             x-36
+//                    })
+//          +         DoubleAnimation({
+//                      'targetName':     id('barB', i),
+//                      'targetProperty': '(Canvas.Left)',
+//                      'beginTime':      i/50,
+//                      'duration':       0.56,
+//                      'from':           (x-35)*3/4,
+//                      'to':             x-35
+//                    })
+//          + '    </Storyboard>'
+
+          // Loaded animation 2 (first bounce)
+
+          + '    <Storyboard Name="' + id('load2',i) + '" Completed="load3">'
+          +         DoubleAnimation({
+                      'targetName':     id('barscale', i),
+                      'targetProperty': 'ScaleY',
+                      'duration':       0.2,
+                      'to':             0.9
+                    })
+          +         DoubleAnimation({
+                      'targetName':     id('barscaleB', i),
+                      'targetProperty': 'ScaleY',
+                      'duration':       0.2,
+                      'to':             0.9
+                    })
+          + '    </Storyboard>'
+
+          // Loaded animation 3 (last bounce)
+
+          + '    <Storyboard Name="' + id('load3',i) + '">'
+          +         DoubleAnimation({
+                      'targetName':     id('barscale', i),
+                      'targetProperty': 'ScaleY',
+                      'duration':       0.06,
+                      'to':             1.0
+                    })
+          +         DoubleAnimation({
+                      'targetName':     id('barscaleB', i),
+                      'targetProperty': 'ScaleY',
+                      'duration':       0.06,
+                      'to':             1.0
+                    })
+          + '    </Storyboard>'
+
+          // Growing animation
+
+          + '    <Storyboard Name="' + id('esg',i) + '">'
+          + '      <DoubleAnimation Storyboard.TargetName="' + id('bubbleText',i) + '" Storyboard.TargetProperty="Opacity"'
+          + '                       To="1" Duration="0:0:0.00" />'
+          + '      <DoubleAnimation Storyboard.TargetName="' + id('bubble',i) + '" Storyboard.TargetProperty="Opacity"'
+          + '                       To="1" Duration="0:0:0.00" />'
+          + '      <ColorAnimation Storyboard.TargetName="' + id('grad2',i) + '" Storyboard.TargetProperty="Color"'
+          + '                      To="#0cae00" Duration="0:0:0.0" />'
+          + '      <ColorAnimation Storyboard.TargetName="' + id('grad1',i) + '" Storyboard.TargetProperty="Color"'
+          + '                      To="#52ff66" Duration="0:0:0.0" />'
+          + '      <ColorAnimation Storyboard.TargetName="' + id('barStroke',i) + '" Storyboard.TargetProperty="Color"'
+          + '                      To="#005906" Duration="0:0:0.0" />'
+          + '      <ColorAnimation Storyboard.TargetName="' + id('brushB',i) + '" Storyboard.TargetProperty="Color"'
+          + '                      To="#005906" Duration="0:0:0.0" />'
+          + '    </Storyboard>'
+
+          // Shrinking animation
+
+          + '    <Storyboard Name="' + id('ess',i) + '" Completed="doneShrink">'
+          + '      <DoubleAnimation Storyboard.TargetName="' + id('bubbleText',i) + '" Storyboard.TargetProperty="Opacity"'
+          + '                       To="0" Duration="0:0:0.0" />'
+          + '      <DoubleAnimation Storyboard.TargetName="' + id('bubble',i) + '" Storyboard.TargetProperty="Opacity"'
+          + '                       To="0" Duration="0:0:0.0" />'
+          + '      <ColorAnimation Storyboard.TargetName="' + id('grad1',i) + '" Storyboard.TargetProperty="Color"'
+          + '                      To="#00baff" Duration="0:0:0.1" />'
+          + '      <ColorAnimation Storyboard.TargetName="' + id('grad2',i) + '" Storyboard.TargetProperty="Color"'
+          + '                      To="#0046a6" Duration="0:0:0.1" />'
+          + '      <ColorAnimation Storyboard.TargetName="' + id('barStroke',i) + '" Storyboard.TargetProperty="Color"'
+          + '                      To="#004baa" Duration="0:0:0.0" />'
+          + '      <ColorAnimation Storyboard.TargetName="' + id('brushB',i) + '" Storyboard.TargetProperty="Color"'
+          + '                      To="#004baa" Duration="0:0:0.1" />'
+          + '    </Storyboard>'
+
+          + '  </Rectangle.Resources>'
+
+          ///////////////////////
+
+          + '</Rectangle>'
+        );
+        _sl.children.add(bar);
+
+
+        ////////////////
+        // This is the bubble that contains the number, showing up on MouseEnter
+        //
+        var rect = control.content.createFromXaml(
+            '<Path Name="' + id('bubble',i) + '" Opacity="0" Canvas.ZIndex="2"'
+            + '    Stroke="#3a3a3a" StrokeThickness="1" Fill="#202020"'
+            + '    Canvas.Left="' + (x - 42) + '" Canvas.Top="' + (260 - values[i-1] + 2) + '"'
+            + '    Data="M 0,3'
+            + '          c 0,-2 -2,0 3,-3'
+            + '          h 36'
+            + '          c 2,0 0,-2, 3,3'
+            + '          v 24'
+            + '          c 0,2 2,0 -3,3'
+            + '          h -12'
+            + '          l -6 6'
+            + '          l -6 -6'
+            + '          h -12'
+            + '          c -2,0 0,2 -3,-3'
+            + '          v -24'
+            + '">'
+            + '</Path>'
+        );
+        _sl.children.add(rect);
+
+
+        ////////////////
+        // This is the text block that shows up inside the bubble
+        //
+        var yInt = parseInt(values[i-1]);
+        var textBlock = control.content.createFromXaml(
+            '<TextBlock Name="' + id('bubbleText',i) + '" FontSize="11" Text="' + yInt + '"'
+            + '         Canvas.Left="' + (x - 32) + '" Canvas.Top="' + (273 - values[i-1] + 4) + '"'
+            + '         Canvas.ZIndex="3" Opacity="0" Foreground="#FFFFFF">'
+            + ' <TextBlock.RenderTransform>'
+            + '     <ScaleTransform CenterX="12" CenterY="24" ScaleX="1.5" ScaleY="1.5" />'
+            + ' </TextBlock.RenderTransform>'
+            + '</TextBlock>'
+        );
+        _sl.children.add(textBlock);
+    }
+  }
+}
+
+function mouseenter(sender, eventArgs)
+{
+    var id = sender.Name.substr(3);
+    sender.findName('esg'+id).begin();
+}
+
+function mouseleave(sender, eventArgs)
+{
+    var id = sender.Name.substr(3);
+    sender.findName('ess'+id).begin();
+}
+
+function loadbar(sender, eventArgs)
+{
+    sender.findName('load'+sender.Name.substr(3)).begin();
+//    sender.findName('loadB'+sender.Name.substr(3)).begin();
+}
+
+function load2(sender, eventArgs)
+{
+    sender.findName('load2'+sender.Name.substr(4)).begin();
+}
+
+function load3(sender, eventArgs)
+{
+    sender.findName('load3'+sender.Name.substr(5)).begin();
+}
+
+</script>
+  </head>
+  <body onload="onLoaded()">
+  <div id="container">
+    <img src="JellyBar.gif" alt="Richard Z's JellyBar" width="210" height="81" />
+
+    <!-- Where the Silverlight ActiveX control will go-->
+    <div id="mySilverlightControlHost" style="border:1px solid #2b2b2b;width:800px;height:300px">
+    </div>
+    <script type="text/javascript">
+
+
+        // Retrieve the div element you created in the previous step.
+        var parentElement = document.getElementById("mySilverlightControlHost");
+        createMySilverlightControl();
+
+    </script>
+
+    <div style="margin-top:16px">
+        <input type="image" src="newgraph.gif" onclick="history.go();return false" width="144" height="57" />
+        <img style="margin-left:12px" src="warning.gif" alt="WARNING: Once you hit refresh you might not be able to stop." width="399" height="37" />
+
+    </div>
+  </div>
+  <div id="footer">
+    <div id="morejelly">
+        <div><img src="needmore.gif" style="margin:20px 15px 5px 15px" width="156" height="20" /></div>
+        <div style="float:left">
+          <a href="index.htm"><img src="graph_small.png" style="margin:10px 0px 10px 10px" /></a>
+        </div>
+        <div style="float:right">
+          <a href="overload.html"><img src="overload_small.png" style="margin:10px 10px 10px 0px" /></a>
+        </div>
+        <div style="text-align:center">
+          <a href="pie.htm"><img src="pie_small.png" style="margin:10px 0px" /></a>
+        </div>
+    </div>
+    <div id="contact">
+        Richard Z is a Program Manager Intern at Microsoft<br />
+        and is naturally on <strong>gmail</strong> as <strong>richkzad</strong>.
+    </div>
+  </div>
+  </body>
+</html>

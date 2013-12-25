@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetPosts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPostsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPostsResult" type="tns:ArrayOfPost" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPost">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Post" nillable="true" type="tns:Post" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Post">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Author" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPostsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPosts" />
+  </wsdl:message>
+  <wsdl:message name="GetPostsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPostsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="BlogServiceSoap">
+    <wsdl:operation name="GetPosts">
+      <wsdl:input message="tns:GetPostsSoapIn" />
+      <wsdl:output message="tns:GetPostsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BlogServiceSoap" type="tns:BlogServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPosts">
+      <soap:operation soapAction="http://tempuri.org/GetPosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BlogServiceSoap12" type="tns:BlogServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPosts">
+      <soap12:operation soapAction="http://tempuri.org/GetPosts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BlogService">
+    <wsdl:port name="BlogServiceSoap" binding="tns:BlogServiceSoap">
+      <soap:address location="http://localhost:1983/BlogService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BlogServiceSoap12" binding="tns:BlogServiceSoap12">
+      <soap12:address location="http://localhost:1983/BlogService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

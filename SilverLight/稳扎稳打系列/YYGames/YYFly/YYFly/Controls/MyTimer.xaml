@@ -1,0 +1,8 @@
+﻿<UserControl x:Class="YYFly.Controls.MyTimer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Orientation="Horizontal">
+        <TextBlock Text="剩余时间：" Foreground="White" />
+        <TextBlock x:Name="time" Text="60" Foreground="White" />
+    </StackPanel>
+</UserControl>

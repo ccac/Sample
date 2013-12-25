@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="YYTetris.Piece.Block"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Canvas>
+
+        <Rectangle x:Name="rectangle" Width="20" Height="20" RadiusX="2" RadiusY="2" Stroke="AntiqueWhite">
+            <Rectangle.Fill>
+                <RadialGradientBrush SpreadMethod="Reflect">
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop x:Name="gradientStop" Color="#26F" Offset="1" />
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+    </Canvas>
+</UserControl>

@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="ShowPoxQuickStart.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="600" Height="600">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Width="250" HorizontalAlignment="Left" Content="Click for response from gallery service" Click="Button_Click" />
+        <TextBlock HorizontalAlignment="Left" Grid.Row="2" Text="Enter a number in the box: (1-4) " />
+        <TextBox x:Name="numTextBox"  Grid.Row="2" Width="20" />
+        <TextBlock x:Name="resultBlock" Grid.Row="3"/>
+    </Grid>
+</UserControl>

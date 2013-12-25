@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="StreakDemo.Particle.Streak"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Canvas x:Name="LayoutRoot" RenderTransformOrigin="0.5,0.5">
+    	
+        <Ellipse x:Name="_point" Width="1" Height="1" Fill="White"></Ellipse>
+    	<Path x:Name="_streak" Height="100" Width="100" Data="M0,0 L100,100" Stretch="Fill">
+    		<Path.Stroke>
+    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    				<GradientStop Color="#FF444444" Offset="1"/>
+    				<GradientStop Color="#FFFFFFFF" Offset="0"/>
+    			</LinearGradientBrush>
+    		</Path.Stroke>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform  x:Name="streakStretch" />
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform />
+                </TransformGroup>
+            </Path.RenderTransform>
+
+        </Path>
+    </Canvas>
+</UserControl>

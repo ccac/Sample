@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="SilverlightDemoTransForm.RotateTransform"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="800" Height="300">
+    <Canvas Background="#CDFCAE">
+        <Image Source="LiveSearch.png" Canvas.Left="50" Canvas.Top="150" Opacity="0.5">
+        </Image>
+        <Image Source="LiveSearch.png" Canvas.Left="50" Canvas.Top="150">
+            <Image.RenderTransform>
+                <RotateTransform Angle="45"></RotateTransform>
+            </Image.RenderTransform>
+        </Image>
+        <Image Source="LiveSearch.png" Canvas.Left="50" Canvas.Top="20">
+            <Image.RenderTransform>
+                <RotateTransform Angle="45" CenterX="100" CenterY="100"></RotateTransform>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock x:Name="txt" Text="rotate test" Canvas.Left="10" Canvas.Top="10">
+            <TextBlock.RenderTransform>
+                <RotateTransform Angle="45"></RotateTransform>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+    </Canvas>
+</UserControl>

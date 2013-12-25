@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Silverlight20.Control.ComboBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+        
+        <!--
+        XAML方式构造ComboBox
+        -->
+        <ComboBox x:Name="cbo" Width="200" Margin="5">
+            <ComboBoxItem Content="ComboBoxItem1" />
+            <ComboBoxItem Content="ComboBoxItem2" />
+            <ComboBoxItem Content="ComboBoxItem3" />
+        </ComboBox>
+        
+        <!--
+        后台邦定方式构造ComboBox
+        DisplayMemberPath - 数据源中需要被显示出来的字段名称
+        MaxDropDownHeight - 下拉框的最大下拉高度
+        -->
+        <ComboBox x:Name="cbo2" DisplayMemberPath="Name" MaxDropDownHeight="100" Width="200" Margin="5" />
+        
+    </StackPanel>
+</UserControl>

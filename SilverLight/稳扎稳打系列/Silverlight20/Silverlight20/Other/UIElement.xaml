@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="Silverlight20.Other.UIElement"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" Fill="Green" Stroke="Blue" StrokeThickness="3" />
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3">
+
+                <!--
+                Clip - 容器的剪辑区域（System.Windows.Media.Geometry类型）
+                -->
+                <Rectangle.Clip>
+                    <EllipseGeometry Center="200,100" RadiusX="100" RadiusY="50" />
+                </Rectangle.Clip>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="20">
+
+            <!--
+            IsHitTestVisible - 命中测试是否可见。如果设置为False，则无法响应Click事件
+            -->
+            <Button x:Name="btnTest" Width="200" Content="关闭了HitTest的按钮" Click="btnTest_Click" IsHitTestVisible="False" />
+        </Grid>
+
+
+        <Grid Margin="20">
+        
+            <!--
+            Opacity - 不透明度。0 - 1之间
+            -->
+            <Image Source="/Silverlight20;component/Images/Logo.jpg" Height="100" Opacity="0.3" />
+        </Grid>
+
+        <Grid Margin="20">
+            <Image Source="/Silverlight20;component/Images/Logo.jpg" Height="100">
+
+                <!--
+                OpacityMask - 不透明蒙版（遮罩）（System.Windows.Media.Brush类型）
+                -->
+                <Image.OpacityMask>
+                    <RadialGradientBrush Center="0.5,0.5">
+                        <GradientStop Color="#FF000000" Offset="0" />
+                        <GradientStop Color="#44000000" Offset="0.8" />
+                        <GradientStop Color="#00000000" Offset="1" />
+                    </RadialGradientBrush>
+                </Image.OpacityMask>
+            </Image>
+        </Grid>
+
+        <Grid Margin="20">
+            <StackPanel>
+            
+                <!--
+                UseLayoutRounding - 是否使用完整像素布局。默认值为 true
+                    举例：如果设置了Margin="1.6"（非完整像素）
+                    那么UseLayoutRounding="true"时，则容器的外边距不相等；UseLayoutRounding="false"时，则容器的外边距相等
+                -->
+                <Grid Width="20" Height="20" Margin="5" UseLayoutRounding="True">
+                    <Border BorderBrush="#FF884909" Background="#FFFBECA3" BorderThickness="1"></Border>
+                    <Border BorderBrush="#FF884909" Background="#FFFBECA3" BorderThickness="1" Margin="1.6"></Border>
+                </Grid>
+
+                <Grid Width="20" Height="20" Margin="5" UseLayoutRounding="False">
+                    <Border BorderBrush="#FF884909" Background="#FFFBECA3" BorderThickness="1"></Border>
+                    <Border BorderBrush="#FF884909" Background="#FFFBECA3" BorderThickness="1" Margin="1.6"></Border>
+                </Grid>
+            </StackPanel>
+        </Grid>
+        
+    </StackPanel>
+</UserControl>

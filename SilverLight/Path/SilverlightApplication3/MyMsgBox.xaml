@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="SilverlightApplication3.MyMsgBox"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    >
+    <Grid x:Name="LayoutRoot">
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="0.76" Fill="#FF8A8A8A" />
+        <Border Width="450" CornerRadius="30" Height="250" Background="SteelBlue">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+                <TextBlock VerticalAlignment="Center"  HorizontalAlignment="Center" Text="{Binding Message}" />
+                <Button Grid.Row="1" Content="Close" Click="Button_Click" Width="100" Height="30"></Button>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

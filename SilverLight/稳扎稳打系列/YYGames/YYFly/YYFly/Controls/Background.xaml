@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="YYFly.Controls.Background"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="640" Height="480" Background="#FF287128" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" xmlns:YYFly_Controls_Parts="clr-namespace:YYFly.Controls.Parts">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid x:Name="蓝天" d:IsLocked="True">
+    		<Grid.Background>
+    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    				<GradientStop Color="#FF48B4FD"/>
+    				<GradientStop Color="#FFADB7B9" Offset="1"/>
+    			</LinearGradientBrush>
+    		</Grid.Background>
+    	</Grid>
+        <Grid Height="259.446" Margin="-3.377,0,-21.623,-33.804" x:Name="草地" VerticalAlignment="Bottom" Clip="M3,-7 L643,-7 L643,225 L3,225 z" d:IsLocked="True">
+        	<Path Fill="#FF03CC02" Stretch="Fill" Stroke="#FF000000" Data="M0,272 C0,272 183.71585,232.61874 343.46921,272.87473 C446.9007,298.93826 591.08685,345.18271 655.48755,393.64627 C668.50232,403.44031 639.00037,483.09982 639.00037,483.09982 L-0.49960935,482.59442 z" Margin="0.348,0,3.652,32"/>
+        	<Path Fill="#FF98CD01" Stretch="Fill" Stroke="#FF000000" Data="M255.58435,400.99164 C255.58435,400.99164 258.59949,402.8866 260.74173,400.26007 C311.89264,337.54602 586.79303,356.69003 639.02325,400.78784 C690.89111,444.57968 639.5,479.77869 639.5,479.77869 L351.49924,479.77869 z" Margin="256.43,104.5,-0.43,32.5"/>
+        	<Path Fill="#FF037903" Stretch="Fill" Stroke="#FF000000" Data="M-2.4766462,343.53857 C252.52542,319.43259 363.72684,415.66946 423.63388,480.42303 C490.81018,553.03394 -2.8993723,479.76743 -2.8993723,479.76743 C-2.8993723,479.76743 -5.3783917,343.8129 -2.4766462,343.53857 z" Margin="0,86.508,229,-0.508"/>
+        </Grid>
+        <Grid x:Name="花" d:IsLocked="True">
+        	<YYFly_Controls_Parts:Flower RenderTransformOrigin="0.5,0.5" Margin="48,8,272,-112">
+        		<YYFly_Controls_Parts:Flower.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleX="0.4" ScaleY="0.3"/>
+        				<SkewTransform AngleX="10"/>
+        				<RotateTransform Angle="12.773"/>
+        				<TranslateTransform X="38.117" Y="8.641"/>
+        			</TransformGroup>
+        		</YYFly_Controls_Parts:Flower.RenderTransform>
+        	</YYFly_Controls_Parts:Flower>
+        	<YYFly_Controls_Parts:Flower Width="318" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,96,-80,-216">
+        		<YYFly_Controls_Parts:Flower.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</YYFly_Controls_Parts:Flower.RenderTransform>
+        	</YYFly_Controls_Parts:Flower>
+        	<YYFly_Controls_Parts:Flower RenderTransformOrigin="0.5,0.5" Width="318" HorizontalAlignment="Left" Margin="-8,80,0,-200">
+        		<YYFly_Controls_Parts:Flower.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleX="0.3" ScaleY="0.3"/>
+        				<SkewTransform AngleY="-18"/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</YYFly_Controls_Parts:Flower.RenderTransform>
+        	</YYFly_Controls_Parts:Flower>
+        	<YYFly_Controls_Parts:Flower RenderTransformOrigin="0.45,0.5" Margin="202,64,120,-184">
+        		<YYFly_Controls_Parts:Flower.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+        				<SkewTransform AngleX="12"/>
+        				<RotateTransform Angle="9"/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</YYFly_Controls_Parts:Flower.RenderTransform>
+        	</YYFly_Controls_Parts:Flower>
+        	<YYFly_Controls_Parts:Flower RenderTransformOrigin="0.5,0.5" Width="318" HorizontalAlignment="Left" Margin="-86,8,0,-128">
+        		<YYFly_Controls_Parts:Flower.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleX="0.2" ScaleY="0.2"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</YYFly_Controls_Parts:Flower.RenderTransform>
+        	</YYFly_Controls_Parts:Flower>
+        	<YYFly_Controls_Parts:Flower RenderTransformOrigin="0.5,0.5" Margin="296,40,26,-160">
+        		<YYFly_Controls_Parts:Flower.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleX="0.25" ScaleY="0.25"/>
+        				<SkewTransform AngleY="19"/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</YYFly_Controls_Parts:Flower.RenderTransform>
+        	</YYFly_Controls_Parts:Flower>
+        </Grid>
+        <Grid Margin="-0.127,0,0,0" x:Name="云">
+        	<YYFly_Controls_Parts:Cloud Height="73.124" Width="144" RenderTransformOrigin="1.118,0.8" HorizontalAlignment="Right" Margin="0,160.133,16,0" VerticalAlignment="Top" d:LayoutOverrides="Height">
+        		<YYFly_Controls_Parts:Cloud.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform/>
+        				<SkewTransform AngleY="8"/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</YYFly_Controls_Parts:Cloud.RenderTransform>
+        	</YYFly_Controls_Parts:Cloud>
+        	<YYFly_Controls_Parts:Cloud Height="45.485" Width="136" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Margin="0,66.741,80,0" VerticalAlignment="Top">
+        		<YYFly_Controls_Parts:Cloud.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform/>
+        				<SkewTransform AngleY="2"/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</YYFly_Controls_Parts:Cloud.RenderTransform>
+        	</YYFly_Controls_Parts:Cloud>
+        	<YYFly_Controls_Parts:Cloud Height="48" RenderTransformOrigin="0.5,0.5" Margin="272.151,32,245.849,0" VerticalAlignment="Top" Width="121.705" d:LayoutOverrides="Width">
+        		<YYFly_Controls_Parts:Cloud.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform/>
+        				<SkewTransform AngleX="-20.726"/>
+        				<RotateTransform/>
+        				<TranslateTransform X="13.622"/>
+        			</TransformGroup>
+        		</YYFly_Controls_Parts:Cloud.RenderTransform>
+        	</YYFly_Controls_Parts:Cloud>
+        	<YYFly_Controls_Parts:Cloud Height="33.077" RenderTransformOrigin="0.5,0.5" Margin="252.643,160.464,192.357,0" d:LayoutOverrides="Width, Height" VerticalAlignment="Top" Width="195.328">
+        		<YYFly_Controls_Parts:Cloud.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform/>
+        				<SkewTransform AngleX="12"/>
+        				<RotateTransform Angle="7.457"/>
+        				<TranslateTransform X="-40.817" Y="-7.445"/>
+        			</TransformGroup>
+        		</YYFly_Controls_Parts:Cloud.RenderTransform>
+        	</YYFly_Controls_Parts:Cloud>
+        	<YYFly_Controls_Parts:Cloud Height="80" Width="168" HorizontalAlignment="Left" Margin="32,48,0,0" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</UserControl>

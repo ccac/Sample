@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="InputEventHandler.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+    <StackPanel x:Name="LayoutRoot" Background="OldLace" MouseLeftButtonDown="LayoutRoot_MouseLeftButtonDown" KeyDown="LayoutRoot_KeyDown">
+        <Canvas x:Name="Canvas1" Background="DarkKhaki" Width="100" Height="30" MouseLeftButtonDown="Canvas1_MouseLeftButtonDown">
+            <TextBlock>Canvas1</TextBlock>
+        </Canvas>
+        <Canvas x:Name="Canvas2" Background="DarkKhaki" Width="100" Height="30">
+            <TextBlock>Canvas2</TextBlock>
+        </Canvas>
+        <Button Content="Hello"></Button>
+        <TextBlock x:Name="StatusText"></TextBlock>
+    </StackPanel>
+</UserControl>

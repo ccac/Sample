@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IModules" maxBufferSize="65536"
+                    maxReceivedMessageSize="65536">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:8082/ServerDiagnostics_Web/Modules.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IModules"
+                contract="ServerDiagnostics.ModulesService.IModules" name="BasicHttpBinding_IModules" />
+        </client>
+    </system.serviceModel>
+</configuration>

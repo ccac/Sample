@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="SilverlightDemoLiveSearch.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="600" Height="150">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="LiveSearch.png" Grid.Column="0"></Image>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBox x:Name="txtQuery" Width="400" Height="35"
+                 Margin="50 0 0 0" BorderBrush="#3F7801"></TextBox>
+            <Button x:Name="btnSearch" Width="120" Height="35"
+                Background="#62A21D" Margin="20 0 0 0"
+                Content="Search" FontSize="16" Click="btnSearch_Click"></Button>
+        </StackPanel>
+        <TextBlock Grid.Row="2" Text="网页搜索结果" Foreground="#59990E"
+               FontSize="16" Margin="20 0 0 0"></TextBlock>
+    </Grid>
+</UserControl>

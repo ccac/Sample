@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="Silverlight20.WebPage.JSDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left" Margin="5">
+
+        <Button Margin="5" x:Name="invokeJS" Content="调用JavaScript" Click="invokeJS_Click" />
+        
+        <TextBox Margin="5" x:Name="txtMsg" />
+
+    </StackPanel>
+</UserControl>

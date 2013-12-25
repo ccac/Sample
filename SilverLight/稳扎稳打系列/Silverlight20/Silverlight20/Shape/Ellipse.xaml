@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Silverlight20.Shape.Ellipse"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+        
+        <!--椭圆-->
+        <!--
+        Width - 椭圆的宽
+        Height - 椭圆的高
+        Stroke - 边框
+        StrokeThickness - 边框尺寸
+        Fill - 填充
+        -->
+        <Ellipse Stroke="Red" Fill="Yellow" StrokeThickness="6" Width="100" Height="50"></Ellipse>
+        
+    </StackPanel>
+</UserControl>

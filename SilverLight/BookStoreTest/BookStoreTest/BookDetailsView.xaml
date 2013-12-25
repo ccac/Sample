@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="BookStoreTest.BookDetailsView"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="800" Height="600">
+    <Grid x:Name="LayoutRoot" >
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF8A8A8A" Opacity="0.765" />
+        <Border Width="450" Height="350" Background="AliceBlue" CornerRadius="30">
+            <StackPanel>
+            <TextBlock Text="{Binding Title}" Margin="10" HorizontalAlignment="Center" FontSize="23" />
+            <Button Content="Close" Width="100" Height="50" Click="Button_Click" />
+                </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

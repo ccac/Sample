@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="DoubleClick.DoubleClick"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="550" Height="400">
+    <Canvas x:Name="LayoutRoot" Background="White">
+        <Grid Width="550" Height="400">
+            <TextBlock Text="Double click your mouse!" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        </Grid>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,18 @@
+﻿<!-- /********************************************************************************
+ * 地图层, 用于地图操作
+ * 作者: Shareach
+ * Email:yinpengxiang@hotmail.com
+ * 网址: http://sps.shareach.com
+ * 欢迎访问 http://www.fangtoo.com , Flex版的地图,
+ * 这个是Silverlight 2 Bate 2 版本编译开发的, 此代码仅仅作为技术交流使用, 
+ * 请不要能够用于商业用途, 著名出处, 欢迎讨论指教
+ * 还有很多东西不会用, 刚看了半天就开干的, 纯粹使用C# 的知识 和 SDK文档
+ * *............................................................................*/ -->
+ <Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="Shareach.Map.App"
+             >
+    <Application.Resources>
+        
+    </Application.Resources>
+</Application>

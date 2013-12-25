@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="SilverlightDemoCallByJS.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="500" Height="200" Loaded="UserControl_Loaded">
+    <StackPanel Background="#CDFCAE" Orientation="Horizontal">
+        <Border CornerRadius="10" Width="100" Height="40" Margin="50 10 0 0">
+            <TextBlock Text="结果显示：" FontSize="20" Foreground="Red"></TextBlock>
+        </Border>
+        <Border CornerRadius="10" Background="Green" Width="300" Height="40">
+            <TextBlock x:Name="result" FontSize="20" Foreground="White"
+                   Margin="20 5 0 0"></TextBlock>
+        </Border>
+    </StackPanel>
+</UserControl>

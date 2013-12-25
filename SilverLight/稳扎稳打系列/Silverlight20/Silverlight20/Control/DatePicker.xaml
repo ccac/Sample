@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Silverlight20.Control.DatePicker"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:basics="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls">
+    <StackPanel HorizontalAlignment="Left">
+        
+        <!--
+        TextBox 结合 Calendar，经典的选择日期的方式
+        SelectedDateFormat - 被选中的日期的显示格式 [System.Windows.Controls.DatePickerFormat枚举]
+            SelectedDateFormat.Short - 简短格式。默认值。如2008-10-10
+            SelectedDateFormat.Long - 非简短格式。如2008年10月10日
+        -->
+        <basics:DatePicker Width="200" SelectedDateFormat="Short"></basics:DatePicker>
+        
+    </StackPanel>
+</UserControl>

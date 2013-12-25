@@ -1,0 +1,8 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="SilverlightDemoLiveSearch" EntryPointType="SilverlightDemoLiveSearch.App" RuntimeVersion="2.0.30226.2">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="SilverlightDemoLiveSearch" Source="SilverlightDemoLiveSearch.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls" Source="System.Windows.Controls.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Extended" Source="System.Windows.Controls.Extended.dll" />
+    <AssemblyPart x:Name="System.Xml.Serialization" Source="System.Xml.Serialization.dll" />
+  </Deployment.Parts>
+</Deployment>

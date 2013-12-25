@@ -1,0 +1,19 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/client/2007"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="Silverlight2HitTest.Page"
+	Width="396" Height="466">
+    <Grid>
+        <Grid x:Name="LayoutRoot" Background="White" MouseLeftButtonUp="MouseUpHandler">
+            <Rectangle HorizontalAlignment="Stretch" Margin="37,76,197,0" VerticalAlignment="Top" Fill="#FFFF0505" Height="108" x:Name="RectangleRed"/>
+            <Rectangle HorizontalAlignment="Stretch" Margin="101,143,133,215" VerticalAlignment="Stretch" Fill="#FF0554FF" x:Name="RectangleBlue"/>
+            <Rectangle HorizontalAlignment="Stretch" Margin="153,101,81,0" VerticalAlignment="Top" Fill="#FF127873" Height="108" x:Name="RectangleGreen"/>
+            <Rectangle HorizontalAlignment="Stretch" Margin="62,169,172,189" VerticalAlignment="Stretch" Fill="#FFCFFF05" x:Name="RectangleYellow"/>
+            <Rectangle HorizontalAlignment="Stretch" Margin="181,31,53,0" VerticalAlignment="Top" Fill="#FFFF05BF" Height="108" x:Name="RectanglePurple"/>
+            <Rectangle HorizontalAlignment="Stretch" Margin="72,111,162,0" VerticalAlignment="Top" Fill="#FFBEC0EA" Height="108" x:Name="RectangleGray"/>
+            <TextBlock Height="149" Margin="19,0,26,21" VerticalAlignment="Bottom" TextWrapping="Wrap" x:Name="tb1">
+			<Run Text="Hit Test Result" FontFamily="Portable User Interface" FontSize="14.666666984558106" FontStretch="Normal" FontStyle="Normal" FontWeight="Normal" Foreground="#FF000000"/>
+		</TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>

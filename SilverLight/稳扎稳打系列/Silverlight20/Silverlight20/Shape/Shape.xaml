@@ -1,0 +1,192 @@
+﻿<UserControl x:Class="Silverlight20.Shape.Shape"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+
+        <Grid Margin="10" HorizontalAlignment="Left">
+            
+            <!--
+            Fill - 填充（System.Windows.Media.Brush类型）
+            Stroke - 笔划（边框）（System.Windows.Media.Brush类型）
+            StrokeThickness - 笔划（边框）尺寸
+            -->
+            <Rectangle Width="200" Height="50" Fill="Red" Stroke="Yellow" StrokeThickness="3" />
+            
+        </Grid>
+        
+        <Grid Width="200" Height="200" Margin="10" HorizontalAlignment="Left" ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+
+            <!--Stretch - 拉伸值 [System.Windows.Media.Stretch 枚举]-->
+            
+            <!--
+            Stretch.None - 不做处理
+                不做任何拉伸处理，填充内容保持原始大小
+            -->
+            <Rectangle Grid.Row="0" Grid.Column="0" 
+                     Width="80" Height="40" Fill="Red" Stroke="Yellow" StrokeThickness="6"
+                     Stretch="None" />
+            
+            <!--
+            Stretch.Fill - 充满
+                调整填充内容，以充满整个容器，填充内容比例变为容器比例。默认值            
+            -->
+            <Rectangle Grid.Row="0" Grid.Column="1" 
+                     Width="180" Height="40" Fill="Red" Stroke="Yellow" StrokeThickness="6" 
+                     Stretch="Fill" />
+            
+            <!--
+            Stretch.Uniform - 等比适应
+                调整填充内容，以适合容器尺寸，填充内容会做等比例调整
+                如果填充内容与容器比例不一样，那么填充内容调整的结果为：
+                使得填充内容的宽与容器的宽相等，或者 填充内容的高与容器的高相等。填充内容会被完整显示
+            -->
+            <Rectangle Grid.Row="1" Grid.Column="0" 
+                     Width="80" Height="40" Fill="Red" Stroke="Yellow" StrokeThickness="6" 
+                     Stretch="Uniform" />
+            
+            <!--
+            Stretch.UniformToFill - 等比充满
+                调整填充内容，以适合容器尺寸，填充内容会做等比例调整
+                如果填充内容与容器比例不一样，那么填充内容调整的结果为：
+                使得填充内容的宽与容器的宽相等，并且 填充内容的高与容器的高相等。填充内容会被做相应的剪裁
+            -->
+            <Rectangle Grid.Row="1" Grid.Column="1" 
+                     Width="80" Height="40" Fill="Red" Stroke="Yellow" StrokeThickness="6" 
+                     Stretch="UniformToFill" />
+            
+        </Grid>
+
+        <Grid Margin="10" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+
+            <!--
+            StrokeDashArray - 虚线和间隙的值的集合 [System.Windows.Media.Stretch 枚举]
+                奇数项为虚线长度；偶数项为间隙长度；如果只有一个值，则虚线长度和间隙长度都为该值
+            -->
+            <Line Grid.Row="0" X1="0" Y1="0" X2="400" Y2="0" Stroke="Red" StrokeThickness="10" 
+                  StrokeDashArray="2" />
+                     
+            <!--
+            StrokeDashCap - 虚线两端（线帽）的类型 [System.Windows.Media.PenLineCap 枚举]
+                PenLineCap.Flat - 无。默认值
+                PenLineCap.Round - 直径等于 StrokeThickness
+                PenLineCap.Square - 高度等于 StrokeThickness 并且 宽度等于 StrokeThickness/2
+                PenLineCap.Triangle - 底边长等于 StrokeThickness 的等腰直角三角形
+            -->
+            <Line Grid.Row="1" X1="0" Y1="0" X2="400" Y2="0" Stroke="Red" StrokeThickness="10" 
+                  StrokeDashArray="2,4,6" StrokeDashCap="Flat" />
+        
+            <Line Grid.Row="2" X1="0" Y1="0" X2="400" Y2="0" Stroke="Red" StrokeThickness="10" 
+                  StrokeDashArray="2,4,6" StrokeDashCap="Round" />
+            <Line Grid.Row="2" X1="0" Y1="0" X2="400" Y2="0" Stroke="Black" StrokeThickness="10" 
+                  StrokeDashArray="2,4,6" StrokeDashCap="Flat" />
+
+            <Line Grid.Row="3" X1="0" Y1="0" X2="400" Y2="0" Stroke="Red" StrokeThickness="10" 
+                  StrokeDashArray="2,4,6" StrokeDashCap="Square" />
+            <Line Grid.Row="3" X1="0" Y1="0" X2="400" Y2="0" Stroke="Black" StrokeThickness="10" 
+                  StrokeDashArray="2,4,6" StrokeDashCap="Flat" />
+
+            <Line Grid.Row="4" X1="0" Y1="0" X2="400" Y2="0" Stroke="Red" StrokeThickness="10" 
+                  StrokeDashArray="2,4,6" StrokeDashCap="Triangle" />
+            <Line Grid.Row="4" X1="0" Y1="0" X2="400" Y2="0" Stroke="Black" StrokeThickness="10" 
+                  StrokeDashArray="2,4,6" StrokeDashCap="Flat" />
+            
+            <!--
+            StrokeStartLineCap - 虚线起始端（线帽）的类型 [System.Windows.Media.PenLineCap 枚举]
+            StrokeEndLineCap - 虚线终结端（线帽）的类型 [System.Windows.Media.PenLineCap 枚举]
+            -->
+            <Line Grid.Row="5" X1="0" Y1="0" X2="400" Y2="0" Stroke="Red" StrokeThickness="10" 
+                  StrokeDashArray="2,4,6" StrokeStartLineCap="Square" StrokeEndLineCap="Triangle" />
+            <Line Grid.Row="5" X1="0" Y1="0" X2="400" Y2="0" Stroke="Black" StrokeThickness="10" 
+                  StrokeDashArray="2,4,6" StrokeDashCap="Flat" />
+            
+            <!--
+            StrokeDashOffset - 虚线的起始位置。从虚线的起始端的 StrokeDashOffset 距离处开始描绘虚线
+            -->
+            <Line Grid.Row="6" X1="0" Y1="0" X2="400" Y2="0" Stroke="Red" StrokeThickness="10" 
+                  StrokeDashArray="2,4,6" StrokeDashOffset="1" />
+
+        </Grid>
+
+        <Grid Margin="10" HorizontalAlignment="Left" ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+
+            <!--StrokeLineJoin属性 - 图形连接点处的连接类型 [System.Windows.Media.PenLineJoin 枚举]-->
+
+            <!--
+            StrokeLineJoin.Bevel - 线形连接
+            -->
+            <Polyline Grid.Column="0" 
+                      Points="10,100 50,10 100,100" Stroke="Red" StrokeThickness="20" HorizontalAlignment="Center"
+                      StrokeLineJoin="Bevel" />
+
+            <!--
+            StrokeLineJoin.Miter - 角形连接。默认值
+            -->
+            <Polyline Grid.Column="1" 
+                      Points="10,100 50,10 100,100" Stroke="Red" StrokeThickness="20" HorizontalAlignment="Center" 
+                      StrokeLineJoin="Miter" />
+
+            <!--
+            StrokeLineJoin.Round - 弧形连接
+            -->
+            <Polyline Grid.Column="2" 
+                      Points="10,100 50,10 100,100" Stroke="Red" StrokeThickness="20"  HorizontalAlignment="Center"
+                      StrokeLineJoin="Round" />
+            
+        </Grid>
+
+        <Grid Margin="10" HorizontalAlignment="Left"  ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+            
+            <!--StrokeMiterLimit属性 - 斜接长度（蓝色线部分）与 StrokeThickness/2 的比值。默认值 10，最小值 1-->
+
+            <Polyline Grid.Column="0" 
+                      Points="0,100 50,10 100,100" Stroke="Red" StrokeThickness="20"
+                      StrokeMiterLimit="1" />
+            <Line Grid.Column="0" X1="0" Y1="100" X2="50" Y2="10" Stroke="Yellow" />
+            <Line Grid.Column="0" X1="50" Y1="10" X2="100" Y2="100" Stroke="Yellow" />
+            <Line Grid.Column="0" X1="50" Y1="10" X2="50" Y2="0" Stroke="Blue" />
+
+            <Polyline Grid.Column="1" 
+                      Points="0,100 50,10 100,100" Stroke="Red" StrokeThickness="20"
+                      StrokeMiterLimit="2.0" />
+            <Line Grid.Column="1" X1="0" Y1="100" X2="50" Y2="10" Stroke="Yellow" />
+            <Line Grid.Column="1" X1="50" Y1="10" X2="100" Y2="100" Stroke="Yellow" />
+            <Line Grid.Column="1" X1="50" Y1="10" X2="50" Y2="-10" Stroke="Blue" />
+
+            <Polyline Grid.Column="2" 
+                      Points="0,100 50,10 100,100" Stroke="Red" StrokeThickness="20" 
+                      />
+            <Line Grid.Column="2" X1="0" Y1="100" X2="50" Y2="10" Stroke="Yellow" />
+            <Line Grid.Column="2" X1="50" Y1="10" X2="100" Y2="100" Stroke="Yellow" />
+            <Line Grid.Column="2" X1="50" Y1="10" X2="50" Y2="-10" Stroke="Blue" />
+            
+        </Grid>
+
+    </StackPanel>
+</UserControl>

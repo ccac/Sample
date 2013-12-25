@@ -1,0 +1,28 @@
+﻿<configuration>
+    <system.serviceModel>
+        <client>
+            <endpoint
+                name="BasicHttpBinding_WCFService"
+                address="http://localhost:3036/WCFService.svc"
+                binding="basicHttpBinding"
+                contract="WCFServiceReference.WCFService"
+                bindingConfiguration="BasicHttpBinding_WCFService"
+             />
+        </client>
+        <bindings>
+            <basicHttpBinding>
+                <binding 
+                    name="BasicHttpBinding_WCFService" 
+                    maxBufferSize="65536"
+                    maxReceivedMessageSize="65536"
+                >
+                    <!--
+                    HTTP 地址：<security mode="None" />
+                    HTTPS 地址： <security mode="Transport" />
+                    -->
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+    </system.serviceModel>
+</configuration>

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="YYPiano.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:custom="clr-namespace:YYPiano.Controls;assembly=YYPiano"
+    KeyDown="UserControl_KeyDown" >
+    <Canvas x:Name="root" Width="640" Height="480" Background="BurlyWood">
+
+        <HyperlinkButton Content="作者：webabcd" NavigateUri="http://webabcd.cnblogs.com" TargetName="_blank" Margin="5" />
+
+        <!--系统内置乐谱的 ListBox-->
+        <ListBox x:Name="menu" Width="120" Height="200" Canvas.Top="30" Canvas.Left="10" SelectionChanged="menu_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" Margin="1" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!--用户自定义乐谱-->
+        <TextBlock Text="我的乐谱" Canvas.Top="240" Canvas.Left="10" Width="120" TextAlignment="Left" />
+        <TextBlock Text="帮助" Canvas.Top="240" Canvas.Left="10" Width="120" TextAlignment="Right" Cursor="Hand">
+            <ToolTipService.ToolTip>
+                <TextBlock Margin="5">
+                    <Run Text="1、A - Z 26 个键代表钢琴的 26 个音阶，A 键对应 C 大调的低音 dou，以此类推" />
+                    <LineBreak />
+                    <Run Text="2、A - Z 字符后跟该音阶的播放时长，以组成一个乐谱音阶，每个乐谱音阶以“,”分隔" />
+                    <LineBreak />
+                    <Run Text="3、示例：A600,B600,C600,D600,E600,F600,G600" />
+                </TextBlock>
+            </ToolTipService.ToolTip>
+        </TextBlock>
+        <TextBox x:Name="txtMyBook" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Canvas.Top="255" Canvas.Left="10" Width="120" Height="80" />
+        <Button x:Name="btnMyBook" Content="挑战我的乐谱" Canvas.Top="340" Canvas.Left="10" Width="120" Click="btnMyBook_Click" />
+
+        <!--控件的集成-->
+        <custom:Score x:Name="score" Canvas.Left="400" />
+        <custom:Hits x:Name="hits" Canvas.Top="280" Canvas.Left="530" />
+        <custom:PianoKeyboard x:Name="keyboard" Canvas.Top="370" Canvas.Left="10" />
+        <custom:AnimationMusicBook x:Name="book" Canvas.Top="10" Canvas.Left="140" />
+
+    </Canvas>
+</UserControl>

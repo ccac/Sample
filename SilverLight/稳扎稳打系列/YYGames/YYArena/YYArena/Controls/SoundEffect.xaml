@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="YYArena.Controls.SoundEffect"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <!--循环播放的背景音乐-->
+        <MediaElement x:Name="bg" Source="/Resource/bg.mp3" Volume="0.8" AutoPlay="True" MediaEnded="bg_MediaEnded" />
+
+        <!--音效-->
+        <Canvas x:Name="root"></Canvas>
+    </Grid>
+</UserControl>

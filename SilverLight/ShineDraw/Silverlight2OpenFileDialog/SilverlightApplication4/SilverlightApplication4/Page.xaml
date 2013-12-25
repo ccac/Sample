@@ -1,0 +1,18 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/client/2007"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="SilverlightApplication4.Page"
+	Width="640" Height="480">
+
+	<Grid x:Name="LayoutRoot" Background="White" >
+	  <Grid.RowDefinitions>
+
+    <RowDefinition Height="0.173*"/>
+
+    <RowDefinition Height="0.827*"/>
+
+    </Grid.RowDefinitions>
+		<Button HorizontalAlignment="Stretch" Margin="222,19.7600002288818,223,16.2800006866455" Click="Button1_Click" VerticalAlignment="Stretch" Content="Load Image"/>
+		<Border Margin="8,32.9599990844727,8,61" Grid.Row="1" x:Name="bd" VerticalAlignment="Stretch"/>
+	</Grid>
+</UserControl>

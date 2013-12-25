@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Silverlight20.Tip.RightClick"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Border BorderBrush="Black" BorderThickness="4" Background="Bisque" Width="100" HorizontalAlignment="Left">
+        
+        <!--右键菜单的内容-->
+        <StackPanel>
+            <TextBlock Margin="5">我是右键菜单1</TextBlock>
+            <TextBlock Margin="5">我是右键菜单2</TextBlock>
+            <TextBlock Margin="5">我是右键菜单3</TextBlock>
+        </StackPanel>
+
+        <!--右键菜单的位置-->
+        <Border.RenderTransform>
+            <TranslateTransform x:Name="tt" />
+        </Border.RenderTransform>
+
+    </Border>
+</UserControl>

@@ -1,0 +1,20 @@
+﻿<!--
+KeyDown - 鼠标按下时触发的事件
+KeyUp - 鼠标按下并放开时触发的事件
+-->
+<!--
+KeyDown和KeyUp均为向上冒泡的路由事件，本例的事件路由为：TextBox -> Canvas -> UserControl
+-->
+<UserControl x:Class="Silverlight20.Interactive.Keyboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    x:Name="userControl"
+    KeyDown="userControl_KeyDown">
+    
+    <Canvas>
+            
+        <TextBox x:Name="textBox" Text="TextBox" />
+        
+    </Canvas>
+    
+</UserControl>

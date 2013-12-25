@@ -1,0 +1,1663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Xml.Serialization</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.XmlSerializerFormatAttribute">
+      <summary>Instructs the Silverlight version 2 Beta 2 infrastructure to use the <see cref="T:System.Xml.Serialization.XmlSerializer" /> instead of the <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" />.</summary>
+    </member>
+    <member name="M:System.ServiceModel.XmlSerializerFormatAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.ServiceModel.XmlSerializerFormatAttribute" /> class. </summary>
+    </member>
+    <member name="P:System.ServiceModel.XmlSerializerFormatAttribute.Style">
+      <summary>Gets or sets the SOAP style of the <see cref="T:System.Xml.Serialization.XmlSerializer" />.</summary>
+      <returns>One of the <see cref="T:System.ServiceModel.OperationFormatStyle" /> values. The default is <see cref="F:System.ServiceModel.OperationFormatStyle.Document" />.</returns>
+    </member>
+    <member name="T:System.Xml.Schema.XmlSchemaForm">
+      <summary>Indicates whether element, attribute, array item and array forms are required to be qualified with a namespace prefix.</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlSchemaForm.None">
+      <summary>Element, attribute, array item and array forms are not specified in the schema.</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlSchemaForm.Qualified">
+      <summary>Element, attribute, array item and array forms must be qualified with a namespace prefix.</summary>
+    </member>
+    <member name="F:System.Xml.Schema.XmlSchemaForm.Unqualified">
+      <summary>Element, attribute, array item and array forms are not required to be qualified with a namespace prefix.</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAnyElementAttribute">
+      <summary>Specifies that the member (a field that returns an array of <see cref="T:System.Xml.XmlElement" /> or <see cref="T:System.Xml.XmlNode" /> objects) contains objects that represent any XML element that has no corresponding member in the object being serialized or deserialized.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttribute.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> class and specifies the XML element name generated in the XML document.</summary>
+      <param name="name">The name of the XML element that the <see cref="T:System.Xml.Serialization.XmlSerializer" /> generates. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttribute.#ctor(System.String,System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> class and specifies the XML element name generated in the XML document and its XML namespace.</summary>
+      <param name="name">The name of the XML element that the <see cref="T:System.Xml.Serialization.XmlSerializer" /> generates. </param>
+      <param name="ns">The XML namespace of the XML element. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttribute.Name">
+      <summary>Gets or sets the XML element name.</summary>
+      <returns>The name of the XML element.</returns>
+      <exception cref="T:System.InvalidOperationException">The element name of an array member does not match the element name specified by the <see cref="P:System.Xml.Serialization.XmlAnyElementAttribute.Name" /> property. </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttribute.Namespace">
+      <summary>Gets or sets the XML namespace generated in the XML document.</summary>
+      <returns>An XML namespace.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttribute.Order">
+      <summary>Gets or sets the explicit order in which the elements are serialized or deserialized.</summary>
+      <returns>The order of the code generation.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAnyElementAttributes">
+      <summary>Represents a collection of <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> objects.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Add(System.Xml.Serialization.XmlAnyElementAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Clear"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Contains(System.Xml.Serialization.XmlAnyElementAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.CopyTo(System.Xml.Serialization.XmlAnyElementAttribute[],System.Int32)"></member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.Count"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.GetEnumerator"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.IndexOf(System.Xml.Serialization.XmlAnyElementAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlAnyElementAttribute)"></member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.Item(System.Int32)"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.Remove(System.Xml.Serialization.XmlAnyElementAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.RemoveAt(System.Int32)"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)"></member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#IsSynchronized"></member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#ICollection#SyncRoot"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Add(System.Object)"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Contains(System.Object)"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IndexOf(System.Object)"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)"></member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IsFixedSize"></member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#IsReadOnly"></member>
+    <member name="P:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Item(System.Int32)"></member>
+    <member name="M:System.Xml.Serialization.XmlAnyElementAttributes.System#Collections#IList#Remove(System.Object)"></member>
+    <member name="T:System.Xml.Serialization.XmlArrayAttribute">
+      <summary>Specifies that the <see cref="T:System.Xml.Serialization.XmlSerializer" /> must serialize a particular class member as an array of XML elements.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlArrayAttribute" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayAttribute.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlArrayAttribute" /> class and specifies the XML element name generated in the XML document instance.</summary>
+      <param name="elementName">The name of the XML element that the <see cref="T:System.Xml.Serialization.XmlSerializer" /> generates. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayAttribute.ElementName">
+      <summary>Gets or sets the XML element name given to the serialized array.</summary>
+      <returns>The XML element name of the serialized array. The default is the name of the member to which the <see cref="T:System.Xml.Serialization.XmlArrayAttribute" /> is assigned.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayAttribute.Form">
+      <summary>Gets or sets a value that indicates whether the XML element name generated by the <see cref="T:System.Xml.Serialization.XmlSerializer" /> is qualified or unqualified.</summary>
+      <returns>One of the <see cref="T:System.Xml.Schema.XmlSchemaForm" /> values. The default is XmlSchemaForm.None.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayAttribute.IsNullable">
+      <summary>Gets or sets a value that indicates whether the <see cref="T:System.Xml.Serialization.XmlSerializer" /> must serialize a member as an empty XML element with the xsi:nil attribute set to true.</summary>
+      <returns>true if the <see cref="T:System.Xml.Serialization.XmlSerializer" /> generates the xsi:nil attribute; otherwise, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayAttribute.Namespace">
+      <summary>Gets or sets the namespace of the XML element.</summary>
+      <returns>The namespace of the XML element.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayAttribute.Order">
+      <summary>Gets or sets the explicit order in which the elements are serialized or deserialized.</summary>
+      <returns>The order of the code generation.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlArrayItemAttribute">
+      <summary>Specifies the derived types that the <see cref="T:System.Xml.Serialization.XmlSerializer" /> can place in a serialized array.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttribute.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> class and specifies the name of the XML element generated in the XML document.</summary>
+      <param name="elementName">The name of the XML element. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttribute.#ctor(System.String,System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> class and specifies the name of the XML element generated in the XML document and the <see cref="T:System.Type" /> that can be inserted into the generated XML document.</summary>
+      <param name="elementName">The name of the XML element. </param>
+      <param name="type">The <see cref="T:System.Type" /> of the object to serialize. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttribute.#ctor(System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> class and specifies the <see cref="T:System.Type" /> that can be inserted into the serialized array.</summary>
+      <param name="type">The <see cref="T:System.Type" /> of the object to serialize. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.DataType">
+      <summary>Gets or sets the XML data type of the generated XML element.</summary>
+      <returns>An XML Schema definition (XSD) data type, as defined by the World Wide Web Consortium (www.w3.org) document "XML Schema Part 2: DataTypes".</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.ElementName">
+      <summary>Gets or sets the name of the generated XML element.</summary>
+      <returns>The name of the generated XML element. The default is the member identifier.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.Form">
+      <summary>Gets or sets a value that indicates whether the name of the generated XML element is qualified.</summary>
+      <returns>One of the <see cref="T:System.Xml.Schema.XmlSchemaForm" /> values. The default is XmlSchemaForm.None.</returns>
+      <exception cref="T:System.Exception">The <see cref="P:System.Xml.Serialization.XmlArrayItemAttribute.Form" /> property is set to XmlSchemaForm.Unqualified and a <see cref="P:System.Xml.Serialization.XmlArrayItemAttribute.Namespace" /> value is specified. </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.IsNullable">
+      <summary>Gets or sets a value that indicates whether the <see cref="T:System.Xml.Serialization.XmlSerializer" /> must serialize a member as an empty XML tag with the xsi:nil attribute set to true.</summary>
+      <returns>true if the <see cref="T:System.Xml.Serialization.XmlSerializer" /> generates the xsi:nil attribute; otherwise, false and no instance is generated. The default is true.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.Namespace">
+      <summary>Gets or sets the namespace of the generated XML element.</summary>
+      <returns>The namespace of the generated XML element.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.NestingLevel">
+      <summary>Gets or sets the level in a hierarchy of XML elements that the <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> affects.</summary>
+      <returns>The zero-based index of a set of indexes in an array of arrays.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttribute.Type">
+      <summary>Gets or sets the type allowed in an array.</summary>
+      <returns>A <see cref="T:System.Type" /> that is allowed in the array.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlArrayItemAttributes">
+      <summary>Represents a collection of <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> objects.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Add(System.Xml.Serialization.XmlArrayItemAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Clear"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Contains(System.Xml.Serialization.XmlArrayItemAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.CopyTo(System.Xml.Serialization.XmlArrayItemAttribute[],System.Int32)"></member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.Count"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.GetEnumerator"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.IndexOf(System.Xml.Serialization.XmlArrayItemAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Insert(System.Int32,System.Xml.Serialization.XmlArrayItemAttribute)"></member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.Item(System.Int32)"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.Remove(System.Xml.Serialization.XmlArrayItemAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.RemoveAt(System.Int32)"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)"></member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#IsSynchronized"></member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#ICollection#SyncRoot"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Add(System.Object)"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Contains(System.Object)"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IndexOf(System.Object)"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Insert(System.Int32,System.Object)"></member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IsFixedSize"></member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#IsReadOnly"></member>
+    <member name="P:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Item(System.Int32)"></member>
+    <member name="M:System.Xml.Serialization.XmlArrayItemAttributes.System#Collections#IList#Remove(System.Object)"></member>
+    <member name="T:System.Xml.Serialization.XmlAttributeAttribute">
+      <summary>Specifies that the <see cref="T:System.Xml.Serialization.XmlSerializer" /> must serialize the class member as an XML attribute.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAttributeAttribute" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeAttribute.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAttributeAttribute" /> class and specifies the name of the generated XML attribute.</summary>
+      <param name="attributeName">The name of the XML attribute that the <see cref="T:System.Xml.Serialization.XmlSerializer" /> generates. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeAttribute.#ctor(System.String,System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAttributeAttribute" /> class.</summary>
+      <param name="attributeName">The name of the XML attribute that is generated. </param>
+      <param name="type">The <see cref="T:System.Type" /> used to store the attribute. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeAttribute.#ctor(System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAttributeAttribute" /> class.</summary>
+      <param name="type">The <see cref="T:System.Type" /> used to store the attribute. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeAttribute.AttributeName">
+      <summary>Gets or sets the name of the XML attribute.</summary>
+      <returns>The name of the XML attribute. The default is the member name.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeAttribute.DataType">
+      <summary>Gets or sets the XSD data type of the XML attribute generated by the <see cref="T:System.Xml.Serialization.XmlSerializer" />.</summary>
+      <returns>An XSD (XML Schema Document) data type, as defined by the World Wide Web Consortium (www.w3.org) document named "XML Schema Part 2: DataTypes".</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeAttribute.Form">
+      <summary>Gets or sets a value that indicates whether the XML attribute name generated by the <see cref="T:System.Xml.Serialization.XmlSerializer" /> is qualified.</summary>
+      <returns>One of the <see cref="T:System.Xml.Schema.XmlSchemaForm" /> values. The default is XmlForm.None.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeAttribute.Namespace">
+      <summary>Gets or sets the XML namespace of the XML attribute.</summary>
+      <returns>The XML namespace of the XML attribute.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeAttribute.Type">
+      <summary>Gets or sets the complex type of the XML attribute.</summary>
+      <returns>The type of the XML attribute.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributeOverrides">
+      <summary>Allows you to override property, field, and class attributes when you use the <see cref="T:System.Xml.Serialization.XmlSerializer" /> to serialize or deserialize an object.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.Add(System.Type,System.String,System.Xml.Serialization.XmlAttributes)">
+      <summary>Adds an <see cref="T:System.Xml.Serialization.XmlAttributes" /> object to the collection of <see cref="T:System.Xml.Serialization.XmlAttributes" /> objects. The <paramref name="type" /> parameter specifies an object to be overridden. The <paramref name="member" /> parameter specifies the name of a member that is overridden.</summary>
+      <param name="type">The <see cref="T:System.Type" /> of the object to override. </param>
+      <param name="member">The name of the member to override. </param>
+      <param name="attributes">An <see cref="T:System.Xml.Serialization.XmlAttributes" /> object that represents the overriding attributes. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributeOverrides.Add(System.Type,System.Xml.Serialization.XmlAttributes)">
+      <summary>Adds an <see cref="T:System.Xml.Serialization.XmlAttributes" /> object to the collection of <see cref="T:System.Xml.Serialization.XmlAttributes" /> objects. The <paramref name="type" /> parameter specifies an object to be overridden by the <see cref="T:System.Xml.Serialization.XmlAttributes" /> object.</summary>
+      <param name="type">The <see cref="T:System.Type" /> of the object that is overridden. </param>
+      <param name="attributes">An <see cref="T:System.Xml.Serialization.XmlAttributes" /> object that represents the overriding attributes. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeOverrides.Item(System.Type)">
+      <summary>Gets the object associated with the specified base-class type.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlAttributes" /> that represents the collection of overriding attributes.</returns>
+      <param name="type">The base class <see cref="T:System.Type" /> that is associated with the collection of attributes you want to retrieve. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributeOverrides.Item(System.Type,System.String)">
+      <summary>Gets the object associated with the specified base-class type. The <paramref name="member" /> parameter specifies the base-class member that is overridden.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlAttributes" /> that represents the collection of overriding attributes.</returns>
+      <param name="type">The base class <see cref="T:System.Type" /> that is associated with the collection of attributes you want. </param>
+      <param name="member">The name of the overridden member that specifies the <see cref="T:System.Xml.Serialization.XmlAttributes" /> to return. </param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlAttributes">
+      <summary>Represents a collection of attribute objects that control how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes and deserializes an object.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributes.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAttributes" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlAttributes.#ctor(System.Reflection.ICustomAttributeProvider)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlAttributes" /> class and customizes how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes and deserializes an object. </summary>
+      <param name="provider">A class that can provide alternative implementations of attributes that control XML serialization.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAnyElements">
+      <summary>Gets the collection of <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> objects to override.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlAnyElementAttributes" /> object that represents the collection of <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> objects.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlArray">
+      <summary>Gets or sets an object that specifies how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes a public field or read/write property that returns an array.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlArrayAttribute" /> that specifies how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes a public field or read/write property that returns an array.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlArrayItems">
+      <summary>Gets or sets a collection of objects that specify how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes items inserted into an array returned by a public field or read/write property.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlArrayItemAttributes" /> object that contains a collection of <see cref="T:System.Xml.Serialization.XmlArrayItemAttribute" /> objects.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlAttribute">
+      <summary>Gets or sets an object that specifies how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes a public field or public read/write property as an XML attribute.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlAttributeAttribute" /> that controls the serialization of a public field or read/write property as an XML attribute.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlChoiceIdentifier">
+      <summary>Gets or sets an object that allows you to distinguish between a set of choices.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute" /> that can be applied to a class member that is serialized as an xsi:choice element.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlDefaultValue">
+      <summary>Gets or sets the default value of an XML element or attribute.</summary>
+      <returns>An <see cref="T:System.Object" /> that represents the default value of an XML element or attribute.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlElements">
+      <summary>Gets a collection of objects that specify how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes a public field or read/write property as an XML element.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlElementAttributes" /> that contains a collection of <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> objects.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlEnum">
+      <summary>Gets or sets an object that specifies how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes an enumeration member.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlEnumAttribute" /> that specifies how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes an enumeration member.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlIgnore">
+      <summary>Gets or sets a value that specifies whether the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes a public field or public read/write property.</summary>
+      <returns>true if the <see cref="T:System.Xml.Serialization.XmlSerializer" /> must not serialize the field or property; otherwise, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.Xmlns">
+      <summary>Gets or sets a value that specifies whether to keep all namespace declarations when an object that contains a member that returns an <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> object is overridden.</summary>
+      <returns>true if the namespace declarations should be kept; otherwise, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlRoot">
+      <summary>Gets or sets an object that specifies how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes a class as an XML root element.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> that overrides a class attributed as an XML root element.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlText">
+      <summary>Gets or sets an object that instructs the <see cref="T:System.Xml.Serialization.XmlSerializer" /> to serialize a public field or public read/write property as XML text.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlTextAttribute" /> that overrides the default serialization of a public property or field.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlAttributes.XmlType">
+      <summary>Gets or sets an object that specifies how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes a class to which the <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> has been applied.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> that overrides an <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> applied to a class declaration.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute">
+      <summary>Specifies that the member can be further detected by using an enumeration.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlChoiceIdentifierAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlChoiceIdentifierAttribute.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlChoiceIdentifierAttribute" /> class.</summary>
+      <param name="name">The member name that returns the enumeration used to detect a choice. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlChoiceIdentifierAttribute.MemberName">
+      <summary>Gets or sets the name of the field that returns the enumeration to use when detecting types.</summary>
+      <returns>The name of a field that returns an enumeration.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlElementAttribute">
+      <summary>Indicates that a public field or property represents an XML element when the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes or deserializes the object that contains it.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttribute.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> class and specifies the name of the XML element.</summary>
+      <param name="elementName">The XML element name of the serialized member. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttribute.#ctor(System.String,System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> and specifies the name of the XML element and a derived type for the member to which the <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> is applied. This member type is used when the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes the object that contains it.</summary>
+      <param name="elementName">The XML element name of the serialized member. </param>
+      <param name="type">The <see cref="T:System.Type" /> of an object derived from the member's type. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttribute.#ctor(System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> class and specifies a type for the member to which the <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> is applied. This type is used by the <see cref="T:System.Xml.Serialization.XmlSerializer" /> when serializing or deserializing object that contains it.</summary>
+      <param name="type">The <see cref="T:System.Type" /> of an object derived from the member's type. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.DataType">
+      <summary>Gets or sets the XML Schema definition (XSD) data type of the XML element generated by the <see cref="T:System.Xml.Serialization.XmlSerializer" />.</summary>
+      <returns>An XML Schema data type, as defined by the World Wide Web Consortium (www.w3.org) document named, XML Schema Part 2: Datatypes.</returns>
+      <exception cref="T:System.Exception">The XML Schema data type you have specified cannot be mapped to the.NET data type. </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.ElementName">
+      <summary>Gets or sets the name of the generated XML element.</summary>
+      <returns>The name of the generated XML element. The default is the member identifier.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.Form">
+      <summary>Gets or sets a value that indicates whether the element is qualified.</summary>
+      <returns>One of the <see cref="T:System.Xml.Schema.XmlSchemaForm" /> values. The default is <see cref="F:System.Xml.Schema.XmlSchemaForm.None" />.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.IsNullable">
+      <summary>Gets or sets a value that indicates whether the <see cref="T:System.Xml.Serialization.XmlSerializer" /> must serialize a member that is set to null as an empty tag with the xsi:nil attribute set to true.</summary>
+      <returns>true if the <see cref="T:System.Xml.Serialization.XmlSerializer" /> generates the xsi:nil attribute; otherwise, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.Namespace">
+      <summary>Gets or sets the namespace assigned to the XML element that results when the class is serialized.</summary>
+      <returns>The namespace of the XML element.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.Order">
+      <summary>Gets or sets the explicit order in which the elements are serialized or deserialized.</summary>
+      <returns>The order of the code generation.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlElementAttribute.Type">
+      <summary>Gets or sets the object type used to represent the XML element.</summary>
+      <returns>The <see cref="T:System.Type" /> of the member.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlElementAttributes">
+      <summary>Represents a collection of <see cref="T:System.Xml.Serialization.XmlElementAttribute" /> objects used by the <see cref="T:System.Xml.Serialization.XmlSerializer" /> to override the default way it serializes a class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlElementAttributes" /> class. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Add(System.Xml.Serialization.XmlElementAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Clear"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Contains(System.Xml.Serialization.XmlElementAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.CopyTo(System.Xml.Serialization.XmlElementAttribute[],System.Int32)"></member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.Count"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.GetEnumerator"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.IndexOf(System.Xml.Serialization.XmlElementAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Insert(System.Int32,System.Xml.Serialization.XmlElementAttribute)"></member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.Item(System.Int32)"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.Remove(System.Xml.Serialization.XmlElementAttribute)"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.RemoveAt(System.Int32)"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#CopyTo(System.Array,System.Int32)"></member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#IsSynchronized"></member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#ICollection#SyncRoot"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Add(System.Object)"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Contains(System.Object)"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IndexOf(System.Object)"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Insert(System.Int32,System.Object)"></member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsFixedSize"></member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#IsReadOnly"></member>
+    <member name="P:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Item(System.Int32)"></member>
+    <member name="M:System.Xml.Serialization.XmlElementAttributes.System#Collections#IList#Remove(System.Object)"></member>
+    <member name="T:System.Xml.Serialization.XmlEnumAttribute">
+      <summary>Controls how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes an enumeration member.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlEnumAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlEnumAttribute" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlEnumAttribute.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlEnumAttribute" /> class, and specifies the XML value that the <see cref="T:System.Xml.Serialization.XmlSerializer" /> generates or recognizes (when it serializes or deserializes the enumeration, respectively).</summary>
+      <param name="name">The overriding name of the enumeration member. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlEnumAttribute.Name">
+      <summary>Gets or sets the value generated in an XML-document instance when the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes an enumeration or the value recognized when it deserializes the enumeration member.</summary>
+      <returns>The value generated in an XML-document instance when the <see cref="T:System.Xml.Serialization.XmlSerializer" /> serializes the enumeration or the value recognized when it is deserializes the enumeration member.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlIgnoreAttribute">
+      <summary>Instructs the <see cref="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)" /> method of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> not to serialize the public field or public read/write property value.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlIgnoreAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlIgnoreAttribute" /> class.</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlIncludeAttribute">
+      <summary>Allows the <see cref="T:System.Xml.Serialization.XmlSerializer" /> to recognize a type when it serializes or deserializes an object.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlIncludeAttribute.#ctor(System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlIncludeAttribute" /> class.</summary>
+      <param name="type">The <see cref="T:System.Type" /> of the object to include. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlIncludeAttribute.Type">
+      <summary>Gets or sets the type of the object to include.</summary>
+      <returns>The <see cref="T:System.Type" /> of the object to include.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMapping">
+      <summary>Supports mappings between .NET Framework types and XML Schema data types. </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.ElementName">
+      <summary>Get the name of the mapped element.</summary>
+      <returns>The name of the mapped element.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.Namespace">
+      <summary>Gets the namespace of the mapped element.</summary>
+      <returns>The namespace of the mapped element.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlMapping.SetKey(System.String)">
+      <summary>Sets the key used to look up the mapping.</summary>
+      <param name="key">The lookup key.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMapping.XsdElementName">
+      <summary>Gets the name of the XSD element of the mapping.</summary>
+      <returns>The XSD element name.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMappingAccess">
+      <summary>Specifies whether a mapping is read, write, or both.</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.None">
+      <summary>Both read and write methods are generated.</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.Read">
+      <summary>Read methods are generated.</summary>
+    </member>
+    <member name="F:System.Xml.Serialization.XmlMappingAccess.Write">
+      <summary>Write methods are generated.</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMemberMapping">
+      <summary>Maps a code entity in a .NET Framework Web service method to an element in a Web Services Description Language (WSDL) message.</summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.Any">
+      <summary>Gets or sets a value that indicates whether the .NET Framework type maps to an XML element or attribute of any type. </summary>
+      <returns>true, if the type maps to an XML any element or attribute; otherwise, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.CheckSpecified">
+      <summary>Gets a value that indicates whether the accompanying field in the .NET Framework type has a value specified.</summary>
+      <returns>true, if the accompanying field has a value specified; otherwise, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.ElementName">
+      <summary>Gets the unqualified name of the XML element declaration that applies to this mapping. </summary>
+      <returns>The unqualified name of the XML element declaration that applies to this mapping.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.MemberName">
+      <summary>Gets the name of the Web service method member that is represented by this mapping. </summary>
+      <returns>The name of the Web service method member represented by this mapping.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.Namespace">
+      <summary>Gets the XML namespace that applies to this mapping. </summary>
+      <returns>The XML namespace that applies to this mapping.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.TypeFullName">
+      <summary>Gets the fully-qualified type name of the .NET Framework type for this mapping. </summary>
+      <returns>The fully-qualified type name of the .NET Framework type for this mapping.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.TypeName">
+      <summary>Gets the type name of the .NET Framework type for this mapping. </summary>
+      <returns>The type name of the .NET Framework type for this mapping.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.TypeNamespace">
+      <summary>Gets the namespace of the .NET Framework type for this mapping.</summary>
+      <returns>The namespace of the .NET Framework type for this mapping.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMemberMapping.XsdElementName">
+      <summary>Gets the XML element name as it appears in the service description document.</summary>
+      <returns>The XML element name.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlMembersMapping">
+      <summary>Provides mappings between .NET Framework Web service methods and Web Services Description Language (WSDL) messages that are defined for SOAP Web services. </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMembersMapping.Count">
+      <summary>Gets the number of .NET Framework code entities that belong to a Web service method to which a SOAP message is being mapped. </summary>
+      <returns>The number of mappings in the collection.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMembersMapping.Item(System.Int32)">
+      <summary>Gets an item that contains internal type mapping information for a .NET Framework code entity that belongs to a Web service method being mapped to a SOAP message.</summary>
+      <returns>The requested <see cref="T:System.Xml.Serialization.XmlMemberMapping" />.</returns>
+      <param name="index">The index of the mapping to return.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMembersMapping.TypeName">
+      <summary>Gets the name of the .NET Framework type being mapped to the data type of an XML Schema element that represents a SOAP message.</summary>
+      <returns>The name of the .NET Framework type.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlMembersMapping.TypeNamespace">
+      <summary>Gets the namespace of the .NET Framework type being mapped to the data type of an XML Schema element that represents a SOAP message.</summary>
+      <returns>The .NET Framework namespace of the mapping.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute">
+      <summary>Specifies that the target property, parameter, return value, or class member contains prefixes associated with namespaces that are used within an XML document.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute" /> class.</summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlReflectionImporter">
+      <summary>Generates mappings to XML schema element declarations, including literal XML Schema Definition (XSD) message parts in a Web Services Description Language (WSDL) document for .NET Framework types or Web service method information. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> class. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> class using the specified default XML namespace. </summary>
+      <param name="defaultNamespace">The default XML namespace to use for imported type mappings.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> class using the specified XML serialization overrides. </summary>
+      <param name="attributeOverrides">An object that overrides how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class serializes mapped types.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.#ctor(System.Xml.Serialization.XmlAttributeOverrides,System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlReflectionImporter" /> class using the specified XML serialization overrides and default XML namespace. </summary>
+      <param name="attributeOverrides">An object that overrides how the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class serializes mapped types.</param>
+      <param name="defaultNamespace">The default XML namespace to use for imported type mappings.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean)">
+      <summary>Generates internal type mappings for information from a Web service method. </summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlMembersMapping" /> with mappings to the element parts of a WSDL message definition.</returns>
+      <param name="elementName">An XML element name produced from the Web service method.</param>
+      <param name="ns">An XML element namespace produced from the Web service method.</param>
+      <param name="members">An array of <see cref="T:System.Xml.Serialization.XmlReflectionMember" /> objects that contain .NET Framework code entities that belong to a Web service method.</param>
+      <param name="hasWrapperElement">true if elements that correspond to Web Services Description Language (WSDL) message parts should be enclosed in an extra wrapper element in a SOAP message; otherwise, false.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean)">
+      <summary>Returns internal type mappings using information from a Web service method and allows you to specify an XML element name, XML namespace, and other options.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlMembersMapping" /> that contains the mappings.</returns>
+      <param name="elementName">An XML element name produced from the Web service method.</param>
+      <param name="ns">An XML element namespace produced from the Web service method.</param>
+      <param name="members">An array of <see cref="T:System.Xml.Serialization.XmlReflectionMember" /> objects that contain .NET Framework code entities that belong to a Web service method.</param>
+      <param name="hasWrapperElement">true if elements that correspond to Web Services Description Language (WSDL) message parts should be enclosed in an extra wrapper element in a SOAP message; otherwise, false.</param>
+      <param name="rpc">true if the method is a remote procedure call; otherwise, false.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean)">
+      <summary>Returns internal type mappings using information from a Web service method and allows you to specify an XML element name, XML namespace, and other options.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlMembersMapping" /> that contains the mappings.</returns>
+      <param name="elementName">An XML element name produced from the Web service method.</param>
+      <param name="ns">An XML element namespace produced from the Web service method.</param>
+      <param name="members">An array of <see cref="T:System.Xml.Serialization.XmlReflectionMember" /> objects that contain .NET Framework code entities that belong to a Web service method.</param>
+      <param name="hasWrapperElement">true if elements that correspond to Web Services Description Language (WSDL) message parts should be enclosed in an extra wrapper element in a SOAP message; otherwise, false.</param>
+      <param name="rpc">true if the method is a remote procedure call; otherwise, false.</param>
+      <param name="openModel">true to specify that the generated schema type is marked with the &lt;xs:anyAttribute&gt; element; otherwise, false.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportMembersMapping(System.String,System.String,System.Xml.Serialization.XmlReflectionMember[],System.Boolean,System.Boolean,System.Boolean,System.Xml.Serialization.XmlMappingAccess)">
+      <summary>Generates internal type mappings for information from a Web service method.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlMembersMapping" /> that contains the mappings.</returns>
+      <param name="elementName">An XML element name produced from the Web service method.</param>
+      <param name="ns">An XML element namespace produced from the Web service method.</param>
+      <param name="members">An array of <see cref="T:System.Xml.Serialization.XmlReflectionMember" /> objects that contain .NET Framework code entities that belong to a Web service method.</param>
+      <param name="hasWrapperElement">true if elements that correspond to Web Services Description Language (WSDL) message parts should be enclosed in an extra wrapper element in a SOAP message; otherwise, false.</param>
+      <param name="rpc">true if the method is a remote procedure call; otherwise, false.</param>
+      <param name="openModel">true to specify that the generated schema type is marked with the &lt;xs:anyAttribute&gt; element; otherwise, false.</param>
+      <param name="access">One of the <see cref="T:System.Xml.Serialization.XmlMappingAccess" /> values. The default is None.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type)">
+      <summary>Generates a mapping to an XML Schema element for a specified .NET Framework type. </summary>
+      <returns>Internal .NET Framework mapping of a type to an XML Schema element.</returns>
+      <param name="type">The .NET Framework type for which to generate a type mapping.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.String)">
+      <summary>Generates a mapping to an XML Schema element for a .NET Framework type, using the specified type and namespace. </summary>
+      <returns>Internal .NET Framework mapping of a type to an XML Schema element.</returns>
+      <param name="type">The .NET Framework type for which to generate a type mapping.</param>
+      <param name="defaultNamespace">The default XML namespace to use.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute)">
+      <summary>Generates a mapping to an XML Schema element for a .NET Framework type, using the specified type and attribute. </summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> that represents a mapping of a .NET Framework type to an XML Schema element.</returns>
+      <param name="type">The .NET Framework type for which to generate a type mapping.</param>
+      <param name="root">An <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> attribute that is applied to the type.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(System.Type,System.Xml.Serialization.XmlRootAttribute,System.String)">
+      <summary>Generates a mapping to an XML Schema element for a .NET Framework type, using the specified type, attribute, and namespace. </summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> that contains the internal .NET Framework mapping of a type to an XML Schema element.</returns>
+      <param name="type">The .NET Framework type for which to generate a type mapping.</param>
+      <param name="root">An <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> attribute that is applied to the type.</param>
+      <param name="defaultNamespace">The default XML namespace to use.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.IncludeType(System.Type)">
+      <summary>Includes mappings for a type for later use when import methods are invoked. </summary>
+      <param name="type">The .NET Framework type for which to save type mapping information.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionImporter.IncludeTypes(System.Reflection.ICustomAttributeProvider)">
+      <summary>Includes mappings for derived types for later use when import methods are invoked. </summary>
+      <param name="provider">An instance of the <see cref="T:System.Reflection.ICustomAttributeProvider" /> class that contains custom attributes derived from the <see cref="T:System.Xml.Serialization.XmlIncludeAttribute" /> attribute.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlReflectionMember">
+      <summary>Provides mappings between code entities in .NET Framework Web service methods and the content of Web Services Description Language (WSDL) messages that are defined for SOAP Web services. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlReflectionMember.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlReflectionMember" /> class. </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlReflectionMember.IsReturnValue">
+      <summary>Gets or sets a value that indicates whether the <see cref="T:System.Xml.Serialization.XmlReflectionMember" /> represents a Web service method return value, as opposed to an output parameter. </summary>
+      <returns>true, if the member represents a Web service return value; otherwise, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlReflectionMember.MemberName">
+      <summary>Gets or sets the name of the Web service method member for this mapping. </summary>
+      <returns>The name of the Web service method.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlReflectionMember.MemberType">
+      <summary>Gets or sets the type of the Web service method member code entity that is represented by this mapping. </summary>
+      <returns>The <see cref="T:System.Type" /> of the Web service method member code entity that is represented by this mapping.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlReflectionMember.OverrideIsNullable">
+      <summary>Gets or sets a value that indicates that the value of the corresponding XML element definition's isNullable attribute is false.</summary>
+      <returns>true to override the <see cref="P:System.Xml.Serialization.XmlElementAttribute.IsNullable" /> property; otherwise, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlReflectionMember.XmlAttributes">
+      <summary>Gets or sets an <see cref="T:System.Xml.Serialization.XmlAttributes" /> with the collection of <see cref="T:System.Xml.Serialization.XmlSerializer" />-related attributes that have been applied to the member code entity. </summary>
+      <returns>An <see cref="T:System.XML.Serialization.XmlAttributes" /> that represents XML attributes that have been applied to the member code.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializationGeneratedCode">
+      <summary>An abstract class that is the base class for <see cref="T:System.Xml.Serialization.XmlSerializationReader" /> and <see cref="T:System.Xml.Serialization.XmlSerializationWriter" /> and that contains methods common to both of these types.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationGeneratedCode.#ctor">
+      <summary>Initializes an instance of the <see cref="T:System.Xml.Serialization.XmlSerializationGeneratedCode" /> class. </summary>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializationReader">
+      <summary>Controls deserialization by the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializationReader" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CheckReaderCount(System.Int32@,System.Int32@)">
+      <summary>Checks whether the deserializer has advanced.</summary>
+      <param name="whileIterations">The current count in a while loop.</param>
+      <param name="readerCount">The current <see cref="P:System.Xml.Serialization.XmlSerializationReader.ReaderCount" />. </param>
+      <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Xml.Serialization.XmlSerializationReader.ReaderCount" /> has not advanced. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CollapseWhitespace(System.String)">
+      <summary>Removes all occurrences of white space characters from the beginning and end of the specified string.</summary>
+      <returns>The trimmed string.</returns>
+      <param name="value">The string that has its white space trimmed.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateAbstractTypeException(System.String,System.String)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that an object being deserialized should be abstract. </summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="name">The name of the abstract type.</param>
+      <param name="ns">The Silverlight namespace of the abstract type.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateBadDerivationException(System.String,System.String,System.String,System.String,System.String,System.String)">
+      <summary>Populates an object from its XML representation at the current location of the <see cref="T:System.Xml.XmlReader" />, with an option to read the inner element.</summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="xsdDerived">The local name of the derived XML Schema data type.</param>
+      <param name="nsDerived">The namespace of the derived XML Schema data type.</param>
+      <param name="xsdBase">The local name of the base XML Schema data type.</param>
+      <param name="nsBase">The namespace of the base XML Schema data type.</param>
+      <param name="clrDerived">The namespace of the derived Silverlight type.</param>
+      <param name="clrBase">The name of the base Silverlight type.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateCtorHasSecurityException(System.String)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that an object being deserialized cannot be instantiated because the constructor throws a security exception.</summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="typeName">The name of the type.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateInaccessibleConstructorException(System.String)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that an object being deserialized cannot be instantiated because there is no constructor available.</summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="typeName">The name of the type.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type,System.Object)">
+      <summary>Creates an <see cref="T:System.InvalidCastException" /> that indicates that an explicit reference conversion failed.</summary>
+      <returns>An <see cref="T:System.InvalidCastException" /> exception.</returns>
+      <param name="type">The <see cref="T:System.Type" /> that an object cannot be cast to. This type is incorporated into the exception message.</param>
+      <param name="value">The object that cannot be cast. This object is incorporated into the exception message.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateInvalidCastException(System.Type,System.Object,System.String)">
+      <summary>Creates an <see cref="T:System.InvalidCastException" /> that indicates that an explicit reference conversion failed.</summary>
+      <returns>An <see cref="T:System.InvalidCastException" /> exception.</returns>
+      <param name="type">The <see cref="T:System.Type" /> that an object cannot be cast to. This type is incorporated into the exception message.</param>
+      <param name="value">The object that cannot be cast. This object is incorporated into the exception message.</param>
+      <param name="id">A string identifier.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateMissingIXmlSerializableType(System.String,System.String,System.String)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that a derived type that is mapped to an XML Schema data type cannot be located.</summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="name">The local name of the XML Schema data type that is mapped to the unavailable derived type.</param>
+      <param name="ns">The namespace of the XML Schema data type that is mapped to the unavailable derived type.</param>
+      <param name="clrType">The full name of the Silverlight base type for which a derived type cannot be located.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateReadOnlyCollectionException(System.String)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that a SOAP-encoded collection type cannot be modified and its values cannot be filled in. </summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="name">The fully-qualified name of the Silverlight type for which there is a mapping.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateUnknownConstantException(System.String,System.Type)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that an enumeration value is not valid. </summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="value">The enumeration value that is not valid.</param>
+      <param name="enumType">The enumeration type.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateUnknownNodeException">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that the current position of <see cref="T:System.Xml.XmlReader" /> represents an unknown XML node. </summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.CreateUnknownTypeException(System.Xml.XmlQualifiedName)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that a type is unknown. </summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="type">An <see cref="T:System.Xml.XmlQualifiedName" /> that represents the name of the unknown type.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationReader.DecodeName">
+      <summary>Gets or sets a value that determines whether XML strings are translated into valid Silverlight type names.</summary>
+      <returns>true if XML strings are decoded into valid Silverlight type names; otherwise, false.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.EnsureArrayIndex(System.Array,System.Int32,System.Type)">
+      <summary>Ensures that a given array, or a copy, is large enough to contain a specified index. </summary>
+      <returns>The existing <see cref="T:System.Array" />, if it is already large enough; otherwise, a new, larger array that contains the original array's elements.</returns>
+      <param name="a">The <see cref="T:System.Array" /> that is being checked.</param>
+      <param name="index">The required index.</param>
+      <param name="elementType">The <see cref="T:System.Type" /> of the array's elements.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.GetNullAttr">
+      <summary>Determines whether the XML element where the <see cref="T:System.Xml.XmlReader" /> is currently positioned has a null attribute set to the value true.</summary>
+      <returns>true if <see cref="T:System.Xml.XmlReader" /> is currently positioned over a null attribute with the value true; otherwise, false.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.GetXsiType">
+      <summary>Gets the value of the xsi:type attribute for the XML element at the current location of the <see cref="T:System.Xml.XmlReader" />. </summary>
+      <returns>An XML qualified name that indicates the data type of an XML element.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.InitCallbacks">
+      <summary>Initializes callback methods that populate objects that map to SOAP-encoded XML data. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.InitIDs">
+      <summary>Stores element and attribute names in a <see cref="T:System.Xml.NameTable" /> object. </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationReader.IsReturnValue">
+      <summary>Gets or sets a value that should be true for a SOAP 1.1 return value.</summary>
+      <returns>true, if the value is a return value. </returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.IsXmlnsAttribute(System.String)">
+      <summary>Determines whether an XML attribute name indicates an XML namespace. </summary>
+      <returns>true if the XML attribute name indicates an XML namespace; otherwise, false.</returns>
+      <param name="name">The name of an XML attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadElementQualifiedName">
+      <summary>Makes the <see cref="T:System.Xml.XmlReader" /> read the fully-qualified name of the element where it is currently positioned. </summary>
+      <returns>The fully-qualified name of the current XML element.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadEndElement">
+      <summary>Makes the <see cref="T:System.Xml.XmlReader" /> read an XML end tag. </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationReader.Reader">
+      <summary>Gets the <see cref="T:System.Xml.XmlReader" /> object that is being used by <see cref="T:System.Xml.Serialization.XmlSerializationReader" />. </summary>
+      <returns>The <see cref="T:System.Xml.XmlReader" /> that is being used by the <see cref="T:System.Xml.Serialization.XmlSerializationReader" />.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationReader.ReaderCount">
+      <summary>Gets the current count of the <see cref="T:System.Xml.XmlReader" />.</summary>
+      <returns>The current count of an <see cref="T:System.Xml.XmlReader" />.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadNull">
+      <summary>Instructs the <see cref="T:System.Xml.XmlReader" /> to read the current XML element if the element has a null attribute with the value true. </summary>
+      <returns>true if the element has a null="true" attribute value and has been read; otherwise, false.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadNullableQualifiedName">
+      <summary>Instructs the <see cref="T:System.Xml.XmlReader" /> to read the fully-qualified name of the element where it is currently positioned. </summary>
+      <returns>A <see cref="T:System.Xml.XmlQualifiedName" /> that represents the fully-qualified name of the current XML element; otherwise, null if a null="true" attribute value is present.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadNullableString">
+      <summary>Instructs the <see cref="T:System.Xml.XmlReader" /> to read a simple, text-only XML element that could be null. </summary>
+      <returns>The string value; otherwise, null.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadSerializable(System.Xml.Serialization.IXmlSerializable)">
+      <summary>Populates an object from its XML representation at the current location of the <see cref="T:System.Xml.XmlReader" />. </summary>
+      <returns>An object that implements the <see cref="T:System.Xml.Serialization.IXmlSerializable" /> interface with its members populated from the location of the <see cref="T:System.Xml.XmlReader" />.</returns>
+      <param name="serializable">An <see cref="T:System.Xml.Serialization.IXmlSerializable" /> that corresponds to the current position of the <see cref="T:System.Xml.XmlReader" />.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadSerializable(System.Xml.Serialization.IXmlSerializable,System.Boolean)">
+      <returns>
+Returns <see cref="T:System.Xml.Serialization.IXmlSerializable" />.
+</returns>
+      <param name="serializable"></param>
+      <param name="wrappedAny"></param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadString(System.String)">
+      <summary>Produces the result of a call to the <see cref="M:System.Xml.XmlReader.ReadString" /> method appended to the input value. </summary>
+      <returns>The result of a call to the <see cref="M:System.Xml.XmlReader.ReadString" /> method appended to the input value.</returns>
+      <param name="value">A string to prefix to the result of a call to the <see cref="M:System.Xml.XmlReader.ReadString" /> method.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadString(System.String,System.Boolean)">
+      <summary>Returns the result of a call to the <see cref="M:System.Xml.XmlReader.ReadString" /> method of the <see cref="T:System.Xml.XmlReader" /> class, trimmed of white space if required, and appended to the input value.</summary>
+      <returns>The result of the read operation appended to the input value.</returns>
+      <param name="value">A string that is appended to.</param>
+      <param name="trim">true if the result of the read operation should be trimmed; otherwise, false.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadTypedNull(System.Xml.XmlQualifiedName)">
+      <summary>Reads an XML element that allows null values (xsi:nil = 'true') and returns a generic <see cref="T:System.Nullable`1" /> value. </summary>
+      <returns>A generic <see cref="T:System.Nullable`1" /> that represents a null XML value.</returns>
+      <param name="type">The <see cref="T:System.Xml.XmlQualifiedName" /> that represents the simple data type for the current location of the <see cref="T:System.Xml.XmlReader" />.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ReadTypedPrimitive(System.Xml.XmlQualifiedName)">
+      <summary>Gets the value of the XML node at which the <see cref="T:System.Xml.XmlReader" /> is currently positioned. </summary>
+      <returns>The value of the node as a Silverlight value type, if the value is a simple XML Schema data type.</returns>
+      <param name="type">The <see cref="T:System.Xml.XmlQualifiedName" /> that represents the simple data type for the current location of the <see cref="T:System.Xml.XmlReader" />.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ShrinkArray(System.Array,System.Int32,System.Type,System.Boolean)">
+      <summary>Ensures that a given array, or a copy, is no larger than a specified length. </summary>
+      <returns>The existing <see cref="T:System.Array" />, if it is already small enough; otherwise, a new, smaller array that contains the original array's elements up to the size of<paramref name=" length" />.</returns>
+      <param name="a">The array that is being checked.</param>
+      <param name="length">The maximum length of the array.</param>
+      <param name="elementType">The <see cref="T:System.Type" /> of the array's elements.</param>
+      <param name="isNullable">true if null for the array, if present for the input array, can be returned; otherwise, a new, smaller array.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(System.Boolean)">
+      <summary>Instructs the <see cref="T:System.Xml.XmlReader" /> to read the string value at its current position and return it as a base-64 byte array.</summary>
+      <returns>A base-64 byte array; otherwise, null if the value of the <paramref name="isNull" /> parameter is true.</returns>
+      <param name="isNull">true to return null; false to return a base-64 byte array.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToByteArrayBase64(System.String)">
+      <summary>Produces a base-64 byte array from an input string. </summary>
+      <returns>A base-64 byte array.</returns>
+      <param name="value">A string to translate into a base-64 byte array.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(System.Boolean)">
+      <summary>Instructs the <see cref="T:System.Xml.XmlReader" /> to read the string value at its current position and return it as a hexadecimal byte array.</summary>
+      <returns>A hexadecimal byte array; otherwise, null if the value of the <paramref name="isNull" /> parameter is true. </returns>
+      <param name="isNull">true to return null; false to return a hexadecimal byte array.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToByteArrayHex(System.String)">
+      <summary>Produces a hexadecimal byte array from an input string.</summary>
+      <returns>A hexadecimal byte array.</returns>
+      <param name="value">A string to translate into a hexadecimal byte array.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToChar(System.String)">
+      <summary>Produces a <see cref="T:System.Char" /> object from an input string. </summary>
+      <returns>A <see cref="T:System.Char" /> object.</returns>
+      <param name="value">A string to translate into a <see cref="T:System.Char" /> object.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToDate(System.String)">
+      <summary>Produces a <see cref="T:System.DateTime" /> object from an input string. </summary>
+      <returns>A <see cref="T:System.DateTime" />object.</returns>
+      <param name="value">A string to translate into a <see cref="T:System.DateTime" /> class object.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToDateTime(System.String)">
+      <summary>Produces a <see cref="T:System.DateTime" /> object from an input string. </summary>
+      <returns>A <see cref="T:System.DateTime" /> object.</returns>
+      <param name="value">A string to translate into a <see cref="T:System.DateTime" /> object.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToEnum(System.String,System.Collections.IDictionary,System.String)">
+      <returns>
+Returns <see cref="T:System.Int64" />.
+</returns>
+      <param name="value"></param>
+      <param name="h"></param>
+      <param name="typeName"></param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToTime(System.String)">
+      <summary>Produces a <see cref="T:System.DateTime" /> from a string that represents the time. </summary>
+      <returns>A <see cref="T:System.DateTime" /> object.</returns>
+      <param name="value">A string to translate into a <see cref="T:System.DateTime" /> object.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToXmlName(System.String)">
+      <summary>Decodes an XML name.</summary>
+      <returns>A decoded string.</returns>
+      <param name="value">An XML name to be decoded.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToXmlNCName(System.String)">
+      <summary>Decodes an XML name.</summary>
+      <returns>A decoded string.</returns>
+      <param name="value">An XML name to be decoded.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToXmlNmToken(System.String)">
+      <summary>Decodes an XML name.</summary>
+      <returns>A decoded string.</returns>
+      <param name="value">An XML name to be decoded.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToXmlNmTokens(System.String)">
+      <summary>Decodes an XML name.</summary>
+      <returns>A decoded string.</returns>
+      <param name="value">An XML name to be decoded.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.ToXmlQualifiedName(System.String)">
+      <summary>Obtains an <see cref="T:System.Xml.XmlQualifiedName" /> from a name that may contain a prefix. </summary>
+      <returns>An <see cref="T:System.Xml.XmlQualifiedName" /> that represents a namespace-qualified XML name.</returns>
+      <param name="value">A name that may contain a prefix.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.UnknownNode(System.Object)">
+      <summary>Raises an <see cref="E:System.Xml.Serialization.XmlSerializer.UnknownNode" /> event for the current position of the <see cref="T:System.Xml.XmlReader" />. </summary>
+      <param name="o">The object that is being deserialized.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationReader.UnknownNode(System.Object,System.String)">
+      <summary>Raises an <see cref="E:System.Xml.Serialization.XmlSerializer.UnknownNode" /> event for the current position of the <see cref="T:System.Xml.XmlReader" />.</summary>
+      <param name="o">The object being deserialized.</param>
+      <param name="qnames">A comma-delimited list of XML qualified names.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializationWriteCallback">
+      <summary>Delegate that is used by the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class for serialization of types from SOAP-encoded, non-root XML data. </summary>
+      <param name="o"></param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializationWriter">
+      <summary>Abstract class used for controlling serialization by the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializationWriter" /> class. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateChoiceIdentifierValueException(System.String,System.String,System.String,System.String)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates an unexpected name for an element that adheres to an XML Schema choice element declaration.</summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="value">The name that is not valid.</param>
+      <param name="identifier">The choice element declaration that the name belongs to.</param>
+      <param name="name">The expected local name of an element.</param>
+      <param name="ns">The expected namespace of an element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidAnyTypeException(System.Object)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates the <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> has been invalidly applied to a member; only members that are of type <see cref="T:System.Xml.XmlNode" />, or derived from <see cref="T:System.Xml.XmlNode" />, are valid.</summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="o">The object that represents the invalid member.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidAnyTypeException(System.Type)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates the <see cref="T:System.Xml.Serialization.XmlAnyElementAttribute" /> has been invalidly applied to a member; only members that are of type <see cref="T:System.Xml.XmlNode" />, or derived from <see cref="T:System.Xml.XmlNode" />, are valid.</summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="type">The <see cref="T:System.Type" /> that is invalid.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidChoiceIdentifierValueException(System.String,System.String)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates a failure while writing an array where an XML Schema choice element declaration is applied.</summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="type">The type being serialized.</param>
+      <param name="identifier">A name for the choice element declaration.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateInvalidEnumValueException(System.Object,System.String)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> for an invalid enumeration value.</summary>
+      <returns>An <see cref="T:System.ComponentModel.InvalidEnumArgumentException" />.</returns>
+      <param name="value">An object that represents the invalid enumeration.</param>
+      <param name="typeName">The XML type name.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateMismatchChoiceException(System.String,System.String,System.String)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that a value for an XML element does not match an enumeration type.</summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="value">The value that is not valid.</param>
+      <param name="elementName">The name of the XML element with an invalid value.</param>
+      <param name="enumValue">The valid value.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateUnknownAnyElementException(System.String,System.String)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that an XML element that should adhere to the XML Schema any element declaration cannot be processed.</summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="name">The XML element that cannot be processed.</param>
+      <param name="ns">The namespace of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateUnknownTypeException(System.Object)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that a type being serialized is not being used in a valid manner or is unexpectedly encountered. </summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="o">The object whose type cannot be serialized.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.CreateUnknownTypeException(System.Type)">
+      <summary>Creates an <see cref="T:System.InvalidOperationException" /> that indicates that a type being serialized is not being used in a valid manner or is unexpectedly encountered. </summary>
+      <returns>An <see cref="T:System.InvalidOperationException" /> exception.</returns>
+      <param name="type">The type that cannot be serialized.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationWriter.EscapeName">
+      <summary>Gets or sets a value that indicates whether the <see cref="M:System.Xml.XmlConvert.EncodeName(System.String)" /> method is used to write valid XML.</summary>
+      <returns>true if the <see cref="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlQualifiedName(System.Xml.XmlQualifiedName)" /> method returns an encoded name; otherwise, false.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromByteArrayBase64(System.Byte[])">
+      <summary>Processes a base-64 byte array.</summary>
+      <returns>The same byte array that was passed in as an argument.</returns>
+      <param name="value">A base-64 <see cref="T:System.Byte" /> array.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromByteArrayHex(System.Byte[])">
+      <summary>Produces a string from an input hexadecimal byte array.</summary>
+      <returns>The byte array value converted to a string.</returns>
+      <param name="value">A hexadecimal byte array to translate to a string.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromChar(System.Char)">
+      <summary>Produces a string from an input <see cref="T:System.Char" />.</summary>
+      <returns>The <see cref="T:System.Char" /> value converted to a string.</returns>
+      <param name="value">A <see cref="T:System.Char" /> to translate to a string.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromDate(System.DateTime)">
+      <summary>Produces a string from a <see cref="T:System.DateTime" /> object.</summary>
+      <returns>A string representation of the <see cref="T:System.DateTime" /> that shows the date but no time.</returns>
+      <param name="value">A <see cref="T:System.DateTime" /> to translate to a string.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromDateTime(System.DateTime)">
+      <summary>Produces a string from an input <see cref="T:System.DateTime" />.</summary>
+      <returns>A string representation of the <see cref="T:System.DateTime" /> that shows the date and time.</returns>
+      <param name="value">A <see cref="T:System.DateTime" /> to translate to a string.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromEnum(System.Int64,System.String[],System.Int64[])">
+      <summary>Produces a string that consists of delimited identifiers that represent the enumeration members that have been set.</summary>
+      <returns>A string that consists of delimited identifiers, where each represents a member from the set enumerator list.</returns>
+      <param name="value">The enumeration value as a series of bitwise OR operations.</param>
+      <param name="values">The enumeration's name values.</param>
+      <param name="ids">The enumeration's constant values.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromEnum(System.Int64,System.String[],System.Int64[],System.String)">
+      <summary>Takes a numeric enumeration value and the names and constants from the enumerator list for the enumeration and returns a string that consists of delimited identifiers that represent the enumeration members that have been set.</summary>
+      <returns>A string that consists of delimited identifiers, where each item is one of the values set by the bitwise operation.</returns>
+      <param name="value">The enumeration value as a series of bitwise OR operations.</param>
+      <param name="values">The values of the enumeration.</param>
+      <param name="ids">The constants of the enumeration.</param>
+      <param name="typeName">The name of the type </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromTime(System.DateTime)">
+      <summary>Produces a string from a <see cref="T:System.DateTime" /> object.</summary>
+      <returns>The <see cref="T:System.DateTime" /> object that shows the time but no date.</returns>
+      <param name="value">A <see cref="T:System.DateTime" /> that is translated to a string.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlName(System.String)">
+      <summary>Encodes a valid XML name by replacing characters that are not valid with escape sequences.</summary>
+      <returns>An encoded string.</returns>
+      <param name="name">A string to be used as an XML name.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlNCName(System.String)">
+      <summary>Encodes a valid XML local name by replacing characters that are not valid with escape sequences.</summary>
+      <returns>An encoded string.</returns>
+      <param name="ncName">A string to be used as a local (unqualified) XML name.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlNmToken(System.String)">
+      <summary>Encodes an XML name.</summary>
+      <returns>An encoded string.</returns>
+      <param name="nmToken">An XML name to be encoded.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlNmTokens(System.String)">
+      <summary>Encodes a space-delimited sequence of XML names into a single XML name.</summary>
+      <returns>An encoded string.</returns>
+      <param name="nmTokens">A space-delimited sequence of XML names to be encoded.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlQualifiedName(System.Xml.XmlQualifiedName)">
+      <summary>Returns an XML qualified name, with invalid characters replaced by escape sequences. </summary>
+      <returns>An XML qualified name, with invalid characters replaced by escape sequences.</returns>
+      <param name="xmlQualifiedName">An <see cref="T:System.Xml.XmlQualifiedName" /> that represents the XML to be written.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.FromXmlQualifiedName(System.Xml.XmlQualifiedName,System.Boolean)">
+      <summary>Produces a string that can be written as an XML qualified name, with invalid characters replaced by escape sequences. </summary>
+      <returns>An XML qualified name, with invalid characters replaced by escape sequences.</returns>
+      <param name="xmlQualifiedName">An <see cref="T:System.Xml.XmlQualifiedName" /> that represents the XML to be written.</param>
+      <param name="ignoreEmpty">true to ignore empty spaces in the string; otherwise, false.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.InitCallbacks">
+      <summary>Initializes instances of the <see cref="T:System.Xml.Serialization.XmlSerializationWriteCallback" /> delegate to serialize SOAP-encoded XML data. </summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationWriter.Namespaces">
+      <summary>Gets or sets a list of XML qualified name objects that contain the namespaces and prefixes used to produce qualified names in XML documents. </summary>
+      <returns>An <see cref="T:System.Collections.ArrayList" /> that contains the namespaces and prefix pairs.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.TopLevelElement">
+      <summary>Initializes object references only while serializing a SOAP-encoded SOAP message.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.Byte[])">
+      <summary>Instructs an <see cref="T:System.Xml.XmlWriter" /> object to write an XML attribute that has no namespace specified for its name.</summary>
+      <param name="localName">The local name of the XML attribute.</param>
+      <param name="value">The value of the XML attribute as a byte array.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String)">
+      <summary>Instructs the <see cref="T:System.Xml.XmlWriter" /> to write an XML attribute that has no namespace specified for its name. </summary>
+      <param name="localName">The local name of the XML attribute.</param>
+      <param name="value">The value of the XML attribute as a string.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String,System.Byte[])">
+      <summary>Instructs an <see cref="T:System.Xml.XmlWriter" /> object to write an XML attribute.</summary>
+      <param name="localName">The local name of the XML attribute.</param>
+      <param name="ns">The namespace of the XML attribute.</param>
+      <param name="value">The value of the XML attribute as a byte array.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String,System.String)">
+      <summary>Writes an XML attribute. </summary>
+      <param name="localName">The local name of the XML attribute.</param>
+      <param name="ns">The namespace of the XML attribute.</param>
+      <param name="value">The value of the XML attribute as a string.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteAttribute(System.String,System.String,System.String,System.String)">
+      <summary>Writes an XML attribute where the namespace prefix is provided manually. </summary>
+      <param name="prefix">The namespace prefix to write.</param>
+      <param name="localName">The local name of the XML attribute.</param>
+      <param name="ns">The namespace represented by the prefix.</param>
+      <param name="value">The value of the XML attribute as a string.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.String,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element with a specified qualified name in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="ns">The namespace of the XML element.</param>
+      <param name="value">The name to write, using its prefix if namespace-qualified, in the element text.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.String,System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element with a specified qualified name in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="ns">The namespace of the XML element.</param>
+      <param name="value">The name to write, using its prefix if namespace-qualified, in the element text.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element with a specified qualified name in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="value">The name to write, using its prefix if namespace-qualified, in the element text.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementQualifiedName(System.String,System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element with a specified qualified name in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="value">The name to write, using its prefix if namespace-qualified, in the element text.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String)">
+      <summary>Writes an XML element with a specified value in its body. </summary>
+      <param name="localName">The local name of the XML element to be written without namespace qualification.</param>
+      <param name="value">The text value of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String,System.String)">
+      <summary>Writes an XML element with a specified value in its body. </summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="ns">The namespace of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String,System.String,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element with a specified value in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="ns">The namespace of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementString(System.String,System.String,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element with a specified value in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.Byte[])">
+      <summary>Writes an XML element with a specified value in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.Byte[],System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element with a specified value in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String)">
+      <summary>Writes an XML element with a specified value in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.Byte[])">
+      <summary>Writes an XML element with a specified value in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="ns">The namespace of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.Byte[],System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element with a specified value in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="ns">The namespace of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.String)">
+      <summary>Writes an XML element with a specified value in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="ns">The namespace of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.String,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element with a specified value in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="ns">The namespace of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteElementStringRaw(System.String,System.String,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element with a specified value in its body.</summary>
+      <param name="localName">The local name of the XML element.</param>
+      <param name="value">The text value of the XML element.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteEmptyTag(System.String)">
+      <summary>Writes an XML element whose body is empty. </summary>
+      <param name="name">The local name of the XML element to write.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteEmptyTag(System.String,System.String)">
+      <summary>Writes an XML element whose body is empty.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteEndElement">
+      <summary>Writes a &lt;closing&gt; element tag.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteEndElement(System.Object)">
+      <summary>Writes a closing element tag.</summary>
+      <param name="o">The object being serialized.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNamespaceDeclarations(System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Writes namespace declaration attributes.</summary>
+      <param name="xmlns">The XML namespaces to declare.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableQualifiedNameEncoded(System.String,System.String,System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element whose body contains a valid XML qualified name. <see cref="T:System.Xml.XmlWriter" /> inserts an xsi:nil='true' attribute if the string's value is null.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="value">The XML qualified name to write in the body of the XML element.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableQualifiedNameLiteral(System.String,System.String,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element whose body contains a valid XML qualified name. <see cref="T:System.Xml.XmlWriter" /> inserts an xsi:nil='true' attribute if the string's value is null.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="value">The XML qualified name to write in the body of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncoded(System.String,System.String,System.String,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element that contains a string as the body. <see cref="T:System.Xml.XmlWriter" /> inserts an xsi:nil='true' attribute if the string's value is null.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="value">The string to write in the body of the XML element.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncodedRaw(System.String,System.String,System.Byte[],System.Xml.XmlQualifiedName)">
+      <summary>Writes a byte array as the body of an XML element. <see cref="T:System.Xml.XmlWriter" /> inserts an xsi:nil='true' attribute if the string's value is null.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="value">The byte array to write in the body of the XML element.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringEncodedRaw(System.String,System.String,System.String,System.Xml.XmlQualifiedName)">
+      <summary>Writes an XML element that contains a string as the body. <see cref="T:System.Xml.XmlWriter" /> inserts an xsi:nil='true' attribute if the string's value is null.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="value">The string to write in the body of the XML element.</param>
+      <param name="xsiType">The name of the XML Schema data type to be written to the xsi:type attribute.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteral(System.String,System.String,System.String)">
+      <summary>Writes an XML element that contains a string as the body. <see cref="T:System.Xml.XmlWriter" /> inserts an xsi:nil='true' attribute if the string's value is null.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="value">The string to write in the body of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteralRaw(System.String,System.String,System.Byte[])">
+      <summary>Writes a byte array as the body of an XML element. <see cref="T:System.Xml.XmlWriter" /> inserts an xsi:nil='true' attribute if the string's value is null.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="value">The byte array to write in the body of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullableStringLiteralRaw(System.String,System.String,System.String)">
+      <summary>Writes an XML element that contains a string as the body. <see cref="T:System.Xml.XmlWriter" /> inserts a xsi:nil='true' attribute if the string's value is null.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="value">The string to write in the body of the XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagEncoded(System.String)">
+      <summary>Writes an XML element with an xsi:nil='true' attribute.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagEncoded(System.String,System.String)">
+      <summary>Writes an XML element with an xsi:nil='true' attribute.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagLiteral(System.String)">
+      <summary>Writes an XML element with an xsi:nil='true' attribute.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteNullTagLiteral(System.String,System.String)">
+      <summary>Writes an XML element with an xsi:nil='true' attribute. </summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializationWriter.Writer">
+      <summary>Gets the <see cref="T:System.Xml.XmlWriter" /> that is being used by the <see cref="T:System.Xml.Serialization.XmlSerializationWriter" />. </summary>
+      <returns>The <see cref="T:System.Xml.XmlWriter" /> used by the class instance.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteSerializable(System.Xml.Serialization.IXmlSerializable,System.String,System.String,System.Boolean)">
+      <summary>Writes an object that uses custom XML formatting as an XML element. </summary>
+      <param name="serializable">An object that implements the <see cref="T:System.Xml.Serialization.IXmlSerializable" /> interface that uses custom XML formatting.</param>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="isNullable">true to write an xsi:nil='true' attribute if the <see cref="T:System.Xml.Serialization.IXmlSerializable" /> class object is null; otherwise, false.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteSerializable(System.Xml.Serialization.IXmlSerializable,System.String,System.String,System.Boolean,System.Boolean)">
+      <summary>Instructs <see cref="T:System.Xml.XmlNode" /> to write an object that uses custom XML formatting as an XML element. </summary>
+      <param name="serializable">An object that implements the <see cref="T:System.Xml.Serialization.IXmlSerializable" /> interface that uses custom XML formatting.</param>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="isNullable">true to write an xsi:nil='true' attribute if the <see cref="T:System.Xml.Serialization.IXmlSerializable" /> object is null; otherwise, false.</param>
+      <param name="wrapped">true to ignore writing the opening element tag; otherwise, false to write the opening element tag.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartDocument">
+      <summary>Writes the XML declaration if the writer is positioned at the start of an XML document. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String)">
+      <summary>Writes an opening element tag, including any attributes. </summary>
+      <param name="name">The local name of the XML element to write.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String)">
+      <summary>Writes an opening element tag, including any attributes. </summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Boolean)">
+      <summary>Writes an opening element tag, including any attributes.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="writePrefixed">true to write the element name with a prefix if none is available for the specified namespace; otherwise, false.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Object)">
+      <summary>Writes an opening element tag, including any attributes.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="o">The object being serialized as an XML element.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Object,System.Boolean)">
+      <summary>Writes an opening element tag, including any attributes.</summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="o">The object being serialized as an XML element.</param>
+      <param name="writePrefixed">true to write the element name with a prefix if none is available for the specified namespace; otherwise, false.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteStartElement(System.String,System.String,System.Object,System.Boolean,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Writes an opening element tag, including any attributes. </summary>
+      <param name="name">The local name of the XML element to write.</param>
+      <param name="ns">The namespace of the XML element to write.</param>
+      <param name="o">The object being serialized as an XML element.</param>
+      <param name="writePrefixed">true to write the element name with a prefix if none is available for the specified namespace; otherwise, false.</param>
+      <param name="xmlns">An instance of the <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> class that contains prefix and namespace pairs to be used in the generated XML.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteTypedPrimitive(System.String,System.String,System.Object,System.Boolean)">
+      <summary>Writes an XML element whose text body is a value of a simple XML Schema data type. </summary>
+      <param name="name">The local name of the element to write.</param>
+      <param name="ns">The namespace of the element to write.</param>
+      <param name="o">The object to be serialized in the element body.</param>
+      <param name="xsiType">true if the XML element explicitly specifies the text value's type using the xsi:type attribute; otherwise, false.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteValue(System.Byte[])">
+      <summary>Writes a base-64 byte array.</summary>
+      <param name="value">The byte array to write.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteValue(System.String)">
+      <summary>Writes a specified string.</summary>
+      <param name="value">The string to write.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializationWriter.WriteXsiType(System.String,System.String)">
+      <summary>Writes an xsi:type attribute for an XML element that is being serialized into a document. </summary>
+      <param name="name">The local name of an XML Schema data type.</param>
+      <param name="ns">The namespace of an XML Schema data type.</param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializer">
+      <summary>Serializes and deserializes objects into and from XML documents. The <see cref="T:System.Xml.Serialization.XmlSerializer" /> enables you to control how objects are encoded into XML.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class that can serialize objects of the specified type into XML documents and deserialize XML documents into objects of the specified type.</summary>
+      <param name="type">The type of the object that this <see cref="T:System.Xml.Serialization.XmlSerializer" /> can serialize. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class that can serialize objects of the specified type into XML documents and deserialize XML documents into objects of the specified type. Specifies the default namespace for all the XML elements.</summary>
+      <param name="type">The type of the object that this <see cref="T:System.Xml.Serialization.XmlSerializer" /> can serialize. </param>
+      <param name="defaultNamespace">The default namespace to use for all the XML elements. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Type[])">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class that can serialize objects of the specified type into XML documents and deserialize XML documents into objects of a specified type. If a property or field returns an array, the <paramref name="extraTypes" /> parameter specifies objects that can be inserted into the array.</summary>
+      <param name="type">The type of the object that this <see cref="T:System.Xml.Serialization.XmlSerializer" /> can serialize. </param>
+      <param name="extraTypes">A <see cref="T:System.Type" /> array of additional object types to serialize. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class that can serialize objects of the specified type into XML documents and deserialize XML documents into objects of the specified type. Each object to be serialized can itself contain instances of classes, which this overload can override with other classes.</summary>
+      <param name="type">The type of the object to serialize. </param>
+      <param name="overrides">An <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" />. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlAttributeOverrides,System.Type[],System.Xml.Serialization.XmlRootAttribute,System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class that can serialize objects of type <see cref="T:System.Object" /> into XML document instances and deserialize XML document instances into objects of type <see cref="T:System.Object" />. Each object to be serialized can itself contain instances of classes, which this overload overrides with other classes. This overload also specifies the default namespace for all the XML elements and the class to use as the XML root element.</summary>
+      <param name="type">The type of the object that this <see cref="T:System.Xml.Serialization.XmlSerializer" /> can serialize. </param>
+      <param name="overrides">An <see cref="T:System.Xml.Serialization.XmlAttributeOverrides" /> that extends or overrides the behavior of the class specified in the <paramref name="type" /> parameter. </param>
+      <param name="extraTypes">A <see cref="T:System.Type" /> array of additional object types to serialize. </param>
+      <param name="root">An <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> that defines the XML root element properties. </param>
+      <param name="defaultNamespace">The default namespace of all XML elements in the XML document. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Type,System.Xml.Serialization.XmlRootAttribute)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class that can serialize objects of the specified type into XML documents and deserialize an XML document into object of the specified type. It also specifies the class to use as the XML root element.</summary>
+      <param name="type">The type of the object that this <see cref="T:System.Xml.Serialization.XmlSerializer" /> can serialize. </param>
+      <param name="root">An <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> that represents the XML root element. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.#ctor(System.Xml.Serialization.XmlTypeMapping)">
+      <summary>Initializes an instance of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class using an object that maps one type to another.</summary>
+      <param name="xmlTypeMapping">An <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> that maps one type to another. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.CanDeserialize(System.Xml.XmlReader)">
+      <summary>Gets a value that indicates whether this <see cref="T:System.Xml.Serialization.XmlSerializer" /> can deserialize a specified XML document.</summary>
+      <returns>true if this <see cref="T:System.Xml.Serialization.XmlSerializer" /> can deserialize the object that the <see cref="T:System.Xml.XmlReader" /> points to; otherwise, false.</returns>
+      <param name="xmlReader">An <see cref="T:System.Xml.XmlReader" /> that points to the document to deserialize. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.CreateReader">
+      <summary>Returns an object used to read the XML document to be serialized.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlSerializationReader" /> used to read the XML document.</returns>
+      <exception cref="T:System.NotImplementedException">Any attempt is made to access the method when the method is not overridden in a descendant class. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.CreateWriter">
+      <summary>When overridden in a derived class, returns a writer used to serialize the object.</summary>
+      <returns>An instance that implements the <see cref="T:System.Xml.Serialization.XmlSerializationWriter" /> class.</returns>
+      <exception cref="T:System.NotImplementedException">Any attempt is made to access the method when the method is not overridden in a descendant class. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.Stream)">
+      <summary>Deserializes the XML document contained by the specified <see cref="T:System.IO.Stream" />.</summary>
+      <returns>The <see cref="T:System.Object" /> being deserialized.</returns>
+      <param name="stream">The <see cref="T:System.IO.Stream" /> that contains the XML document to deserialize. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)">
+      <summary>Deserializes the XML document contained by the specified <see cref="T:System.IO.TextReader" />.</summary>
+      <returns>The <see cref="T:System.Object" /> being deserialized.</returns>
+      <param name="textReader">The <see cref="T:System.IO.TextReader" /> that contains the XML document to deserialize. </param>
+      <exception cref="T:System.InvalidOperationException">An error occurred during deserialization. The original exception is available using the <see cref="P:System.Exception.InnerException" /> property. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.Serialization.XmlSerializationReader)">
+      <summary>Deserializes the XML document contained by the specified <see cref="T:System.Xml.Serialization.XmlSerializationReader" />.</summary>
+      <returns>The deserialized object.</returns>
+      <param name="reader">The <see cref="T:System.Xml.Serialization.XmlSerializationReader" /> that contains the XML document to deserialize. </param>
+      <exception cref="T:System.NotImplementedException">Any attempt is made to access the method when the method is not overridden in a descendant class. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader)">
+      <summary>Deserializes the XML document contained by the specified <see cref="T:System.xml.XmlReader" />.</summary>
+      <returns>The <see cref="T:System.Object" /> being deserialized.</returns>
+      <param name="xmlReader">The <see cref="T:System.xml.XmlReader" /> that contains the XML document to deserialize. </param>
+      <exception cref="T:System.InvalidOperationException">An error occurred during deserialization. The original exception is available using the <see cref="P:System.Exception.InnerException" /> property. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader,System.String)">
+      <summary>Deserializes the XML document contained by the specified <see cref="T:System.xml.XmlReader" /> and encoding style.</summary>
+      <returns>The deserialized object.</returns>
+      <param name="xmlReader">The <see cref="T:System.xml.XmlReader" /> that contains the XML document to deserialize. </param>
+      <param name="encodingStyle">The encoding style of the serialized XML. </param>
+      <exception cref="T:System.InvalidOperationException">An error occurred during deserialization. The original exception is available using the <see cref="P:System.Exception.InnerException" /> property. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[])">
+      <summary>Returns an array of <see cref="T:System.Xml.Serialization.XmlSerializer" /> objects created from an array of <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> objects.</summary>
+      <returns>An array of <see cref="T:System.Xml.Serialization.XmlSerializer" /> objects.</returns>
+      <param name="mappings">An array of <see cref="T:System.Xml.Serialization.XmlTypeMapping" /> that maps one type to another. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromMappings(System.Xml.Serialization.XmlMapping[],System.Type)">
+      <summary>Returns an instance of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class from the specified mappings.</summary>
+      <returns>An instance of the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class.</returns>
+      <param name="mappings">An array of <see cref="T:System.Xml.Serialization.XmlMapping" /> objects.</param>
+      <param name="type">The <see cref="T:System.Type" /> of the deserialized object.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.FromTypes(System.Type[])">
+      <summary>Returns an array of <see cref="T:System.Xml.Serialization.XmlSerializer" /> objects created from an array of types.</summary>
+      <returns>An array of <see cref="T:System.Xml.Serialization.XmlSerializer" /> objects.</returns>
+      <param name="types">An array of <see cref="T:System.Type" /> objects. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object)">
+      <summary>Serializes the specified <see cref="T:System.Object" /> and writes the XML document to a file using the specified <see cref="T:System.IO.Stream" />.</summary>
+      <param name="stream">The <see cref="T:System.IO.Stream" /> used to write the XML document. </param>
+      <param name="o">The <see cref="T:System.Object" /> to serialize. </param>
+      <exception cref="T:System.InvalidOperationException">An error occurred during serialization. The original exception is available using the <see cref="P:System.Exception.InnerException" /> property. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.Stream,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Serializes the specified <see cref="T:System.Object" /> and writes the XML document to a file using the specified <see cref="T:System.IO.Stream" /> that references the specified namespaces.</summary>
+      <param name="stream">The <see cref="T:System.IO.Stream" /> used to write the XML document. </param>
+      <param name="o">The <see cref="T:System.Object" /> to serialize. </param>
+      <param name="namespaces">The <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> referenced by the object. </param>
+      <exception cref="T:System.InvalidOperationException">An error occurred during serialization. The original exception is available using the <see cref="P:System.Exception.InnerException" /> property. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)">
+      <summary>Serializes the specified <see cref="T:System.Object" /> and writes the XML document to a file using the specified <see cref="T:System.IO.TextWriter" />.</summary>
+      <param name="textWriter">The <see cref="T:System.IO.TextWriter" /> used to write the XML document. </param>
+      <param name="o">The <see cref="T:System.Object" /> to serialize. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Serializes the specified <see cref="T:System.Object" /> and writes the XML document to a file using the specified <see cref="T:System.IO.TextWriter" /> and references the specified namespaces.</summary>
+      <param name="textWriter">The <see cref="T:System.IO.TextWriter" /> used to write the XML document. </param>
+      <param name="o">The <see cref="T:System.Object" /> to serialize. </param>
+      <param name="namespaces">The <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> that contains namespaces for the generated XML document. </param>
+      <exception cref="T:System.InvalidOperationException">An error occurred during serialization. The original exception is available using the <see cref="P:System.Exception.InnerException" /> property. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Object,System.Xml.Serialization.XmlSerializationWriter)">
+      <summary>Serializes the specified <see cref="T:System.Object" /> and writes the XML document to a file using the specified <see cref="T:System.Xml.Serialization.XmlSerializationWriter" />.</summary>
+      <param name="o">The <see cref="T:System.Object" /> to serialize. </param>
+      <param name="writer">The <see cref="T:System.Xml.Serialization.XmlSerializationWriter" /> used to write the XML document. </param>
+      <exception cref="T:System.NotImplementedException">Any attempt is made to access the method when the method is not overridden in a descendant class. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object)">
+      <summary>Serializes the specified <see cref="T:System.Object" /> and writes the XML document to a file using the specified <see cref="T:System.Xml.XmlWriter" />.</summary>
+      <param name="xmlWriter">The <see cref="T:System.xml.XmlWriter" /> used to write the XML document. </param>
+      <param name="o">The <see cref="T:System.Object" /> to serialize. </param>
+      <exception cref="T:System.InvalidOperationException">An error occurred during serialization. The original exception is available using the <see cref="P:System.Exception.InnerException" /> property. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Serializes the specified <see cref="T:System.Object" /> and writes the XML document to a file using the specified <see cref="T:System.Xml.XmlWriter" /> and references the specified namespaces.</summary>
+      <param name="xmlWriter">The <see cref="T:System.xml.XmlWriter" /> used to write the XML document. </param>
+      <param name="o">The <see cref="T:System.Object" /> to serialize. </param>
+      <param name="namespaces">The <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> referenced by the object. </param>
+      <exception cref="T:System.InvalidOperationException">An error occurred during serialization. The original exception is available using the <see cref="P:System.Exception.InnerException" /> property. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces,System.String)">
+      <summary>Serializes the specified object and writes the XML document to a file using the specified <see cref="T:System.Xml.XmlWriter" /> and references the specified namespaces and encoding style.</summary>
+      <param name="xmlWriter">The <see cref="T:System.xml.XmlWriter" /> used to write the XML document. </param>
+      <param name="o">The object to serialize. </param>
+      <param name="namespaces">The <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> referenced by the object. </param>
+      <param name="encodingStyle">The encoding style of the serialized XML. </param>
+      <exception cref="T:System.InvalidOperationException">An error occurred during serialization. The original exception is available using the <see cref="P:System.Exception.InnerException" /> property. </exception>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,System.Object,System.Xml.Serialization.XmlSerializerNamespaces,System.String,System.String)">
+      <summary>Serializes the specified <see cref="T:System.Object" /> and writes the XML document to a file using the specified <see cref="T:System.Xml.XmlWriter" />, XML namespaces, and encoding. </summary>
+      <param name="xmlWriter">The <see cref="T:System.Xml.XmlWriter" /> used to write the XML document.</param>
+      <param name="o">The object to serialize.</param>
+      <param name="namespaces">An instance of the XmlSerializaerNamespaces that contains namespaces and prefixes to use.</param>
+      <param name="encodingStyle">The encoding used in the document.</param>
+      <param name="id">For SOAP encoded messages, the base used to generate id attributes. </param>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializerImplementation">
+      <summary>Defines the reader, writer, and methods for pre-generated, typed serializers.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerImplementation.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializerImplementation" /> class. </summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerImplementation.CanSerialize(System.Type)">
+      <summary>Gets a value that determines whether a type can be serialized.</summary>
+      <returns>true if the type can be serialized; otherwise, false.</returns>
+      <param name="type">The <see cref="T:System.Type" /> to be serialized.</param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerImplementation.GetSerializer(System.Type)">
+      <summary>Returns a serializer for the specified type.</summary>
+      <returns>An instance of a type derived from the <see cref="T:System.Xml.Serialization.XmlSerializer" /> class. </returns>
+      <param name="type">The <see cref="T:System.Type" /> to be serialized.</param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerImplementation.Reader">
+      <summary>Gets the XML reader object that is used by the serializer.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlSerializationReader" /> that is used to read an XML document or data stream.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerImplementation.ReadMethods">
+      <summary>Gets the collection of methods that is used to read a data stream.</summary>
+      <returns>A <see cref="T:System.Collections.Hashtable" /> that contains the methods.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerImplementation.TypedSerializers">
+      <summary>Gets the collection of typed serializers found in the assembly.</summary>
+      <returns>A <see cref="T:System.Collections.Hashtable" /> that contains the typed serializers.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerImplementation.WriteMethods">
+      <summary>Get the collection of methods used to write to a data stream.</summary>
+      <returns>A <see cref="T:System.Collections.Hashtable" /> that contains the methods.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerImplementation.Writer">
+      <summary>Gets the XML writer object for the serializer.</summary>
+      <returns>An <see cref="T:System.Xml.Serialization.XmlSerializationWriter" /> that is used to write to an XML data stream or document.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlSerializerNamespaces">
+      <summary>Contains the XML namespaces and prefixes that the <see cref="T:System.Xml.Serialization.XmlSerializer" /> uses to generate qualified names in an XML-document instance.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.Serialization.XmlSerializerNamespaces)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> class, using the specified instance of XmlSerializerNamespaces that contains the collection of prefix and namespace pairs.</summary>
+      <param name="namespaces">An instance of the <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> that contains the namespace and prefix pairs. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.#ctor(System.Xml.XmlQualifiedName[])">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> class.</summary>
+      <param name="namespaces">An array of <see cref="T:System.Xml.XmlQualifiedName" /> objects. </param>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.Add(System.String,System.String)">
+      <summary>Adds a prefix and namespace pair to an <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> object.</summary>
+      <param name="prefix">The prefix associated with an XML namespace. </param>
+      <param name="ns">An XML namespace. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlSerializerNamespaces.Count">
+      <summary>Gets the number of prefix and namespace pairs in the collection.</summary>
+      <returns>The number of prefix and namespace pairs in the collection.</returns>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlSerializerNamespaces.ToArray">
+      <summary>Gets the array of prefix and namespace pairs in an <see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" /> object.</summary>
+      <returns>An array of <see cref="T:System.Xml.XmlQualifiedName" /> objects that are used as qualified names in an XML document.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlTextAttribute">
+      <summary>Indicates to the <see cref="T:System.Xml.Serialization.XmlSerializer" /> that the member must be treated as XML text when the class that contains it is serialized or deserialized.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlTextAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlTextAttribute" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlTextAttribute.#ctor(System.Type)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlTextAttribute" /> class.</summary>
+      <param name="type">The <see cref="T:System.Type" /> of the member to be serialized. </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTextAttribute.DataType">
+      <summary>Gets or sets the XML Schema definition language (XSD) data type of the text generated by the <see cref="T:System.Xml.Serialization.XmlSerializer" />.</summary>
+      <returns>An XML Schema (XSD) data type, as defined by the World Wide Web Consortium (www.w3.org) document "XML Schema Part 2: Datatypes".</returns>
+      <exception cref="T:System.Exception">The XML Schema data type you have specified cannot be mapped to the .NET data type. </exception>
+      <exception cref="T:System.InvalidOperationException">The XML Schema data type you have specified is invalid for the property and cannot be converted to the member type. </exception>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTextAttribute.Type">
+      <summary>Gets or sets the type of the member.</summary>
+      <returns>The <see cref="T:System.Type" /> of the member.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlTypeAttribute">
+      <summary>Controls the XML schema that is generated when the attribute target is serialized by the <see cref="T:System.Xml.Serialization.XmlSerializer" />.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlTypeAttribute.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> class.</summary>
+    </member>
+    <member name="M:System.Xml.Serialization.XmlTypeAttribute.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> class and specifies the name of the XML type.</summary>
+      <param name="typeName">The name of the XML type that the <see cref="T:System.Xml.Serialization.XmlSerializer" /> generates when it serializes the class instance (and recognizes when it deserializes the class instance). </param>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeAttribute.AnonymousType">
+      <summary>Gets or sets a value that determines whether the resulting schema type is an XSD anonymous type.</summary>
+      <returns>true, if the resulting schema type is an XSD anonymous type; otherwise, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeAttribute.IncludeInSchema">
+      <summary>Gets or sets a value that indicates whether to include the type in XML schema documents.</summary>
+      <returns>true to include the type in XML schema documents; otherwise, false.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeAttribute.Namespace">
+      <summary>Gets or sets the namespace of the XML type.</summary>
+      <returns>The namespace of the XML type.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeAttribute.TypeName">
+      <summary>Gets or sets the name of the XML type.</summary>
+      <returns>The name of the XML type.</returns>
+    </member>
+    <member name="T:System.Xml.Serialization.XmlTypeMapping">
+      <summary>Contains a mapping of one type to another.</summary>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.TypeFullName">
+      <summary>The fully-qualified type name that includes the namespace (or namespaces) and type.</summary>
+      <returns>The fully-qualified type name.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.TypeName">
+      <summary>Gets the type name of the mapped object.</summary>
+      <returns>The type name of the mapped object.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeName">
+      <summary>Gets the XML element name of the mapped object.</summary>
+      <returns>The XML element name of the mapped object. The default is the class name of the object.</returns>
+    </member>
+    <member name="P:System.Xml.Serialization.XmlTypeMapping.XsdTypeNamespace">
+      <summary>Gets the XML namespace of the mapped object.</summary>
+      <returns>The XML namespace of the mapped object. The default is an empty string ("").</returns>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Silverlight20.Control.ListBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+        
+        <!--
+        SelectionChanged - ListBox中某个对象被选中后所触发的事件
+        -->
+        <ListBox Margin="5" Width="200" Height="100" SelectionChanged="ListBox_SelectionChanged">
+            <ListBoxItem Content="ListBoxItem01" />
+            <ListBoxItem Content="ListBoxItem02" />
+            <ListBoxItem Content="ListBoxItem03" />
+            <ListBoxItem Content="ListBoxItem04" />
+            <ListBoxItem Content="ListBoxItem05" />
+            <ListBoxItem Content="ListBoxItem06" />
+            <ListBoxItem Content="ListBoxItem07" />
+            <ListBoxItem Content="ListBoxItem08" />
+            <ListBoxItem Content="ListBoxItem09" />
+            <ListBoxItem Content="ListBoxItem10" />
+        </ListBox>
+        
+        <!--
+        ListBox中可以包含任何对象
+        -->
+        <ListBox Margin="5" Width="200">
+            <TextBlock Text="TextBlock" />
+            <TextBox Text="TextBox" />
+            <Button Content="Button" />
+        </ListBox>
+        
+    </StackPanel>
+</UserControl>

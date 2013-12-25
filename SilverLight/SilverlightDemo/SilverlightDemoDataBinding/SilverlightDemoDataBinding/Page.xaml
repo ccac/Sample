@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="SilverlightDemoDataBinding.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="400" Height="300">
+    <Grid x:Name="LayoutRoot" Background="#46461F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="terrylee.jpg" Width="78" Height="100"
+       HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1"/>
+        <Button x:Name="btnUpdate" Width="100" Height="40"
+            Content="Update" Click="btnUpdate_Click"/>
+
+       <TextBlock Foreground="White" FontSize="18" Text="姓名："
+           Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"/>
+    <TextBlock x:Name="lblName" Foreground="White" FontSize="18"
+               Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"
+               Text="{Binding Name}"/>
+    <TextBlock Foreground="White" FontSize="18" Text="位置："
+               Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"/>
+    <TextBlock x:Name="lblAddress" Foreground="White" FontSize="18"
+               Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left"
+               Text="{Binding Address}"/>
+</Grid>
+</UserControl>

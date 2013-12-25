@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5ce80036-0e14-4381-9d7a-b58337b0a37a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8082/ServerDiagnostics_Web/Modules.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Modules.xsd" MetadataType="Schema" ID="79519cdc-f03e-4f39-8e44-33da2d818d58" SourceId="1" SourceUrl="http://localhost:8082/ServerDiagnostics_Web/Modules.svc?xsd=xsd2" />
+    <MetadataFile FileName="Modules.disco" MetadataType="Disco" ID="b68a6d36-24a9-4cb4-a66c-f0381ea087d4" SourceId="1" SourceUrl="http://localhost:8082/ServerDiagnostics_Web/Modules.svc?disco" />
+    <MetadataFile FileName="Modules1.xsd" MetadataType="Schema" ID="c781f027-0eb6-452f-a92d-5a7ab31197a6" SourceId="1" SourceUrl="http://localhost:8082/ServerDiagnostics_Web/Modules.svc?xsd=xsd0" />
+    <MetadataFile FileName="Modules.wsdl" MetadataType="Wsdl" ID="037a7a46-c19b-4255-9358-321b4c48bb31" SourceId="1" SourceUrl="http://localhost:8082/ServerDiagnostics_Web/Modules.svc?wsdl" />
+    <MetadataFile FileName="Modules2.xsd" MetadataType="Schema" ID="4626ccbf-2bf8-48ee-a0d9-850526bec3ac" SourceId="1" SourceUrl="http://localhost:8082/ServerDiagnostics_Web/Modules.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

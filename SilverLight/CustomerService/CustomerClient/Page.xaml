@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="CustomerClient.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="400" Height="300">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <StackPanel>
+            <TextBlock x:Name="userCountResult" />
+            <TextBlock x:Name="getUserResult" />
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Silverlight20.Control.RadioButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+        
+        <!--
+        GroupName - RadioButton控件所属组的组名
+        Checked - 被选中后所触发的事件
+        Click - 被单击后所触发的事件
+        -->
+        <RadioButton GroupName="groupName" Content="红色的RadioButton" Background="Red" Margin="5" />
+        
+        <!--
+        IsEnabled - RadioButton是否有效
+        -->
+        <RadioButton GroupName="groupName" Content="无效的RadioButton" IsEnabled="False" Margin="5" />
+
+        <!--
+        IsChecked - 是否被选中
+        RadioButton.Content - RadioButton所对应的内容
+        -->
+        <RadioButton GroupName="groupName" Margin="5" IsChecked="true">
+            <RadioButton.Content>
+                <Image Source="/Silverlight20;component/Images/Logo.jpg" Width="200" />
+            </RadioButton.Content>
+        </RadioButton>
+        
+    </StackPanel>
+</UserControl>

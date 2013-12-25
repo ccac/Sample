@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Silverlight20.Communication.RssAtom"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left" >
+
+        <TextBox x:Name="txtMsgRss" Width="600" Margin="5" />
+
+        <StackPanel Orientation="Horizontal">
+        
+            <ListBox x:Name="list" Width="300" Margin="5" SelectionChanged="list_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Title.Text}"></TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <TextBlock x:Name="detail" Width="300" Margin="5" Text="{Binding Summary.Text}" TextWrapping="Wrap" />
+            
+        </StackPanel>
+        
+    </StackPanel>
+</UserControl>

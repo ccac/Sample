@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="Silverlight">
+    <siteMapNode title="Silverlight 1.0">
+      <siteMapNode url="~/10/Clock/Default.aspx" title="电子表" />
+      <siteMapNode url="~/10/Piano/Default.aspx" title="支持录音和回放的钢琴" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

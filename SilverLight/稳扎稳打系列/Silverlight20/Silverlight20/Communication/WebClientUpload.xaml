@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Silverlight20.Communication.WebClientUpload"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">      
+      
+        <StackPanel Margin="5" Width="200">
+            <TextBox x:Name="lblMsgString" Margin="5" />
+            <ProgressBar x:Name="progressBarString" Height="20" Margin="5" Minimum="0" Maximum="100" />
+            <Button x:Name="btnString" Content="上传文件（字符串的方式）" Margin="5" Click="btnString_Click" />
+        </StackPanel>
+        
+        <StackPanel Margin="5" Width="200">
+            <TextBox x:Name="lblMsgStream" Margin="5" />
+            <ProgressBar x:Name="progressBarStream" Height="20" Margin="5" Minimum="0" Maximum="100" />
+            <Button x:Name="btnStream" Content="上传文件（流的方式）" Margin="5" Click="btnStream_Click" />
+        </StackPanel>
+        
+    </StackPanel>
+</UserControl>

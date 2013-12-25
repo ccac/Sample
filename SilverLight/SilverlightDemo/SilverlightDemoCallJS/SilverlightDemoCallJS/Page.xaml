@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="SilverlightDemoCallJS.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="560" Height="300">
+    <StackPanel Background="#CDFCAE" Orientation="Vertical">
+        <StackPanel Height="40">
+            <TextBlock Text="Calling Browser Script from Silverlight"
+                   Foreground="Red"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="input" Width="340" Height="40" Margin="20 0 20 0"></TextBox>
+            <Button x:Name="submit" Width="120" Height="40" Background="Red"
+            Content="调 用" FontSize="20" Foreground="Red" Click="submit_Click"></Button>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

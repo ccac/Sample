@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="Silverlight20.Animation.Programmatically"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+
+        <!--
+        MouseLeftButtonDown - 在该Canvas上单击鼠标后所执行的事件
+        -->
+        <Canvas x:Name="canvas" Background="Yellow" Width="640" Height="480" MouseLeftButtonDown="Canvas_MouseLeftButtonDown">
+            <Path Fill="Red">
+                <Path.Data>
+                    <EllipseGeometry x:Name="ellipseGeometry" Center="200,100" RadiusX="15" RadiusY="15" />
+                </Path.Data>
+            </Path>
+        </Canvas>
+
+        <StackPanel.Resources>
+            <Storyboard x:Name="storyboard">
+                <PointAnimation 
+                    x:Name="pointAnimation"
+                    Storyboard.TargetProperty="Center"
+                    Storyboard.TargetName="ellipseGeometry"
+                    Duration="0:0:2"/>
+            </Storyboard>
+        </StackPanel.Resources>
+    </StackPanel>
+
+</UserControl>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AutoCompleteBox.Web.Service.AutoCompletedService" CodeBehind="AutoCompletedService.svc.cs" %>

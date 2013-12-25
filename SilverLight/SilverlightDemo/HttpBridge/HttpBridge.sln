@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpBridge", "HttpBridge\HttpBridge.csproj", "{2D039C7A-BD14-4A79-B43B-39D8572373E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpBridge_Web", "HttpBridge_Web\HttpBridge_Web.csproj", "{9C736446-C354-4E96-8EE8-7F854148DF40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D039C7A-BD14-4A79-B43B-39D8572373E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D039C7A-BD14-4A79-B43B-39D8572373E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D039C7A-BD14-4A79-B43B-39D8572373E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D039C7A-BD14-4A79-B43B-39D8572373E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C736446-C354-4E96-8EE8-7F854148DF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C736446-C354-4E96-8EE8-7F854148DF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C736446-C354-4E96-8EE8-7F854148DF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C736446-C354-4E96-8EE8-7F854148DF40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="Silverlight20.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:Microsoft.Windows.Controls;assembly=Microsoft.Windows.Controls">
+    <Grid x:Name="LayoutRoot" Width="Auto" Height="Auto">
+
+        <ScrollViewer x:Name="pageScroll" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid Width="Auto" Height="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="1" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Rectangle Grid.Column="1" Grid.RowSpan="2" Fill="Blue" />
+
+                <StackPanel x:Name="header" Grid.ColumnSpan="2" Grid.Row="0">
+                    <HyperlinkButton Content="http://webabcd.cnblogs.com" NavigateUri="http://webabcd.cnblogs.com/" TargetName="_blank" />
+                </StackPanel>
+
+                <StackPanel x:Name="size" Grid.ColumnSpan="3" Grid.Row="0" HorizontalAlignment="Right">
+                    <Button x:Name="btnSize" Content="最大化/还原" Click="btnSize_Click" />
+                </StackPanel>
+
+                <StackPanel x:Name="navigation" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left">
+
+                    <controls:TreeView x:Name="treeView" Margin="5" SelectedItemChanged="TreeView_SelectedItemChanged">
+                        <controls:TreeViewItem Header="控件（Control）">
+                            <controls:TreeViewItem Header="Border" Tag="Control.Border" />
+                            <controls:TreeViewItem Header="Button" Tag="Control.Button" />
+                            <controls:TreeViewItem Header="Calendar" Tag="Control.Calendar" />
+                            <controls:TreeViewItem Header="Canvas" Tag="Control.Canvas" />
+                            <controls:TreeViewItem Header="CheckBox" Tag="Control.CheckBox" />
+                            <controls:TreeViewItem Header="ComboBox" Tag="Control.ComboBox" />
+                            <controls:TreeViewItem Header="DataGrid" Tag="Control.DataGrid" />
+                            <controls:TreeViewItem Header="DatePicker" Tag="Control.DatePicker" />
+                            <controls:TreeViewItem Header="Grid" Tag="Control.Grid" />
+                            <controls:TreeViewItem Header="GridSplitter" Tag="Control.GridSplitter" />
+                            <controls:TreeViewItem Header="HyperlinkButton" Tag="Control.HyperlinkButton" />
+                            <controls:TreeViewItem Header="Image" Tag="Control.Image" />
+                            <controls:TreeViewItem Header="ListBox" Tag="Control.ListBox" />
+                            <controls:TreeViewItem Header="MediaElement" Tag="Control.MediaElement" />
+                            <controls:TreeViewItem Header="MultiScaleImage" Tag="Control.MultiScaleImage" />
+                            <controls:TreeViewItem Header="PasswordBox" Tag="Control.PasswordBox" />
+                            <controls:TreeViewItem Header="ProgressBar" Tag="Control.ProgressBar" />
+                            <controls:TreeViewItem Header="RadioButton" Tag="Control.RadioButton" />
+                            <controls:TreeViewItem Header="ScrollViewer" Tag="Control.ScrollViewer" />
+                            <controls:TreeViewItem Header="Slider" Tag="Control.Slider" />
+                            <controls:TreeViewItem Header="StackPanel" Tag="Control.StackPanel" />
+                            <controls:TreeViewItem Header="TabControl" Tag="Control.TabControl" />
+                            <controls:TreeViewItem Header="TextBlock" Tag="Control.TextBlock" />
+                            <controls:TreeViewItem Header="TextBox" Tag="Control.TextBox" />
+                            <controls:TreeViewItem Header="ToggleButton" Tag="Control.ToggleButton" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="图形（Shape）">
+                            <controls:TreeViewItem Header="Ellipse" Tag="Shape.Ellipse" />
+                            <controls:TreeViewItem Header="Line" Tag="Shape.Line" />
+                            <controls:TreeViewItem Header="Path" Tag="Shape.Path" />
+                            <controls:TreeViewItem Header="Polygon" Tag="Shape.Polygon" />
+                            <controls:TreeViewItem Header="Polyline" Tag="Shape.Polyline" />
+                            <controls:TreeViewItem Header="Rectangle" Tag="Shape.Rectangle" />
+                            <controls:TreeViewItem Header="基类Shape" Tag="Shape.Shape" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="画笔（Brush）">
+                            <controls:TreeViewItem Header="ImageBrush" Tag="Brush.ImageBrush" />
+                            <controls:TreeViewItem Header="LinearGradientBrush" Tag="Brush.LinearGradientBrush" />
+                            <controls:TreeViewItem Header="RadialGradientBrush" Tag="Brush.RadialGradientBrush" />
+                            <controls:TreeViewItem Header="SolidColorBrush" Tag="Brush.SolidColorBrush" />
+                            <controls:TreeViewItem Header="VideoBrush" Tag="Brush.VideoBrush" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="动画（Animation）">
+                            <controls:TreeViewItem Header="ColorAnimation" Tag="Animation.ColorAnimation" />
+                            <controls:TreeViewItem Header="DoubleAnimation" Tag="Animation.DoubleAnimation" />
+                            <controls:TreeViewItem Header="PointAnimation" Tag="Animation.PointAnimation" />
+                            <controls:TreeViewItem Header="KeyFrame" Tag="Animation.KeyFrame" />
+                            <controls:TreeViewItem Header="Programmatically" Tag="Animation.Programmatically" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="外观（Appearance）">
+                            <controls:TreeViewItem Header="Style" Tag="Appearance.Style" />
+                            <controls:TreeViewItem Header="Template" Tag="Appearance.Template" />
+                            <controls:TreeViewItem Header="VisualStateManager" Tag="Appearance.VisualStateManager" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="数据（Data）">
+                            <controls:TreeViewItem Header="INotifyPropertyChanged" Tag="Data.NotifyProperty" />
+                            <controls:TreeViewItem Header="Conversion" Tag="Data.Conversion" />
+                            <controls:TreeViewItem Header="Validation" Tag="Data.Validation" />
+                            <controls:TreeViewItem Header="IsolatedStorage" Tag="Data.IsolatedStorage" />
+                            <controls:TreeViewItem Header="详解DataGrid之一" Tag="Data.DataGrid01" />
+                            <controls:TreeViewItem Header="详解DataGrid之二" Tag="Data.DataGrid02" />
+                            <controls:TreeViewItem Header="详解ListBox" Tag="Data.ListBox" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="交互（Interactive）">
+                            <controls:TreeViewItem Header="Mouse" Tag="Interactive.Mouse" />
+                            <controls:TreeViewItem Header="Keyboard" Tag="Interactive.Keyboard" />
+                            <controls:TreeViewItem Header="InkPresenter" Tag="Interactive.InkPresenter" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="通信（Communication）">
+                            <controls:TreeViewItem Header="REST-JSON" Tag="Communication.Json" />
+                            <controls:TreeViewItem Header="REST-XML" Tag="Communication.Xml" />
+                            <controls:TreeViewItem Header="REST-RSS/ATOM" Tag="Communication.RssAtom" />
+                            <controls:TreeViewItem Header="WebClient - Download" Tag="Communication.WebClientDownload" />
+                            <controls:TreeViewItem Header="WebClient - Upload" Tag="Communication.WebClientUpload" />
+                            <controls:TreeViewItem Header="WebRequest - Get" Tag="Communication.WebRequestGet" />
+                            <controls:TreeViewItem Header="WebRequest - Post" Tag="Communication.WebRequestPost" />
+                            <controls:TreeViewItem Header="WCF" Tag="Communication.WCF" />
+                            <controls:TreeViewItem Header="Cryptography" Tag="Communication.Cryptography" />
+                            <controls:TreeViewItem Header="DuplexService" Tag="Communication.DuplexService" />
+                            <controls:TreeViewItem Header="Socket" Tag="Communication.SocketClient" />
+                            <controls:TreeViewItem Header="DataService" Tag="Communication.DataService" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="线程（Thread）">
+                            <controls:TreeViewItem Header="Thread" Tag="Thread.Thread" />
+                            <controls:TreeViewItem Header="Timer" Tag="Thread.Timer" />
+                            <controls:TreeViewItem Header="BackgroundWorker" Tag="Thread.BackgroundWorker" />
+                            <controls:TreeViewItem Header="ThreadPool" Tag="Thread.ThreadPool" />
+                            <controls:TreeViewItem Header="Lock" Tag="Thread.Lock" />
+                            <controls:TreeViewItem Header="Interlocked" Tag="Thread.Interlocked" />
+                            <controls:TreeViewItem Header="EventWaitHandle" Tag="Thread.EventWaitHandle" />
+                            <controls:TreeViewItem Header="Monitor" Tag="Thread.Monitor" />
+                            <controls:TreeViewItem Header="ThreadStaticAttribute" Tag="Thread.ThreadStaticAttribute" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="视频（Video）">
+                            <controls:TreeViewItem Header="详解MediaElement - 播放器" Tag="Video.VideoPlayer" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="网页（WebPage）">
+                            <controls:TreeViewItem Header="可脚本化" Tag="WebPage.ScriptableDemo" />
+                            <controls:TreeViewItem Header="和 DOM 的交互" Tag="WebPage.DOMDemo" />
+                            <controls:TreeViewItem Header="和 JS 的交互" Tag="WebPage.JSDemo" />
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="其它（Other）">
+                            <controls:TreeViewItem Header="基类UIElement" Tag="Other.UIElement" />
+                            <controls:TreeViewItem Header="基类FrameworkElement" Tag="Other.FrameworkElement" />
+                            <controls:TreeViewItem Header="转换Transform" Tag="Other.Transform" />                           
+                        </controls:TreeViewItem>
+                        <controls:TreeViewItem Header="Tip/Trick">
+                            <controls:TreeViewItem Header="为 Silverlight 配置参数" Tag="Tip.InitParams" />
+                            <controls:TreeViewItem Header="自定义字体" Tag="Tip.CustomFont" />
+                            <controls:TreeViewItem Header="Cookie" Tag="Tip.Cookie" />
+                            <controls:TreeViewItem Header="响应鼠标右键事件" Tag="Tip.RightClick" />
+                            <controls:TreeViewItem Header="响应鼠标滚轮事件" Tag="Tip.Wheel" />
+                        </controls:TreeViewItem>
+                    </controls:TreeView>
+                </StackPanel>
+
+                <Grid x:Name="pnl" Grid.Column="2" Grid.Row="1">
+
+                </Grid>
+            </Grid>
+
+        </ScrollViewer>
+    </Grid>
+</UserControl>

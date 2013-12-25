@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputEventHandler", "InputEventHandler\InputEventHandler.csproj", "{67C4D0A0-900C-4472-8B32-3DB90474454C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67C4D0A0-900C-4472-8B32-3DB90474454C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C4D0A0-900C-4472-8B32-3DB90474454C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C4D0A0-900C-4472-8B32-3DB90474454C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C4D0A0-900C-4472-8B32-3DB90474454C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

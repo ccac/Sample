@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Silverlight20.Other.FrameworkElement"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left" >
+
+        <!--
+        Cursor - 鼠标移动到 FrameworkElement 上面时，鼠标指针的样式
+            Arrow - 箭头
+            Hand - 手形 
+            Wait - 沙漏
+            IBeam - “I”字形 
+            Stylus - 点
+            Eraser - 橡皮
+            None - 无 
+        Margin - 容器边缘与边缘之外的空白距离（像素值：上下左右；左右,上下；左,上,右,下）
+        Tag - 保存一些额外的信息（System.Object类型）
+        -->
+        <Rectangle Width="200" Height="100" Fill="Red" Cursor="IBeam" Margin="5" Tag="1234" />
+
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBox", "MessageBox\MessageBox.csproj", "{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MessageBoxWeb", "MessageBoxWeb\", "{777889A7-E363-4FD9-80FF-4DC107AD38CA}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/MessageBoxWeb"
+		Debug.AspNetCompiler.PhysicalPath = "MessageBoxWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\MessageBoxWeb\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/MessageBoxWeb"
+		Release.AspNetCompiler.PhysicalPath = "MessageBoxWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\MessageBoxWeb\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3021"
+		DefaultWebSiteLanguage = "Visual C#"
+		ProjOutputReferences = "{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}|ClientBin|false;"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}.Release|.NET.ActiveCfg = Release|Any CPU
+		{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CA1EB8CE-A023-4B8F-AAA8-018E939DF4B2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{777889A7-E363-4FD9-80FF-4DC107AD38CA}.Debug|.NET.ActiveCfg = Debug|.NET
+		{777889A7-E363-4FD9-80FF-4DC107AD38CA}.Debug|.NET.Build.0 = Debug|.NET
+		{777889A7-E363-4FD9-80FF-4DC107AD38CA}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{777889A7-E363-4FD9-80FF-4DC107AD38CA}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{777889A7-E363-4FD9-80FF-4DC107AD38CA}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{777889A7-E363-4FD9-80FF-4DC107AD38CA}.Release|.NET.ActiveCfg = Debug|.NET
+		{777889A7-E363-4FD9-80FF-4DC107AD38CA}.Release|.NET.Build.0 = Debug|.NET
+		{777889A7-E363-4FD9-80FF-4DC107AD38CA}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{777889A7-E363-4FD9-80FF-4DC107AD38CA}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{777889A7-E363-4FD9-80FF-4DC107AD38CA}.Release|Mixed Platforms.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

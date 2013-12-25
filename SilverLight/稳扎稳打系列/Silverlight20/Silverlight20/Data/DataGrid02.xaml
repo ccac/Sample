@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="Silverlight20.Data.DataGrid02"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data">
+    <StackPanel HorizontalAlignment="Left">
+
+        <StackPanel Orientation="Vertical" Margin="5">
+        
+            <CheckBox Content="是否只读" Margin="5" 
+                Checked="chkReadOnly_Changed" Unchecked="chkReadOnly_Changed" />
+
+            <CheckBox Content="冻结列" Margin="5"
+                Checked="chkFreezeColumn_Changed" Unchecked="chkFreezeColumn_Changed"/>
+
+            <CheckBox Content="行的选中模式，是否只能单选" Margin="5"
+                Checked="chkSelectionMode_Changed" Unchecked="chkSelectionMode_Changed" />
+
+            <CheckBox Content="是否允许拖动列" IsChecked="true" Margin="5" 
+                Checked="chkColReorder_Changed" Unchecked="chkColReorder_Changed"/>
+
+            <CheckBox Content="是否允许改变列的宽度" IsChecked="true" Margin="5"
+                Checked="chkColResize_Changed" Unchecked="chkColResize_Changed"/>
+                
+            <CheckBox Content="是否允许列的排序" IsChecked="true" Margin="5"
+                Checked="chkColSort_Changed" Unchecked="chkColSort_Changed"/>
+
+            <CheckBox Content="改变表格的垂直分隔线的 Brush" Margin="5" 
+                Checked="chkCustomGridLineVertical_Changed" Unchecked="chkCustomGridLineVertical_Changed"/>
+                
+            <CheckBox Content="改变表格的水平分隔线的 Brush" Margin="5"
+                Checked="chkCustomGridLineHorizontal_Changed" Unchecked="chkCustomGridLineHorizontal_Changed"/>
+
+            <ComboBox SelectionChanged="cboHeaders_SelectionChanged" Width="200" HorizontalAlignment="Left">
+                <ComboBoxItem Content="列头和行头均显示" Tag="All" />
+                <ComboBoxItem Content="只显示列头（默认值）" Tag="Column" IsSelected="True" />
+                <ComboBoxItem Content="只显示行头" Tag="Row" />
+                <ComboBoxItem Content="列头和行头均不显示" Tag="None" />
+            </ComboBox>
+
+        </StackPanel>
+
+        <!--
+        GridLinesVisibility - 表格分隔线的显示方式 [System.Windows.Controls.DataGridGridLinesVisibility枚举]
+            DataGridGridLinesVisibility.None - 都不显示
+            DataGridGridLinesVisibility.Horizontal - 只显示水平分隔线
+            DataGridGridLinesVisibility.Vertical - 只显示垂直分隔线。默认值
+            DataGridGridLinesVisibility.All - 显示水平和垂直分隔线
+        RowBackground - 奇数数据行背景
+        AlternatingRowBackground - 偶数数据行背景
+        -->
+        <data:DataGrid x:Name="DataGrid1" Margin="5"
+            Width="400" Height="200"
+            AutoGenerateColumns="False"
+            GridLinesVisibility="All"
+            RowBackground="White"
+            AlternatingRowBackground="Yellow"
+            ItemsSource="{Binding}"
+        >
+
+            <data:DataGrid.Columns>
+            
+                <!--
+                IsReadOnly - 该列的单元格是否只读
+                CanUserReorder - 该列是否可以拖动
+                CanUserResize - 该列是否可以改变列宽
+                CanUserSort - 该列是否可以排序
+                SortMemberPath - 该列的排序字段
+                -->
+                <data:DataGridTextColumn Header="姓名" Binding="{Binding Name}" 
+                    IsReadOnly="False"
+                    CanUserReorder="True" 
+                    CanUserResize="True" 
+                    CanUserSort="True" 
+                    SortMemberPath="Name" 
+                />
+                
+                <!--
+                Width - 列宽
+                    Auto - 根据列头内容的宽度和单元格内容的宽度自动设置列宽
+                    SizeToCells - 根据单元格内容的宽度设置列宽
+                    SizeToHeader - 根据列头内容的宽度设置列宽
+                    Pixel - 像素值
+                -->
+                <data:DataGridTextColumn Header="生日" Binding="{Binding DayOfBirth}" Width="100" />
+                <data:DataGridTextColumn Header="年龄" Binding="{Binding Age}" />
+                <data:DataGridCheckBoxColumn Header="性别" Binding="{Binding Male}" />
+                <data:DataGridTextColumn Header="姓名" Binding="{Binding Name}" />
+                <data:DataGridTextColumn Header="生日" Binding="{Binding DayOfBirth}" />
+                <data:DataGridTextColumn Header="年龄" Binding="{Binding Age}" />
+                <data:DataGridCheckBoxColumn Header="性别" Binding="{Binding Male}" />
+            </data:DataGrid.Columns>
+
+        </data:DataGrid>
+
+    </StackPanel>
+</UserControl>

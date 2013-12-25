@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Silverlight20.Control.Button"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left" Width="400">
+
+        <!--
+        Content - 按钮上显示的内容
+        Click - 按钮的单击事件
+        Cursor - 鼠标移动到按钮上面时，鼠标指针的样式
+            Arrow - 箭头
+            Hand - 手形 
+            Wait - 沙漏
+            IBeam - “I”字形 
+            Stylus - 点
+            Eraser - 橡皮
+            None - 无
+        Padding - 容器内的内容与容器边缘的填充距离（像素值：上下左右；左右,上下；左,上,右,下）
+        -->
+        <Button Tag="我是Button" Content="我是Button" Cursor="Eraser" Click="Button_Click" Padding="5" Margin="5" />
+
+        <!--
+        IsEnabled - 按钮是否有效
+        -->
+        <Button Tag="无效Button" Content="无效Button" IsEnabled="False" Click="Button_Click" Margin="5" />
+
+        <!--
+        Button.Content - 按钮上显示的内容
+        ClickMode - 触发单击事件的类型 [System.Windows.Controls.ClickMode枚举]
+            ClickMode.Press - 鼠标左键单击
+            ClickMode.Release - 鼠标左键单击并放开
+            ClickMode.Hover - 鼠标经过
+        -->
+        <Button Tag="图片Button" ClickMode="Release" Click="Button_Click" Margin="5">
+            <Button.Content>
+                <Image Source="/Silverlight20;component/Images/Logo.jpg" />
+            </Button.Content>
+        </Button>
+
+    </StackPanel>
+</UserControl>

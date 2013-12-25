@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="WeatherApp.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:controls="clr-namespace:ControlsLibrary;assembly=ControlsLibrary"
+             xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+             FontFamily="/fonts/Existence-UnicaseLight.otf#Existence Unicase Light"
+FontSize="15"             
+>
+    <StackPanel Background="White">
+        <controls:WeatherControl x:Name="WeatherGadget" Width="400" Height="400" Margin="30" FontSize="20"
+            Condition="Sunny"
+            Temperature="80"
+            ConditionDescription="Sunny with blue skies"/>
+        
+        <Button Width="120" Click="SunnyButton_Click" Content="Sunny" Margin="10"/>
+        <Button Width="120" Click="PartyCloudyButton_Click" Content="Partly Cloudy" Margin="10"/>
+        <Button Width="120" Click="CloudyButton_Click" Content="Cloudy" Margin="10"/>
+        <Button Width="120" Click="RainyButton_Click" Content="Rainy" Margin="10"/>
+    </StackPanel>
+</UserControl>

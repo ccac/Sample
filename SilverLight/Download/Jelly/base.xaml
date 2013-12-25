@@ -1,0 +1,14 @@
+<Canvas Width="800" Height="300"
+   xmlns="http://schemas.microsoft.com/client/2007"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   Loaded="slLoaded">
+
+  <Canvas.Background>
+    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+      <GradientStop Color="#0c0c0c" Offset="0.0" />
+      <GradientStop Color="#171717" Offset="1.0" />
+    </LinearGradientBrush>
+  </Canvas.Background>
+
+  <Line X1="0" X2="800" Y1="150" Y2="150" Stroke="#191919" StrokeThickness="1"/>
+</Canvas>

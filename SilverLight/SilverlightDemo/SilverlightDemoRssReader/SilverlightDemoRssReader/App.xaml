@@ -1,0 +1,45 @@
+﻿<Application xmlns="http://schemas.microsoft.com/client/2007"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="SilverlightDemoRssReader.App"
+             >
+    <Application.Resources>
+        <Style x:Key="button" TargetType="Button">
+            <Setter Property="Width" Value="100"></Setter>
+            <Setter Property="Height" Value="35"></Setter>
+            <Setter Property="Background" Value="#FBA430"></Setter>
+            <Setter Property="Foreground" Value="#FBA430"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+        </Style>
+        
+        <Style x:Key="titleBar" TargetType="Border">
+            <Setter Property="CornerRadius" Value="10"></Setter>
+            <Setter Property="Width" Value="220"></Setter>
+            <Setter Property="Height" Value="35"></Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0">
+                        <GradientStop Color="#FBA430" Offset="0.0" />
+                        <GradientStop Color="#FEF4E7" Offset="0.5" />
+                        <GradientStop Color="#FBA430" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="rectangle" TargetType="Rectangle">
+            <Setter Property="Width" Value="780"></Setter>
+            <Setter Property="Height" Value="5"></Setter>
+            <Setter Property="RadiusX" Value="3"></Setter>
+            <Setter Property="RadiusY" Value="3"></Setter>
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0">
+                        <GradientStop Color="#FEF4E7" Offset="0.0" />
+                        <GradientStop Color="#FBA430" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </Application.Resources>
+</Application>

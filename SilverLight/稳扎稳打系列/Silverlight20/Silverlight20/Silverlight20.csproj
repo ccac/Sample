@@ -1,0 +1,781 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B4391A72-6920-4F80-8CA4-5A9CCB624CC7}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Silverlight20</RootNamespace>
+    <AssemblyName>Silverlight20</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Silverlight20.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Silverlight20.App</SilverlightAppEntry>
+    <TestPageFileName>TestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>false</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Windows.Controls, Version=2.0.21027.1502, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Client\Microsoft.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Services.Client, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Json, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.PollingDuplex, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Client\System.ServiceModel.PollingDuplex.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Syndication, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animation\ColorAnimation.xaml.cs">
+      <DependentUpon>ColorAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animation\DoubleAnimation.xaml.cs">
+      <DependentUpon>DoubleAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animation\KeyFrame.xaml.cs">
+      <DependentUpon>KeyFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animation\PointAnimation.xaml.cs">
+      <DependentUpon>PointAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animation\Programmatically.xaml.cs">
+      <DependentUpon>Programmatically.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\DataService.xaml.cs">
+      <DependentUpon>DataService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\SocketClient.xaml.cs">
+      <DependentUpon>SocketClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\Cryptography.xaml.cs">
+      <DependentUpon>Cryptography.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\DuplexService.xaml.cs">
+      <DependentUpon>DuplexService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\Json.xaml.cs">
+      <DependentUpon>Json.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\RssAtom.xaml.cs">
+      <DependentUpon>RssAtom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\WCF.xaml.cs">
+      <DependentUpon>WCF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\WebClientDownload.xaml.cs">
+      <DependentUpon>WebClientDownload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\WebClientUpload.xaml.cs">
+      <DependentUpon>WebClientUpload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\WebRequestGet.xaml.cs">
+      <DependentUpon>WebRequestGet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\WebRequestPost.xaml.cs">
+      <DependentUpon>WebRequestPost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\Xml.xaml.cs">
+      <DependentUpon>Xml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Conversion.xaml.cs">
+      <DependentUpon>Conversion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataGrid01.xaml.cs">
+      <DependentUpon>DataGrid01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataGrid02.xaml.cs">
+      <DependentUpon>DataGrid02.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IsolatedStorage.xaml.cs">
+      <DependentUpon>IsolatedStorage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ListBox.xaml.cs">
+      <DependentUpon>ListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\NotifyProperty.xaml.cs">
+      <DependentUpon>NotifyProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Validation.xaml.cs">
+      <DependentUpon>Validation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interactive\InkPresenter.xaml.cs">
+      <DependentUpon>InkPresenter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interactive\Keyboard.xaml.cs">
+      <DependentUpon>Keyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interactive\Mouse.xaml.cs">
+      <DependentUpon>Mouse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NorthwindDataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.datasvcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WCFServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Brush\ImageBrush.xaml.cs">
+      <DependentUpon>ImageBrush.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Brush\LinearGradientBrush.xaml.cs">
+      <DependentUpon>LinearGradientBrush.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Brush\RadialGradientBrush.xaml.cs">
+      <DependentUpon>RadialGradientBrush.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Brush\SolidColorBrush.xaml.cs">
+      <DependentUpon>SolidColorBrush.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Brush\VideoBrush.xaml.cs">
+      <DependentUpon>VideoBrush.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Border.xaml.cs">
+      <DependentUpon>Border.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Button.xaml.cs">
+      <DependentUpon>Button.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Calendar.xaml.cs">
+      <DependentUpon>Calendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Canvas.xaml.cs">
+      <DependentUpon>Canvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CheckBox.xaml.cs">
+      <DependentUpon>CheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ComboBox.xaml.cs">
+      <DependentUpon>ComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\DataGrid.xaml.cs">
+      <DependentUpon>DataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\DatePicker.xaml.cs">
+      <DependentUpon>DatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Grid.xaml.cs">
+      <DependentUpon>Grid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\GridSplitter.xaml.cs">
+      <DependentUpon>GridSplitter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\HyperlinkButton.xaml.cs">
+      <DependentUpon>HyperlinkButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Image.xaml.cs">
+      <DependentUpon>Image.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ListBox.xaml.cs">
+      <DependentUpon>ListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MediaElement.xaml.cs">
+      <DependentUpon>MediaElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MultiScaleImage.xaml.cs">
+      <DependentUpon>MultiScaleImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\PasswordBox.xaml.cs">
+      <DependentUpon>PasswordBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ProgressBar.xaml.cs">
+      <DependentUpon>ProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\RadioButton.xaml.cs">
+      <DependentUpon>RadioButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ScrollViewer.xaml.cs">
+      <DependentUpon>ScrollViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Slider.xaml.cs">
+      <DependentUpon>Slider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\StackPanel.xaml.cs">
+      <DependentUpon>StackPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TabControl.xaml.cs">
+      <DependentUpon>TabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TextBlock.xaml.cs">
+      <DependentUpon>TextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TextBox.xaml.cs">
+      <DependentUpon>TextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ToggleButton.xaml.cs">
+      <DependentUpon>ToggleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SourceDataModel.cs" />
+    <Compile Include="Data\SourceData.cs" />
+    <Compile Include="MouseWheelHelper.cs" />
+    <Compile Include="Other\Transform.xaml.cs">
+      <DependentUpon>Transform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Other\FrameworkElement.xaml.cs">
+      <DependentUpon>FrameworkElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Other\UIElement.xaml.cs">
+      <DependentUpon>UIElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shape\Ellipse.xaml.cs">
+      <DependentUpon>Ellipse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shape\Line.xaml.cs">
+      <DependentUpon>Line.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shape\Path.xaml.cs">
+      <DependentUpon>Path.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shape\Polygon.xaml.cs">
+      <DependentUpon>Polygon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shape\Polyline.xaml.cs">
+      <DependentUpon>Polyline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shape\Rectangle.xaml.cs">
+      <DependentUpon>Rectangle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shape\Shape.xaml.cs">
+      <DependentUpon>Shape.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Appearance\Style.xaml.cs">
+      <DependentUpon>Style.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Appearance\Template.xaml.cs">
+      <DependentUpon>Template.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Appearance\VisualStateManager.xaml.cs">
+      <DependentUpon>VisualStateManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thread\BackgroundWorker.xaml.cs">
+      <DependentUpon>BackgroundWorker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thread\EventWaitHandle.xaml.cs">
+      <DependentUpon>EventWaitHandle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thread\Interlocked.xaml.cs">
+      <DependentUpon>Interlocked.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thread\Lock.xaml.cs">
+      <DependentUpon>Lock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thread\Monitor.xaml.cs">
+      <DependentUpon>Monitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thread\Thread.xaml.cs">
+      <DependentUpon>Thread.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thread\ThreadPool.xaml.cs">
+      <DependentUpon>ThreadPool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thread\ThreadStaticAttribute.xaml.cs">
+      <DependentUpon>ThreadStaticAttribute.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thread\Timer.xaml.cs">
+      <DependentUpon>Timer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tip\Cookie.xaml.cs">
+      <DependentUpon>Cookie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tip\CustomFont.xaml.cs">
+      <DependentUpon>CustomFont.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tip\InitParams.xaml.cs">
+      <DependentUpon>InitParams.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tip\RightClick.xaml.cs">
+      <DependentUpon>RightClick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tip\Wheel.xaml.cs">
+      <DependentUpon>Wheel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Video\VideoPlayer.xaml.cs">
+      <DependentUpon>VideoPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WebPage\DOMDemo.xaml.cs">
+      <DependentUpon>DOMDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WebPage\JSDemo.xaml.cs">
+      <DependentUpon>JSDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WebPage\Scriptable.cs" />
+    <Compile Include="WebPage\ScriptableDemo.xaml.cs">
+      <DependentUpon>ScriptableDemo.xaml</DependentUpon>
+    </Compile>
+    <Resource Include="Images\Background.jpg" />
+    <None Include="Service References\WCFServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WCFServiceReference\configuration.svcinfo" />
+    <None Include="Service References\WCFServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\WCFServiceReference\WCFService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Animation\ColorAnimation.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Animation\DoubleAnimation.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Animation\KeyFrame.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Animation\PointAnimation.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Animation\Programmatically.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\DataService.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\SocketClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\Cryptography.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\DuplexService.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\Json.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\RssAtom.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\WCF.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\WebClientDownload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\WebClientUpload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\WebRequestGet.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\WebRequestPost.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Communication\Xml.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Data\Conversion.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Data\DataGrid01.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Data\DataGrid02.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Data\IsolatedStorage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Data\ListBox.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Data\NotifyProperty.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Data\Validation.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Interactive\InkPresenter.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Interactive\Keyboard.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Interactive\Mouse.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Brush\ImageBrush.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Brush\LinearGradientBrush.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Brush\RadialGradientBrush.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Brush\SolidColorBrush.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Brush\VideoBrush.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\Border.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\Button.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\Calendar.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\Canvas.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\CheckBox.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\ComboBox.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\DataGrid.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\DatePicker.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\Grid.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\GridSplitter.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\HyperlinkButton.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\Image.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\ListBox.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\MediaElement.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\MultiScaleImage.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\PasswordBox.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\ProgressBar.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\RadioButton.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\ScrollViewer.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\Slider.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\StackPanel.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\TabControl.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\TextBlock.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\TextBox.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Control\ToggleButton.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Other\Transform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Other\FrameworkElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Other\UIElement.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Page.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shape\Ellipse.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Shape\Line.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Shape\Path.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Shape\Polygon.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Shape\Polyline.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Shape\Rectangle.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Shape\Shape.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Appearance\Style.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Appearance\Template.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Appearance\VisualStateManager.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Thread\BackgroundWorker.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Thread\EventWaitHandle.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Thread\Interlocked.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Thread\Lock.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Thread\Monitor.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Thread\Thread.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Thread\ThreadPool.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Thread\ThreadStaticAttribute.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Thread\Timer.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Tip\Cookie.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Tip\CustomFont.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Tip\InitParams.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Tip\RightClick.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Tip\Wheel.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="Video\VideoPlayer.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="WebPage\DOMDemo.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WebPage\JSDemo.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+    <Page Include="WebPage\ScriptableDemo.xaml">
+      <SubType>Page</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\NorthwindDataService\service.edmx" />
+    <None Include="Service References\WCFServiceReference\Silverlight20.WCFServiceReference.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCFServiceReference\WCFService.wsdl" />
+    <None Include="Service References\WCFServiceReference\WCFService.xsd" />
+    <None Include="Service References\WCFServiceReference\WCFService1.xsd" />
+    <None Include="Service References\WCFServiceReference\WCFService2.xsd" />
+    <None Include="Service References\NorthwindDataService\Reference.datasvcmap">
+      <Generator>DataServiceClientGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Video\Demo.wmv" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WCFServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceReferenceMetadataStorage Include="Service References\NorthwindDataService\">
+      <Type>datasvcmap</Type>
+    </ServiceReferenceMetadataStorage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resource\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight\v2.0\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

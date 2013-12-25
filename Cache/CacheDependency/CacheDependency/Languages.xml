@@ -1,0 +1,1069 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+
+	<!--
+  The naming convention of id
+    1. Use English text and remove punctuations and ESC and then replace blank with _
+    2. Use xml comment to group each module's language.
+  -->
+	<module name="Master">
+
+		<language id="menu_file" >
+			<en-us>&lt;U&gt;F&lt;/U&gt;ile</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="menu_action" >
+			<en-us>&lt;U&gt;A&lt;/U&gt;ction</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="menu_item_exit" >
+			<en-us>Logout</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="menu_item_changepwd" >
+			<en-us>Change Password</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="header_welcome" >
+			<en-us>Welcome</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="header_language" >
+			<en-us>Language:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="header_last_logon_attempt" >
+			<en-us>Last Logon Attempt: {0} {1} IP: {2}</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="header_ip" >
+			<en-us>IP:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="header_current_time" >
+			<en-us>Current Time:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+	</module>
+
+	<module name="LeftMemu">
+
+		<language id="system" >
+			<en-us>System</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="treenode_home_page" >
+			<en-us>Home</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="treenode_role_view" >
+			<en-us>Role View</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="treenode_user_view" >
+			<en-us>User View</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="treenode_gateway" >
+			<en-us>Gateway Profile</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="treenode_member" >
+			<en-us>Member Profiles</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="treenode_message_view" >
+			<en-us>Message View</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="treenode_logout" >
+			<en-us>Logout</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="treenode_message_schema_view" >
+			<en-us>Message Schema View</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+	</module>
+
+	<module name="Common">
+
+		<language id="atomsg" >
+			<en-us>ATOMS&amp;#8482 Gateway</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="sag" >
+			<en-us>SAG</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="swift" >
+			<en-us>SnF Queue</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="members" >
+			<en-us>Members</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="new" >
+			<en-us>New</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="delete" >
+			<en-us>Delete</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="save" >
+			<en-us>Save</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="save_and_close" >
+			<en-us>Save And Close</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="cancel" >
+			<en-us>Cancel</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="close" >
+			<en-us>Close</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="update" >
+			<en-us>Update</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="refresh" >
+			<en-us>Refresh</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="status" >
+			<en-us>Status</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="status_active" >
+			<en-us>Active</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="status_inactive" >
+			<en-us>Inactive</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="status_suspended" >
+			<en-us>Suspended</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="status_connected" >
+			<en-us>Connected</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="status_disconected" >
+			<en-us>Disconnected</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="status_normal" >
+			<en-us>Normal</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="status_released" >
+			<en-us>Released</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="permission_name" >
+			<en-us>Permission Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="view" >
+			<en-us>View</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="edit" >
+			<en-us>Edit</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="create" >
+			<en-us>Create</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="gateway_profile" >
+			<en-us>Gateway Profile</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="role" >
+			<en-us>Role</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="member" >
+			<en-us>Member</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="user" >
+			<en-us>User</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="message_list" >
+			<en-us>Message View</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="message_details" >
+			<en-us>Message Details</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="dashboard" >
+			<en-us>Dashboard</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status_all" >
+			<en-us>All</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status1" >
+			<en-us>Received by ATOMS&amp;#8482 Gateway</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status2" >
+			<en-us>Rejected by ATOMS&amp;#8482 Gateway</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status3" >
+			<en-us>Failed on Delivery to SWIFT</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status4" >
+			<en-us>Delivered to SWIFT</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status5" >
+			<en-us>ACK by SWIFT</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status6" >
+			<en-us>Rejected by SWIFT</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status7" >
+			<en-us>Failed on Delivery to Recipient</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status8" >
+			<en-us>Delivered to Recipient</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status9" >
+			<en-us>Delivered to Member</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_status10" >
+			<en-us>Rejected by Member</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="lblLoading" >
+			<en-us>Loading...</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+	</module>
+
+	<module name="Dashboard">
+
+		<language id="ACK" >
+			<en-us>Reset</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_title_connection_status" >
+			<en-us>Connection Status</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_title_alert_email" >
+			<en-us>Alert Email</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_title_outbound_queue" >
+			<en-us>Outbound Message Queue</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_title_inbound_queue" >
+			<en-us>Inbound Message Queue</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_send_swift_error" >
+			<en-us>Send SWIFT Errors:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_receive_swift_error" >
+			<en-us>Receive SWIFT Errors:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_total_process_today" >
+			<en-us>Total Processed Today:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_rejected_by_atomsg" >
+			<en-us>Rejected by ATOMS&amp;#8482 Gateway Today:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_send_to_swift" >
+			<en-us>Sent to SWIFT Today:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_outbound_pending" >
+			<en-us>Waiting to Send:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_outbound_max_queue_time" >
+			<en-us>Maximum Queuing Time (min.):</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_outbound_log_volume" >
+			<en-us>Log Volume:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_total_receive_today" >
+			<en-us>Total Received Today: </en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_rejected_by_member" >
+			<en-us>Rejected by Members Today:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_deliver_to_member" >
+			<en-us>Delivered to Members Today: </en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_inbound_pending" >
+			<en-us>Waiting to Send:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_inbound_max_queue_time" >
+			<en-us>Maximum Queuing Time (min.):</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="db_inbound_log_volume" >
+			<en-us>Log Volume:</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+	</module>
+
+	<module name="RoleView">
+
+		<language id="rv_role_name" >
+			<en-us>Role Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="rv_admin_role" >
+			<en-us>Gateway Administration Role</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="rv_key" >
+			<en-us>Key</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="rv_selected" >
+			<en-us>Selected</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="rv_none_selected" >
+			<en-us>None Selected</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+	</module>
+
+	<module name="UserView">
+
+		<language id="user_login_name" >
+			<en-us>Login Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="user_first_name" >
+			<en-us>First Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="user_last_name" >
+			<en-us>Last Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="user_user_name" >
+			<en-us>User Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="user_local_name" >
+			<en-us>Local Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="user_user_group" >
+			<en-us>User Group</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="office_phone" >
+			<en-us>Office Phone</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="office_fax" >
+			<en-us>Office Fax</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="mobile" >
+			<en-us>Mobile</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="email_address" >
+			<en-us>Email Address</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="position_title" >
+			<en-us>Position Title</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="user_roles" >
+			<en-us>Roles</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="change_pwd" >
+			<en-us>Change Password</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="current_pwd" >
+			<en-us>Current Password</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="new_pwd" >
+			<en-us>New Password</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="confirm_pwd" >
+			<en-us>Confirm Password</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+	</module>
+
+	<module name="GatewayProfiles">
+
+		<language id="reactivate_outbound" >
+			<en-us>Reactivate Outbound</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+		
+		<language id="tab_gateway_detail" >
+			<en-us>Gateway Profile Details</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="tab_interface_setting" >
+			<en-us>User Interface Settings</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="tab_gateway_policy" >
+			<en-us>Gateway Profile Policies</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="gateway_profile_name" >
+			<en-us>Gateway Profile Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="gateway_local_name" >
+			<en-us>Local Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="address1" >
+			<en-us>Address Line1</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="address2" >
+			<en-us>Address Line2</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="address3" >
+			<en-us>Address Line3</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="country" >
+			<en-us>Country</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="sag_connection_status" >
+			<en-us>SAG Connection Status</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="outbound_queue_status" >
+			<en-us>Outbound Queue Status</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="swift_snf_status" >
+			<en-us>SWIFT SnF Queue Status</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="date_format" >
+			<en-us>Date Format</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="language" >
+			<en-us>Language</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="statistics_history" >
+			<en-us>Statistics History (Months)</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="mgmt_email" >
+			<en-us>System Management Email</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="monitor_frequency" >
+			<en-us>Monitoring Frequency (min.)</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="acceptable_resp_time" >
+			<en-us>Acceptable Response Time (sec.)</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="acceptable_queue_time" >
+			<en-us>Acceptable Queuing Time (min.)</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+	</module>
+
+	<module name="MemberProfile">
+
+		<language id="reactivate" >
+			<en-us>Reactivate Inbound</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="statistics" >
+			<en-us>Statistics</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="tab_member_details" >
+			<en-us>Member Details</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="tab_member_policy" >
+			<en-us>Member Policies</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="tab_msg_statistic" >
+			<en-us>Message Statistics</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="member_name" >
+			<en-us>Member Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="member_local_name" >
+			<en-us>Local Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="member_dn" >
+			<en-us>Member DN</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="ip_address" >
+			<en-us>IP Address</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="security_officer_login_name" >
+			<en-us>Security Officer Login Name</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="member_status" >
+			<en-us>Member Status</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="member_connection_status" >
+			<en-us>Connection Status</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="member_inbound_status" >
+			<en-us>Inbound Queue Status</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="downtime_start_time" >
+			<en-us>Downtime Start Time(HH:MM)</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="downtime_end_time" >
+			<en-us>Downtime End Time(HH:MM)</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="rentention_period" >
+			<en-us>Message Retention Months</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="stat_msg_outbound_title" >
+			<en-us>Outbound Messages</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="stat_msg_inbound_title" >
+			<en-us>Inbound Messages</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="stat_msg_pending" >
+			<en-us>Pending</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="last_msg_received" >
+			<en-us>Last Message Received</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="last_received_on" >
+			<en-us>Received On</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="last_msg_delivered" >
+			<en-us>Last Message Delivered</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+		
+		<language id="last_delivered_on" >
+			<en-us>Delivered On</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="view_outbound_pending" >
+			<en-us>Outbound Pending</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="view_inbound_pending" >
+			<en-us>Inbound Pending</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+	</module>
+
+	<module name="MessageView">
+		   
+		<language id="in_out" >
+			<en-us>In/Out</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_reference" >
+			<en-us>Message Reference</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="from_date" >
+			<en-us>From Date</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="to_date" >
+			<en-us>To Date</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="go" >
+			<en-us>Go</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_received_on" >
+			<en-us>Received On</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_service_code" >
+			<en-us>Service Code</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_type" >
+			<en-us>Message Type</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_counterparty_dn" >
+			<en-us>Counterparty DN</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_current_status" >
+			<en-us>Current Status</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_update_on" >
+			<en-us>Update On</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_additional_info" >
+			<en-us>Additional Info</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="listitem_select" >
+			<en-us>Select</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="listitem_inbound" >
+			<en-us>Inbound Messages</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="listitem_outbound" >
+			<en-us>Outbound Messages</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_detail_inbound" >
+			<en-us>Inbound Message</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_detail_outbound" >
+			<en-us>Outbound Message</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+		
+	</module>
+
+	<module name="ErrorMsg">
+
+		<language id="msg_data_input_not_accepted_front" >
+			<en-us>Data input as </en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_data_input_not_accepted_back" >
+			<en-us> into the form is considered potentially malicious and cannot be accepted for input.</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_system_error" >
+			<en-us>System Error.</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="msg_permission_denied" >
+			<en-us>Permission denied to access this page.</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="needlogin_session_expired" >
+			<en-us>Session expired or invalid user. Click </en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="needlogin_here" >
+			<en-us>here</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+		<language id="needlogin_tologin" >
+			<en-us> to login.</en-us>
+			<zh-cn></zh-cn>
+			<zh-tw></zh-tw>
+		</language>
+
+	</module>
+
+</languages>

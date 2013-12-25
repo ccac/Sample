@@ -1,0 +1,39 @@
+﻿<ResourceDictionary 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:custom="clr-namespace:SimpleButtonDemo;assembly=SimpleButtonDemo">
+	<Style TargetType="custom:SimpleButton">
+		<Setter Property="Width" Value="200" />
+		<Setter Property="Height" Value="100" />
+		<Setter Property="Background" Value="Lavender" />
+		<Setter Property="FontSize" Value="11" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="custom:SimpleButton">
+					<Grid x:Name="RootElement">
+						<Grid.Resources>
+							<Storyboard x:Key="MouseEnterAnimation">
+								<DoubleAnimation Storyboard.TargetName="HighlightElement" Storyboard.TargetProperty="Opacity" From="0" To="0.2" Duration="0:0:0.5" />
+							</Storyboard>
+							<Storyboard x:Key="MouseLeaveAnimation">
+								<DoubleAnimation Storyboard.TargetName="HighlightElement" Storyboard.TargetProperty="Opacity" From="0.2" To="0" Duration="0:0:0.5" />
+							</Storyboard>
+						</Grid.Resources>
+						<Rectangle x:Name="BodyElement"
+							Width="{TemplateBinding Width}"
+							Height="{TemplateBinding Height}"
+							Fill="{TemplateBinding Background}"
+							Stroke="Purple" RadiusX="16" RadiusY="16" />
+						<Rectangle x:Name="HighlightElement"
+							Width="{TemplateBinding Width}"
+							Height="{TemplateBinding Height}"
+							Fill="Black" RadiusX="16" RadiusY="16" Opacity="0" />
+						<ContentPresenter Content="{TemplateBinding Content}"
+							HorizontalAlignment="Center" VerticalAlignment="Center"
+							FontSize="{TemplateBinding FontSize}" />
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

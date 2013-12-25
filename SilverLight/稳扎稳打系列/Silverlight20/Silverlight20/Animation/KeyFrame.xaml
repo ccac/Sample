@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="Silverlight20.Animation.KeyFrame"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+    
+        <!--
+        ColorAnimationUsingKeyFrames - 在一组 KeyFrame 中所设置的多个 Color 值之间做动画处理
+        DoubleAnimationUsingKeyFrames - 在一组 KeyFrame 中所设置的多个 Double 值之间做动画处理
+        PointAnimationUsingKeyFrames - 在一组 KeyFrame 中所设置的多个 Point 值之间做动画处理
+        -->
+        
+        <!--
+        LinearColorKeyFrame - 在前一个关键帧的 Color 值及其自己的 Value 之间进行线性内插动画处理
+        DiscreteColorKeyFrame - 在前一个关键帧的 Color 值及其自己的 Value 之间进行离散内插动画处理
+        SplineColorKeyFrame - 在前一个关键帧的 Color 值及其自己的 Value 之间按 三次贝塞尔曲线 进行内插动画处理
+        
+        LinearDoubleKeyFrame - 在前一个关键帧的 Double 值及其自己的 Value 之间进行线性内插动画处理
+        DiscreteDoubleKeyFrame - 在前一个关键帧的 Double 值及其自己的 Value 之间进行离散内插动画处理
+        SplineDoubleKeyFrame - 在前一个关键帧的 Double 值及其自己的 Value 之间按 三次贝塞尔曲线 进行内插动画处理
+        
+        LinearPointKeyFrame - 在前一个关键帧的 Point 值及其自己的 Value 之间进行线性内插动画处理
+        DiscretePointKeyFrame - 在前一个关键帧的 Point 值及其自己的 Value 之间进行离散内插动画处理
+        SplinePointKeyFrame - 在前一个关键帧的 Point 值及其自己的 Value 之间按 三次贝塞尔曲线 进行内插动画处理
+        -->
+        
+        <!--
+        Value - 关键帧的目标值
+        KeyTime - 到达关键帧目标值的时间
+        KeySpline - 三次贝塞尔曲线的两个控制点：x1,y1 x2,y2（该三次贝塞尔曲线的起点为0,0，终点为1,1）
+        -->
+    
+        <Grid Margin="5" >
+            <Grid.Resources>
+                <Storyboard x:Name="caStoryboard">
+                    <ColorAnimationUsingKeyFrames
+                        Storyboard.TargetName="caBrush"
+                        Storyboard.TargetProperty="Color"
+                        Duration="0:0:10"
+                    >
+                        <LinearColorKeyFrame Value="Green" KeyTime="0:0:3" />
+                        <DiscreteColorKeyFrame Value="Blue" KeyTime="0:0:4" />
+                        <SplineColorKeyFrame Value="Red" KeySpline="0.6,0.0 0.9,0.00" KeyTime="0:0:6" />
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+            </Grid.Resources>
+
+            <Rectangle x:Name="caRectangle" MouseLeftButtonDown="caRectangle_MouseLeftButtonDown" Width="100" Height="50">
+                <Rectangle.Fill>
+                    <SolidColorBrush x:Name="caBrush" Color="Red" />
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="5" >
+            <Grid.Resources>
+                <Storyboard x:Name="daStoryboard">
+                    <DoubleAnimationUsingKeyFrames
+                        Storyboard.TargetName="daTransform"
+                        Storyboard.TargetProperty="X"
+                        Duration="0:0:10"
+                    >
+                        <LinearDoubleKeyFrame Value="500" KeyTime="0:0:3" />
+                        <DiscreteDoubleKeyFrame Value="400" KeyTime="0:0:4" />
+                        <SplineDoubleKeyFrame Value="0" KeySpline="0.6,0.0 0.9,0.00" KeyTime="0:0:6" />
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </Grid.Resources>
+
+            <Rectangle x:Name="daRectangle" MouseLeftButtonDown="daRectangle_MouseLeftButtonDown" Fill="Red" Width="100" Height="50">
+                <Rectangle.RenderTransform>
+                    <TranslateTransform x:Name="daTransform" X="0" Y="0" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="5" >
+            <Grid.Resources>
+                <Storyboard x:Name="paStoryboard">
+                    <PointAnimationUsingKeyFrames
+                        Storyboard.TargetName="paGeometry"
+                        Storyboard.TargetProperty="Center"
+                        Duration="0:0:10"
+                    >
+                        <LinearPointKeyFrame Value="100,100" KeyTime="0:0:3" />
+                        <DiscretePointKeyFrame Value="200,200" KeyTime="0:0:4" />
+                        <SplinePointKeyFrame Value="50,50" KeySpline="0.6,0.0 0.9,0.00" KeyTime="0:0:6" />
+                    </PointAnimationUsingKeyFrames>
+                </Storyboard>
+            </Grid.Resources>
+
+            <Path Fill="Red" MouseLeftButtonDown="paPath_MouseLeftButtonDown">
+                <Path.Data>
+                    <EllipseGeometry x:Name="paGeometry" Center="50,50" RadiusX="15" RadiusY="15" />
+                </Path.Data>
+            </Path>
+        </Grid>
+    </StackPanel>
+</UserControl>

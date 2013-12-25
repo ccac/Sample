@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IBlog" maxBufferSize="65536"
+                    maxReceivedMessageSize="65536">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:1593/Blog.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IBlog" contract="SilverlightDemoWCF.BlogService.IBlog"
+                name="BasicHttpBinding_IBlog" />
+        </client>
+    </system.serviceModel>
+</configuration>

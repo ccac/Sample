@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="CoreyMiller.VisualFx.Demo.CycloneParts.CycloneParticle"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Width="10" Height="10">
+    <Canvas>
+        <Rectangle Fill="Black" Width="10" Height="10" RenderTransformOrigin="0.5,0.5">
+        	<Rectangle.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform x:Name="ParticleScale" />
+        			<SkewTransform/>
+        			<RotateTransform Angle="45"/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Rectangle.RenderTransform></Rectangle>
+    </Canvas>
+</UserControl>

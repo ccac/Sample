@@ -1,0 +1,64 @@
+﻿<Canvas
+	xmlns="http://schemas.microsoft.com/client/2007"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Name="Piano" 
+	Width="1024" Height="500">
+    <Image Source="Image/bg.jpg" Height="500" Width="1024"/>
+
+    <Image x:Name="imgC" Height="500" Width="1024" Canvas.Top="0" Source="Image/C.jpg" Opacity="0"/>
+    <Image x:Name="imgC2" Height="500" Width="1024" Canvas.Top="0" Source="Image/C2.jpg" Opacity="0"/>
+    <Image x:Name="imgD" Height="500" Width="1024" Canvas.Top="0" Source="Image/D.jpg" Opacity="0"/>
+    <Image x:Name="imgD2" Height="500" Width="1024" Canvas.Top="0" Source="Image/D2.jpg" Opacity="0"/>
+    <Image x:Name="imgE" Height="500" Width="1024" Canvas.Top="0" Source="Image/E.jpg" Opacity="0"/>
+    <Image x:Name="imgF" Height="500" Width="1024" Canvas.Top="0" Source="Image/F.jpg" Opacity="0"/>
+    <Image x:Name="imgF2" Height="500" Width="1024" Canvas.Top="0" Source="Image/F2.jpg" Opacity="0"/>
+    <Image x:Name="imgG" Height="500" Width="1024" Canvas.Top="0" Source="Image/G.jpg" Opacity="0"/>
+    <Image x:Name="imgG2" Height="500" Width="1024" Canvas.Top="0" Source="Image/G2.jpg" Opacity="0"/>
+    <Image x:Name="imgA" Height="500" Width="1024" Canvas.Top="0" Source="Image/A.jpg" Opacity="0"/>
+    <Image x:Name="imgA2" Height="500" Width="1024" Canvas.Top="0" Source="Image/A2.jpg" Opacity="0"/>
+    <Image x:Name="imgB" Height="500" Width="1024" Canvas.Top="0" Source="Image/B.jpg" Opacity="0"/>
+
+    <MediaElement x:Name="C" AutoPlay="false" Source="Media/C.wma"/>
+    <MediaElement x:Name="C2" AutoPlay="false" Source="Media/C2.wma"/>
+    <MediaElement x:Name="D" AutoPlay="false" Source="Media/D.wma"/>
+    <MediaElement x:Name="D2" AutoPlay="false" Source="Media/D2.wma"/>
+    <MediaElement x:Name="E" AutoPlay="false" Source="Media/E.wma"/>
+    <MediaElement x:Name="F" AutoPlay="false" Source="Media/F.wma"/>
+    <MediaElement x:Name="F2" AutoPlay="false" Source="Media/F2.wma"/>
+    <MediaElement x:Name="G" AutoPlay="false" Source="Media/G.wma"/>
+    <MediaElement x:Name="G2" AutoPlay="false" Source="Media/G2.wma"/>
+    <MediaElement x:Name="A" AutoPlay="false" Source="Media/A.wma"/>
+    <MediaElement x:Name="A2" AutoPlay="false" Source="Media/A2.wma"/>
+    <MediaElement x:Name="B" AutoPlay="false" Source="Media/B.wma"/>
+
+    <Canvas x:Name="pathCanvas">
+        <Path x:Name="CPath" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="161.666656494141" Height="272.333312988281" Canvas.Left="135.5" Canvas.Top="138.83332824707" Data="M272.66667,140 L136,330 147.33333,336 162.66667,410.66667 247.33333,410 234.66667,330.66667 278,248 254,242.66667 258.66667,200.66667 296.66667,139.33333 272.66667,140" />
+        <Path x:Name="C2Path" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="91" Height="136.333319306374" Canvas.Left="263.5" Canvas.Top="105.500005066396" Data="M325.33333,106.66667 L264,202.66667 266,241.33333 307.33333,238.66667 354,138 351.33333,106.66666 326.66667,106" />
+        <Path x:Name="DPath" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="131" Height="274.333297729492" Canvas.Left="247.499999999999" Canvas.Top="137.499984741212" Data="M358,142.66667 L311.33333,243.33333 288.66667,246 248,330.66667 258,338 266.66667,411.33333 354,410.66665 347.33333,330.66668 374,246.66668 350,243.33336 352.66667,202.66669 378,138.00005 360.66667,140.00005" />
+        <Path x:Name="D2Path" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="70.3333129882813" Height="134.333319425583" Canvas.Left="356.83334350586" Canvas.Top="107.500003457069" Data="M394.66667,108.66667 L357.33333,204 359.33333,241.33333 398,240.66667 426.66667,134.66667 425.33333,108" />
+        <Path x:Name="EPath" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="117.666656494141" Height="274.333343505859" Canvas.Left="358.833343505859" Canvas.Top="137.5" Data="M431.33333,140 L403.33333,245.33333 381.33333,248 359.33333,330 368.66667,339.33333 372,411.33333 458,411.33333 455.33333,331.33333 476,138 433.33333,138.66667" />
+        <Path x:Name="FPath" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="99.6666564941406" Height="273.666680037975" Canvas.Left="470.83334350586" Canvas.Top="138.833345949649" Data="M486.66667,140.66667 L471.33333,332 477.33333,334 476.66667,412 563.33333,411.33335 564,339.33334 570,328 560,246.66665 535.33333,243.33331 530,139.3333 486.66667,139.33329" />
+        <Path x:Name="F2Path" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="51" Height="133.666656494141" Canvas.Left="534.166687011719" Canvas.Top="108.16665649414" Data="M538.66667,109.33333 L534.66667,137.33333 542,241.33333 584,240.66666 584.66667,205.33334 568,108.66667 540.66667,108.66668" />
+        <Path x:Name="GPath" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="111" Height="274.333343505859" Canvas.Left="570.166687011719" Canvas.Top="137.5" Data="M570.66667,248 L582.66667,336 582,411.33333 669.33333,410.66667 672.66667,332.66667 680.66667,330 655.33333,245.33333 631.33333,244 601.33333,138 578.66667,138 594.66667,244.66667 571.33333,248" />
+        <Path x:Name="G2Path" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="76.3333129882813" Height="131.666656494141" Canvas.Left="603.5" Canvas.Top="110.166664123534" Data="M612,111.33333 L604,136.66667 636,238.66667 636.66667,241.33333 679.33333,241.33333 679.33333,206.66667 641.33333,111.33334 612.66667,110.66668" />
+        <Path x:Name="APath" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="138.333312988281" Height="274.333343505859" Canvas.Left="655.5" Canvas.Top="137.5" Data="M665.33333,246 L694.66667,336.66667 686,411.33333 774.66667,410 785.33333,335.33333 793.33333,328.66667 750.66667,246.66667 722,243.33333 673.33333,138 656,138.66667 688.66667,216.66667 685.33333,245.33333 666,246" />
+        <Path x:Name="A2Path" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="95" Height="131" Canvas.Left="676.166687011719" Canvas.Top="110.833320617675" Data="M682,111.33333 L676.66667,138.66667 730.66667,240.66667 768.66667,241.33333 770.66667,204.00001 713.33333,111.33334 683.33333,111.33335" />
+        <Path x:Name="BPath" Opacity="0.01" Fill="#FFFFFFFF" Stretch="Fill" Stroke="#FF000000" Width="172.333312988281" Height="275.666687011719" Canvas.Left="733.5" Canvas.Top="136.833320051431" Data="M758,247.33333 L806,333.33333 790,412 878,412 894.66667,334 905.33333,327.33333 764.66667,138.66667 734,137.33333 776.66667,207.33334 778.66667,246.66668 758.66667,248" />
+    </Canvas>
+
+    <Ellipse x:Name="stopRecord"  Height="30" Width="30" Canvas.Left="40" Canvas.Top="430"
+      Stroke="Black" StrokeThickness="3" Fill="Red"/>
+    <Ellipse x:Name="startRecord"  Height="30" Width="30" Canvas.Left="80" Canvas.Top="430"
+      Stroke="Black" StrokeThickness="3" Fill="Green"/>
+
+
+    <Canvas Width="60" Height="30" Canvas.Left="760" Canvas.Top="422" Cursor="Hand">
+        <TextBlock x:Name="play" TextWrapping="Wrap" FontSize="28" Foreground="#FF4C7185" Text="Play">
+        </TextBlock>
+    </Canvas>
+
+    <TextBlock x:Name="lblMussicBook" TextWrapping="Wrap" Canvas.Left="120" Canvas.Top="434" FontSize="14" Foreground="#FFFFFFFF" Text="MusicBook:">
+    </TextBlock>
+    <TextBlock x:Name="lblName" TextWrapping="Wrap" Canvas.Left="520" Canvas.Top="434" FontSize="14" Foreground="#FFFFFFFF" Text="Name:">
+    </TextBlock>
+</Canvas>

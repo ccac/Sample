@@ -1,0 +1,265 @@
+﻿<UserControl x:Class="MessageBox.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:local="clr-namespace:MessageBox"
+  xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+  <UserControl.Resources>
+    <Style
+      x:Name="myStyle"
+      TargetType="local:MessageBoxControl">
+      <Setter
+        Property="Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <Grid
+              x:Name="RootElement"
+              Width="450" Height="300">  
+              <Grid.Resources>
+                <Style
+                  x:Key="ButtonStyle1"
+                  TargetType="Button">
+                  <Setter
+                    Property="IsEnabled"
+                    Value="true" />
+                  <Setter
+                    Property="IsTabStop"
+                    Value="true" />
+                  <Setter
+                    Property="Background"
+                    Value="#FF003255" />
+                  <Setter
+                    Property="Foreground"
+                    Value="#FF313131" />
+                  <Setter
+                    Property="MinWidth"
+                    Value="5" />
+                  <Setter
+                    Property="MinHeight"
+                    Value="5" />
+                  <Setter
+                    Property="Margin"
+                    Value="0" />
+                  <Setter
+                    Property="HorizontalContentAlignment"
+                    Value="Center" />
+                  <Setter
+                    Property="VerticalContentAlignment"
+                    Value="Center" />
+                  <Setter
+                    Property="Cursor"
+                    Value="Arrow" />
+                  <Setter
+                    Property="TextAlignment"
+                    Value="Left" />
+                  <Setter
+                    Property="TextWrapping"
+                    Value="NoWrap" />
+                  <Setter
+                    Property="FontSize"
+                    Value="11" />
+                  <Setter
+                    Property="Template">
+                    <Setter.Value>
+                      <ControlTemplate
+                        TargetType="Button">
+                        <Grid>
+                          <Grid.Resources>
+                            <Color
+                              x:Key="LinearBevelLightStartColor">#FCFFFFFF</Color>
+                            <Color
+                              x:Key="LinearBevelLightEndColor">#F4FFFFFF</Color>
+                            <Color
+                              x:Key="LinearBevelDarkStartColor">#E0FFFFFF</Color>
+                            <Color
+                              x:Key="LinearBevelDarkEndColor">#B2FFFFFF</Color>
+                            <Color
+                              x:Key="MouseOverLinearBevelDarkEndColor">#7FFFFFFF</Color>
+                            <Color
+                              x:Key="HoverLinearBevelLightStartColor">#FCFFFFFF</Color>
+                            <Color
+                              x:Key="HoverLinearBevelLightEndColor">#EAFFFFFF</Color>
+                            <Color
+                              x:Key="HoverLinearBevelDarkStartColor">#D8FFFFFF</Color>
+                            <Color
+                              x:Key="HoverLinearBevelDarkEndColor">#4CFFFFFF</Color>
+                            <Color
+                              x:Key="CurvedBevelFillStartColor">#B3FFFFFF</Color>
+                            <Color
+                              x:Key="CurvedBevelFillEndColor">#3CFFFFFF</Color>
+                            <SolidColorBrush
+                              x:Key="BorderBrush"
+                              Color="#FF000000" />
+                            <SolidColorBrush
+                              x:Key="AccentBrush"
+                              Color="#FFFFFFFF" />
+                            <SolidColorBrush
+                              x:Key="DisabledBrush"
+                              Color="#A5FFFFFF" />
+                            <LinearGradientBrush
+                              x:Key="FocusedStrokeBrush"
+                              EndPoint="0.5,1"
+                              StartPoint="0.5,0">
+                              <GradientStop
+                                Color="#B2FFFFFF"
+                                Offset="0" />
+                              <GradientStop
+                                Color="#51FFFFFF"
+                                Offset="1" />
+                              <GradientStop
+                                Color="#66FFFFFF"
+                                Offset="0.325" />
+                              <GradientStop
+                                Color="#1EFFFFFF"
+                                Offset="0.325" />
+                            </LinearGradientBrush>
+                          </Grid.Resources>
+                          <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup
+                              x:Name="CommonStates">
+                              <vsm:VisualStateGroup.Transitions>
+                                <vsm:VisualTransition
+                                  Duration="0:0:0.2"
+                                  To="MouseOver" />
+                                <vsm:VisualTransition
+                                  Duration="0:0:0.1"
+                                  To="Pressed" />
+                              </vsm:VisualStateGroup.Transitions>
+                              <vsm:VisualState
+                                x:Name="Normal" />
+                              <vsm:VisualState
+                                x:Name="MouseOver">
+                                <Storyboard />
+                              </vsm:VisualState>
+                              <vsm:VisualState
+                                x:Name="Pressed">
+                                <Storyboard />
+                              </vsm:VisualState>
+                              <vsm:VisualState
+                                x:Name="Disabled">
+                                <Storyboard />
+                              </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup
+                              x:Name="FocusStates">
+                              <vsm:VisualState
+                                x:Name="Focused">
+                                <Storyboard />
+                              </vsm:VisualState>
+                              <vsm:VisualState
+                                x:Name="Unfocused">
+                                <Storyboard />
+                              </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                          </vsm:VisualStateManager.VisualStateGroups>
+                          <Path
+                            HorizontalAlignment="Stretch"
+                            Margin="5.80000019073486,4.09999990463257,0.800999999046326,9.66100025177002"
+                            VerticalAlignment="Stretch"
+                            Fill="#FF06C8B3"
+                            Stretch="Fill"
+                            Stroke="#FF2400DA"
+                            StrokeThickness="2"
+                            Data="M8.2999935,10.199994 L6.299994,4.5999937 C6.299994,4.5999937 46.699978,23.399988 65.099976,8.9999876 C83.499969,-5.400013 49.899971,38.601345 58.69997,39.401375 C67.499969,40.201408 23.499971,28.200924 13.099981,37.801304 C2.6999912,47.401684 8.2999935,10.199994 8.2999935,10.199994 z" />
+                          <ContentPresenter
+                            Margin="4,5,4,4"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Padding="{TemplateBinding Padding}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            TextAlignment="{TemplateBinding TextAlignment}"
+                            TextDecorations="{TemplateBinding TextDecorations}"
+                            TextWrapping="{TemplateBinding TextWrapping}" />
+                        </Grid>
+                      </ControlTemplate>
+                    </Setter.Value>
+                  </Setter>
+                </Style>
+
+              </Grid.Resources>
+                  <Grid.RowDefinitions>
+                    <RowDefinition
+                      Height="*" />
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                      Width="*" />
+                  </Grid.ColumnDefinitions>
+                  <Path
+                    HorizontalAlignment="Stretch"
+                    Margin="53.5,30.5690002441406,35.4770011901855,19.6319999694824"
+                    VerticalAlignment="Stretch"
+                    Stretch="Fill"
+                    StrokeThickness="9"
+                    Data="M54,53.599998 C54,53.599998 453.20001,-1.6000016 550.79999,60.799999 C648.39996,123.2 531.59998,208.00238 594.79999,209.60242 C658,211.20244 404.39999,259.20325 334.79999,203.20233 C265.19998,147.20142 67.600006,196.00183 81.200012,172.8015 C94.800018,149.60118 54,53.599998 54,53.599998 z">
+                    <Path.Fill>
+                      <RadialGradientBrush>
+                        <GradientStop
+                          Color="#FF6EE7FF" />
+                        <GradientStop
+                          Color="#FF228A9F"
+                          Offset="1" />
+                      </RadialGradientBrush>
+                    </Path.Fill>
+                    <Path.Stroke>
+                      <LinearGradientBrush
+                        EndPoint="1.02400004863739,0.507000029087067"
+                        StartPoint="0.0149999996647239,0.495000004768372">
+                        <GradientStop
+                          Color="#FF000000" />
+                        <GradientStop
+                          Color="#FF572AEF"
+                          Offset="0.375" />
+                        <GradientStop
+                          Color="#FF25078C"
+                          Offset="0.73900002241134644" />
+                      </LinearGradientBrush>
+                    </Path.Stroke>
+                  </Path>
+                  <Button
+                    x:Name="YesButtonElement"
+                    Height="49.6"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,143.199996948242,47.2000007629395"
+                    VerticalAlignment="Bottom"
+                    Width="72"
+                    Content="Yes"
+                    Style="{StaticResource ButtonStyle1}"/>
+                  <Button
+                    x:Name="NoButtonElement"
+                    Height="49.6"
+                    HorizontalAlignment="Right"
+                    Margin="0,0,63.199996948242,47.2000007629395"
+                    VerticalAlignment="Bottom"
+                    Width="72"
+                    Content="No"
+                    Style="{StaticResource ButtonStyle1}"/>
+                            <ContentPresenter
+                    Height="70.4"
+                    HorizontalAlignment="Stretch"
+                    Margin="106.400001525879,66.4000015258789,130.399993896484,113.599998474121"
+                    VerticalAlignment="Stretch"
+                    FontFamily="Comic Sans MS"
+                    FontSize="22"
+                    FontStyle="Italic"
+                    FontWeight="Bold"/>
+                </Grid>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="White" Width="300" Height="350">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+    <Button  Width="100" Grid.Row="0" Height="40" Content="硬统码模式"  Click="OnHardCodeClick"/>
+    <Button  Width="100" Grid.Row="1" Height="40" Content="普通样式"  Click="OnNormalClick"/>
+    <Button  Width="100" Grid.Row="2" Height="40"  Content="图形显示"  Click="OnShapeClick"/>        
+    <Button  Width="100" Grid.Row="3" Height="40"  Content="转换样式"  Click="OnChangeStyleClick"/>
+    </Grid>
+</UserControl>

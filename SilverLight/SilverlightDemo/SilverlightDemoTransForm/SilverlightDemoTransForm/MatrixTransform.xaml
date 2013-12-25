@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="SilverlightDemoTransForm.MatrixTransform"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="800" Height="400" Loaded="UserControl_Loaded">
+    <Canvas Background="#CDFCAE">
+        <Canvas.Resources>
+            <Storyboard x:Name="myStoryboard">
+                <DoubleAnimation
+                    Storyboard.TargetName="myTransform"
+                    Storyboard.TargetProperty="Angle"
+                     From="0" To="360" Duration="0:0:5" RepeatBehavior="Forever" ></DoubleAnimation>
+            </Storyboard>
+        </Canvas.Resources>
+        
+        <Image Source="a.png" Canvas.Left="20" Canvas.Top="50" Opacity="0.3">
+        </Image>
+        <Image Source="a.png" Canvas.Left="20" Canvas.Top="50" Opacity="0.5">
+            <Image.RenderTransform>
+                <MatrixTransform>
+                    <MatrixTransform.Matrix>
+                        <Matrix OffsetX="0" OffsetY="0" M12="0.2"></Matrix>
+                    </MatrixTransform.Matrix>
+                </MatrixTransform>
+            </Image.RenderTransform>
+        </Image>
+
+        <Image Source="a.png" Canvas.Left="20" Canvas.Top="50">
+            <Image.RenderTransform>
+                <MatrixTransform>
+                    <MatrixTransform.Matrix>
+                        <Matrix OffsetX="0" OffsetY="0" M11="1" M12="0.5" M21="0.5" M22="1"></Matrix>
+                    </MatrixTransform.Matrix>
+                </MatrixTransform>
+            </Image.RenderTransform>
+        </Image>
+        
+        <Image Source="a.png" Canvas.Left="280" Canvas.Top="80" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave">
+            <Image.RenderTransform>
+                <RotateTransform x:Name="myTransform" Angle="0" CenterX="120" CenterY="68"></RotateTransform>
+            </Image.RenderTransform>
+        </Image>
+        
+        <Image Source="a.png" Canvas.Left="550" Canvas.Top="80" MouseLeftButtonDown="Image_MouseLeftButtonDown">
+            <Image.RenderTransform>
+                <RotateTransform x:Name="myTransform1" Angle="0" CenterX="120" CenterY="68"></RotateTransform>
+            </Image.RenderTransform>
+        </Image>
+        
+        <TextBlock Text="鼠标放我上面的图片" Canvas.Left="350" Canvas.Top="300"></TextBlock>
+        <TextBlock Text="点我上面的图片" Canvas.Left="600" Canvas.Top="300"></TextBlock>
+    </Canvas>
+</UserControl>

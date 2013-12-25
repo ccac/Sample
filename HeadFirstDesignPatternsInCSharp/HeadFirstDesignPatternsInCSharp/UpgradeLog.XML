@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="HeadFirstDesignPatternsInCSharp">
+</Property><Property Name="Solution File" Value="D:\MyWork\Sample\HeadFirstDesignPatternsInCSharp\HeadFirstDesignPatternsInCSharp\HeadFirstDesignPatternsInCSharp.sln">
+</Property><Property Name="Date" Value="Thursday, December 25, 2008">
+</Property><Property Name="Time" Value="15:53 PM">
+</Property></Properties><Event ErrorLevel="0" Project="AbstractFactory.PizzaStore" Source="AbstractFactory.PizzaStore\AbstractFactory.PizzaStore.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="AbstractFactory.PizzaStore" Source="AbstractFactory.PizzaStore\AbstractFactory.PizzaStore.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Adapter.Birds" Source="Adapter.Birds\Adapter.Birds.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Adapter.Birds" Source="Adapter.Birds\Adapter.Birds.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Command.RemoteControl" Source="Command.RemoteControl\Command.RemoteControl.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Command.RemoteControl" Source="Command.RemoteControl\Command.RemoteControl.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Composite.Menu" Source="Composite.Menu\Composite.Menu.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Composite.Menu" Source="Composite.Menu\Composite.Menu.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Compound.Duck" Source="Compound.Duck\Compound.Duck.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Compound.Duck" Source="Compound.Duck\Compound.Duck.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Decorator.Starbuzz" Source="Decorator.Starbuzz\Decorator.Starbuzz.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Decorator.Starbuzz" Source="Decorator.Starbuzz\Decorator.Starbuzz.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="DeveloperTests" Source="DeveloperTests\DeveloperTests.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="DeveloperTests" Source="DeveloperTests\DeveloperTests.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Facade.HomeTheater" Source="Facade.HomeTheater\Facade.HomeTheater.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Facade.HomeTheater" Source="Facade.HomeTheater\Facade.HomeTheater.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Factory.PizzaStore" Source="Factory.PizzaStore\Factory.PizzaStore.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Factory.PizzaStore" Source="Factory.PizzaStore\Factory.PizzaStore.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Iterator.CSharp" Source="Iterator.CSharp\Iterator.CSharp.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Iterator.CSharp" Source="Iterator.CSharp\Iterator.CSharp.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Iterator.Menu" Source="Iterator.Menu\Iterator.Menu.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Iterator.Menu" Source="Iterator.Menu\Iterator.Menu.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MVC.Controller.WebForm" Source="MVC.Controller.WebForm\MVC.Controller.WebForm.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MVC.Controller.WebForm" Source="MVC.Controller.WebForm\MVC.Controller.WebForm.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MVC.Controller.WinForm" Source="MVC.Controller.WinForm\MVC.Controller.WinForm.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MVC.Controller.WinForm" Source="MVC.Controller.WinForm\MVC.Controller.WinForm.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MVC.Model" Source="MVC.Model\MVC.Model.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MVC.Model" Source="MVC.Model\MVC.Model.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MVCWinFormView" Source="MVCWinFormView\MVCWinFormView.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MVCWinFormView" Source="MVCWinFormView\MVCWinFormView.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Observer.WeatherData" Source="Observer.WeatherData\Observer.WeatherData.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Observer.WeatherData" Source="Observer.WeatherData\Observer.WeatherData.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Proxy.CSharp" Source="Proxy.CSharp\Proxy.CSharp.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Proxy.CSharp" Source="Proxy.CSharp\Proxy.CSharp.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Proxy.Dynamic.Net" Source="Proxy.Dynamic.Net\Proxy.Dynamic.Net.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Proxy.Dynamic.Net" Source="Proxy.Dynamic.Net\Proxy.Dynamic.Net.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Proxy.GumballMachine" Source="Proxy.GumballMachine\Proxy.GumballMachine.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Proxy.GumballMachine" Source="Proxy.GumballMachine\Proxy.GumballMachine.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Proxy.Virtual.WinApp" Source="Proxy.Virtual.WinApp\Proxy.Virtual.WinApp.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Proxy.Virtual.WinApp" Source="Proxy.Virtual.WinApp\Proxy.Virtual.WinApp.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Singleton.InterestRate" Source="Singleton.InterestRate\Singleton.InterestRate.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Singleton.InterestRate" Source="Singleton.InterestRate\Singleton.InterestRate.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="State.GumballMachine" Source="State.GumballMachine\State.GumballMachine.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="State.GumballMachine" Source="State.GumballMachine\State.GumballMachine.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Strategy.Character" Source="Strategy.Character\Strategy.Character.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Strategy.Character" Source="Strategy.Character\Strategy.Character.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Strategy.Duck" Source="Strategy.Duck\Strategy.Duck.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Strategy.Duck" Source="Strategy.Duck\Strategy.Duck.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Strategy.Football" Source="Strategy.Football\Strategy.Football.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Strategy.Football" Source="Strategy.Football\Strategy.Football.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="TemplateMethod.CaffeineBeverage" Source="TemplateMethod.CaffeineBeverage\TemplateMethod.CaffeineBeverage.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="TemplateMethod.CaffeineBeverage" Source="TemplateMethod.CaffeineBeverage\TemplateMethod.CaffeineBeverage.csproj" Description="Converted">
+</Event><Event ErrorLevel="2" Project="MVCWebFormView" Source="http://localhost/MVCWebFormView/MVCWebFormView.csproj" Description="Unable to open the Web site 'http://localhost/MVCWebFormView/MVCWebFormView.csproj'.  The Web site 'http://localhost/MVCWebFormView/MVCWebFormView.csproj' does not exist.">
+</Event><Event ErrorLevel="0" Project="" Source="HeadFirstDesignPatternsInCSharp.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="HeadFirstDesignPatternsInCSharp.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="AbstractFactory.PizzaStore" Source="AbstractFactory.PizzaStore\AbstractFactory.PizzaStore.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Adapter.Birds" Source="Adapter.Birds\Adapter.Birds.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Command.RemoteControl" Source="Command.RemoteControl\Command.RemoteControl.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Composite.Menu" Source="Composite.Menu\Composite.Menu.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Compound.Duck" Source="Compound.Duck\Compound.Duck.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Decorator.Starbuzz" Source="Decorator.Starbuzz\Decorator.Starbuzz.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="DeveloperTests" Source="DeveloperTests\DeveloperTests.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Facade.HomeTheater" Source="Facade.HomeTheater\Facade.HomeTheater.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Factory.PizzaStore" Source="Factory.PizzaStore\Factory.PizzaStore.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Iterator.CSharp" Source="Iterator.CSharp\Iterator.CSharp.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Iterator.Menu" Source="Iterator.Menu\Iterator.Menu.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="MVC.Controller.WebForm" Source="MVC.Controller.WebForm\MVC.Controller.WebForm.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="MVC.Controller.WinForm" Source="MVC.Controller.WinForm\MVC.Controller.WinForm.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="MVC.Model" Source="MVC.Model\MVC.Model.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="MVCWinFormView" Source="MVCWinFormView\MVCWinFormView.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Observer.WeatherData" Source="Observer.WeatherData\Observer.WeatherData.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Proxy.CSharp" Source="Proxy.CSharp\Proxy.CSharp.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Proxy.Dynamic.Net" Source="Proxy.Dynamic.Net\Proxy.Dynamic.Net.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Proxy.GumballMachine" Source="Proxy.GumballMachine\Proxy.GumballMachine.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Proxy.Virtual.WinApp" Source="Proxy.Virtual.WinApp\Proxy.Virtual.WinApp.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Singleton.InterestRate" Source="Singleton.InterestRate\Singleton.InterestRate.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="State.GumballMachine" Source="State.GumballMachine\State.GumballMachine.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Strategy.Character" Source="Strategy.Character\Strategy.Character.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Strategy.Duck" Source="Strategy.Duck\Strategy.Duck.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="Strategy.Football" Source="Strategy.Football\Strategy.Football.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="TemplateMethod.CaffeineBeverage" Source="TemplateMethod.CaffeineBeverage\TemplateMethod.CaffeineBeverage.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

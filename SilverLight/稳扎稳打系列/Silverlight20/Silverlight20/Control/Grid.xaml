@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Silverlight20.Control.Grid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="Auto" Height="500">
+    
+    <!--
+    Grid - 表格式布局模式
+        Grid.RowDefinitions - 用于定义 Grid 中的行
+        Grid.ColumnDefinitions - 用于定义 Grid 中的列
+        Grid.ShowGridLines - 显示网格
+    
+        Grid.Row - 控件所在的 Grid 的行的索引
+        Grid.Column - 控件所在的 Grid 的列的索引
+        Grid.RowSpan - 合并行。 控件所在行，以及控件所在行之后的需要连续合并的行的总行数
+        Grid.ColumnSpan - 合并列。 控件所在列，以及控件所在列之后的需要连续合并的列的总列数
+    
+        Width - 宽度
+        MinWidth - 最小宽度
+        MaxWidth - 最大宽度
+        Height - 高度
+        MinHeight - 最小高度
+        MaxHeight - 最大高度
+    
+    Width 和 Height 的可用值
+    Auto - 自动设置为一个合适的值。默认值
+    Pixel - 像素值
+    * - 比例值。如 * 就是全部，2* & 8* 就是分别占20%和80%
+    -->
+    <Grid x:Name="LayoutRoot" Background="White" ShowGridLines="True">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="*" MinHeight="200" MaxHeight="500" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <TextBox Grid.Row="0" Grid.Column="0" Background="red" Text="abc" />
+        <TextBox Grid.Row="0" Grid.Column="1" Background="red" Text="abc" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
+        <TextBox Grid.Row="1" Grid.Column="0" Background="red" Text="abc" />
+        <TextBox Grid.Row="1" Grid.Column="1" Background="red" Text="abc" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
+        <TextBox Grid.Row="2" Grid.Column="0" Background="red" Text="abc" />
+        <TextBox Grid.Row="2" Grid.Column="1" Background="red" Text="abc" Grid.RowSpan="2" VerticalAlignment="Bottom" />
+        <TextBox Grid.Row="2" Grid.Column="2" Background="red" Text="abc" />
+        <TextBox Grid.Row="3" Grid.Column="2" Background="red" Text="abc" />
+        <TextBox Grid.Row="4" Grid.Column="2" Background="red" Text="abc" />
+        
+    </Grid>
+    
+</UserControl>

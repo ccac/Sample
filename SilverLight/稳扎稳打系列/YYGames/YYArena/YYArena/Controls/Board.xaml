@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="YYArena.Controls.Board"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:res="clr-namespace:YYArena.Resource"
+    Foreground="#FF8">
+    <Grid Margin="5">
+        <Grid.Resources>
+            <res:Localization x:Name="myRes" />
+        </Grid.Resources>
+
+        <Grid Background="Bisque" Opacity="0.3">
+            <Border x:Name="root" BorderThickness="1" BorderBrush="DarkBlue">
+
+            </Border>
+        </Grid>
+        <Grid Margin="3" DataContext="{Binding Source={StaticResource myRes}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="160" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="0">
+                <HyperlinkButton NavigateUri="http://webabcd.cnblogs.com/" TargetName="_blank" Foreground="#FF8" Style="{StaticResource styleHyperlinkButton}">
+                    <HyperlinkButton.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Developer}" />
+                            <TextBlock Text=": webabcd" />
+                        </StackPanel>
+                    </HyperlinkButton.Content>
+                </HyperlinkButton>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <TextBlock Text="{Binding FPS}" />
+                <TextBlock Text=": " />
+                <TextBlock x:Name="lblFps" Text="0" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="2">
+                <TextBlock Text="{Binding Level}" />
+                <TextBlock Text=": " />
+                <TextBlock x:Name="lblLevel" Text="1" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="3">
+                <TextBlock Text="{Binding Score}" />
+                <TextBlock Text=": " />
+                <TextBlock x:Name="lblScore" Text="0" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="5" HorizontalAlignment="Right">
+                <TextBlock Text="{Binding HP}" />
+                <TextBlock Text=": " />
+                <Grid>
+                    <Border Width="120" Height="8" CornerRadius="5" BorderBrush="Gray" BorderThickness="1">
+
+                    </Border>
+                    <Rectangle Width="118" Height="6" RadiusX="5" RadiusY="5">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="Red" Offset="0.0"></GradientStop>
+                                <GradientStop Color="Yellow" Offset="0.5"></GradientStop>
+                                <GradientStop Color="Green" Offset="1.0"></GradientStop>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+
+                        <!--用于显示“血管”的长度-->
+                        <Rectangle.Clip>
+                            <RectangleGeometry x:Name="rg" Rect="0,0,120,6"></RectangleGeometry>
+                        </Rectangle.Clip>
+                    </Rectangle>
+                </Grid>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

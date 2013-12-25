@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Silverlight20.Control.Slider"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+                
+        <!--
+        Minimum - Slider控件的最小值。参见基类System.Windows.Controls.Primitives.RangeBase
+        Maximum - Slider控件的最大值。参见基类System.Windows.Controls.Primitives.RangeBase
+        Value - Slider控件的值。参见基类System.Windows.Controls.Primitives.RangeBase
+        SmallChange - 按上/下/左/右键的时候，Slider控件的Value值的变化跨度。参见基类System.Windows.Controls.Primitives.RangeBase
+        ValueChanged - Slider控件的值发生变化时所触发的事件
+        Orientation - 控件的放置方向
+            Horizontal - 水平放置
+            Vertical - 垂直放置
+        IsDirectionReversed - 滑块的初始位置
+            True - 上到下 或者 右到左
+            False - 下到上 或者 左到右
+        -->
+        <Slider Height="400" HorizontalAlignment="Left" Orientation="Vertical" IsDirectionReversed="True" Minimum="0" Maximum="50" SmallChange="5" ValueChanged="Slider_ValueChanged"  />
+
+        <TextBlock x:Name="lblMsg" HorizontalAlignment="Left" />
+
+    </StackPanel>
+</UserControl>

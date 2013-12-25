@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Silverlight20.Interactive.Mouse"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--路由事件是一种可以针对元素树中的多个侦听器（而不是仅针对引发该事件的对象）调用处理程序的事件-->
+    
+    <!--
+    MouseLeftButtonDown, MouseLeftButtonUp和MouseMove均为向上冒泡的路由事件
+    本例的事件路由为：Ellipse -> StackPanel -> UserControl 或 Rectangle -> Canvas -> StackPanel -> UserControl
+    如果不想向上冒泡，则可以使用 MouseButtonEventArgs.Handled = true 告知事件已被处理
+    -->
+    <StackPanel HorizontalAlignment="Left" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown" >
+
+        <!--
+        MouseEnter - 鼠标进入时触发的事件（显然，此事件不能冒泡）
+        MouseLeave - 鼠标离开时触发的事件（显然，此事件不能冒泡）
+        
+        MouseLeftButtonDown - 鼠标左键单击按下时触发的事件
+        MouseLeftButtonUp - 鼠标左键单击按下并放开时触发的事件
+        MouseMove - 鼠标移动时触发的事件
+        -->
+        <Ellipse x:Name="ellipse" Width="200" Height="100" Fill="Red" Margin="5" 
+            MouseEnter="ellipse_MouseEnter" 
+            MouseLeave="ellipse_MouseLeave"
+            MouseLeftButtonDown="ellipse_MouseLeftButtonDown"
+            MouseLeftButtonUp="ellipse_MouseLeftButtonUp"
+        >
+        </Ellipse>
+
+        <Canvas Margin="5">
+
+            <!--用于演示拖放的矩形-->
+            <Rectangle x:Name="rectangle" Fill="Blue" Width="50" Height="50"
+                MouseLeftButtonDown="rectangle_MouseLeftButtonDown"
+                MouseLeftButtonUp="rectangle_MouseLeftButtonUp"
+                MouseMove="rectangle_MouseMove"
+            />
+            
+        </Canvas>
+
+    </StackPanel>
+</UserControl>

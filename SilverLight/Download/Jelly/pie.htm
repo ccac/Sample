@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>Richard Z's JellyPie</title>
+<style type="text/css">
+body {
+    background: #0a0a0a;
+    color: white;
+    font-family: Segoe UI, Verdana, Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+}
+h1 {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+a {
+    color: #0088d9;
+}
+img {
+    border: 0px;
+}
+#container {
+    background: #111;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    width: 800px;
+    height: 100%;
+}
+#footer {
+    margin: 0px auto;
+    width: 800px;
+}
+#morejelly {
+    background: #111;
+    margin-top: 60px;
+    text-align: right;
+}
+#contact {
+    width: 800px;
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+}
+</style>
+    <script type="text/javascript" src="js/Silverlight.js"></script>
+<script type="text/javascript">
+var _sl = null, bodyLoadWasFaster = false;
+function createMySilverlightControl()
+{  
+    var obj = Silverlight.createObject(
+        "base.xaml",                      // Source property value.
+        parentElement,                      // DOM reference to hosting DIV tag.
+        "mySilverlightControl",             // Unique control id value.
+        {                                   // Control properties.
+            width:'800',                    // Width of rectangular region of control in pixels.
+            height:'300',                   // Height of rectangular region of control in pixels.
+            inplaceInstallPrompt:false,     // Determines whether to display in-place install prompt if invalid version detected.
+            background:'#0d0d0d',           // Background color of control.
+            isWindowless:'false',           // Determines whether to display control in Windowless mode.
+            framerate:'24',                 // MaxFrameRate property value.
+            version:'0.9'                   // Control version to use.
+        },
+        {
+            onError:null,                   // OnError property value -- event handler function name.
+            onLoad:null                     // OnLoad property value -- event handler function name.
+        },
+        null);                              // Context value -- event handler function name.
+}
+
+function slLoaded(sender, eventArgs)
+{
+    _sl = sender;
+    if (bodyLoadWasFaster) {
+        onLoaded();
+    }
+}
+
+function onLoaded()
+{
+    if (!_sl) {
+        bodyLoadWasFaster = true;
+        return;
+    }
+
+    // Retrieve a reference to the control.
+    var control = _sl.getHost();
+    
+    var dark = control.content.createFromXaml(
+        '<Rectangle Name="dark" Canvas.Left="300" Canvas.Top="0" Width="500" Height="300">'
+      + '    <Rectangle.Fill>'
+      + '       <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">'
+      + '           <GradientStop Color="#353535" Offset="0.0" />'
+      + '           <GradientStop Color="#575757" Offset="0.23" />'
+      + '           <GradientStop Color="#4e4e4e" Offset="0.5" />'
+      + '           <GradientStop Color="#363636" Offset="1.0" />'
+      + '       </LinearGradientBrush>'
+      + '    </Rectangle.Fill>'
+      + '</Rectangle>'
+    );
+    _sl.children.add(dark);
+    
+    var colors = [ '00baff', '62e918', 'cf0773', '616161' ];
+//    var xy = [  ['0,-100', '100,100'],
+//                ['100,0', '-100,100'],
+//                ['0,100', '-100,-100'],
+//                ['-100,0', '100,-100']  ];
+  
+//    var trans = [   ['10', '-10'],
+//                    ['10', '10'],
+//                    ['-10', '10'],
+//                    ['-10', '-10']  ];
+
+    var slices = [0.05+Math.random()*0.5];
+    slices[1] = 0.05+Math.random()*(0.65 - slices[0]);
+    slices[2] = 0.05+Math.random()*(0.9 - slices[0] - slices[1]);
+    slices[3] = 1.0 - slices[0] - slices[1] - slices[2];
+    
+    //slices.sort(function(a,b){if(a>b)return -1;if(a<b)return 1;return 0;});
+    
+    var xyCoords = [[], [], [], []];
+    var popOutTranslation = [[], [], [], []];
+    
+    var currentAngle = 0;
+    for (var i = 0; i < slices.length; ++i) {
+        xyCoords[i][0] = (100*Math.sin(currentAngle * 2 * Math.PI)) + ',' + (-100*Math.cos(currentAngle * 2 * Math.PI));
+        
+        popOutTranslation[i][0] = (20-slices[i]*10)*Math.sin((currentAngle + slices[i]/2) * 2*Math.PI);
+        popOutTranslation[i][1] = -(20-slices[i]*10)*Math.cos((currentAngle + slices[i]/2) * 2*Math.PI);
+
+        currentAngle += slices[i];
+        xyCoords[i][1] = (100*Math.sin(currentAngle * 2 * Math.PI)) + ',' + (-100*Math.cos(currentAngle * 2 * Math.PI));
+    }
+    
+    for (var i = 0; i < 4; ++i) {
+        var arc = control.content.createFromXaml(
+            '<Path Name="' + i + '" Fill="#' + colors[i] + '"'
+          + '      Canvas.Left="150" Canvas.Top="150"'
+          + '      Data="M ' + xyCoords[i][0]
+          + '            A 100,100 ' + (slices[i]*2*Math.PI) + ' ' + (slices[i] > 0.5?1:0) + ' 1 ' + xyCoords[i][1]
+          + '            L 0,0"'
+          + '      MouseEnter="enter" MouseLeave="leave">'
+          + '   <Path.RenderTransform>'
+          + '       <TransformGroup>'
+          + '           <ScaleTransform Name="a' + i + '" CenterX="0" CenterY="0" ScaleX="0.0" ScaleY="0.0"/>'
+          + '           <RotateTransform Name="r' + i + '" Angle="-180.0"/>'
+          + '           <TranslateTransform Name="t' + i + '" X="0" Y="0"/>'
+          + '       </TransformGroup>'
+          + '   </Path.RenderTransform>'
+          + '   <Path.Resources>'
+          + '       <Storyboard Name="rot' + i + '">'
+          + '           <DoubleAnimation Storyboard.TargetName="r' + i + '" Storyboard.TargetProperty="Angle" To="0" Duration="0:0:0.6" />'
+          + '       </Storyboard>'
+          + '       <Storyboard Name="loademup' + i + '" Completed="loadmeup2">'
+          + '           <DoubleAnimation BeginTime="0:0:0.' + i + '" Storyboard.TargetName="a' + i + '" Storyboard.TargetProperty="ScaleX" To="1.1" Duration="0:0:0.3" />'
+          + '           <DoubleAnimation BeginTime="0:0:0.' + i + '" Storyboard.TargetName="a' + i + '" Storyboard.TargetProperty="ScaleY" To="1.1" Duration="0:0:0.3" />'
+          + '       </Storyboard>'
+          + '       <Storyboard Name="loademup' + i + '2" Completed="loadmeup3">'
+          + '            <DoubleAnimation Storyboard.TargetName="a' + i + '" Storyboard.TargetProperty="ScaleX" To="0.9" Duration="0:0:0.2" />'
+          + '            <DoubleAnimation Storyboard.TargetName="a' + i + '" Storyboard.TargetProperty="ScaleY" To="0.9" Duration="0:0:0.2" />'
+          + '        </Storyboard>'
+          + '        <Storyboard Name="loademup' + i + '23">'
+          + '            <DoubleAnimation Storyboard.TargetName="a' + i + '" Storyboard.TargetProperty="ScaleX" To="1.0" Duration="0:0:0.1" />'
+          + '            <DoubleAnimation Storyboard.TargetName="a' + i + '" Storyboard.TargetProperty="ScaleY" To="1.0" Duration="0:0:0.1" />'
+          + '        </Storyboard>'
+          + '        <Storyboard Name="enter' + i + '">'
+          + '            <DoubleAnimation Storyboard.TargetName="t' + i + '" Storyboard.TargetProperty="X" To="' + popOutTranslation[i][0] + '" Duration="0:0:0.1" />'
+          + '            <DoubleAnimation Storyboard.TargetName="t' + i + '" Storyboard.TargetProperty="Y" To="' + popOutTranslation[i][1] + '" Duration="0:0:0.1" />'
+          + '            <DoubleAnimation Storyboard.TargetName="text' + i + '" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.07" />'
+          + '        </Storyboard>'
+          + '        <Storyboard Name="leave' + i + '">'
+          + '            <DoubleAnimation Storyboard.TargetName="t' + i + '" Storyboard.TargetProperty="X" To="0" Duration="0:0:0.1" />'
+          + '            <DoubleAnimation Storyboard.TargetName="t' + i + '" Storyboard.TargetProperty="Y" To="0" Duration="0:0:0.1" />'
+          + '            <DoubleAnimation Storyboard.TargetName="text' + i + '" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.07" />'
+          + '       </Storyboard>'
+          + '   </Path.Resources>'
+          + '</Path>'
+            );
+        _sl.children.add(arc);
+        
+        var textblock = control.content.createFromXaml(
+            '<TextBlock Name="text' + i + '" FontSize="300" Text="' + i + '" Foreground="#FFFFFF"'
+            + '         Canvas.Left="450" Canvas.Top="-70"'
+            + '         Opacity="0"/>'
+        );
+        _sl.children.add(textblock);
+    }
+
+    for (var i = 0; i < 4; ++i) {
+        _sl.findName('loademup' + i).begin();
+        _sl.findName('rot' + i).begin();
+    }
+}
+
+function loadmeup2(sender, eventargs) {
+    sender.findName(sender.Name + '2').begin();
+}
+
+function loadmeup3(sender, eventargs) {
+    sender.findName(sender.Name + '3').begin();
+}
+
+function enter(sender, eventargs) {
+    sender.findName('enter' + sender.Name).begin();
+}
+function leave(sender, eventargs) {
+    sender.findName('leave' + sender.Name).begin();
+}
+</script>
+  </head>
+  <body onload="onLoaded()">
+  <div id="container">
+    <img src="JellyPie.gif" alt="Richard Z's JellyPie.gif" width="201" height="81" />
+
+    <!-- Where the Silverlight ActiveX control will go-->
+    <div id="mySilverlightControlHost" style="border:1px solid #2b2b2b;width:800px;height:300px">
+    </div>
+    <script type="text/javascript">
+
+
+        // Retrieve the div element you created in the previous step.
+        var parentElement = document.getElementById("mySilverlightControlHost");
+        createMySilverlightControl();
+
+    </script>
+
+    <div style="margin-top:16px">
+        <input type="image" src="newgraph.gif" onclick="history.go();return false" width="144" height="57" />
+        <img style="margin-left:12px" src="warning.gif" alt="WARNING: Once you hit refresh you might not be able to stop." width="399" height="37" />
+
+    </div>
+  </div>
+  <div id="footer">
+    <div id="morejelly">
+        <div><img src="needmore.gif" style="margin:20px 15px 5px 15px" width="156" height="20" /></div>
+        <div style="float:left">
+          <a href="index.htm"><img src="graph_small.png" style="margin:10px 0px 10px 10px" /></a>
+        </div>
+        <div style="float:right">
+          <a href="overload.html"><img src="overload_small.png" style="margin:10px 10px 10px 0px" /></a>
+        </div>
+        <div style="text-align:center">
+          <a href="bar.htm"><img src="bar_small.png" style="margin:10px 0px" /></a>
+        </div>
+    </div>
+    <div id="contact">
+        Richard Z is a Program Manager Intern at Microsoft<br />
+        and is naturally on <strong>gmail</strong> as <strong>richkzad</strong>.
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+﻿<UserControl x:Class="StylingTemplatingSample.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    Width="600" Height="400">
+    <StackPanel>
+        <StackPanel.Resources>
+            <Style TargetType="Button" x:Key="buttonStyle">
+                <Setter Property="Background" Value="Green" />
+                <Setter Property="Foreground" Value="Navy"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid x:Name="RootElement">
+                                <Grid.Resources>
+                                    <!--Add the constant resources here.-->
+                                    <LinearGradientBrush x:Key="ReflectionGradient" StartPoint="0,1" EndPoint="0,0">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Color="#80FFFFFF" Offset="0" />
+                                            <GradientStop Color="#50FFFFFF" Offset="0.5" />
+                                            <GradientStop Color="#80FFFFFF" Offset="0.5" />
+                                            <GradientStop Color="#C0FFFFFF" Offset="1" />
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+
+                                    <ScaleTransform x:Key="scale_1_1-3" ScaleX="1" ScaleY="1.4" />
+
+                                    <RadialGradientBrush x:Key="HighlightGradient">
+                                        <RadialGradientBrush.GradientStops>
+                                            <GradientStop Color="#FFFFFF" Offset="0" />
+                                            <GradientStop Color="#AAFFFFFF" Offset="0.3" />
+                                            <GradientStop Color="#55FFFFFF" Offset="0.6" />
+                                            <GradientStop Color="Transparent" Offset="1" />
+                                        </RadialGradientBrush.GradientStops>
+                                    </RadialGradientBrush>
+
+                                    <LinearGradientBrush x:Key="FocusedStrokeBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="#B2FFFFFF" Offset="0" />
+                                        <GradientStop Color="#51FFFFFF" Offset="1" />
+                                        <GradientStop Color="#66FFFFFF" Offset="0.325" />
+                                        <GradientStop Color="#1EFFFFFF" Offset="0.325" />
+                                    </LinearGradientBrush>
+
+                                    <SolidColorBrush x:Key="DisabledBrush" Color="#A5FFFFFF" />
+
+                                    <SolidColorBrush x:Key="AccentBrush" Color="#FFFFFFFF" />
+
+                                </Grid.Resources>
+
+                                <vsm:VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        
+                                        <vsm:VisualStateGroup.Transitions>
+                                            <vsm:VisualTransition Duration="0:0:.5" />
+                                            <vsm:VisualTransition Duration="0:0:0.8" To="MouseOver"/>
+                                            <vsm:VisualTransition Duration="0:0:0.2" From="Pressed"/>
+                                            <vsm:VisualTransition Duration="0" From="MouseOver" To="Pressed"/>
+                                        </vsm:VisualStateGroup.Transitions>
+                                        
+                                        <vsm:VisualState x:Name="Normal">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0:0:0.1" 
+                                                    Storyboard.TargetName="Highlight" 
+                                                    Storyboard.TargetProperty="Opacity" To="0"  />
+
+                                                <DoubleAnimation Duration="0:0:0.1" 
+                                                    Storyboard.TargetName="Reflection" 
+                                                    Storyboard.TargetProperty="Opacity" To="1"  />
+                                            </Storyboard>
+                                        </vsm:VisualState>
+                                        
+                                        <vsm:VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0:0:0" 
+                                                    Storyboard.TargetName="DisabledRect" 
+                                                    Storyboard.TargetProperty="Opacity" To="1" />
+                                            </Storyboard>
+                                        </vsm:VisualState>
+                                        
+                                        <vsm:VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0:0:0.1" 
+                                                    Storyboard.TargetName="Highlight" 
+                                                    Storyboard.TargetProperty="Opacity" To="1"  />
+                                            </Storyboard>
+                                        </vsm:VisualState>
+                                        
+                                        <vsm:VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0:0:0.1" 
+                                                    Storyboard.TargetName="Reflection" 
+                                                    Storyboard.TargetProperty="Opacity" To="0"  />
+
+                                                <DoubleAnimation Duration="0:0:0" 
+                                                    Storyboard.TargetName="Highlight" 
+                                                    Storyboard.TargetProperty="Opacity" To="1"  />
+                                            </Storyboard>
+                                        </vsm:VisualState>
+                                        
+                                    </VisualStateGroup>
+                                    
+                                    <VisualStateGroup x:Name="FocusStates">
+
+                                    </VisualStateGroup>
+                                </vsm:VisualStateManager.VisualStateGroups>
+
+                                <!--Add child FrameworkElement objects here.Keep the elements in the order that is specified.-->
+                                <!--Add the elements that specify appearance here.Keep the elements in the order that is specified in the QuickStart.-->
+                                <!--Main color of the button-->
+                                <Rectangle x:Name="Base" RadiusY="2" RadiusX="2" Fill="{TemplateBinding Background}"  />
+
+                                <!--Reflection effect-->
+                                <Rectangle x:Name="Reflection" RadiusY="2" RadiusX="2" Fill="{StaticResource ReflectionGradient}" />
+
+                                <!--3D Effect-->
+                                <Rectangle x:Name="BlurBorder" RadiusY="2" RadiusX="2" Stroke="#60000000" StrokeThickness="1.5" />
+                                <Rectangle x:Name="ThinBorder" RadiusY="2" RadiusX="2" Stroke="#90000000" StrokeThickness="0.5" />
+
+                                <!--Rectangles used as the FocusVisual-->
+                                <Grid x:Name="FocusVisualElement" Visibility="Collapsed">
+                                    <Rectangle RadiusX="3" RadiusY="3" Margin="2" Stroke="{StaticResource AccentBrush}" StrokeThickness="1" />
+                                    <Rectangle RadiusX="3" RadiusY="3" Stroke="{TemplateBinding Background}" StrokeThickness="2" />
+                                </Grid>
+
+                                <!--Rectangle used for the MouseOver State-->
+                                <Rectangle x:Name="Highlight" Opacity="0" 
+                                    RenderTransform="{StaticResource scale_1_1-3}" 
+                                    Fill="{StaticResource HighlightGradient}" />
+
+                                <ContentPresenter
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    FontFamily="{TemplateBinding FontFamily}"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    FontStretch="{TemplateBinding FontStretch}"
+                                    FontStyle="{TemplateBinding FontStyle}"
+                                    FontWeight="{TemplateBinding FontWeight}"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    Padding="{TemplateBinding Padding}"
+                                    TextAlignment="{TemplateBinding TextAlignment}"
+                                    TextDecorations="{TemplateBinding TextDecorations}"
+                                    TextWrapping="{TemplateBinding TextWrapping}"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    Margin="4,5,4,4" />
+
+                                <!--Rectangle used for the Disabled State-->
+                                <Rectangle x:Name="DisabledRect" 
+                                            RadiusX="4" RadiusY="4" 
+                                            Fill="{StaticResource DisabledBrush}"
+                                            Opacity="0" IsHitTestVisible="false" />
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </StackPanel.Resources>
+
+        <Grid Background="#FF5C7590">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Button Grid.Column="0" Grid.Row="1" Content="Button1" Style="{StaticResource buttonStyle}" Background="Red"></Button>
+                <Button Grid.Column="1" Grid.Row="0" Content="Button2" Style="{StaticResource buttonStyle}" Background="Orchid"></Button>
+                <Button Grid.Column="2" Grid.Row="1" Content="Button3" Style="{StaticResource buttonStyle}" Background="Gold"></Button>
+                <Button Grid.Column="1" Grid.Row="2" Content="Button4" Style="{StaticResource buttonStyle}"></Button>
+            </Grid>
+        </Grid>
+
+    </StackPanel>
+</UserControl>

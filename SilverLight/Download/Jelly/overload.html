@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>Richard Z's JellyGraph</title>
+<style type="text/css">
+body {
+    background: #000;
+    color: white;
+    font-family: Segoe UI, Verdana, Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+}
+h1 {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+a {
+    color: #0088d9;
+}
+img {
+    border: 0px;
+}
+#container {
+    background: #111;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    width: 800px;
+    height: 100%;
+}
+#footer {
+    margin: 0px auto;
+    width: 800px;
+}
+#morejelly {
+    background: #111;
+    margin-top: 60px;
+    text-align: right;
+}
+#contact {
+    width: 800px;
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+}
+</style>
+    <script type="text/javascript" src="js/Silverlight.js"></script>
+    <script type="text/javascript" src="js/JellyGraph.js"></script>
+  </head>
+  <body onload="onLoaded()">
+  <div id="container">
+    <img src="overload.gif" alt="Richard Z's JellyOverload" width="395" height="86" />
+    <!-- Where the Silverlight ActiveX control will go-->
+    <div id="mySilverlightControlHost" style="border:1px solid #2b2b2b;width:800px;height:300px">
+    </div>
+    <script type="text/javascript">
+
+
+        // Retrieve the div element you created in the previous step.
+        var parentElement = document.getElementById("mySilverlightControlHost");
+        createMySilverlightControl();
+
+    </script>
+
+    <div style="width:800px;text-align:right">
+        <div style="float:left" style="margin:7px;font-size:11px;color:#444">
+            <input type="checkbox" id="funtime" name="funtime" onclick="setShowMode(this.checked)" /> <label for="funtime">Happy Fun Time Mode</label>
+        </div>
+        <button style="font-weight:bold;margin:6px 3px;padding:6px 12px;display:none;background-color:#222222;border:0px;color:#fff" id="show1" onclick="showSet(0);$('show1').style.display='none';$('hide1').style.display=''">Show</button>
+        <button style="font-weight:bold;margin:6px 3px;padding:6px 12px;background-color:#444444;border:0px;color:#fff" id="hide1" onclick="hideSet(0);$('hide1').style.display='none';$('show1').style.display=''">Hide</button>
+
+        <button style="font-weight:bold;margin:6px 3px;padding:6px 12px;display:none;background-color:#002456;border:0px;color:#fff" id="show2" onclick="showSet(1);$('show2').style.display='none';$('hide2').style.display=''">Show</button>
+        <button style="font-weight:bold;margin:6px 3px;padding:6px 12px;background-color:#0046a6;border:0px;color:#fff" id="hide2" onclick="hideSet(1);$('hide2').style.display='none';$('show2').style.display=''">Hide</button>
+
+        <button style="font-weight:bold;margin:6px 3px;padding:6px 12px;display:none;background-color:#560606;border:0px;color:#fff" id="show3" onclick="showSet(2);$('show3').style.display='none';$('hide3').style.display=''">Show</button>
+        <button style="font-weight:bold;margin:6px 3px;padding:6px 12px;background-color:#b50c0c;border:0px;color:#fff" id="hide3" onclick="hideSet(2);$('hide3').style.display='none';$('show3').style.display=''">Hide</button>
+
+        <button style="font-weight:bold;margin:6px 3px;padding:6px 12px;display:none;background-color:#044b00;border:0px;color:#fff" id="show4" onclick="showSet(3);$('show4').style.display='none';$('hide4').style.display=''">Show</button>
+        <button style="font-weight:bold;margin:6px 3px;padding:6px 12px;background-color:#0ad500;border:0px;color:#fff" id="hide4" onclick="hideSet(3);$('hide4').style.display='none';$('show4').style.display=''">Hide</button>
+    </div>
+
+  </div>
+  <div id="footer">
+
+    <div id="morejelly">
+        <div><img src="needmore.gif" style="margin:20px 15px 5px 15px" width="156" height="20" /></div>
+        <div style="float:left">
+          <a href="index.htm"><img src="graph_small.png" style="margin:10px 0px 10px 10px" /></a>
+        </div>
+        <div style="float:right">
+          <a href="bar.htm"><img src="bar_small.png" style="margin:10px 10px 10px 0px" /></a>
+        </div>
+        <div style="text-align:center">
+          <a href="pie.htm"><img src="pie_small.png" style="margin:10px 0px" /></a>
+        </div>
+    </div>
+    
+    <div id="contact">
+        Richard Z is a Program Manager Intern at Microsoft<br />
+        and is naturally on <strong>gmail</strong> as <strong>richkzad</strong>.
+    </div>
+  </div>
+  </body>
+</html>

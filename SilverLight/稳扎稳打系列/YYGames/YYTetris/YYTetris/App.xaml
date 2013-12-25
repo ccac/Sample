@@ -1,0 +1,120 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="YYTetris.App"
+             >
+    <Application.Resources>
+
+        <Style x:Key="pieceBlue" TargetType="Rectangle">
+            <Setter Property="RadiusX" Value="2" />
+            <Setter Property="RadiusY" Value="2" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Stroke" Value="AntiqueWhite" />
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <RadialGradientBrush SpreadMethod="Reflect">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#26F" Offset="1"/>
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="pieceGreen" TargetType="Rectangle">
+            <Setter Property="RadiusX" Value="2" />
+            <Setter Property="RadiusY" Value="2" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Stroke" Value="AntiqueWhite" />
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <RadialGradientBrush SpreadMethod="Reflect">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#393" Offset="1"/>
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="pieceOrange" TargetType="Rectangle">
+            <Setter Property="RadiusX" Value="2" />
+            <Setter Property="RadiusY" Value="2" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Stroke" Value="AntiqueWhite" />
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <RadialGradientBrush SpreadMethod="Reflect">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FA0" Offset="1"/>
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="pieceRed" TargetType="Rectangle">
+            <Setter Property="RadiusX" Value="2" />
+            <Setter Property="RadiusY" Value="2" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Stroke" Value="AntiqueWhite" />
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <RadialGradientBrush SpreadMethod="Reflect">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#F22" Offset="1"/>
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="pieceCyan" TargetType="Rectangle">
+            <Setter Property="RadiusX" Value="2" />
+            <Setter Property="RadiusY" Value="2" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Stroke" Value="AntiqueWhite" />
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <RadialGradientBrush SpreadMethod="Reflect">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#2AA" Offset="1"/>
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="piecePurple" TargetType="Rectangle">
+            <Setter Property="RadiusX" Value="2" />
+            <Setter Property="RadiusY" Value="2" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Stroke" Value="AntiqueWhite" />
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <RadialGradientBrush SpreadMethod="Reflect">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#808" Offset="1"/>
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+                
+        <Style x:Key="pieceYellow" TargetType="Rectangle">
+            <Setter Property="RadiusX" Value="2" />
+            <Setter Property="RadiusY" Value="2" />
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Stroke" Value="AntiqueWhite" />
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <RadialGradientBrush SpreadMethod="Reflect">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#DD2" Offset="1"/>
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Application.Resources>
+</Application>

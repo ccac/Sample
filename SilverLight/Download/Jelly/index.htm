@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC
+  "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>Richard Z's JellyGraph</title>
+<style type="text/css">
+body {
+    background: #0a0a0a;
+    color: white;
+    font-family: Segoe UI, Verdana, Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+}
+h1 {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+a {
+    color: #0088d9;
+}
+img {
+    border: 0px;
+}
+#container {
+    background: #111;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    width: 800px;
+    height: 100%;
+}
+#footer {
+    margin: 0px auto;
+    width: 800px;
+}
+#morejelly {
+    background: #111;
+    margin-top: 60px;
+    text-align: right;
+}
+#contact {
+    width: 800px;
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+}
+</style>
+    <script type="text/javascript" src="js/Silverlight.js"></script>
+<script type="text/javascript">
+var _sl = null, bodyLoadWasFaster = false;
+function createMySilverlightControl()
+{  
+    var obj = Silverlight.createObject(
+        "base.xaml",                      // Source property value.
+        parentElement,                      // DOM reference to hosting DIV tag.
+        "mySilverlightControl",             // Unique control id value.
+        {                                   // Control properties.
+            width:'800',                    // Width of rectangular region of control in pixels.
+            height:'300',                   // Height of rectangular region of control in pixels.
+            inplaceInstallPrompt:false,     // Determines whether to display in-place install prompt if invalid version detected.
+            background:'#0d0d0d',           // Background color of control.
+            isWindowless:'false',           // Determines whether to display control in Windowless mode.
+            framerate:'24',                 // MaxFrameRate property value.
+            version:'0.9'                   // Control version to use.
+        },
+        {
+            onError:null,                   // OnError property value -- event handler function name.
+            onLoad:null                     // OnLoad property value -- event handler function name.
+        },
+        null);                              // Context value -- event handler function name.
+}
+
+function Animation(type, data) {
+    if (data.targetName && data.targetProperty && data.to && data.duration) {
+        var properties = '';
+        
+        properties += ' Storyboard.TargetName="' + data.targetName + '"';
+        properties += ' Storyboard.TargetProperty="' + data.targetProperty + '"';
+        
+        if (data.beginTime)
+            properties += ' BeginTime="0:0:' + data.beginTime + '"';
+
+        if (data.from)
+            properties += ' From="' + data.from + '"';
+
+        properties += ' To="' + data.to + '"';
+        properties += ' Duration="0:0:' + data.duration + '"';
+        return '<' + type + 'Animation' + properties + ' />';
+    }
+    return '';
+}
+
+function DoubleAnimation(data) {
+    return Animation('Double', data);
+}
+
+function PointAnimation(data) {
+    return Animation('Point', data);
+}
+
+function slLoaded(sender, eventArgs)
+{
+    _sl = sender;
+    if (bodyLoadWasFaster) {
+        onLoaded();
+    }
+}
+
+function onLoaded()
+{
+  if (!_sl) {
+    bodyLoadWasFaster = true;
+    return;
+  }
+
+  // Retrieve a reference to the control.
+  var control = _sl.getHost();
+
+  var colours = [ '0046a6' ]; //, '444444' ];
+
+  for (var group = 0; group < colours.length; ++group) {
+
+    var id = function(name, id) { return name + '_' + group + '_' + id; }
+    var values = [ 150 ];
+
+    _sl.children.add(
+        control.content.createFromXaml('<Line Name="' + id('line',0) + '" X1="0" X2="10" Y1="150" Y2="300" StrokeThickness="3" Stroke="#' + colours[group] + '"/>')
+    );
+
+
+
+    // The shaded region is really one big polygon. Start it smushed for the growing animation.
+    var shadedPath = '<Path Fill="#20' + colours[group] + '">'
+
+/*  // Optional Gradient, but don't know how to make it look good.
+
+          + '  <Path.Fill>'
+          + '    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">'
+          + '      <GradientStop Color="#205F87CE" Offset="0.0"/>'
+          + '      <GradientStop Color="#200D2D60" Offset="1.0"/>'
+          + '    </LinearGradientBrush>'
+          + '  </Path.Fill>'
+
+*/
+
+          + '  <Path.Data>'
+          + '    <PathGeometry>'
+          + '      <PathGeometry.Figures>'
+          + '        <PathFigureCollection>'
+          + '          <PathFigure StartPoint="0,300">'
+          + '            <PathFigure.Segments>'
+          + '              <PathSegmentCollection>'
+          + '                   <LineSegment Point="0,150" />';
+
+    for (var i = 0; i < 42; ++i) {
+         shadedPath += '                   <LineSegment Name="' + id('sp2', i) + '" Point="' + (10 + i*20) + ',300" />'
+                     + '                   <LineSegment Name="' + id('sp1', i+1) + '" Point="' + (10 + i*20) + ',300" />';
+    }
+
+    shadedPath += '                   <LineSegment Point="' + (30+41*20) + ',300" />'
+          + '                   <LineSegment Point="0,300" />'
+          + '              </PathSegmentCollection>'
+          + '            </PathFigure.Segments>'
+          + '          </PathFigure>'
+          + '        </PathFigureCollection>'
+          + '      </PathGeometry.Figures>'
+          + '    </PathGeometry>'
+          + '  </Path.Data>'
+          + '</Path>';
+
+    _sl.children.add(
+        control.content.createFromXaml(shadedPath)
+    );
+
+    var nodeCount = 42;
+    for (i = 1; i < nodeCount; ++i)
+    {
+        values[i] = Math.min(290,         //10 + 280 * (group + 1) / colours.length,
+                             Math.max(10, // + 280 * group / colours.length,
+                                      values[i-1] - 50 + Math.random()*101));
+
+        var x = i * 20 + 10;
+
+        // Draw the line
+        var line = control.content.createFromXaml(
+            '<Line Name="' + id('line',i) + '" X1="' + (x - 20) + '" X2="' + x + '"'
+            + ' Y1="305" Y2="305"'
+            + ' StrokeThickness="3" Stroke="#' + colours[group] + '" />'
+        );
+        _sl.children.add(line);
+
+        // The ugly part.
+        // Creates a circle, with a render transform so the circle can be resized later.
+        // Also create two storyboard animations. One for growing the circle, and one for shrinking it.
+        var circle = control.content.createFromXaml(
+
+            //////////////////////
+
+            // Start the Ellipse tag
+
+            '<Ellipse Name="' + id('', i) + '" Canvas.ZIndex="1"'
+            + '       Canvas.Left="' + (x - 24) + '"'
+            + '       Canvas.Top="305"'
+            + '       Width="8" Height="8"'
+            + '       MouseEnter="mouseenter" MouseLeave="mouseleave" Loaded="loadedellipse">'
+
+            + '  <Ellipse.Fill>'
+            + '    <SolidColorBrush Name="' + id('vertexFill',i) + '" Color="#' + colours[group] + '" />'
+            + '  </Ellipse.Fill>'
+
+            //////////////////////
+
+            // Transform used for scaling up/down later
+
+            + '  <Ellipse.RenderTransform>'
+            + '    <ScaleTransform Name="' + id('est',i) + '" CenterX="4" CenterY="4" ScaleX="1.0" ScaleY="1.0"/>'
+            + '  </Ellipse.RenderTransform>'
+
+            //////////////////////
+
+            // Animations
+
+            + '  <Ellipse.Resources>'
+
+            // Loaded animation (rise from the bottom)
+
+            + '    <Storyboard Name="' + id('l',i) + '" Completed="l2">'
+            +         DoubleAnimation({
+                        'targetName':     id('', i),
+                        'targetProperty': '(Canvas.Top)',
+                        'beginTime':      i/50,
+                        'duration':       0.3,
+                        'from':           296,
+                        'to':             300 - (300 - (values[i-1] - 4)) * 1.1
+                      })
+            +         DoubleAnimation({
+                        'targetName':     id('line', i-1),
+                        'targetProperty': 'Y2',
+                        'beginTime':      i/50,
+                        'duration':       0.3,
+                        'from':           300,
+                        'to':             300 - (300 - values[i-1]) * 1.1
+                      })
+            +         DoubleAnimation({
+                        'targetName':     id('line', i),
+                        'targetProperty': 'Y1',
+                        'beginTime':      i/50,
+                        'duration':       0.3,
+                        'from':           300,
+                        'to':             300 - (300 - values[i-1]) * 1.1
+                      })
+            +         PointAnimation({
+                        'targetName':     id('sp2', i-1),
+                        'targetProperty': 'Point',
+                        'beginTime':      i/50,
+                        'duration':       0.3,
+                        'to':             (x-20) + ',' + (300 - (300 - values[i-1]) * 1.1)
+                      })
+            +         PointAnimation({
+                        'targetName':     id('sp1', i),
+                        'targetProperty': 'Point',
+                        'beginTime':      i/50,
+                        'duration':       0.3,
+                        'to':             (x-20) + ',' + (300 - (300 - values[i-1]) * 1.1)
+                      })
+            + '    </Storyboard>'
+
+            // Loaded animation 2 (first bounce)
+
+            + '    <Storyboard Name="' + id('l2',i) + '" Completed="l3">'
+            + '      <DoubleAnimation Storyboard.TargetName="' +id('', i) + '" Storyboard.TargetProperty="(Canvas.Top)"'
+            + '                       To="' + (300 - (300 - (values[i-1] - 4))*0.98) + '" Duration="0:0:0.2" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('line',i-1) + '" Storyboard.TargetProperty="Y2"'
+            + '                       To="' + (300 - (300 - (values[i-1]))*0.98) + '" Duration="0:0:0.2" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('line',i) + '" Storyboard.TargetProperty="Y1"'
+            + '                       To="' + (300 - (300 - (values[i-1]))*0.98) + '" Duration="0:0:0.2" />'
+            + '      <PointAnimation Storyboard.TargetName="' + id('sp2',i-1) + '" Storyboard.TargetProperty="Point"'
+            + '                      To="' + (x-20) + ',' + (300 - (300 - (values[i-1]))*0.98) + '" Duration="0:0:0.2" />'
+            + '      <PointAnimation Storyboard.TargetName="' + id('sp1',i) + '" Storyboard.TargetProperty="Point"'
+            + '                      To="' + (x-20) + ',' + (300 - (300 - (values[i-1]))*0.98) + '" Duration="0:0:0.2" />'
+            + '    </Storyboard>'
+
+            // Loaded animation 3 (last bounce)
+
+            + '    <Storyboard Name="' + id('l3',i) + '">'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('', i) + '" Storyboard.TargetProperty="(Canvas.Top)"'
+            + '                       To="' + (values[i-1] - 4) + '" Duration="0:0:0.06" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('line',i-1) + '" Storyboard.TargetProperty="Y2"'
+            + '                       To="' + values[i-1] + '" Duration="0:0:0.06" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('line',i) + '" Storyboard.TargetProperty="Y1"'
+            + '                       To="' + values[i-1] + '" Duration="0:0:0.06" />'
+            + '      <PointAnimation Storyboard.TargetName="' + id('sp2',i-1) + '" Storyboard.TargetProperty="Point"'
+            + '                      To="' + (x-20) + ',' + values[i-1] + '" Duration="0:0:0.06" />'
+            + '      <PointAnimation Storyboard.TargetName="' + id('sp1',i) + '" Storyboard.TargetProperty="Point"'
+            + '                      To="' + (x-20) + ',' + values[i-1] + '" Duration="0:0:0.06" />'
+            + '    </Storyboard>'
+
+            + '  </Ellipse.Resources>'
+
+            ///////////////////////
+
+            + '</Ellipse>'
+        );
+
+        _sl.children.add(circle);
+
+
+        var hotspot = control.content.createFromXaml(
+            '<Rectangle Name="' + id('hs',i) + '" Canvas.ZIndex="5"'
+            + '       Canvas.Left="' + (x - 28) + '"'
+            + '       Canvas.Top="' + (values[i-1]-12) + '"'
+            + '       Width="16" Height="24"'
+            + '       Fill="#00000000"'
+            + '       MouseEnter="mouseenter" MouseLeave="mouseleave">'
+
+            //////////////////////
+
+            // Animations
+
+            + '  <Rectangle.Resources>'
+
+            // Growing animation
+
+            + '    <Storyboard Name="' + id('esg',i) + '">'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('est',i) + '" Storyboard.TargetProperty="ScaleX"'
+            + '                       To="1.5" Duration="0:0:0.07" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('est',i) + '" Storyboard.TargetProperty="ScaleY"'
+            + '                       To="1.5" Duration="0:0:0.07" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('t',i) + '" Storyboard.TargetProperty="Opacity"'
+            + '                       To="1" Duration="0:0:0.07" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('r',i) + '" Storyboard.TargetProperty="Opacity"'
+            + '                       To="1" Duration="0:0:0.07" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('r',i) + '" Storyboard.TargetProperty="(Canvas.Left)"'
+            + '                       To="' + (x-2) + '" Duration="0:0:0.1" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('t',i)+ '" Storyboard.TargetProperty="(Canvas.Left)"'
+            + '                       To="' + (x+1) + '" Duration="0:0:0.1" />'
+            + '      <ColorAnimation Storyboard.TargetName="' + id('vertexFill',i)+ '" Storyboard.TargetProperty="Color"'
+            + '                       To="#00baff" Duration="0:0:0.1" />'
+            + '    </Storyboard>'
+
+            // Shrinking animation
+
+            + '    <Storyboard Name="' + id('ess',i) + '" Completed="doneShrink">'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('est',i) + '" Storyboard.TargetProperty="ScaleX"'
+            + '                       To="1.0" Duration="0:0:0.2" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('est',i) + '" Storyboard.TargetProperty="ScaleY"'
+            + '                       To="1.0" Duration="0:0:0.2" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('t',i) + '" Storyboard.TargetProperty="Opacity"'
+            + '                       To="0" Duration="0:0:0.2" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('r',i) + '" Storyboard.TargetProperty="Opacity"'
+            + '                       To="0" Duration="0:0:0.2" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('r',i) + '" Storyboard.TargetProperty="(Canvas.Left)"'
+            + '                       To="' + (x+12) + '" Duration="0:0:0.1" />'
+            + '      <DoubleAnimation Storyboard.TargetName="' + id('t',i) + '" Storyboard.TargetProperty="(Canvas.Left)"'
+            + '                       To="' + (x+15) + '" Duration="0:0:0.1" />'
+            + '      <ColorAnimation Storyboard.TargetName="' + id('vertexFill',i)+ '" Storyboard.TargetProperty="Color"'
+            + '                       To="#' + colours[group] + '" Duration="0:0:0.1" />'
+            + '    </Storyboard>'
+
+            + '  </Rectangle.Resources>'
+
+            ///////////////////////
+
+            + '</Rectangle>'
+        );
+
+        _sl.children.add(hotspot);
+
+        ////////////////
+        // This is the bubble that contains the number, showing up on MouseEnter
+        //
+        var rect = control.content.createFromXaml(
+            '<Path Name="' + id('r',i) + '" Opacity="0" Canvas.ZIndex="2"'
+            + '    Stroke="#3a3a3a" StrokeThickness="1" Fill="#202020"'
+            + '    Canvas.Left="' + (x - 5) + '" Canvas.Top="' + (parseInt(values[i-1]) - 10.5) + '"'
+            + '    Data="M 0,2'
+            + '          c 0,-2 -2,0 2,-2'
+            + '          h 24'
+            + '          c 2,0 0,-2, 2,2'
+            + '          v 16'
+            + '          c 0,2 2,0 -2,2'
+            + '          h -24'
+            + '          c -2,0 0,2 -2,-2'
+            + '          v -4'
+            + '          l -6,-4'
+            + '          l 6,-4'
+            + '          v -4'
+            + '">'
+//            + '    <Path.Fill>'
+//            + '        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">'
+//            + '            <GradientStop Color="#FFFFFF" Offset="0.0"/>'
+//            + '            <GradientStop Color="#F0F0F0" Offset="1.0"/>'
+//            + '        </LinearGradientBrush>'
+//            + '    </Path.Fill>'
+            + '</Path>'
+        );
+        _sl.children.add(rect);
+
+
+        ////////////////
+        // This is the text block that shows up inside the bubble
+        //
+        var yInt = parseInt(values[i-1]);
+        var textBlock = control.content.createFromXaml(
+            '<TextBlock Name="' + id('t',i) + '" FontSize="11" Text="' + yInt + '" Foreground="#ffffff"'
+            + '         Canvas.Left="' + (x - 2) + '" Canvas.Top="' + (yInt - 8) + '"'
+            + '         Canvas.ZIndex="3" Opacity="0">'
+            + '</TextBlock>'
+        );
+        _sl.children.add(textBlock);
+    }
+
+  }
+}
+
+function mouseenter(sender, eventArgs)
+{
+    var id = sender.Name.substr(2,6);
+    sender.findName('esg'+id).begin();
+}
+
+function mouseleave(sender, eventArgs)
+{
+    var id = sender.Name.substr(2,6);
+    sender.findName('ess'+id).begin();
+}
+
+function loadedellipse(sender, eventArgs)
+{
+    sender.findName('l'+sender.Name).begin();
+}
+
+function l2(sender, eventArgs)
+{
+    sender.findName('l2'+sender.Name.substr(1,6)).begin();
+}
+
+function l3(sender, eventArgs)
+{
+    sender.findName('l3'+sender.Name.substr(2,6)).begin();
+}
+
+</script>
+  </head>
+  <body onload="onLoaded()">
+  <div id="container">
+    <img src="JellyGraph.gif" alt="Richard Z's JellyGraph" width="287" height="81" />
+
+    <!-- Where the Silverlight ActiveX control will go-->
+    <div id="mySilverlightControlHost" style="border:1px solid #2b2b2b;width:800px;height:300px">
+    </div>
+    <script type="text/javascript">
+
+
+        // Retrieve the div element you created in the previous step.
+        var parentElement = document.getElementById("mySilverlightControlHost");
+        createMySilverlightControl();
+
+    </script>
+
+    <div style="margin-top:16px">
+        <input type="image" src="newgraph.gif" onclick="history.go();return false" width="144" height="57" />
+        <img style="margin-left:12px" src="warning.gif" alt="WARNING: Once you hit refresh you might not be able to stop." width="399" height="37" />
+
+    </div>
+  </div>
+  <div id="footer">
+    <div id="morejelly">
+        <div><img src="needmore.gif" style="margin:20px 15px 5px 15px" width="156" height="20" /></div>
+        <div style="float:left">
+          <a href="pie.htm"><img src="pie_small.png" style="margin:10px 0px 10px 10px" /></a>
+        </div>
+        <div style="float:right">
+          <a href="overload.html"><img src="overload_small.png" style="margin:10px 10px 10px 0px" /></a>
+        </div>
+        <div style="text-align:center">
+          <a href="bar.htm"><img src="bar_small.png" style="margin:10px 0px" /></a>
+        </div>
+    </div>
+    <div id="contact">
+        Richard Z is a Program Manager Intern at Microsoft<br />
+        and is naturally on <strong>gmail</strong> as <strong>richkzad</strong>.
+    </div>
+  </div>
+  </body>
+</html>

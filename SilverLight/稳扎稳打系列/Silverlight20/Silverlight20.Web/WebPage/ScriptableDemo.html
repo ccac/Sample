@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Silverlight20</title>
+    <style type="text/css">
+        html, body
+        {
+            height: 100%;
+            overflow: auto;
+        }
+        body
+        {
+            padding: 0;
+            margin: 0;
+        }
+        #silverlightControlHost
+        {
+            height: 100%;
+        }
+    </style>
+
+    <script type="text/javascript" src="../Silverlight.js"></script>
+
+    <script type="text/javascript">
+        function scriptableDemo() {
+
+            // scriptable - Silverlight 注册到客户端的对象
+            var obj = document.getElementById("xaml1").content.scriptable;
+            var output = document.getElementById('result');
+
+            output.innerHTML += obj.CurrentTime
+            output.innerHTML += '<br />';
+
+            output.innerHTML += obj.Hello("webabcd");
+            output.innerHTML += '<br />';
+
+            // obj.Start = responseStart;
+            // addEventListener - 添加事件监听器
+            // removeEventListener - 移除事件监听器
+            obj.addEventListener("Start", responseStart);
+        }
+
+        function responseStart(sender, args) {
+            document.getElementById('result').innerHTML += args.CurrentTime;
+            document.getElementById('result').innerHTML += '<br />';
+        }
+    </script>
+
+</head>
+<body>
+    <div style="font-size: 12px" id="result">
+    </div>
+    <div style="font-size: 12px" onclick="scriptableDemo();">
+        加载了 Silverlight20.WebPage.ScriptableDemo 后，单击这里以测试 Silverlight 对可脚本化的支持</div>
+    <div id="silverlightControlHost">
+        <object id="xaml1" data="data:application/x-silverlight-2," type="application/x-silverlight-2"
+            width="100%" height="100%">
+            <param name="source" value="../ClientBin/Silverlight20.xap" />
+            <param name="EnableHtmlAccess" value="true" />
+        </object>
+        <iframe style='visibility: hidden; height: 0; width: 0; border: 0px'></iframe>
+    </div>
+</body>
+</html>

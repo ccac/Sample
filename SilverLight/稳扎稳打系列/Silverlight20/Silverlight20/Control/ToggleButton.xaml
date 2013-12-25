@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Silverlight20.Control.ToggleButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left" Width="300">
+
+        <!--
+        Content - ToggleButton上显示的内容
+        Click - ToggleButton的单击事件
+        Cursor - 鼠标移动到ToggleButton上面时，鼠标指针的样式
+            Arrow - 箭头
+            Hand - 手形 
+            Wait - 沙漏
+            IBeam - “I”字形 
+            Stylus - 点
+            Eraser - 橡皮
+            None - 无
+        -->
+        <ToggleButton x:Name="tbtn1" Content="红色的两状态的ToggleButton" Cursor="IBeam" Background="Red" Margin="5" />
+
+        <!--
+        IsThreeState - 是否是 有3个状态 的ToggleButton
+            false - 通常的两状态。默认值
+            true - 有3个状态，分别为：true, false, null。也就是说 ToggleButton.IsChecked 是 bool? 类型
+        Checked - ToggleButton的IsChecked变为true时所触发的事件
+        Unchecked - ToggleButton的IsChecked变为false时所触发的事件
+        Indeterminate - ToggleButton的IsChecked变为null时所触发的事件
+        -->
+        <ToggleButton x:Name="tbtn2" Content="红色的三状态的ToggleButton" Background="Red" IsThreeState="True" Margin="5" />
+
+        <!--
+        IsEnabled - ToggleButton是否有效
+        -->
+        <ToggleButton x:Name="tbtn3" Content="无效的ToggleButton" IsEnabled="False" Margin="5"/>
+
+        <!--
+        ToggleButton.Content - ToggleButton上显示的内容
+        ClickMode - 触发单击事件的类型 [System.Windows.Controls.ClickMode枚举]
+            ClickMode.Press - 鼠标左键单击
+            ClickMode.Release - 鼠标左键单击并放开
+            ClickMode.Hover - 鼠标经过
+        -->
+        <ToggleButton x:Name="tbtn4" ClickMode="Release" Margin="5">
+            <ToggleButton.Content>
+                <Image Source="/Silverlight20;component/Images/Logo.jpg" />
+            </ToggleButton.Content>
+        </ToggleButton>
+
+        <Button Content="各个ToggleButton的选中状态" HorizontalAlignment="Left" Click="Button_Click" Margin="5" />
+
+    </StackPanel>
+</UserControl>

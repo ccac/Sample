@@ -1,0 +1,7 @@
+﻿<UserControl x:Class="StreakDemo.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Canvas x:Name="LayoutRoot" Background="Black" MouseMove="LayoutRoot_MouseMove">
+
+    </Canvas>
+</UserControl>

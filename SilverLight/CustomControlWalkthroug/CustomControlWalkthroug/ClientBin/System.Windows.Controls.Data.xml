@@ -1,0 +1,1222 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Windows.Controls.Data</name>
+    </assembly>
+    <members>
+        <member name="P:System.Windows.Controls.DataGridRowHeader.SeparatorBrush">
+            <summary>
+            Gets or sets a brush used by the header separator line
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridRowHeader.SeparatorVisibility">
+            <summary>
+            Gets or sets the visibility of the header separator line
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGridColumnBase.UpdateElement(System.Windows.FrameworkElement,System.String)">
+            <summary>
+            Called by the DataGrid control when a column asked for its
+            elements to be updated, typically because one of its properties changed.
+            </summary>
+            <param name="element">Indicates the element that needs to be updated</param>
+            <param name="propertyName">Indicates which property changed and caused this call</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataGridColumnBase.UpdateElements(System.String)">
+            <summary>
+            Called by a specific column type when one of its properties changed, 
+            and its current cells need to be updated.
+            </summary>
+            <param name="propertyName">Indicates which property changed and caused this call</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataGridCheckBoxColumn.UpdateElement(System.Windows.FrameworkElement,System.String)">
+            <summary>
+            Called by the DataGrid control when this column asks for its elements to be
+            updated, because its CheckBoxContentBinding or IsThreeState property changed.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.GetRowDetailsVisibility(System.Windows.FrameworkElement)">
+            <summary>
+            Returns the DetailsVisibility of the DataGridRow that contains the given element
+            </summary>
+            <param name="element">FrameworkElement contained in the row</param>
+            <returns>If the element is valid then Visible or Collapsed based on the DetailsVisibility of the DataGridRow 
+            containing the element; otherwise, throws an ArgumentException
+            </returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.ClearRowSelection(System.Boolean)">
+            <summary>
+            Clears the entire selection. Displayed rows are deselected explicitly to visualize
+            potential transition effects
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.ClearRowSelection(System.Int32,System.Boolean)">
+            <summary>
+            Clears the entire selection except the indicated row. Displayed rows are deselected explicitly to 
+            visualize potential transition effects. The row indicated is selected if it is not already.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.GetRowFromItem(System.Object)">
+            <summary>
+            Returns the row associated to the provided backend data item.
+            </summary>
+            <param name="index">backend data item</param>
+            <returns>null if the datasource is null or provided item in not in the source. The associated UI row otherwise</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:System.Windows.Controls.DataGrid.CorrectRowIndexesAfterDeletion(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:System.Windows.Controls.DataGrid.CorrectRowIndexesAfterInsertion(System.Int32,System.Int32)" -->
+        <member name="M:System.Windows.Controls.DataGrid.GenerateRow(System.Int32,System.Boolean)">
+            <summary>
+            Returns a row for the provided index. The row gets first prepared through the PreparingRow event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.GetEdgedExactRowHeight(System.Int32)">
+            <summary>
+            Returns the exact row height, whether it is currently displayed or not.
+            The row is generated in case it is not already displayed.
+            The horizontal gridlines thickness are added.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.GetEdgedRowHeight(System.Int32)">
+            <summary>
+            If the provided row index is displayed, returns the exact row height.
+            If the row is not displayed, returns the default row height.
+            In both cases, the horizontal gridlines thickness are added.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.GetEdgedRowsHeight(System.Int32,System.Int32)">
+            <summary>
+            Cumulates the approximate height of the rows from fromRowIndex to toRowIndex included.
+            Including the potential gridline thickness.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.GetGeneratedRow(System.Int32)">
+            <summary>
+            Checks if the row for the provided index has been generated and is present
+            in either the prepared rows, prefetched rows, or editing row. 
+            The displayed rows are *not* searched. Returns null if the row does not belong to those 3 categories.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.ReleaseRow(System.Windows.Controls.DataGridRow)">
+            <summary>
+            Detaches the provided row from the grid and adds it to the recyclable list. 
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.RowRequiresDisplay(System.Int32)">
+            <summary>
+            Determines whether the row at the provided index must be displayed or not.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.#ctor">
+            <summary>
+            Initializes a new instance of the DataGrid class.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.AlternatingRowBackgroundProperty">
+            <summary>
+            Identifies the AlternatingRowBackground dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.AutoGenerateColumnsProperty">
+            <summary>
+            Identifies the AutoGenerateColumns dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.CanUserResizeColumnsProperty">
+            <summary>
+            Identifies the CanUserResizeColumns dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.ColumnHeadersHeightProperty">
+            <summary>
+            Identifies the ColumnHeadersHeight dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnColumnHeadersHeightPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            ColumnHeadersHeightProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its ColumnHeadersHeight.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.ColumnHeaderStyleProperty">
+            <summary>
+            Identifies the ColumnHeaderStyle dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.ColumnWidthProperty">
+            <summary>
+            Identifies the ColumnWidth dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnColumnWidthPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            ColumnWidthProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its ColumnWidth.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.GridlinesVisibilityProperty">
+            <summary>
+            Identifies the Gridlines dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnGridlinesVisibilityPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            GridlinesProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its Gridlines.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.HeadersVisibilityProperty">
+            <summary>
+            Identifies the HeadersVisibility dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnHeadersVisibilityPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            HeadersVisibilityProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its HeadersVisibility.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.HorizontalGridlinesBrushProperty">
+            <summary>
+            Identifies the HorizontalGridlinesBrush dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnHorizontalGridlinesBrushPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            HorizontalGridlinesBrushProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its HorizontalGridlinesBrush.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.HorizontalScrollBarVisibilityProperty">
+            <summary>
+            Identifies the HorizontalScrollBarVisibility dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnHorizontalScrollBarVisibilityPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            HorizontalScrollBarVisibilityProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its HorizontalScrollBarVisibility.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.IsReadOnlyProperty">
+            <summary>
+            Identifies the IsReadOnly dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnIsReadOnlyPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            IsReadOnlyProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its IsReadOnly.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.ItemsSourceProperty">
+            <summary>
+            Identifies the ItemsSource dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnItemsSourcePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            ItemsSourceProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its ItemsSource.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.OverrideRowDetailsScrollingProperty">
+            <summary>
+            Identifies the OverrideRowDetailsScrolling dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.RowDetailsTemplateProperty">
+            <summary>
+            Identifies the RowDetailsTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.RowDetailsVisibilityProperty">
+            <summary>
+            Identifies the RowDetailsVisibility dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnRowDetailsVisibilityPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            RowDetailsVisibilityProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its RowDetailsVisibility.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.RowHeightProperty">
+            <summary>
+            Identifies the RowHeight dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnRowHeightPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            RowHeightProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its RowHeight.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.RowHeadersWidthProperty">
+            <summary>
+            Identifies the RowHeadersWidth dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnRowHeadersWidthPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            RowHeadersWidthProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its RowHeadersWidth.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.SelectionModeProperty">
+            <summary>
+            Identifies the SelectionMode dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnSelectionModePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectionModeProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its SelectionMode.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.SelectedItemProperty">
+            <summary>
+            Identifies the SelectedItem dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnSelectedItemPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectedItemProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its SelectedItem.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.SelectedItemsProperty">
+            <summary>
+            Identifies the SelectedItems dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnSelectedItemsPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            SelectedItemsProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its SelectedItems.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.VerticalGridlinesBrushProperty">
+            <summary>
+            Identifies the VerticalGridlinesBrush dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnVerticalGridlinesBrushPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            VerticalGridlinesBrushProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its VerticalGridlinesBrush.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGrid.VerticalScrollBarVisibilityProperty">
+            <summary>
+            Identifies the VerticalScrollBarVisibility dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnVerticalScrollBarVisibilityPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            VerticalScrollBarVisibilityProperty property changed handler.
+            </summary>
+            <param name="d">DataGrid that changed its VerticalScrollBarVisibility.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.BeginEdit">
+            <summary>
+            Enters editing mode for the current cell and current row (if they're not already in editing mode).
+            </summary>
+            <returns>True if operation was successful. False otherwise.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.BeginEdit(System.Windows.Controls.DataGridEditingTriggerInfo)">
+            <summary>
+            Enters editing mode for the current cell and current row (if they're not already in editing mode).
+            </summary>
+            <param name="editingTriggerInfo">Provides information about the user gesture that caused the call to BeginEdit. Can be null.</param>
+            <returns>True if operation was successful. False otherwise.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.EndEdit(System.Boolean,System.Boolean)">
+            <summary>
+            Common method for committing edits, cancelling edits, and exiting editing mode.
+            </summary>
+            <param name="commitChanges">Edits are pushed to the backend if True. Original cells values are restored if False.</param>
+            <param name="exitEditingMode">Editing mode is left if True.</param>
+            <returns>True if operation was successful. False otherwise.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnAutoGeneratingColumn(System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs)">
+            <summary>
+            Raises the AutoGeneratingColumn event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnBeginningCellEdit(System.Windows.Controls.DataGridCellEditingCancelEventArgs)">
+            <summary>
+            Raises the BeginningCellEdit event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnCleaningRow(System.Windows.Controls.DataGridRowCancelEventArgs)">
+            <summary>
+            Raises the CleaningRow event for row recycling.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnCleaningRowDetails(System.Windows.Controls.DataGridRowDetailsEventArgs)">
+            <summary>
+            Raises the CleaningRowDetails event
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnCommitCellEdit(System.Windows.Controls.DataGridCellEventArgs)">
+            <summary>
+            Raises the CommitCellEdit event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnCommittingCellEdit(System.Windows.Controls.DataGridCellCancelEventArgs)">
+            <summary>
+            Raises the CommittingCellEdit event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnCommittingRowEdit(System.Windows.Controls.DataGridRowCancelEventArgs)">
+            <summary>
+            Raises the CommittingRowEdit event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnCurrentCellChanged(System.EventArgs)">
+            <summary>
+            Raises the CurrentCellChanged event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnDataError(System.Windows.Controls.DataGridDataErrorEventArgs)">
+            <summary>
+            Raises the DataError event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnPrepareCellEdit(System.Windows.Controls.DataGridPrepareCellEditEventArgs)">
+            <summary>
+            Raises the PrepareCellEdit event.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnPreparingRow(System.Windows.Controls.DataGridRowEventArgs)">
+            <summary>
+            Raises the PreparingRow event for row preparation.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnPreparingRowDetails(System.Windows.Controls.DataGridRowDetailsEventArgs)">
+            <summary>
+            Raises the PreparingRowDetails for row details preparation
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnSelectionChanged(System.EventArgs)">
+            <summary>
+            Raises the SelectionChanged event and clears the _selectionChanged.
+            This event won't get raised again until after _selectionChanged is set back to true.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.CoerceSelectedItem">
+            <summary>
+            call when: selection changes or SelectedItems object changes
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.OnDataConversionError(System.Windows.Controls.DataGridDataErrorEventArgs)">
+            <summary>
+            A cell value parsing or formatting failed
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.AddDisplayedHorizontalCellsPresenterSeparator(System.Windows.Shapes.Line)">
+            <summary>
+            Adds the provided Line as the last child of the column headers' container.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.EditingBoundElement_GotFocus(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Called when the edited element of a bound column gains focus
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.EditingBoundElement_LostFocus(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Called when the edited element of a bound column loses focus
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.ExitEdit(System.Boolean)">
+            <summary>
+            Exits editing mode without trying to commit or revert the editing, and 
+            without repopulating the edited row's cell.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.PopulateUneditedBoundCellContent">
+            <summary>
+            Repopulates a cell that was previously edited with the non-editing element.
+            This method is invoked asynchronously after the editing element loses focus and
+            the back-end property was updated with a new value, or when the current cell
+            leaves the editing mode before the Loaded event has a chance to be raised.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.UpdateColumnElements(System.Windows.Controls.DataGridColumnBase,System.String)">
+            <summary>
+            Called when a column property changes, and its cells need to 
+            adjust that that column change.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGrid.GetColumnXFromIndex(System.Int32)">
+            <devdoc>
+                 Returns the absolute coordinate of the left edge of the given column (including
+                 the potential gridline - that is the left edge of the gridline is returned). Note that
+                 the column does not need to be in the display area.
+            </devdoc>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.AlternatingRowBackground">
+            <summary>
+            Gets or sets a brush that describes the background of odd-numbered rows in the grid.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.AutoGenerateColumns">
+            <summary>
+            Gets or sets a value indicating whether columns are created automatically when the ItemsSource 
+            property is set.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.CanUserResizeColumns">
+            <summary>
+            Gets or sets a value indicating whether users can resize columns.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.ColumnHeadersHeight">
+            <summary>
+            Gets or sets the suggested height of the grid's column headers.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.ColumnHeaderStyle">
+            <summary>
+            Gets or sets the style used by column headers when they are rendered. 
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.ColumnWidth">
+            <summary>
+            Gets or sets the width of the grid's columns.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.CornerHeaderStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.GridlinesVisibility">
+            <summary>
+            Gets or sets a value that indicates whether horizontal or vertical gridlines for 
+            the inner cells should be displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.HeadersVisibility">
+            <summary>
+            Gets or sets a value that indicates whether column or row headers should be displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.HorizontalGridlinesBrush">
+            <summary>
+            Gets or sets a brush that describes the horizontal gridlines color.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.HorizontalScrollBarVisibility">
+            <summary>
+            Gets or sets a value that indicates whether a horizontal ScrollBar should be displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating whether the user can edit the cells of the DataGrid control.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.ItemsSource">
+            <summary>
+            Gets or sets a collection used to generate the content of the DataGrid.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.OverrideRowDetailsScrolling">
+            <summary>
+            Gets or sets a value indicating whether the horizontal ScrollBar of the DataGrid affects the
+            details section of a row.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.RowBackground">
+            <summary>
+            Gets or sets a brush that describes the background of a row in the grid.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.RowDetailsTemplate">
+            <summary>
+            Gets or sets the DataTemplate used to display the details section of a row.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.RowDetailsVisibility">
+            <summary>
+            Gets or sets a value that indicates when the details section of a row should be displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.RowHeight">
+            <summary>
+            Gets or sets the suggested height of the grid's rows.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.RowHeadersWidth">
+            <summary>
+            Gets or sets the width of the grid's row headers.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.RowHeaderStyle">
+            <summary>
+            Gets or sets the style used by row headers when they are rendered. 
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.RowStyle">
+            <summary>
+            Gets or sets the style used by rows when they are rendered.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.SelectionMode">
+            <summary>
+            Gets or sets the selection behavior for a DataGrid.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.SelectedItem">
+            <summary>
+            Gets or sets the first item in the current selection or returns null if the selection is empty.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.SelectedItems">
+            <summary>
+            Gets the currently selected items.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.SelectedItemsInternal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.VerticalGridlinesBrush">
+            <summary>
+            Gets or sets a brush that describes the vertical gridlines color.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.VerticalScrollBarVisibility">
+            <summary>
+            Gets or sets a value that indicates whether a vertical ScrollBar should be displayed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.Columns">
+            <summary>
+            Gets the collection of columns currently present in the DataGrid.
+            </summary>      
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.CurrentColumn">
+            <summary>
+            Gets or sets the column that contains the cell that will go into 
+            editing mode.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGrid.CurrentItem">
+            <summary>
+            Gets the item that will be edited during editing mode.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGridRow.DetailsTemplateProperty">
+            <summary>
+            Identifies the DetailsTemplate dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGridRow.OnDetailsTemplatePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            DetailsTemplateProperty property changed handler.
+            </summary>
+            <param name="d">DataGridRow that changed its DetailsTemplate.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="F:System.Windows.Controls.DataGridRow.HeaderProperty">
+            <summary>
+            Identifies the Header dependency property.
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGridRow.OnHeaderPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            HeaderProperty property changed handler.
+            </summary>
+            <param name="d">DataGridRow that changed its Header.</param>
+            <param name="e">DependencyPropertyChangedEventArgs.</param>
+        </member>
+        <member name="M:System.Windows.Controls.DataGridRow.ApplyBackgroundBrush(System.Boolean)">
+            <summary>
+            Updates the background brush of the row, using a storyboard if available.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridRow.Background">
+            <summary>
+            Row's Background Brush
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridRow.DetailsTemplate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridRow.Header">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridRow.HeaderStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridRow.Index">
+            <summary>
+            Index of the row
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridRow.IsLayoutDelayed">
+            <summary>
+            Layout when template is applied
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.Resource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_CannotAddFrozenColumn">
+            <summary>
+              Looks up a localized string similar to Cannot add frozen column..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_CannotAddNonFrozenColumn">
+            <summary>
+              Looks up a localized string similar to Cannot add non-frozen column..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_CannotChangeColumnCollectionWhileAdjustingDisplayIndexes">
+            <summary>
+              Looks up a localized string similar to Cannot change column collection while adjusting display indexes..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_CannotMoveFrozenColumn">
+            <summary>
+              Looks up a localized string similar to Cannot move frozen column..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_CannotMoveNonFrozenColumn">
+            <summary>
+              Looks up a localized string similar to Cannot move non-frozen column..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ColumnCannotBeCollapsed">
+            <summary>
+              Looks up a localized string similar to Column cannot be collapsed..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ColumnCannotBeReassignedToDifferentDataGrid">
+            <summary>
+              Looks up a localized string similar to Column already belongs to a DataGrid instance and cannot be reassigned..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ColumnNotInThisDataGrid">
+            <summary>
+              Looks up a localized string similar to Provided column does not belong to this DataGrid..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_CommitFailedCannotCompleteOperation">
+            <summary>
+              Looks up a localized string similar to Commit failed.  Cannot complete operation..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_InvalidEnumValue">
+            <summary>
+              Looks up a localized string similar to The value &quot;{0}&quot; is not a valid &quot;{1}&quot; enumeration value..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_InvalidRowElement">
+            <summary>
+              Looks up a localized string similar to Invalid element, check that the element is contained in a row, and that the row is displayed or selected..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ItemIsNotContainedInTheItemsSource">
+            <summary>
+              Looks up a localized string similar to The item is not contained in the ItemsSource..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ItemsSourceNullCannotCompleteOperation">
+            <summary>
+              Looks up a localized string similar to The ItemsSource is null.  Cannot complete operation..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_MissingTemplateForType">
+            <summary>
+              Looks up a localized string similar to Missing template.  Cannot initialize {0}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_NoCurrentRow">
+            <summary>
+              Looks up a localized string similar to There is no current row.  Operation cannot be completed..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_NoOwningGrid">
+            <summary>
+              Looks up a localized string similar to There is no instance of DataGrid assigned to this {0}.  Cannot complete operation..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_UnderlyingPropertyIsReadOnly">
+            <summary>
+              Looks up a localized string similar to Cannot set a column to read/write when the underlying property does not allow it..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueCannotBeSetToNull">
+            <summary>
+              Looks up a localized string similar to {0} cannot be set to a null value..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueIsNotAnInstanceOf">
+            <summary>
+              Looks up a localized string similar to The value is not an instance of {0}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueIsNotAnInstanceOfEitherOr">
+            <summary>
+              Looks up a localized string similar to The value is not an instance of {0} or {1}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueIsReadOnly">
+            <summary>
+              Looks up a localized string similar to {0} is a read-only value and cannot be reassigned..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueMustBeGreaterThan">
+            <summary>
+              Looks up a localized string similar to {0} must be greater than {1}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueMustBeGreaterThanOrEqualTo">
+            <summary>
+              Looks up a localized string similar to {0} must be greater than or equal to {1}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueMustBeGTandLT">
+            <summary>
+              Looks up a localized string similar to {0} must be greater than {1} and less than {2}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueMustBeGTandLTE">
+            <summary>
+              Looks up a localized string similar to {0} must be greater than {1} and less than or equal to {2}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueMustBeGTEandLT">
+            <summary>
+              Looks up a localized string similar to {0} must be greater than or equal to {1} and less than {2}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueMustBeGTEandLTE">
+            <summary>
+              Looks up a localized string similar to {0} must be greater than or equal to {1} and less than or equal to {2}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueMustBeLessThan">
+            <summary>
+              Looks up a localized string similar to {0} must be less than {1}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGrid_ValueMustBeLessThanOrEqualTo">
+            <summary>
+              Looks up a localized string similar to {0} must be less than or equal to {1}..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGridDataErrorEventArgs_NullException">
+            <summary>
+              Looks up a localized string similar to Cannot throw null exception..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGridRow_InvalidRowIndexCannotCompleteOperation">
+            <summary>
+              Looks up a localized string similar to Invalid row index. Cannot complete operation..
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.Resource.DataGridSelectedItemsCollection_CannotChangeSelectedItemsCollectionInSingleMode">
+            <summary>
+              Looks up a localized string similar to Can only change SelectedItems collection in ExtendedFullRow selection mode.  Use SelectedItem property in SingleFullRow selection mode..
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGridDataConnection.BeginEdit(System.Object)">
+            <summary>
+            Puts the entity into editing mode if possible
+            </summary>
+            <param name="dataItem">The entity to edit</param>
+            <returns>True if editing was started</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataGridDataConnection.CancelEdit(System.Object)">
+            <summary>
+            Cancels the current entity editing and exits the editing mode.
+            </summary>
+            <param name="dataItem">The entity being edited</param>
+            <returns>True if a cancellation operation was invoked.</returns>
+        </member>
+        <member name="M:System.Windows.Controls.DataGridDataConnection.EndEdit(System.Object)">
+            <summary>
+            Commits the current entity editing and exits the editing mode.
+            </summary>
+            <param name="dataItem">The entity being edited</param>
+            <returns>True if a commit operation was invoked.</returns>
+        </member>
+        <member name="T:System.Windows.Controls.DataGridGridlines">
+            <summary>
+            Determines whether the inner cells' vertical/horizontal gridlines are shown or not.
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGridHeaders.All">
+            <summary>
+            Show Row, Column, and Corner Headers
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGridHeaders.Column">
+            <summary>
+            Show only Column Headers with top-right corner Header
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGridHeaders.Row">
+            <summary>
+            Show only Row Headers with bottom-left corner
+            </summary>
+        </member>
+        <member name="F:System.Windows.Controls.DataGridHeaders.None">
+            <summary>
+            Don’t show any Headers
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DataGridSelectionMode">
+            <summary>
+            Determines the selection model
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DoubleUtil.AreClose(System.Double,System.Double)">
+            <summary>
+            AreClose - Returns whether or not two doubles are "close".  That is, whether or 
+            not they are within epsilon of each other.  Note that this epsilon is proportional
+            to the numbers themselves to that AreClose survives scalar multiplication.
+            There are plenty of ways for this to return false even for numbers which
+            are theoretically identical, so no code calling this should fail to work if this 
+            returns false.  This is important enough to repeat:
+            NB: NO CODE CALLING THIS FUNCTION SHOULD DEPEND ON ACCURATE RESULTS - this should be
+            used for optimizations *only*.
+            </summary>
+            <returns>
+            bool - the result of the AreClose comparision.
+            </returns>
+            <param name="value1"> The first double to compare. </param>
+            <param name="value2"> The second double to compare. </param>
+        </member>
+        <member name="M:System.Windows.Controls.DoubleUtil.GreaterThan(System.Double,System.Double)">
+            <summary>
+            GreaterThan - Returns whether or not the first double is greater than the second double.
+            That is, whether or not the first is strictly greater than *and* not within epsilon of
+            the other number.  Note that this epsilon is proportional to the numbers themselves
+            to that AreClose survives scalar multiplication.  Note,
+            There are plenty of ways for this to return false even for numbers which
+            are theoretically identical, so no code calling this should fail to work if this 
+            returns false.  This is important enough to repeat:
+            NB: NO CODE CALLING THIS FUNCTION SHOULD DEPEND ON ACCURATE RESULTS - this should be
+            used for optimizations *only*.
+            </summary>
+            <returns>
+            bool - the result of the GreaterThan comparision.
+            </returns>
+            <param name="value1"> The first double to compare. </param>
+            <param name="value2"> The second double to compare. </param>
+        </member>
+        <member name="M:System.Windows.Controls.DoubleUtil.GreaterThanOrClose(System.Double,System.Double)">
+            <summary>
+            GreaterThanOrClose - Returns whether or not the first double is greater than or close to
+            the second double.  That is, whether or not the first is strictly greater than or within
+            epsilon of the other number.  Note that this epsilon is proportional to the numbers 
+            themselves to that AreClose survives scalar multiplication.  Note,
+            There are plenty of ways for this to return false even for numbers which
+            are theoretically identical, so no code calling this should fail to work if this 
+            returns false.  This is important enough to repeat:
+            NB: NO CODE CALLING THIS FUNCTION SHOULD DEPEND ON ACCURATE RESULTS - this should be
+            used for optimizations *only*.
+            </summary>
+            <returns>
+            bool - the result of the GreaterThanOrClose comparision.
+            </returns>
+            <param name="value1"> The first double to compare. </param>
+            <param name="value2"> The second double to compare. </param>
+        </member>
+        <member name="M:System.Windows.Controls.DoubleUtil.IsZero(System.Double)">
+            <summary>
+            IsZero - Returns whether or not the double is "close" to 0.  Same as AreClose(double, 0),
+            but this is faster.
+            </summary>
+            <returns>
+            bool - the result of the AreClose comparision.
+            </returns>
+            <param name="value"> The double to compare to 0. </param>
+        </member>
+        <member name="M:System.Windows.Controls.DoubleUtil.LessThan(System.Double,System.Double)">
+            <summary>
+            LessThan - Returns whether or not the first double is less than the second double.
+            That is, whether or not the first is strictly less than *and* not within epsilon of
+            the other number.  Note that this epsilon is proportional to the numbers themselves
+            to that AreClose survives scalar multiplication.  Note,
+            There are plenty of ways for this to return false even for numbers which
+            are theoretically identical, so no code calling this should fail to work if this 
+            returns false.  This is important enough to repeat:
+            NB: NO CODE CALLING THIS FUNCTION SHOULD DEPEND ON ACCURATE RESULTS - this should be
+            used for optimizations *only*.
+            </summary>
+            <returns>
+            bool - the result of the LessThan comparision.
+            </returns>
+            <param name="value1"> The first double to compare. </param>
+            <param name="value2"> The second double to compare. </param>
+        </member>
+        <member name="M:System.Windows.Controls.DoubleUtil.LessThanOrClose(System.Double,System.Double)">
+            <summary>
+            LessThanOrClose - Returns whether or not the first double is less than or close to
+            the second double.  That is, whether or not the first is strictly less than or within
+            epsilon of the other number.  Note that this epsilon is proportional to the numbers 
+            themselves to that AreClose survives scalar multiplication.  Note,
+            There are plenty of ways for this to return false even for numbers which
+            are theoretically identical, so no code calling this should fail to work if this 
+            returns false.  This is important enough to repeat:
+            NB: NO CODE CALLING THIS FUNCTION SHOULD DEPEND ON ACCURATE RESULTS - this should be
+            used for optimizations *only*.
+            </summary>
+            <returns>
+            bool - the result of the LessThanOrClose comparision.
+            </returns>
+            <param name="value1"> The first double to compare. </param>
+            <param name="value2"> The second double to compare. </param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.AddValue(System.Int32,`0)">
+            <summary>
+            Add a value with an associated index to the table
+            </summary>
+            <param name="index">Index where the value is to be added or updated</param>
+            <param name="value">Value to add</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.AddValues(System.Int32,System.Int32,`0)">
+            <summary>
+            Add multiples values with an associated start index to the table 
+            </summary>
+            <param name="startIndex">index where first value is added</param>
+            <param name="count">Total number of values to add (must be greater than 0)</param>
+            <param name="value">Value to add</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.Clear">
+            <summary>
+            Clears the index table
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.Contains(System.Int32)">
+            <summary>
+            Returns true if the given index is contained in the table
+            </summary>
+            <param name="index">index to search for</param>
+            <returns>True if the index is contained in the table</returns>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.ContainsAll(System.Int32,System.Int32)">
+            <summary>
+            Returns true if the entire given index range is contained in the table
+            </summary>
+            <param name="startIndex">beginning of the range</param>
+            <param name="endIndex">end of the range</param>
+            <returns>True if the entire index range is present in the table</returns>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.ContainsIndexAndValue(System.Int32,`0)">
+            <summary>
+            Returns true if the given index is contained in the table with the the given value
+            </summary>
+            <param name="index">index to search for</param>
+            <param name="value">value expected</param>
+            <returns>true if the given index is contained in the table with the the given value</returns>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.GetIndexesEnumerator">
+            <summary>
+            Returns an enumerator that goes through the indexes present in the table
+            </summary>
+            <returns>an enumerator that enumerates the indexes present in the table</returns>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.GetValueAt(System.Int32)">
+            <summary>
+            Returns the value at a given index or the default value if the index is not in the table
+            </summary>
+            <param name="index">index to search for</param>
+            <returns>the value at the given index or the default value if index is not in the table</returns>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.GetValueAt(System.Int32,System.Boolean@)">
+            <summary>
+            Returns the value at a given index or the default value if the index is not in the table
+            </summary>
+            <param name="index">index to search for</param>
+            <param name="found">set to true by the method if the index was found; otherwise, false</param>
+            <returns>the value at the given index or the default value if index is not in the table</returns>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.IndexOf(System.Int32)">
+            <summary>
+            Return the index of the Nth element in the table.
+            </summary>
+            <param name="entryIndex">entryIndex parameter represents N</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.InsertIndex(System.Int32)">
+            <summary>
+            Inserts an index at the given location.  This does not alter values in the table
+            </summary>
+            <param name="index">index location to insert an index</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.InsertIndexAndValue(System.Int32,`0)">
+            <summary>
+            Inserts an index into the table with the given value 
+            </summary>
+            <param name="index">index to insert</param>
+            <param name="value">value for the index</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.InsertIndexes(System.Int32,System.Int32)">
+            <summary>
+            Inserts multiple indexes into the table.  This does not alter Values in the table
+            </summary>
+            <param name="startIndex">first index to insert</param>
+            <param name="count">total number of indexes to insert</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.InsertIndexesAndValues(System.Int32,System.Int32,`0)">
+            <summary>
+            Inserts multiple indexes into the table with the given value 
+            </summary>
+            <param name="startIndex">Index to insert first value</param>
+            <param name="count">Total number of values to insert (must be greater than 0)</param>
+            <param name="value">Value to insert</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.RemoveIndex(System.Int32)">
+            <summary>
+            Removes an index from the table.  This does not alter Values in the table
+            </summary>
+            <param name="index">index to remove</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.RemoveIndexAndValue(System.Int32)">
+            <summary>
+            Removes a value and its index from the table
+            </summary>
+            <param name="index">index to remove</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.RemoveIndexes(System.Int32,System.Int32)">
+            <summary>
+            Removes multiple indexes from the table.  This does not alter Values in the table
+            </summary>
+            <param name="startIndex">first index to remove</param>
+            <param name="count">total number of indexes to remove</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.RemoveIndexesAndValues(System.Int32,System.Int32)">
+            <summary>
+            Removes multiple values and their indexes from the table
+            </summary>
+            <param name="startIndex">first index to remove</param>
+            <param name="count">total number of indexes to remove</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.RemoveValue(System.Int32)">
+            <summary>
+            Removes a value from the table at the given index.  This does not alter other indexes in the table.
+            </summary>
+            <param name="index">index where value should be removed</param>
+        </member>
+        <member name="M:System.Windows.Controls.IndexToValueTable`1.RemoveValues(System.Int32,System.Int32)">
+            <summary>
+            Removes multiple values from the table.  This does not alter other indexes in the table.
+            </summary>
+            <param name="startIndex">first index where values should be removed </param>
+            <param name="count">total number of values to remove</param>
+        </member>
+        <member name="P:System.Windows.Controls.IndexToValueTable`1.IndexCount">
+            <summary>
+            Total number of indicies represented in the table
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.IndexToValueTable`1.IsEmpty">
+            <summary>
+            Returns true if the table is empty
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.IndexToValueTable`1.RangeCount">
+            <summary>
+            Returns the number of index ranges in the table
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.IndexToValueTable`1.SingleIndex">
+            <summary>
+            Returns the index of the first value in the table
+            </summary>
+        </member>
+        <member name="M:System.Windows.Controls.DataGridTextBoxColumn.UpdateElement(System.Windows.FrameworkElement,System.String)">
+            <summary>
+            Called by the DataGrid control when this column asks for its elements to be
+            updated, because a property changed.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridTextBoxColumn.FontFamily">
+            <summary>
+            Gets or sets the font name.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridTextBoxColumn.FontSize">
+            <summary>
+            Gets or sets the font size.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridTextBoxColumn.FontStyle">
+            <summary>
+            Gets or sets the font style.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridTextBoxColumn.FontWeight">
+            <summary>
+            Gets or sets the font weight or thickness.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridTextBoxColumn.Foreground">
+            <summary>
+            Gets or sets a brush that describes the foreground of the column cells.
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridColumnHeader.SeparatorBrush">
+            <summary>
+            Gets or sets a brush used by the header separator line
+            </summary>
+        </member>
+        <member name="P:System.Windows.Controls.DataGridColumnHeader.SeparatorVisibility">
+            <summary>
+            Gets or sets the visibility of the header separator line
+            </summary>
+        </member>
+        <member name="T:System.Windows.Controls.DataGridValueConverter">
+            <summary>
+            Default type converter that knows how to convert primitive types.
+            This class raises the DataConversionError event when a conversion fails.
+            It tries to use the FallbackValue value when the provided value parameter
+            causes a FormatException.
+            </summary>
+        </member>
+    </members>
+</doc>

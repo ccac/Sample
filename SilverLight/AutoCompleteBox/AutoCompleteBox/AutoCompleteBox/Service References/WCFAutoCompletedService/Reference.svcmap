@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1b3b0d0e-684f-4d93-a81f-2df4b6be7872" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49177/Service/AutoCompletedService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AutoCompletedService.xsd" MetadataType="Schema" ID="697955be-7742-4421-8af7-2dec9a9517d2" SourceId="1" SourceUrl="http://localhost:49177/Service/AutoCompletedService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AutoCompletedService1.xsd" MetadataType="Schema" ID="fc58e8ba-1f8d-4543-8e80-dfb48d7f3fb2" SourceId="1" SourceUrl="http://localhost:49177/Service/AutoCompletedService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AutoCompletedService.wsdl" MetadataType="Wsdl" ID="64e5015f-d2e2-4e93-80d1-26a8e96c4154" SourceId="1" SourceUrl="http://localhost:49177/Service/AutoCompletedService.svc?wsdl" />
+    <MetadataFile FileName="AutoCompletedService2.xsd" MetadataType="Schema" ID="65a7e14b-6590-4645-93bc-7482ed8ec96b" SourceId="1" SourceUrl="http://localhost:49177/Service/AutoCompletedService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AutoCompletedService1.wsdl" MetadataType="Wsdl" ID="646fe00a-69ed-4514-bfc1-46c8b0bba6c8" SourceId="1" SourceUrl="http://localhost:49177/Service/AutoCompletedService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="AutoCompletedService.disco" MetadataType="Disco" ID="5fa5a4c9-5452-437d-afa1-fa37daa11611" SourceId="1" SourceUrl="http://localhost:49177/Service/AutoCompletedService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

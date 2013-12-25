@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="YYArena.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:custom="clr-namespace:YYArena.Controls"
+    x:Name="root">
+    <Grid>
+
+        <ScrollViewer x:Name="scroll" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Padding="0" IsEnabled="False">
+            <ScrollViewer.Content>
+                <Canvas x:Name="scene">
+                    <!--战场背景-->
+                    <!--<Canvas.Background>
+                        <ImageBrush ImageSource="/Resource/bg.jpg" Stretch="Fill" />
+                    </Canvas.Background>-->
+
+                    <!--Sprite 容器-->
+                    <Canvas x:Name="canvas">
+
+                    </Canvas>
+
+                    <!--爆炸效果-->
+                    <Canvas>
+                        <custom:Explosion x:Name="explosion" />
+                    </Canvas>
+                </Canvas>
+            </ScrollViewer.Content>
+        </ScrollViewer>
+
+        <Canvas>
+            <!--地图-->
+            <custom:Map x:Name="map" />
+            <!--计分牌-->
+            <custom:Board x:Name="board" />
+            <!--音效-->
+            <custom:SoundEffect x:Name="soundEffect" />
+        </Canvas>
+
+        <Canvas>
+            <!--交互界面-->
+            <custom:Interactive x:Name="interactive" />
+        </Canvas>
+
+    </Grid>
+</UserControl>

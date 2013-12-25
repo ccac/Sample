@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="YYArena.Controls.Fireball"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Ellipse x:Name="ball" Width="10" Height="10" Opacity="0" RenderTransformOrigin="0.5, 0.5">
+            <Ellipse.Fill>
+                <RadialGradientBrush GradientOrigin="0.5, 0.5" Center="0.5, 0.5">
+                    <GradientStop Color="White" Offset="0.0" />
+                    <GradientStop Color="#FFFFFFCC" Offset="0.2" />
+                    <GradientStop Color="#FFFF9900" Offset="0.6" />
+                    <GradientStop Color="#FFFF9900" Offset="0.7" />
+                    <GradientStop Color="#9FFF9900" Offset="0.75" />
+                    <GradientStop Color="#00FF9900" Offset="1.0" />
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform x:Name="st" ScaleX="0.8" ScaleY="0.8" />
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <Grid.Resources>
+            <!--火球爆发的动画-->
+            <Storyboard x:Name="aniShow" Completed="aniShow_Completed">
+                <DoubleAnimation Storyboard.TargetName="st" Storyboard.TargetProperty="ScaleX"
+                                 To="1" Duration="0:0:0.3" />
+                <DoubleAnimation Storyboard.TargetName="st" Storyboard.TargetProperty="ScaleY"
+                                 To="1" Duration="0:0:0.3" />
+                <DoubleAnimation Storyboard.TargetName="ball" Storyboard.TargetProperty="Opacity"
+                                 To="1" Duration="0:0:0.3" />
+            </Storyboard>
+            
+            <!--火球萎缩的动画-->
+            <Storyboard x:Name="aniDisappear" Completed="aniDisappear_Completed">
+                <DoubleAnimation Storyboard.TargetName="st" Storyboard.TargetProperty="ScaleX"
+                                 To="1.3" Duration="0:0:0.5" />
+                <DoubleAnimation Storyboard.TargetName="st" Storyboard.TargetProperty="ScaleY"
+                                 To="1.3" Duration="0:0:0.5" />
+                <DoubleAnimation Storyboard.TargetName="ball" Storyboard.TargetProperty="Opacity"
+                                 To="0" Duration="0:0:0.5" />
+            </Storyboard>
+        </Grid.Resources>
+    </Grid>
+</UserControl>

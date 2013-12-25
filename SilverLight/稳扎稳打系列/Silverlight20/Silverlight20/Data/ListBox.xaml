@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Silverlight20.Data.ListBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+
+        <!--
+        ListBox.ItemTemplate - ListBox 的选项模板
+            DataTemplate - 手工定义 ListBox 的选项数据
+        -->
+        <ListBox x:Name="ListBox1" Margin="5" Width="200" Height="100">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" Margin="5" />
+                        <TextBlock Text="{Binding Age}" Margin="5" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+    </StackPanel>
+</UserControl>

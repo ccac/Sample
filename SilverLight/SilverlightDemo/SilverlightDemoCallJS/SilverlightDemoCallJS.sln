@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightDemoCallJS", "SilverlightDemoCallJS\SilverlightDemoCallJS.csproj", "{1DA5AE38-B47D-4AAB-92DA-675A125FBB02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightDemoCallJS_Web", "SilverlightDemoCallJS_Web\SilverlightDemoCallJS_Web.csproj", "{20E5C12D-E087-4FD1-B18B-C32EC53C5757}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DA5AE38-B47D-4AAB-92DA-675A125FBB02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DA5AE38-B47D-4AAB-92DA-675A125FBB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DA5AE38-B47D-4AAB-92DA-675A125FBB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DA5AE38-B47D-4AAB-92DA-675A125FBB02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20E5C12D-E087-4FD1-B18B-C32EC53C5757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20E5C12D-E087-4FD1-B18B-C32EC53C5757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20E5C12D-E087-4FD1-B18B-C32EC53C5757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20E5C12D-E087-4FD1-B18B-C32EC53C5757}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

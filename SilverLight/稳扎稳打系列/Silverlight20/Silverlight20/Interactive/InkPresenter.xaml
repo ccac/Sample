@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Silverlight20.Interactive.InkPresenter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+    <Canvas>
+
+        <!--InkPresenter 的外围的带边框的背景图-->
+        <Rectangle Width="420" Height="350" Stroke="Black" StrokeThickness="1">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Silverlight20;component/Images/Background.jpg" Stretch="Fill" />
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <!--用于描绘 InkPresenter 的工作区-->
+        <Rectangle Canvas.Top="10" Canvas.Left="10" Width="400" Height="300" RadiusX="25" RadiusY="25" Fill="Black" Opacity="0.2" />
+
+        <!--
+        InkPresenter - 涂鸦板，也就是在面板上呈现墨迹
+            Cursor - 鼠标移动到 InkPresenter 上面时，鼠标指针的样式
+                Arrow - 箭头
+                Hand - 手形 
+                Wait - 沙漏
+                IBeam - “I”字形 
+                Stylus - 点
+                Eraser - 橡皮
+                None - 无
+            Background - 涂鸦板背景。建议设置其为“Transparent”，需要的话可以使用其他控件来描绘背景
+            Opacity - 面板上墨迹的不透明度
+            Clip - InkPresenter 的剪辑区域。本例给 InkPresenter 做了一个圆角效果，其Clip值由 Blend 生成
+        -->
+        <InkPresenter x:Name="inkPresenter" Cursor="Stylus" Canvas.Top="10" Canvas.Left="10" Width="400" Height="300" Background="Transparent"
+         
+    		MouseLeftButtonDown="inkPresenter_MouseLeftButtonDown" 
+    		MouseLeftButtonUp="inkPresenter_MouseLeftButtonUp" 
+    		MouseMove="inkPresenter_MouseMove" 
+    		Clip="M0.5,25.5 C0.5,11.692882 11.692882,0.5 25.5,0.5 L374.5,0.5 C388.30713,0.5 399.5,11.692882 399.5,25.5 L399.5,274.5 C399.5,288.30713 388.30713,299.5 374.5,299.5 L25.5,299.5 C11.692882,299.5 0.5,288.30713 0.5,274.5 z">
+
+            <!--
+            InkPresenter 可以包含子控件。本例为在 InkPresenter 的底部循环播放视频
+            -->
+            <MediaElement x:Name="mediaElement" Source="/Silverlight20;component/Video/Demo.wmv" Width="400" Height="100" Canvas.Top="200" Stretch="UniformToFill" MediaEnded="mediaElement_MediaEnded" />
+
+        </InkPresenter>
+    
+        <!--红色取色点，点此后可画红色的线-->
+        <Ellipse x:Name="ellipseRed" Canvas.Top="320" Canvas.Left="20" Cursor="Hand" Fill="Red" Width="20" Height="20" MouseLeftButtonDown="ellipseRed_MouseLeftButtonDown" />
+
+        <!--黑色取色点，点此后可画黑色的线-->
+        <Ellipse x:Name="ellipseBlack" Canvas.Top="320" Canvas.Left="50" Cursor="Hand" Fill="Black" Width="20" Height="20" MouseLeftButtonDown="ellipseBlack_MouseLeftButtonDown" />
+
+        <!--橡皮擦，点此后可擦除之前画的线-->
+        <Button x:Name="btnEraser" Canvas.Top="320" Canvas.Left="80" Content="橡皮擦" Click="btnEraser_Click" />
+
+        <!--用于清除 InkPresenter 上的墨迹的按钮-->
+        <Button x:Name="btnClear" Canvas.Top="320" Canvas.Left="130" Content="清除" Click="btnClear_Click" />
+
+        <!--用于显示当前 Stroke（笔划） 所在的 矩形范围 的位置信息-->
+        <TextBox x:Name="txtMsg" Canvas.Top="320" Canvas.Left="180" Width="220" />
+           
+    </Canvas>
+</UserControl>

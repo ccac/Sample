@@ -1,0 +1,16 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BlogServiceSoap" maxBufferSize="65536" maxReceivedMessageSize="65536">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:1983/BlogService.asmx" binding="basicHttpBinding"
+                bindingConfiguration="BlogServiceSoap" contract="SilverlightDemoWebService.BlogService.BlogServiceSoap"
+                name="BlogServiceSoap" />
+        </client>
+    </system.serviceModel>
+</configuration>

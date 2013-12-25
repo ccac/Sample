@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="SilverlightDemoReflection.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="500" Height="400">
+    <Canvas Background="#000000">
+        <Image Canvas.Top="20" Canvas.Left="182" Source="a.png">
+        </Image>
+        <Image Canvas.Top="20" Canvas.Left="182" Source="a.png" Opacity="0.4">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-0.75"></ScaleTransform>
+                    <SkewTransform AngleX="-15"></SkewTransform>
+                    <TranslateTransform Y="280" X="-30"></TranslateTransform>
+                </TransformGroup>
+            </Image.RenderTransform>
+            <Image.OpacityMask>
+                <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0.0">
+                    <GradientStop Offset="1" Color="#00000000"></GradientStop>
+                    <GradientStop Offset="0" Color="#FF000000"></GradientStop>
+                </LinearGradientBrush>
+            </Image.OpacityMask>
+        </Image>
+    </Canvas>
+</UserControl>

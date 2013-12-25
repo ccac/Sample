@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="YYMatch.Controls.CardControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="38" Height="38" 
+    x:Name="container">
+    <Grid x:Name="LayoutRoot">
+        <Border x:Name="border" CornerRadius="4" Background="Bisque" BorderBrush="BlueViolet">
+            <Image x:Name="img" />
+        </Border>
+    </Grid>
+    <UserControl.Resources>
+        <Storyboard x:Name="ani">
+            <ColorAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                             To="Transparent" Duration="0:0:0.3" />
+        </Storyboard>
+    </UserControl.Resources>
+</UserControl>

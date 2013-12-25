@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightDemoDataBinding", "SilverlightDemoDataBinding\SilverlightDemoDataBinding.csproj", "{210085D1-3F28-4B0E-8362-7AA653C2E7F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightDemoDataBinding_Web", "SilverlightDemoDataBinding_Web\SilverlightDemoDataBinding_Web.csproj", "{2624DA81-332D-4AD2-928D-4C72B2987D29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{210085D1-3F28-4B0E-8362-7AA653C2E7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210085D1-3F28-4B0E-8362-7AA653C2E7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210085D1-3F28-4B0E-8362-7AA653C2E7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210085D1-3F28-4B0E-8362-7AA653C2E7F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2624DA81-332D-4AD2-928D-4C72B2987D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2624DA81-332D-4AD2-928D-4C72B2987D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2624DA81-332D-4AD2-928D-4C72B2987D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2624DA81-332D-4AD2-928D-4C72B2987D29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

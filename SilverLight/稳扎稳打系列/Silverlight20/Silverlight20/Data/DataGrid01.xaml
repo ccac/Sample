@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="Silverlight20.Data.DataGrid01"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data" 
+    xmlns:basics="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls">
+    <StackPanel HorizontalAlignment="Left">
+
+        <CheckBox Content="是否冻结 RowDetailsTemplate" Margin="5"
+            Checked="chkFreezeRowDetails_Changed" Unchecked="chkFreezeRowDetails_Changed" />
+
+        <!--
+        AutoGenerateColumns - 是否根据数据源自动生成列。默认值为 true
+        RowDetailsVisibilityMode - 显示相应的行的详细数据时所使用的显示模式 [System.Windows.Controls.DataGridRowDetailsVisibilityMode枚举]
+            DataGridRowDetailsVisibilityMode.Collapsed - 总不显示    
+            DataGridRowDetailsVisibilityMode.Visible - 总是显示  
+            DataGridRowDetailsVisibilityMode.VisibleWhenSelected - 只显示选中行的详细数据。默认值         
+        -->
+        <data:DataGrid x:Name="DataGrid1" Margin="5"
+            Width="400" Height="200" 
+            AutoGenerateColumns="False"
+            >
+
+            <!--
+            DataGrid.Columns - 手工定义DataGrid的列
+                DataGridTextColumn - 该列的单元格内文本方式显示
+                DataGridCheckBoxColumn - 该列的单元格以复选框方式显示
+                DataGridTemplateColumn - 该列的单元格以自定义方式显示
+                    DataGridTemplateColumn.CellTemplate - 显示模式下的单元格模板
+                    DataGridTemplateColumn.CellEditingTemplate - 编辑模式下的单元格模板
+            -->
+            <data:DataGrid.Columns>
+                <data:DataGridTextColumn Header="姓名" Binding="{Binding Name}" />
+                <data:DataGridTextColumn Header="生日" Binding="{Binding DayOfBirth}" />
+                <data:DataGridTextColumn Header="年龄" Binding="{Binding Age}" />
+                <data:DataGridCheckBoxColumn Header="性别" Binding="{Binding Male}" />
+                <data:DataGridTemplateColumn Header="生日">
+                    <data:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Rectangle Fill="Red" Margin="2" />
+                                <TextBlock Text="{Binding DayOfBirth}" Foreground="Yellow" />
+                            </Grid>
+                        </DataTemplate>
+                    </data:DataGridTemplateColumn.CellTemplate>
+                    <data:DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <basics:DatePicker SelectedDate="{Binding DayOfBirth, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </data:DataGridTemplateColumn.CellEditingTemplate>
+                </data:DataGridTemplateColumn>
+            </data:DataGrid.Columns>
+
+            <!--
+            DataGrid.RowDetailsTemplate - 用于显示相应的行的详细数据的模板
+            -->
+            <data:DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5" Background="Aqua" Height="100">
+                        <TextBlock Text="{Binding Name}" Margin="5"  />
+                        <TextBlock Text="{Binding Age}" Margin="5"  />
+                        <TextBlock Text="{Binding DayOfBirth}" Margin="5"  />
+                    </StackPanel>
+                </DataTemplate>
+            </data:DataGrid.RowDetailsTemplate>
+
+        </data:DataGrid>
+
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="CoreyMiller.VisualFx.Demo.Cyclone"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Canvas x:Name="LayoutRoot">
+        <TextBlock Canvas.Left="-240" Canvas.Top="-50" Text="Cyclone (drag green ball)" Foreground="Green"></TextBlock>
+        <Canvas x:Name="ball" Cursor="hand" Canvas.Top="260" Canvas.Left="-7.5" Width="15" Height="15" MouseLeftButtonDown="Canvas_MouseLeftButtonDown" MouseLeftButtonUp="Canvas_MouseLeftButtonUp" MouseMove="Canvas_MouseMove">
+            <Ellipse Width="15" Height="15" Fill="Green"></Ellipse>
+        </Canvas>
+    </Canvas>
+</UserControl>

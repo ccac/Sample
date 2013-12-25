@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Silverlight20.Control.TextBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left" Width="200">
+
+        <!--
+        Text - TextBox内显示的值
+        BorderThickness - 边框的宽度（像素值：上下左右；左右,上下；左,上,右,下）
+        BorderBrush - 边框的颜色
+        -->
+        <TextBox Text="红色框绿色底蓝色字（真难看）" BorderBrush="Red" BorderThickness="1,5" Background="Green" Foreground="Blue" Margin="6" />
+                
+        <!--
+        IsReadOnly - 是否只读
+        -->
+        <TextBox Text="只读TextBox" IsReadOnly="True" Margin="6" />
+        
+        <!--
+        AcceptsReturn - 是否允许输入回车
+        HorizontalScrollBarVisibility - 水平滚动条的显示状态
+        VerticalScrollBarVisibility - 垂直滚动条的显示状态
+            Auto - 自动根据TextBox控件的宽和高，以及其内容的宽和高，来决定是否显示滚动条
+            Disabled - 不显示，但是可以通过键盘或鼠标在显示内容中的移动或拖动操作，来看到被遮挡的内容
+            Hidden - 不显示，而且无法看到被遮挡的内容
+            Visible - 显示滚动条
+        -->
+        <TextBox Height="50" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Margin="6"
+                Text="多行文本框1&#xD;&#xA;多行文本框2&#xD;&#xA;多行文本框3&#xD;&#xA;多行文本框4&#xD;&#xA;多行文本框5&#xD;&#xA;多行文本框6" />
+        
+        <!--
+        SelectionChanged - 选中的文本内容发生变化时所触发的事件
+        -->
+        <TextBox Height="50" AcceptsReturn="False" Margin="5" SelectionChanged="TextBox_SelectionChanged"
+                Text="相应选中事件&#xD;&#xA;多行文本框1&#xD;&#xA;多行文本框2&#xD;&#xA;多行文本框3" />
+        
+        <TextBlock Margin="5">
+            <Run>选中的文本为：</Run>
+            <LineBreak />
+            <Run x:Name="lblMsg"></Run>
+        </TextBlock>
+        
+    </StackPanel>
+</UserControl>

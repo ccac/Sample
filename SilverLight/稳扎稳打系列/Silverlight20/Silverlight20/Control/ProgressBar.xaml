@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Silverlight20.Control.ProgressBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+        
+        <TextBlock x:Name="lblPercent" TextAlignment="Center" />
+        <!--
+        Minimum - ProgressBar控件的最小值。参见基类System.Windows.Controls.Primitives.RangeBase
+        Maximum - ProgressBar控件的最大值。参见基类System.Windows.Controls.Primitives.RangeBase
+        Value - ProgressBar控件的值。参见基类System.Windows.Controls.Primitives.RangeBase
+        ValueChanged - ProgressBar控件的值发生变化时所触发的事件
+        -->
+        <ProgressBar x:Name="progressBar" Width="200" Height="20" Minimum="10" Maximum="70"></ProgressBar>
+
+        <!--
+        IsIndeterminate - 是否无法确定当前的进度值
+            false - 可以确定当前的进度值
+            true - 无法确定当前的进度值。一个Loading动画
+        -->
+        <ProgressBar Width="200" Height="20" IsIndeterminate="True" Margin="5"></ProgressBar>
+
+   </StackPanel>
+</UserControl>

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="CoreyMiller.VisualFx.Demo.CycloneParts.CyclonePath"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="20" Height="20">
+    <Canvas x:Name="LayoutRoot">
+    	<Canvas.RenderTransform>
+    		<TransformGroup>
+    			<ScaleTransform/>
+    			<SkewTransform/>
+    			<RotateTransform x:Name="LayoutRotate" Angle="0"/>
+    			<TranslateTransform/>
+    		</TransformGroup>
+    	</Canvas.RenderTransform>
+    </Canvas>
+</UserControl>

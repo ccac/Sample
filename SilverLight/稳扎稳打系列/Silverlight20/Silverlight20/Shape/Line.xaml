@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Silverlight20.Shape.Line"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+        
+        <!--线-->
+        <!--
+        X1 - 起点的 X 坐标
+        Y1 - 起点的 Y 坐标
+        X2 - 终点的 X 坐标
+        Y2 - 终点的 Y 坐标
+        注：
+            Line无填充，也就是Line的Fill属性无效
+            坐标以左上角为原点，原点右侧/下侧为正方向
+        -->
+        <Line X1="0" Y1="100" X2="200" Y2="300" Stroke="Black" StrokeThickness="6" />
+        
+    </StackPanel>
+</UserControl>

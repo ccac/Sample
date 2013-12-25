@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="Silverlight20.Brush.RadialGradientBrush"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+        <Grid Margin="10">
+            <Rectangle Width="200" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Rectangle.Fill>
+
+                    <!--LinearGradientBrush - 放射性渐变画笔-->
+                    <!--
+                    GradientOrigin - 放射性渐变的 放射源的 原点坐标。默认值0.5,0.5
+                    Center - 放射性渐变的 填充范围（红色圆圈部分）的 原点坐标。默认值0.5,0.5
+                    GradientStop - 渐变中，过渡点的设置。参见：Brush/LinearGradientBrush.xaml
+                    ColorInterpolationMode - 插入渐变颜色的方式 [System.Windows.Media.ColorInterpolationMode枚举]。参见：Brush/LinearGradientBrush.xaml
+                    SpreadMethod - 线性渐变线之外， 输出区域之内的渐变方式 [System.Windows.Media.GradientSpreadMethod枚举]。。参见：Brush/LinearGradientBrush.xaml
+                    -->
+                    <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5">
+                        <GradientStop Color="Red" Offset="0.0" />
+                        <GradientStop Color="Green" Offset="0.25" />
+                        <GradientStop Color="Blue" Offset="0.75" />
+                        <GradientStop Color="Yellow" Offset="1.0" />
+                    </RadialGradientBrush>
+
+                </Rectangle.Fill>
+            </Rectangle>
+            <Path Stroke="Red" StrokeThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Path.Data>
+                    <EllipseGeometry Center="100,50" RadiusX="100" RadiusY="50" />
+                </Path.Data>
+            </Path>
+        </Grid>
+
+        <Grid Margin="10">
+            <Rectangle Width="200" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Rectangle.Fill>
+
+                    <!--
+                    RadiusX - 填充范围的 X 轴半径。默认值0.5
+                    RadiusY - 填充范围的 Y 轴半径。默认值0.5
+                    -->
+                    <RadialGradientBrush GradientOrigin="0.3,0.3" Center="0.7,0.7" RadiusX="0.6" RadiusY="0.6">
+                        <GradientStop Color="Red" Offset="0.0" />
+                        <GradientStop Color="Green" Offset="0.25" />
+                        <GradientStop Color="Blue" Offset="0.75" />
+                        <GradientStop Color="Yellow" Offset="1.0" />
+                    </RadialGradientBrush>
+
+                </Rectangle.Fill>
+            </Rectangle>
+            <Path Stroke="Red" StrokeThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Path.Data>
+                    <EllipseGeometry Center="140,70" RadiusX="120" RadiusY="60" />
+                </Path.Data>
+            </Path>
+        </Grid>
+
+        <Grid Margin="10">
+            <Rectangle Width="200" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                
+                    <!--
+                    MappingMode - 指定线性渐变的起点（StartPoint）、终点（EndPoint）填充范围的 X 轴半径（RadiusX）和填充范围的 Y 轴半径（RadiusY）相对于输出区域是相对的还是绝对的 [System.Windows.Media.BrushMappingMode枚举]
+                        MappingMode.RelativeToBoundingBox - 相对坐标。默认值
+                        MappingMode.Absolute - 绝对坐标
+                    -->
+                    <RadialGradientBrush MappingMode="Absolute" GradientOrigin="60,30" Center="140,70" RadiusX="120" RadiusY="60">
+                        <GradientStop Color="Red" Offset="0.0" />
+                        <GradientStop Color="Green" Offset="0.25" />
+                        <GradientStop Color="Blue" Offset="0.75" />
+                        <GradientStop Color="Yellow" Offset="1.0" />
+                    </RadialGradientBrush>
+
+                </Rectangle.Fill>
+            </Rectangle>
+            <Path Stroke="Red" StrokeThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Path.Data>
+                    <EllipseGeometry Center="140,70" RadiusX="120" RadiusY="60" />
+                </Path.Data>
+            </Path>
+        </Grid>
+    </StackPanel>
+</UserControl>

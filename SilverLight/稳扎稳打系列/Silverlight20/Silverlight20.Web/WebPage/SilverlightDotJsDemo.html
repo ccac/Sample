@@ -1,0 +1,93 @@
+﻿<!--
+详解 Silverlight.js 
+
+Silverlight.js - 一些 js 帮助函数，用于嵌为入 Silverlight 插件以及自定义安装体验等提供帮助，其最新版本在如下地址下载
+http://code.msdn.microsoft.com/silverlightjs
+
+Silverlight.supportedUserAgent.js - 就一个函数，用于判断 Silverlight 是否支持用户的浏览器，其最新版本在如下地址下载
+http://code.msdn.microsoft.com/SLsupportedUA
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Silverlight.js</title>
+
+    <script type="text/javascript" src="../Silverlight.js"></script>
+
+    <script src="../Silverlight.supportedUserAgent.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div id="container">
+        <a href="http://go.microsoft.com/fwlink/?LinkID=124807" style="text-decoration: none;">
+            <img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight"
+                style="border-style: none" />
+        </a>
+    </div>
+
+    <script type="text/javascript">
+
+        // Silverlight.createObject() - 生成一个嵌入了 Silverlight 插件的 object 元素
+        Silverlight.createObject(
+            "../ClientBin/Silverlight20.xap", // .xap 的地址
+            document.getElementById('container'), // 包含此 object 元素的父元素
+            "slPlugin", // object 元素的 id
+            {
+                width: "100%",
+                height: "100%",
+                minRuntimeVersion: "2.0.31005.0"
+            }, // Silverlight 插件的属性数组
+            {
+                onLoad: onSLLoad,
+                onError: onSLError,
+                onSourceDownloadComplete: onSourceDownloadComplete
+            }, // Silverlight 插件的事件处理程序数组
+            "key1=value1,key2=value2", // 为 Silverlight 程序传递初始化参数(key=value的形式)。用“,”分隔
+            "myContext" // 上下文信息，可以在插件的 onLoad 事件中获取
+        );
+
+        function onSLLoad(plugin, userContext, sender) {
+            alert(plugin.id + " - " + userContext + " - " + sender.toString());
+        }
+
+        function onSLError(sender, args) {
+            // args - Sys.UI.Silverlight.ErrorEventArgs 类型
+            // ErrorEventArgs.errorType - 错误类型
+            // ErrorEventArgs.errorMessage - 错误信息
+            // ErrorEventArgs.errorCode - 错误代码
+
+            // 程序 throw 出的异常可以在此处捕获到
+            alert(args.errorType + "\n" + args.errorMessage + "\n" + args.errorCode);
+        }
+
+        function onSourceDownloadComplete(sender, args) {
+            alert("SourceDownloadComplete");
+        }
+
+
+        // Silverlight.createObjectEx(params) - 将所有参数放入一个数组中传入，其内部会解析这个数组中的参数，然后调用 Silverlight.createObject()
+
+        // Silverlight.default_error_handler = function (sender, args){} - onError 事件的默认处理程序，不需要的话可以将其置为 null
+            
+    </script>
+
+    <script type="text/javascript">
+
+        window.onload = function() {
+
+            // getSilverlight() - 尝试下载指定的版本，如果指定空字符串 "" 则为尝试下载最新版本
+            // Silverlight.getSilverlight("2.0.31005.0");
+
+            // isInstalled() - 判断是否安装了指定的 Silverlight 版本
+            alert(Silverlight.isInstalled("2.0.31005.0"));
+
+            // Silverlight.onSilverlightInstalled - 使用 Silverlight.js 时，如果客户端没有安装 Silverlight 插件，则会自动安装，然后调用此方法以刷新浏览器，可以重写此方法以自定义行为（比如在此通过 createObject() 来使新安装的插件生效，而无需刷新）。注意：如果是 Silverlight 升级，则不会调用此方法，必须重启浏览器（只刷新是不行的）
+
+            // supportedUserAgent(version, userAgent) - 判断 Silverlight 是否支持用户的浏览器，省略 userAgent 则为当前浏览器
+            alert(Silverlight.supportedUserAgent("2.0"));
+        }
+    
+    </script>
+
+</body>
+</html>

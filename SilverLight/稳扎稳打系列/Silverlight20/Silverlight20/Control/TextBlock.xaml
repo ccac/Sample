@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="Silverlight20.Control.TextBlock"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+
+        <!--
+        Text - TextBlock上显示的值
+        -->
+        <TextBlock Text="TextBlock" />
+
+        <!--
+        Foreground - 字体颜色
+        -->
+        <TextBlock Text="红色的TextBlock" Foreground="Red" />
+
+        <!--
+        要以XAML的方式直接显示引号等特殊字请使用相应的HTML编码
+        -->
+        <TextBlock Text="带引号的&quot;TextBlock&quot;" />
+
+        <!--
+        FontFamily - 字体
+        FontSize - 字体大小
+        FontWeight - 字形粗细度 [System.Windows.FontWeights枚举]
+        FontStyle - 字形斜体否 [System.Windows.FontStyles枚举]
+        TextDecorations - 字体下划线 [System.Windows.TextDecorations枚举]
+        FontStretch - 字体间距 [System.Windows.FontStretches枚举]
+        -->
+        <TextBlock Text="常用属性TextBlock" FontFamily="宋体" FontSize="36" FontWeight="Bold" FontStyle="Italic" TextDecorations="Underline" FontStretch="Normal" />
+
+        <!--
+        TextAlignment - 文字排列 [System.Windows.TextAlignment枚举]
+        Run - 文本内容
+        LineBreak - 换行符
+        LineHeight - 每行行高
+        TextWrapping - 文本限制（超过限制是否换行）
+            NoWrap - 永不换行
+            Wrap - 超过限制则换行
+        LineStackingStrategy - 控制行高的策略
+            MaxHeight - TextBlock内每行的行高 以LineHeight值 和 每行自身所设置的行高值 间的最大值为准
+            BlockLineHeight - TextBlock内每行的行高 以LineHeight值为准
+        -->
+        <TextBlock VerticalAlignment="Center" TextAlignment="Center" LineHeight="10" LineStackingStrategy="MaxHeight" Width="200" TextWrapping="NoWrap">
+            <Run FontSize="20" Foreground="Maroon" Text="MaroonMaroonMaroonMaroon" />
+            <LineBreak/>
+            <Run Foreground="Teal" Text="Teal" />
+            <LineBreak/>
+            <Run FontSize="30" Foreground="SteelBlue" Text="SteelBlue" />
+        </TextBlock>
+
+        
+        <TextBlock VerticalAlignment="Center" TextAlignment="Center" LineHeight="10" LineStackingStrategy="BlockLineHeight" Width="200" TextWrapping="Wrap">
+            <Run FontSize="20" Foreground="Red" Text="RedRedRedRedRedRedRedRedRed" />
+            <LineBreak/>
+            <Run Foreground="Green" Text="Green" />
+            <LineBreak/>
+            <Run FontSize="30" Foreground="Blue" Text="Blue" />
+        </TextBlock>
+       
+    </StackPanel>
+</UserControl>

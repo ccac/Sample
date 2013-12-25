@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.PollingDuplex</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.PollingDuplexHttpBinding">
+      <summary>Represents a binding that a Silverlight version 2 client can use to configure endpoints that can communicate with Windows Communication Foundation (WCF) services that are similarly configured for duplex communication with a polling client.</summary>
+    </member>
+    <member name="M:System.ServiceModel.PollingDuplexHttpBinding.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.ServiceModel.PollingDuplexHttpBinding" /> class.</summary>
+    </member>
+    <member name="M:System.ServiceModel.PollingDuplexHttpBinding.#ctor(System.ServiceModel.BasicHttpSecurityMode)">
+      <summary>Initializes a new instance of the <see cref="T:System.ServiceModel.PollingDuplexHttpBinding" /> class.</summary>
+      <param name="securityMode">The value of <see cref="T:System.ServiceModel.BasicHttpSecurityMode" /> that specifies the type of security that is used with the SOAP message and for the client.</param>
+    </member>
+    <member name="M:System.ServiceModel.PollingDuplexHttpBinding.CreateBindingElements">
+      <summary>Returns an ordered collection of binding elements contained in the current binding.</summary>
+      <returns>The <see cref="T:System.ServiceModel.Channels.BindingElementCollection" /> that contains the ordered stack of binding elements described by the <see cref="T:System.PollingDuplexHttpBinding.BasicHttpBinding" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.PollingDuplexHttpBinding.InactivityTimeout">
+      <summary>Gets or sets the maximum interval of time that can pass without activity on a channel before the client or server channel enters a faulted state. The default value is 10 minutes.</summary>
+      <returns>The <see cref="T:System.TimeSpan" /> value that specifies the maximum interval of time that can pass without activity on a channel before the channel enters a faulted state.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">The value is less than zero or it is larger than the maximum time allowed.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.PollingDuplexBindingElement">
+      <summary>Represents the binding element that enables duplex communication between a Silverlight version 2 client and a service.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.PollingDuplexBindingElement.#ctor">
+      <summary>Initializes a new instance of <see cref="T:System.ServiceModel.Channels.PollingDuplexBindingElement" /> class.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.PollingDuplexBindingElement.#ctor(System.ServiceModel.Channels.PollingDuplexBindingElement)">
+      <summary>Initializes a new instance of <see cref="T:System.ServiceModel.Channels.PollingDuplexBindingElement" /> class.</summary>
+      <param name="elementToBeCloned"> The instance of the <see cref="T:System.ServiceModel.Channels.PollingDuplexBindingElement" /> class to be cloned.</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.PollingDuplexBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Creates a channel factory that can be used to create a channel.</summary>
+      <returns>A channel factory of the specified type.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" /> members that describe bindings, behaviors, contracts and other information required to create the channel factory.</param>
+      <typeparam name="TChannel">Type of channel factory.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> cannot be null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.PollingDuplexBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Determines whether a channel factory of the specified type can be built.</summary>
+      <returns>true if a channel factory can be built; otherwise false.</returns>
+      <param name="context"> The <see cref="T:System.ServiceModel.Channels.BindingContext" /> for the channel to be built.</param>
+      <typeparam name="TChannel">The type of channel to check.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> is null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.PollingDuplexBindingElement.ClientPollTimeout"></member>
+    <member name="M:System.ServiceModel.Channels.PollingDuplexBindingElement.Clone">
+      <summary>Creates a copy of the current binding element.</summary>
+      <returns>A copy of the current binding element.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.PollingDuplexBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Gets a property from the specified <see cref="T:System.ServiceModel.Channels.BindingContext" />.</summary>
+      <returns>The property from the specified <see cref="T:System.ServiceModel.Channels.BindingContext" />.</returns>
+      <param name="context">A <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="T">The property to get.</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.PollingDuplexBindingElement.InactivityTimeout">
+      <summary>Specifies the maximum interval of time that can pass without activity on a channel before the client or server channel enters a faulted state.</summary>
+    </member>
+  </members>
+</doc>

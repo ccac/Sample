@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="SilverlightApplication3.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:local="clr-namespace:SilverlightApplication3"
+    >
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="460" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Canvas Background="White" Grid.Row="1"  x:Name="canvas1"  Width="660" Height="430" >
+            
+        </Canvas>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Click="btnFront_Click" Width="20" Height="25" x:Name="btnFront" Content="&lt;" />
+            <TextBox x:Name="tbBeginDate" Width="100" Height="25" Text="" />
+            <Button Click="btnBack_Click" Width="20" Height="25" x:Name="btnBack" Content="&gt;" />
+            <Button Width="350" Margin="20,10" Height="25" Click="Button_Click" Content="click me to draw path begin with the date in the textbox" />
+        </StackPanel>
+        <local:MyMsgBox x:Name="mymsg" Grid.RowSpan="3" Visibility="Collapsed" />
+    </Grid>
+</UserControl>

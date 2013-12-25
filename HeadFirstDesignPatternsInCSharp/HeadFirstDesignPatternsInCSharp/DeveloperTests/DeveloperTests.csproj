@@ -1,0 +1,272 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DAB3D48C-4398-4854-A564-C73980D9B299}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>HeadFirstDesignPatterns.DeveloperTests</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HeadFirstDesignPatterns.DeveloperTests</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <Name>nunit.framework</Name>
+      <HintPath>..\..\..\..\..\..\Program Files\NUnit 2.2\bin\nunit.framework.dll</HintPath>
+      <AssemblyFolderKey>hklm\dn\nunit.framework</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\AbstractFactory.PizzaStore\AbstractFactory.PizzaStore.csproj">
+      <Name>AbstractFactory.PizzaStore</Name>
+      <Project>{FDB21823-980A-401A-8E83-8DBF879FC246}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Adapter.Birds\Adapter.Birds.csproj">
+      <Name>Adapter.Birds</Name>
+      <Project>{FE710B2A-5D26-43B2-9FEF-F11E9A649B73}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Command.RemoteControl\Command.RemoteControl.csproj">
+      <Name>Command.RemoteControl</Name>
+      <Project>{D80AA60A-E86F-42F7-8698-449EFB248C07}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Composite.Menu\Composite.Menu.csproj">
+      <Name>Composite.Menu</Name>
+      <Project>{FF96D383-DCA1-4D99-833B-FAEE6E1C725F}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Compound.Duck\Compound.Duck.csproj">
+      <Name>Compound.Duck</Name>
+      <Project>{05BC56AD-8882-464F-B9A3-10656A254994}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Decorator.Starbuzz\Decorator.Starbuzz.csproj">
+      <Name>Decorator.Starbuzz</Name>
+      <Project>{54FCBC4A-A142-482A-B205-DF2C984AF96C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Facade.HomeTheater\Facade.HomeTheater.csproj">
+      <Name>Facade.HomeTheater</Name>
+      <Project>{8EC4109E-144B-451C-BB85-98B156B3C3F0}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Factory.PizzaStore\Factory.PizzaStore.csproj">
+      <Name>Factory.PizzaStore</Name>
+      <Project>{46BA4D6E-01A2-4BAD-8D9A-395AE8F10E75}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Iterator.CSharp\Iterator.CSharp.csproj">
+      <Name>Iterator.CSharp</Name>
+      <Project>{539B5CFE-1F86-44FF-B88B-B31A77EA4386}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Iterator.Menu\Iterator.Menu.csproj">
+      <Name>Iterator.Menu</Name>
+      <Project>{AA35CE2B-C083-454C-A63A-FC068E084A0D}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\MVC.Controller.WinForm\MVC.Controller.WinForm.csproj">
+      <Name>MVC.Controller.WinForm</Name>
+      <Project>{2FE85DE4-2931-4A55-A35A-AD8B985EB5BF}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\MVC.Model\MVC.Model.csproj">
+      <Name>MVC.Model</Name>
+      <Project>{C1A9B414-4D14-425A-8E2D-5FFFA3ED664C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Observer.WeatherData\Observer.WeatherData.csproj">
+      <Name>Observer.WeatherData</Name>
+      <Project>{C4EAF739-BB94-4F5B-93C0-61FFCFE0BA8F}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Proxy.Dynamic.Net\Proxy.Dynamic.Net.csproj">
+      <Name>Proxy.Dynamic.Net</Name>
+      <Project>{32808BCB-4AFC-4FE1-94D8-4153B7B20D5D}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Singleton.InterestRate\Singleton.InterestRate.csproj">
+      <Name>Singleton.InterestRate</Name>
+      <Project>{974221FA-C9C5-43DA-AF29-705D5D533835}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\State.GumballMachine\State.GumballMachine.csproj">
+      <Name>State.GumballMachine</Name>
+      <Project>{820A01F1-2615-4A09-9E0C-044A5EF5DB08}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Strategy.Character\Strategy.Character.csproj">
+      <Name>Strategy.Character</Name>
+      <Project>{8A43BB20-8A8E-4721-AC21-6D8BC8E0215E}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Strategy.Duck\Strategy.Duck.csproj">
+      <Name>Strategy.Duck</Name>
+      <Project>{5EF36F2C-D81F-423D-8AF9-E464A617D151}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Strategy.Football\Strategy.Football.csproj">
+      <Name>Strategy.Football</Name>
+      <Project>{0FB098C3-60F3-4D74-B01E-C2C80247C069}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\TemplateMethod.CaffeineBeverage\TemplateMethod.CaffeineBeverage.csproj">
+      <Name>TemplateMethod.CaffeineBeverage</Name>
+      <Project>{F5E2CB48-3386-4A41-9C90-3A24A4E6ECE7}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractFactoryPizzaStoreFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AdapterBirdFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommandRemoteControlFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompositeMenuFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompoundDuckFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DecoratorStarbuzzFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FacadeHomeTheaterFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FactoryPizzaStoreFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IteratorCSharpCollectionFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IteratorCSharpFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IteratorMenuFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MVCFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObserverCurrentConditionDisplayFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObserverWeatherDataDisplayFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProxyDynamicNetFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SingletonRateFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StateGumballMachineFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StrategyDuckFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StrategyFootballFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StrategyWeaponFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TemplateMethodCaffeineFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="bin\Debug\HeadFirstDesignPatterns.DeveloperTests.dll.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

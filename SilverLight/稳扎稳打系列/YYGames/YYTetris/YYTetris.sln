@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YYTetris", "YYTetris\YYTetris.csproj", "{F99D7F07-3BEA-4FD1-8682-927AF941429F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YYTetris.Web", "YYTetris.Web\YYTetris.Web.csproj", "{C6F90CA1-BC62-40B1-BD8D-4D1152FC0106}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F99D7F07-3BEA-4FD1-8682-927AF941429F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F99D7F07-3BEA-4FD1-8682-927AF941429F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F99D7F07-3BEA-4FD1-8682-927AF941429F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F99D7F07-3BEA-4FD1-8682-927AF941429F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F90CA1-BC62-40B1-BD8D-4D1152FC0106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F90CA1-BC62-40B1-BD8D-4D1152FC0106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F90CA1-BC62-40B1-BD8D-4D1152FC0106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F90CA1-BC62-40B1-BD8D-4D1152FC0106}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

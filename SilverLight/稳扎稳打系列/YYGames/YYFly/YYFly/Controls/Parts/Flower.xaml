@@ -1,0 +1,246 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="YYFly.Controls.Parts.Flower"
+	d:DesignWidth="317" d:DesignHeight="587">
+    <Grid x:Name="LayoutRoot">
+        <Grid Margin="0,0,0,272" x:Name="花瓣" RenderTransformOrigin="0.5,0.5" Canvas.ZIndex="10" d:IsLocked="True">
+    		<Grid.RenderTransform>
+    			<TransformGroup>
+    				<ScaleTransform/>
+    				<SkewTransform/>
+    				<RotateTransform/>
+    				<TranslateTransform X="0"/>
+    			</TransformGroup>
+    		</Grid.RenderTransform>
+    		<Path Height="142" RenderTransformOrigin="0.089,0.993" Stretch="Fill" Stroke="#FF000000" Data="M214.53757,54.162167 C202.65979,67.171173 190.84744,184.46585 214.84378,170.27505 C265.91226,140.07451 264.2207,124.57422 285.75797,69.880623 C292.93896,22.264877 233.40335,19.646503 214.53757,54.162167 z" d:IsLocked="True" Margin="148.215,8.327,78.785,0" VerticalAlignment="Top">
+    			<Path.Fill>
+    				<LinearGradientBrush EndPoint="0.673,0.012" StartPoint="0.327,0.988">
+    					<GradientStop Color="#FFCC338F"/>
+    					<GradientStop Color="#FFF9CAE2" Offset="1"/>
+    				</LinearGradientBrush>
+    			</Path.Fill>
+    		</Path>
+    		<Path Height="142" RenderTransformOrigin="0.089,0.993" Stretch="Fill" Stroke="#FF000000" Data="M214.53757,54.162167 C202.65979,67.171173 190.84744,184.46585 214.84378,170.27505 C265.91226,140.07451 264.2207,124.57422 285.75797,69.880623 C292.93896,22.264877 233.40335,19.646503 214.53757,54.162167 z" d:IsLocked="True" Margin="149.023,7.885,77.977,0" VerticalAlignment="Top">
+    			<Path.Fill>
+    				<LinearGradientBrush EndPoint="0.737,0.023" StartPoint="0.263,0.977">
+    					<GradientStop Color="#FFCC338F"/>
+    					<GradientStop Color="#FFF9CAE2" Offset="1"/>
+    				</LinearGradientBrush>
+    			</Path.Fill>
+    			<Path.RenderTransform>
+    				<TransformGroup>
+    					<ScaleTransform/>
+    					<SkewTransform/>
+    					<RotateTransform Angle="-68.077"/>
+    					<TranslateTransform/>
+    				</TransformGroup>
+    			</Path.RenderTransform>
+    		</Path>
+    		<Path Height="142" RenderTransformOrigin="0.089,0.993" Stretch="Fill" Stroke="#FF000000" Data="M214.53757,54.162167 C202.65979,67.171173 190.84744,184.46585 214.84378,170.27505 C265.91226,140.07451 264.2207,124.57422 285.75797,69.880623 C292.93896,22.264877 233.40335,19.646503 214.53757,54.162167 z" d:IsLocked="True" Margin="148.877,6.933,78.123,0" VerticalAlignment="Top">
+    			<Path.Fill>
+    				<LinearGradientBrush EndPoint="0.852,0.052" StartPoint="0.148,0.948">
+    					<GradientStop Color="#FFCC338F"/>
+    					<GradientStop Color="#FFF9CAE2" Offset="1"/>
+    				</LinearGradientBrush>
+    			</Path.Fill>
+    			<Path.RenderTransform>
+    				<TransformGroup>
+    					<ScaleTransform/>
+    					<SkewTransform/>
+    					<RotateTransform Angle="220.129"/>
+    					<TranslateTransform/>
+    				</TransformGroup>
+    			</Path.RenderTransform>
+    		</Path>
+    		<Path Height="142" RenderTransformOrigin="0.089,0.993" Stretch="Fill" Stroke="#FF000000" Data="M214.53757,54.162167 C202.65979,67.171173 190.84744,184.46585 214.84378,170.27505 C265.91226,140.07451 264.2207,124.57422 285.75797,69.880623 C292.93896,22.264877 233.40335,19.646503 214.53757,54.162167 z" d:IsLocked="True" Margin="147.817,6.837,79.183,0" VerticalAlignment="Top">
+    			<Path.Fill>
+    				<LinearGradientBrush EndPoint="0.933,0.082" StartPoint="0.067,0.918">
+    					<GradientStop Color="#FFCC338F"/>
+    					<GradientStop Color="#FFF9CAE2" Offset="1"/>
+    				</LinearGradientBrush>
+    			</Path.Fill>
+    			<Path.RenderTransform>
+    				<TransformGroup>
+    					<ScaleTransform/>
+    					<SkewTransform/>
+    					<RotateTransform Angle="139.401"/>
+    					<TranslateTransform/>
+    				</TransformGroup>
+    			</Path.RenderTransform>
+    		</Path>
+    		<Path Height="142" RenderTransformOrigin="0.089,0.993" Stretch="Fill" Stroke="#FF000000" Data="M214.53757,54.162167 C202.65979,67.171173 190.84744,184.46585 214.84378,170.27505 C265.91226,140.07451 264.2207,124.57422 285.75797,69.880623 C292.93896,22.264877 233.40335,19.646503 214.53757,54.162167 z" d:IsLocked="True" Margin="147.487,7.673,79.513,0" VerticalAlignment="Top">
+    			<Path.Fill>
+    				<LinearGradientBrush EndPoint="0.922,0.077" StartPoint="0.078,0.923">
+    					<GradientStop Color="#FFCC338F"/>
+    					<GradientStop Color="#FFF9CAE2" Offset="1"/>
+    				</LinearGradientBrush>
+    			</Path.Fill>
+    			<Path.RenderTransform>
+    				<TransformGroup>
+    					<ScaleTransform/>
+    					<SkewTransform/>
+    					<RotateTransform Angle="73.06"/>
+    					<TranslateTransform/>
+    				</TransformGroup>
+    			</Path.RenderTransform>
+    		</Path>
+    	</Grid>
+        <Grid Height="68" Margin="124,119,114,0" x:Name="花心" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Canvas.ZIndex="100" d:IsLocked="True">
+        	<Grid.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform/>
+        			<TranslateTransform X="0"/>
+        		</TransformGroup>
+        	</Grid.RenderTransform>
+        	<Ellipse x:Name="Container" RenderTransformOrigin="-0.074,0.691" Stroke="#FF000000" d:IsLocked="True" Margin="0,0,11,0">
+        		<Ellipse.Fill>
+        			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        				<GradientStop Color="#FFB8DA2E"/>
+        				<GradientStop Color="#FFB0E85B" Offset="1"/>
+        			</LinearGradientBrush>
+        		</Ellipse.Fill>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" Width="11" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" HorizontalAlignment="Left" Margin="4,32.5,0,24.5">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" Height="11" Width="11" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" HorizontalAlignment="Right" Margin="0,0,21.5,14.25" VerticalAlignment="Bottom">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" Height="11" Width="11" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" HorizontalAlignment="Left" Margin="18,0,0,8.25" VerticalAlignment="Bottom">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" Width="11" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" HorizontalAlignment="Left" Margin="23.25,32.75,0,24.25">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" Height="11" Width="11" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" HorizontalAlignment="Left" Margin="25.75,19.75,0,0" VerticalAlignment="Top">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" Margin="37.5,31.5,30.5,25.5">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" Height="11" Width="11" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" HorizontalAlignment="Left" Margin="20.75,5,0,0" VerticalAlignment="Top">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" Height="11" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" Margin="32.25,0,35.75,6.25" VerticalAlignment="Bottom">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" Height="11" Width="11" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" HorizontalAlignment="Left" Margin="9.5,21.25,0,0" VerticalAlignment="Top">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" Height="11" Width="11" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" HorizontalAlignment="Right" Margin="0,22.5,18.5,0" VerticalAlignment="Top">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        	<Ellipse Fill="#FFFFFF66" Height="11" RenderTransformOrigin="0.5,0.5" d:IsLocked="True" Margin="38.75,9.5,29.25,0" VerticalAlignment="Top">
+        		<Ellipse.RenderTransform>
+        			<TransformGroup>
+        				<ScaleTransform ScaleY="1"/>
+        				<SkewTransform/>
+        				<RotateTransform/>
+        				<TranslateTransform/>
+        			</TransformGroup>
+        		</Ellipse.RenderTransform>
+        	</Ellipse>
+        </Grid>
+        <Grid Margin="120,224,71,-72" x:Name="茎和叶">
+        
+        		<Path Height="161.204" Width="15.241" RenderTransformOrigin="0.5,0.5" Fill="#FF009900" Stretch="Fill" StrokeThickness="13" Data="M-169,148 C-171.40477,172.04764 -179.92453,196.39629 -183,221 C-185.83395,243.67165 -182.96719,255.75415 -175,277 C-172.22189,284.40829 -173.48547,297.31396 -159,278 C-148.67036,264.22714 -148,247.95201 -148,230 C-148,192.13402 -129.66682,170.14877 -169,148 z" Canvas.Left="81.077" Canvas.Top="179.6" Margin="0,72.24,22.302,201.76" HorizontalAlignment="Right">
+        			<Path.RenderTransform>
+        				<TransformGroup>
+        					<ScaleTransform/>
+        					<SkewTransform/>
+        					<RotateTransform Angle="-159.588"/>
+        					<TranslateTransform/>
+        				</TransformGroup>
+        			</Path.RenderTransform>
+        		</Path>
+        		<Path Height="253.885" Width="13" RenderTransformOrigin="0.5,0.5" Canvas.Left="-48.456" Canvas.Top="158.21" Fill="#FF009900" Stretch="Fill" StrokeThickness="13" Data="M-169,148 C-171.40477,172.04764 -179.92453,196.39629 -183,221 C-185.83395,243.67165 -182.96719,255.75415 -175,277 C-172.22189,284.40829 -173.48547,297.31396 -159,278 C-148.67036,264.22714 -148,247.95201 -148,230 C-148,192.13402 -129.66682,170.14877 -169,148 z" d:LayoutOverrides="Width" Margin="-36.463,80.486,0,100.514" HorizontalAlignment="Left">
+        			<Path.RenderTransform>
+        				<TransformGroup>
+        					<ScaleTransform/>
+        					<SkewTransform/>
+        					<RotateTransform Angle="-40.2"/>
+        					<TranslateTransform/>
+        				</TransformGroup>
+        			</Path.RenderTransform>
+        		</Path>
+        		<Path Height="431" Width="74.327" Canvas.Left="-5.687" Stretch="Fill" Stroke="#FF629218" StrokeThickness="13" Data="M380.83832,-50.432926 C329.83832,34.567074 367.48267,113.68156 412.55893,230.98308 C444.60211,314.36871 362.26547,399.40222 362.26547,399.40222" Margin="-2,-72,54,76"/>
+        
+        </Grid>
+    </Grid>
+</UserControl>

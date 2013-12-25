@@ -1,0 +1,106 @@
+﻿<UserControl xmlns:my="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Extended"  x:Class="StylingTemplatingSample.StyleButton"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="500" Height="500">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="250" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style x:Key="RoundButton" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush GradientOrigin="0.2,0.2" RadiusX="0.5">
+                                            <GradientStop Offset="0.2" Color="White" />
+                                            <GradientStop Offset="1" Color="Blue" />
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <!--
+                                <TextBlock Text="Push Me!" 
+                                           HorizontalAlignment="Center" 
+                                           FontSize="28"
+                                           VerticalAlignment="Center" />
+                                -->
+                                <ContentPresenter Content="{TemplateBinding Content}"
+                                                  FontSize="{TemplateBinding FontSize}"
+                                                  FontFamily="{TemplateBinding FontFamily}"
+                                                  HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="CloseButton" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Border Width="22" Height="22" CornerRadius="15">
+                                    <TextBlock Foreground="#222" TextAlignment="Center" Text="r"
+                                               FontSize="11" VerticalAlignment="Center" FontFamily="Webdings" />
+                                    <Border.Background>
+                                        <RadialGradientBrush GradientOrigin="0.3,0.3">
+                                            <GradientStop Color="#FFF" Offset="0.15" />
+                                            <GradientStop Color="#777" Offset="1" />
+                                        </RadialGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="BookList" TargetType="ListBox">
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="Grid.Row" Value="2" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ListBox">
+                            <Grid>
+                                <ScrollViewer x:Name="ELEMENT_SV"
+                                              Background="White"
+                                              HorizontalScrollBarVisibility="Auto"
+                                              VerticalScrollBarVisibility="Auto" >
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Width="50" Height="50" Content="Push me" FontSize="12" Style="{StaticResource RoundButton}" />    
+            <Button Width="80" Height="80" Content="Push me" FontSize="18" Style="{StaticResource RoundButton}" />
+            <Button Width="120" Height="120" Style="{StaticResource RoundButton}" >
+                <Button.Content>
+                    <my:Calendar HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <my:Calendar.RenderTransform>
+                            <ScaleTransform ScaleX="0.5" ScaleY="0.5" CenterX="60" CenterY="60" />
+                            
+                        </my:Calendar.RenderTransform>
+                    </my:Calendar>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+        <Button Grid.Row="0" Margin="10" HorizontalAlignment="Right" Content="Push me" FontSize="12" Style="{StaticResource CloseButton}" />
+        <ListBox x:Name="MyBooks" Grid.Row="2" Style="{StaticResource BookList}" Margin="5" ItemsSource="{Binding Mode=OneWay}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding ISBN}" Margin="0,0,50,0" />
+                        <TextBlock Text="{Binding Title}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

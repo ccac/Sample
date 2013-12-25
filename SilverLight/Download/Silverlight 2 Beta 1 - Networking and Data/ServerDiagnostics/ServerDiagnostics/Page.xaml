@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="ServerDiagnostics.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="400" Height="300">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <ItemsControl x:Name="_modulesItems">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontSize="10" Text="{Binding Name}" />     
+        <TextBlock Text="   "></TextBlock>
+        <TextBlock FontSize="10" Text="{Binding Version}" />
+      </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+    </Grid>
+</UserControl>

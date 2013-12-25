@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="YYFly.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:custom="clr-namespace:YYFly.Controls"
+    Width="640" Height="480" MouseMove="UserControl_MouseMove" MouseLeftButtonDown="UserControl_MouseLeftButtonDown" MouseLeftButtonUp="UserControl_MouseLeftButtonUp">
+    <Grid x:Name="LayoutRoot" Background="White">
+        
+        <custom:Background />
+
+        <custom:Sound x:Name="sound" />
+
+        <Grid Height="30" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <HyperlinkButton Grid.Column="0" Content="作者：webabcd" NavigateUri="http://webabcd.cnblogs.com/" TargetName="_blank" Margin="5" Foreground="White" HorizontalAlignment="Left" Width="100" />
+            <StackPanel x:Name="panelScorer" Grid.Column="1" Orientation="Horizontal" Margin="5">
+                <custom:MyTimer x:Name="myTimer" />
+                <TextBlock Text="级别：" Foreground="White" Margin="30,0,0,0" />
+                <TextBlock Text="{Binding Level}" Foreground="White" />
+                <TextBlock Text="分数：" Foreground="White" Margin="30,0,0,0" />
+                <TextBlock Text="{Binding Score}" Foreground="White" />
+            </StackPanel>
+            <Button x:Name="btnFullScreen" Grid.Column="2" Content="全屏模式" Click="btnFullScreen_Click" HorizontalAlignment="Right" Margin="5" />
+        </Grid>
+        
+        <Canvas x:Name="flyContainer" />
+
+        <custom:GameTip x:Name="gameTip" Visibility="Visible" />
+
+        <Canvas>
+            <custom:Gun x:Name="gun" />
+        </Canvas>
+
+        <Grid.RenderTransform>
+            <ScaleTransform x:Name="st" ScaleX="1" ScaleY="1" />
+        </Grid.RenderTransform>
+        
+    </Grid>
+</UserControl>

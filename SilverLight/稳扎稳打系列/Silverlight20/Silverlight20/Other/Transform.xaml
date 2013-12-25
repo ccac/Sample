@@ -1,0 +1,199 @@
+﻿<UserControl x:Class="Silverlight20.Other.Transform"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel HorizontalAlignment="Left">
+
+        <!--
+        RenderTransform - 呈现位置的转换（System.Windows.Media.Transform类型）
+        RenderTransformOrigin - 位置转换的中心点
+        -->
+
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" StrokeDashArray="3,1" Stroke="Blue" StrokeThickness="3" />
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3" Opacity="0.3">
+                <Rectangle.RenderTransform>
+
+                    <!--TranslateTransform - 平移转换-->
+                    <!--
+                    X - 水平方向上移动的距离。默认值 0
+                    Y - 垂直方向上移动的距离。默认值 0
+                    -->
+                    <TranslateTransform X="100" Y="10" />
+
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" StrokeDashArray="3,1" Stroke="Blue" StrokeThickness="3" />
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3" Opacity="0.3">
+                <Rectangle.RenderTransform>
+
+                    <!--RotateTransform - 旋转转换（顺时针）-->
+                    <!--
+                    Angle - 旋转角度。默认值 0
+                    CenterX - 旋转中心点的 X 轴坐标。默认值 0
+                    CenterY - 旋转中心点的 Y 轴坐标。默认值 0
+                    -->
+                    <RotateTransform Angle="15" CenterX="100" CenterY="50" />
+
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" StrokeDashArray="3,1" Stroke="Blue" StrokeThickness="3" />
+            <!--
+            RenderTransformOrigin - 位置转换的中心点
+            -->
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3" Opacity="0.3" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <RotateTransform Angle="15" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" StrokeDashArray="3,1" Stroke="Blue" StrokeThickness="3" />
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3" Opacity="0.3">
+                <Rectangle.RenderTransform>
+
+                    <!--ScaleTransform - 缩放转换-->
+                    <!--
+                    ScaleX - X 轴方向上缩放的倍数。默认值 1
+                    ScaleY - Y 轴方向上缩放的倍数。默认值 1
+                    CenterX - 缩放中心点的 X 轴坐标。默认值 0
+                    CenterY - 缩放中心点的 Y 轴坐标。默认值 0
+                    -->
+                    <ScaleTransform ScaleX="1.1" ScaleY="1.3" CenterX="100" CenterY="50" />
+
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" StrokeDashArray="3,1" Stroke="Blue" StrokeThickness="3" />
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3" Opacity="0.3">
+                <Rectangle.RenderTransform>
+
+                    <!--SkewTransform - 扭曲转换（典型应用：在 二维 对象中模拟 三维 深度）-->
+                    <!--
+                    CenterX - 扭曲中心点的 X 轴坐标。默认值 0
+                    CenterY - 扭曲中心点的 Y 轴坐标。默认值 0
+                    AngleX - X 轴扭曲角度，Y 轴绕原点旋转（逆时针）。CenterX 对此值所产生的呈现结果没有影响。默认值 0
+                    AngleY - Y 轴扭曲角度，X 轴绕原点旋转（顺时针）。CenterY 对此值所产生的呈现结果没有影响。默认值 0
+                    -->
+                    <SkewTransform AngleX="30" AngleY="5" CenterX="0" CenterY="0" />
+
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" StrokeDashArray="3,1" Stroke="Blue" StrokeThickness="3" />
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3" Opacity="0.3">
+                <Rectangle.RenderTransform>
+
+                    <!--TransformGroup - 多个 Transform 组成的复合转换-->
+                    <TransformGroup>
+                        <TranslateTransform X="100" Y="10" />
+                        <RotateTransform Angle="15" CenterX="100" CenterY="50" />
+                    </TransformGroup>
+
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+
+
+        <!--MatrixTransform - 仿射矩阵变换-->
+        <!--
+        |X|             |M11（默认值 1）      M21（默认值 0）       0|
+        |Y| = |x y 1| * |M12（默认值 0）      M22（默认值 1）       0|
+        |1|             |OffsetX（默认值 0）  OffsetY（默认值 0）   1|
+
+        X = x * M11 + y * M12 + OffsetX
+        Y = x * M21 + y * M22 + OffsetY
+        -->
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" StrokeDashArray="3,1" Stroke="Blue" StrokeThickness="3" />
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3" Opacity="0.3">
+                <Rectangle.RenderTransform>
+                    <MatrixTransform>
+                        <MatrixTransform.Matrix >
+
+                            <!--仿射矩阵中的 平移转换-->
+                            <!--
+                            OffsetX - 水平位移
+                            OffsetY - 垂直位移
+                            -->
+                            <Matrix OffsetX="100" OffsetY="10" />
+
+                        </MatrixTransform.Matrix>
+                    </MatrixTransform>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" StrokeDashArray="3,1" Stroke="Blue" StrokeThickness="3" />
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3" Opacity="0.3" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <MatrixTransform>
+                        <MatrixTransform.Matrix >
+
+                            <!--仿射矩阵中的 缩放转换-->
+                            <!--
+                            M11 - 水平放大倍数
+                            M22 - 垂直放大倍数
+                            -->
+                            <Matrix M11="1.1" M22="1.3" />
+
+                        </MatrixTransform.Matrix>
+                    </MatrixTransform>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" StrokeDashArray="3,1" Stroke="Blue" StrokeThickness="3" />
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3" Opacity="0.3">
+                <Rectangle.RenderTransform>
+                    <MatrixTransform>
+                        <MatrixTransform.Matrix >
+
+                            <!--仿射矩阵中的 扭曲转换-->
+                            <!--
+                            M21 - X 轴扭曲角度，Y 轴绕原点旋转（逆时针）。tanθ（本例中θ等于30度）
+                            M12 - Y 轴扭曲角度，X 轴绕原点旋转（顺时针）。tanθ（本例中θ等于5度）
+                            -->
+                            <Matrix M21="0.577350269189626" M12="0.087488663525924" />
+
+                        </MatrixTransform.Matrix>
+                    </MatrixTransform>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+
+        <Grid Margin="20">
+            <Rectangle Width="200" Height="100" StrokeDashArray="3,1" Stroke="Blue" StrokeThickness="3" />
+            <Rectangle Width="200" Height="100" Fill="Yellow" Stroke="Red" StrokeThickness="3" Opacity="0.3" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <MatrixTransform>
+                        <MatrixTransform.Matrix >
+
+                            <!--仿射矩阵中的 旋转转换-->
+                            <!--
+                            |cosθ      sinθ       0|
+                            |-sinθ     cosθ       0|
+                            |0          0           1|
+                            注：本例中的θ角等于15度
+                            -->
+                            <Matrix M11="0.965925826289068" M12="0.258819045102521" M21="-0.258819045102521" M22="0.965925826289068" />
+
+                        </MatrixTransform.Matrix>
+                    </MatrixTransform>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+    </StackPanel>
+</UserControl>

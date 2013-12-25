@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="HttpBridge.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="400" Height="300">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Line
+    X1="10" Y1="10"
+    X2="50" Y2="50"
+    Stroke="Black"
+    StrokeThickness="1" />
+        <Path Stroke="Black" StrokeThickness="2"
+               Data="M 10,10  20,30 40,50 60,30" />
+    </Grid>
+</UserControl>

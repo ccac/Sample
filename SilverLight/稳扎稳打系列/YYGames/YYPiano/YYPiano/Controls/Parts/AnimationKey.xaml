@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="YYPiano.Controls.Parts.AnimationKey"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Canvas>
+        <!--3个椭圆，目标区，按键动画进入该区域后敲击则为有效敲击-->
+        <Ellipse x:Name="target" Width="80" Height="80" Stroke="#F80" Fill="Transparent" StrokeThickness="1" Canvas.Left="0" Canvas.Top="250" />
+        <Ellipse x:Name="target2" Width="80" Height="80" Stroke="#F80" Fill="Transparent" StrokeThickness="1" Canvas.Left="120" Canvas.Top="250" />
+        <Ellipse x:Name="target3" Width="80" Height="80" Stroke="#F80" Fill="Transparent" StrokeThickness="1" Canvas.Left="240" Canvas.Top="250" />
+
+        <!--提示按键-->
+        <Border x:Name="container" BorderBrush="Gray" BorderThickness="1" Width="50" Height="50" CornerRadius="50" Canvas.Left="135" RenderTransformOrigin="0.5, 0.5">
+            <TextBlock x:Name="key" TextAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold">
+            </TextBlock>
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform x:Name="rt" />
+                    <TranslateTransform x:Name="tt" />
+                    <ScaleTransform x:Name="st" ScaleX="0.3" ScaleY="0.3" />
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+
+        <Canvas.Resources>
+            <!--主动画（缓冲提示）-->
+            <Storyboard x:Name="mainAni" Completed="mainAni_Completed">
+                <!--坐标-->
+                <DoubleAnimation x:Name="targetX" From="0" To="0" Duration="0:0:4" Storyboard.TargetName="tt" Storyboard.TargetProperty="X" />
+                <DoubleAnimation From="0" To="250" Duration="0:0:4" Storyboard.TargetName="tt" Storyboard.TargetProperty="Y" />
+
+                <!--旋转-->
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="rt" Storyboard.TargetProperty="Angle" RepeatBehavior="1x" >
+                    <SplineDoubleKeyFrame Value="366" KeySpline="0.1,0 0.2,0.95" KeyTime="0:0:4" />
+                </DoubleAnimationUsingKeyFrames>
+
+                <!--缩放-->
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="st" Storyboard.TargetProperty="ScaleX">
+                    <SplineDoubleKeyFrame Value="1" KeySpline="0.1,0 0.3,0.8" KeyTime="0:0:4" />
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="st" Storyboard.TargetProperty="ScaleY">
+                    <SplineDoubleKeyFrame Value="1" KeySpline="0.1,0 0.3,0.8" KeyTime="0:0:4" />
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+
+            <!--进入目标区后的动画-->
+            <Storyboard x:Name="insideAni" Completed="insideAni_Completed" Duration="0:0:0.4">
+                <DoubleAnimation To="310" Storyboard.TargetName="tt" Storyboard.TargetProperty="Y" />
+            </Storyboard>
+
+            <!--离开目标区后的动画-->
+            <Storyboard x:Name="outsideAni">
+                <DoubleAnimation To="400" Storyboard.TargetName="tt" Storyboard.TargetProperty="Y" />
+                <DoubleAnimation To="0" Storyboard.TargetName="container" Storyboard.TargetProperty="Opacity" />
+            </Storyboard>
+        </Canvas.Resources>
+    </Canvas>
+</UserControl>

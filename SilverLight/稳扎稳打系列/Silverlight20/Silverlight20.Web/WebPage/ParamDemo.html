@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Silverlight20</title>
+    <style type="text/css">
+        html, body
+        {
+            height: 100%;
+            overflow: auto;
+        }
+        body
+        {
+            padding: 0;
+            margin: 0;
+        }
+        #silverlightControlHost
+        {
+            height: 100%;
+        }
+    </style>
+
+    <script type="text/javascript" src="../Silverlight.js"></script>
+
+</head>
+<body>
+    <div id="silverlightControlHost">
+        <!--
+        注：括号里为 Silverlight 控件所对应的属性
+        source(Source) - xap 文件的路径
+        minRuntimeVersion(MinimumVersion) - 所需的最低 Silverlight 插件版本
+        autoUpgrade(AutoUpgrade) - Silverlight 插件是否要自动升级。默认值 true
+        initParams(InitParameters) - 为 Silverlight 程序传递初始化参数。用“,”分隔
+        enableFrameRateCounter(EnableFrameRateCounter) - 是否在宿主浏览器的状态栏中显示当前呈现的 Silverlight 内容的每秒帧数(fps)，用于调试用。默认值 false
+        maxFrameRate(MaxFrameRate) - 每秒要呈现的最大帧数。默认值 0 （表示未指定最大帧数）
+        enableRedrawRegions(EnableRedrawRegions) - 是否显示每个帧所重绘的区域。默认值 false
+        enableHtmlAccess(HtmlAccess) - 是否允许 HTML DOM 访问
+            对于 object 标记的 param : value="true" - 允许；value="false" - 不允许；无此 param - 同域允许
+            对于 Silverlight 控件的 HtmlAccess 属性 : Enabled - 允许；Disabled - 不允许；SameDomain - 同域允许
+        windowless(Windowless) - 指定 Silverlight 插件是否为无窗口插件
+        -->
+        <object id="xaml1" data="data:application/x-silverlight-2," type="application/x-silverlight-2"
+            width="100%" height="100%">
+            <param name="source" value="../ClientBin/Silverlight20.xap" />
+            <param name="minRuntimeVersion" value="2.0.31005.0" />
+            <param name="autoUpgrade" value="true" />
+            <param name="initParams" value="key1=value1,key2=value2" />
+            <param name="enableFrameRateCounter" value="true" />
+            <param name="maxFrameRate" value="30" />
+            <param name="enableRedrawRegions" value="false" />
+            <param name="scaleMode" value="Zoom" />
+            <param name="enableHtmlAccess" value="true" />
+            <param name="windowless" value="false" />
+        </object>
+        <iframe style='visibility: hidden; height: 0; width: 0; border: 0px'></iframe>
+        <!--iframe 元素和其他附加到 HTML 的元素有助于确保跨浏览器兼容性。iframe 的存在可避免 Safari 浏览器缓存页面。当用户向后导航到以前访问过的 Silverlight 页面时，Safari 缓存可避免重新加载 Silverlight 插件-->
+    </div>
+</body>
+</html>

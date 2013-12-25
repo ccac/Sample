@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="YYArena.Controls.Bullet" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="13" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>RAAAAACEAAAFFAAQAACGAAAAAACACAAAEAggAACAAQI=</HashCode>
+      <FileName>Controls\Bullet.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="YYArena.Controls.Ship" BaseTypeListCollapsed="true">
+    <Position X="1" Y="13" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>RAAAAACEAAAFAABQAACGAAAAAACACAAAEAkgAACAAQI=</HashCode>
+      <FileName>Controls\Ship.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="YYArena.Core.AISprite">
+    <Position X="0.5" Y="3" Width="2.25" />
+    <InheritanceLine Type="YYArena.Core.Sprite" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="2.233" />
+        <Point X="3.375" Y="2.233" />
+        <Point X="3.375" Y="4.109" />
+        <Point X="2.75" Y="4.109" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAACAABAAAAAAAAABgAEAAAAAAAAAgCSABA=</HashCode>
+      <FileName>Core\AISprite.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="YYArena.Core.PlayerSprite">
+    <Position X="3.75" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAACAQBAAAEIAAAABAAEACAAAAQAAgCCAAA=</HashCode>
+      <FileName>Core\PlayerSprite.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="YYArena.Core.Sprite">
+    <Position X="3.75" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAIBAAAAAAAIAAAAAAAAQAAAgIgACAAA=</HashCode>
+      <FileName>Core\Sprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="YYArena.Core.UniformVelocitySprite">
+    <Position X="7" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgACAAA=</HashCode>
+      <FileName>Core\UniformVelocitySprite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="YYArena.Core.PhysicsBox">
+    <Position X="5.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIAAQAAAAQAAADAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Core\PhysicsBox.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="YYArena.Core.IFire">
+    <Position X="0.75" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Core\IFire.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="YYArena.Core.IPhysicsControl">
+    <Position X="2.75" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAEAAAFAAAAAAAAAAAAAACAAAAAEAAgAACAAAI=</HashCode>
+      <FileName>Core\IPhysicsControl.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="SimSun" Size="9" />
+</ClassDiagram>

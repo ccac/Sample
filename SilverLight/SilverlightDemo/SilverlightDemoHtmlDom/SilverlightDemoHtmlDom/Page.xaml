@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="SilverlightDemoHtmlDom.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="500" Height="500">
+    <Canvas Background="#D5FCDF">
+        <TextBlock Text="Silverlight Accessing the HTML DOM" Foreground="Red"
+               Canvas.Top="10" Canvas.Left="30" FontSize="18">
+        </TextBlock>
+        <WatermarkedTextBox x:Name="input" Watermark="请在这里输入"
+                        Height="40" Width="300"
+                        Canvas.Left="30" Canvas.Top="50">
+        </WatermarkedTextBox>
+        <WatermarkedTextBox x:Name="result" Watermark="这里显示结果"
+                        Height="40" Width="300"
+                        Canvas.Left="30" Canvas.Top="100">
+        </WatermarkedTextBox>
+        <WatermarkedTextBox x:Name="change" Watermark="这里输入要改变的内容"
+                        Height="40" Width="300"
+                        Canvas.Left="30" Canvas.Top="150">
+        </WatermarkedTextBox>
+        <Button x:Name="displayButton" Background="Red"
+            Height="40" Width="100" Content="显 示"
+            Canvas.Top="50" Canvas.Left="350"
+            Click="displayButton_Click">
+        </Button>
+
+        <WatermarkedTextBox x:Name="input1" Watermark="请在这里输入"
+                        Height="40" Width="300"
+                        Canvas.Left="30" Canvas.Top="200">
+        </WatermarkedTextBox>
+        <Button x:Name="createButton" Background="Red"
+            Height="40" Width="100" Content="创 建"
+            Canvas.Top="200" Canvas.Left="350"
+            Click="createButton_Click">
+        </Button>
+        <Button x:Name="deleteButton" Background="Red"
+            Height="40" Width="100" Content="删 除"
+            Canvas.Top="250" Canvas.Left="350"
+            Click="deleteButton_Click">
+        </Button>
+
+        <Rectangle x:Name="result1" Height="40" Width="300" Fill="Red"
+               Canvas.Left="30" Canvas.Top="300"
+               RadiusX="5" RadiusY="5">
+        </Rectangle>
+        <Button x:Name="addButton" Background="Red"
+                Height="40" Width="100" Content="添 加"
+                Canvas.Top="300" Canvas.Left="350"
+                Click="addButton_Click">
+        </Button>
+
+    </Canvas>
+</UserControl>

@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="SilverlightDemoControl.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="400" Height="300">
+    <Canvas Background="#46461F">
+        <!--
+        <ToggleButton Content="ToggleButton"
+                      FontSize="16"
+                      Background="Red"
+                      IsThreeState="True"
+                      Canvas.Left="100"
+                      Canvas.Top="100"
+                      Width="200"
+                      Height="80" />
+        
+        <WatermarkedTextBox Watermark="Please Enter Password"
+                            Canvas.Left="50"
+                            Canvas.Top="50"
+                            Width="300"
+                            Height="50"
+                            FontSize="18" />
+        <WatermarkedTextBox Canvas.Left="50"
+                            Canvas.Top="150"
+                            Width="300"
+                            Height="50">
+            <WatermarkedTextBox.Watermark>
+                <Image Source="admin.png" HorizontalAlignment="Left"></Image>
+            </WatermarkedTextBox.Watermark>
+        </WatermarkedTextBox>
+         
+        <ScrollViewer Canvas.Left="50" Canvas.Top="50" Width="300" Height="150"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Visible">
+            <TextBlock TextWrapping="Wrap" Text="adddddddddddddddddddddddddd ffff fdddd dffdsasdfasdfasdf ddddd"/>
+        </ScrollViewer>
+         -->
+        <Button Content="Button" Width="100" Height="50" Canvas.Top="50" Canvas.Left="50">
+            <Button.ToolTip>
+                <ToolTip Width="200" Height="50" Content="This is a button" Background="Aqua" Foreground="White"></ToolTip>
+            </Button.ToolTip>
+        </Button>
+    </Canvas>
+</UserControl>

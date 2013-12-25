@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="SimpleDrawing.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="550" Height="400">
+    <Canvas x:Name="LayoutRoot" Background="White">
+        <TextBlock Canvas.Top="370" Canvas.Left="280" Text="Click to draw, Press 'r' to replay" FontSize="16" Foreground="Black" FontFamily="Verdana"/>
+        <Canvas x:Name="Cover" Background="White" Width="550" Height="400" Visibility="Collapsed">
+            <TextBlock Canvas.Top="130" Canvas.Left="115" Text="I'm Silverlight" FontSize="48" Foreground="Blue" HorizontalAlignment="Right" Width="550" FontFamily="Verdana"/>
+            <TextBlock Canvas.Top="190" Canvas.Left="120" Text="Click To Start" FontSize="48" Foreground="Black" FontFamily="Verdana"/>
+            <TextBlock Canvas.Top="375" Canvas.Left="440" Text="shinedraw.com" FontSize="12" Foreground="Black" FontFamily="Verdana" FontStyle="Italic"/>
+        </Canvas>
+    </Canvas>
+</UserControl>

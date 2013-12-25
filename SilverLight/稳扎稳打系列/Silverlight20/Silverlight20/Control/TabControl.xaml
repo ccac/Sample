@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Silverlight20.Control.TabControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:basics="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls">
+    <StackPanel HorizontalAlignment="Left">
+        
+        <!--
+        SelectedIndex - 被选中的 TabItem 索引
+        SelectedItem - 被选中的 TabItem 对象
+        -->
+        <basics:TabControl Width="400" Height="400" SelectedIndex="1">
+            
+            <basics:TabItem Header="Tab1">
+                <TextBlock Text="Tab1 Content" />
+            </basics:TabItem>
+
+            <!--
+            TabItem.Header - TabItem 的标题
+            TabItem.Content - TabItem 的内容
+            -->
+            <basics:TabItem>
+                <basics:TabItem.Header>
+                    <TextBlock Text="Tab2"/>
+                </basics:TabItem.Header>
+                <basics:TabItem.Content>
+                    <TextBlock Text="Tab2 Content" />
+                </basics:TabItem.Content>
+            </basics:TabItem>
+
+            <basics:TabItem>
+                <basics:TabItem.Header>
+                    <Image Source="/Silverlight20;component/Images/Logo.jpg" Height="20" />
+                </basics:TabItem.Header>
+                <TextBlock Text="Tab3 Content"></TextBlock>
+            </basics:TabItem>
+
+            <basics:TabItem>
+                <basics:TabItem.Header>
+                    <Grid Width="100">
+                        <Image Source="/Silverlight20;component/Images/Logo.jpg" Height="20" HorizontalAlignment="Center" />
+                        <TextBlock Text="Tab4" HorizontalAlignment="Center" />
+                    </Grid>
+                </basics:TabItem.Header>
+                <TextBlock Text="Tab4 Content"></TextBlock>
+            </basics:TabItem>
+            
+        </basics:TabControl>
+        
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceReference>
+	<ProxyGenerationParameters
+		ServiceReferenceUri="http://localhost:1234/calcuator"
+		Name="CalculatorService"
+		NotifyPropertyChange="False"
+		UseObservableCollection="False">
+	</ProxyGenerationParameters>
+	<EndPoints>
+		<EndPoint
+			Address="http://localhost:1234/calcuator"
+			BindingConfiguration="BasicHttpBinding_ICalculator"
+			Contract="Artech.OverloadableContract.Client.CalculatorService.ICalculator"
+			>
+		</EndPoint>
+	</EndPoints>
+</ServiceReference>

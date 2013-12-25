@@ -1,0 +1,2 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="DuplexService" CodeBehind="~/App_Code/DuplexService.cs" Factory="PollingDuplexServiceHostFactory" %>
+

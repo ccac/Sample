@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="SilverlightDemoTransForm.ScaleTransform"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="800" Height="300">
+    <Canvas Background="#CDFCAE">
+        <Image Source="LiveSearch.png" Canvas.Left="40" Canvas.Top="80" Opacity="0.5">
+        </Image>
+        <Image Source="LiveSearch.png" Canvas.Left="40" Canvas.Top="80">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="0.5" ScaleY="0.5"></ScaleTransform>
+            </Image.RenderTransform>
+        </Image>
+
+        <Image Source="LiveSearch.png" Canvas.Left="40" Canvas.Top="180" Opacity="0.5">
+        </Image>
+        <Image Source="LiveSearch.png" Canvas.Left="40" Canvas.Top="180">
+            <Image.RenderTransform>
+                <ScaleTransform ScaleX="0.5" ScaleY="0.5"
+                            CenterX="120" CenterY="68"></ScaleTransform>
+            </Image.RenderTransform>
+        </Image>
+    </Canvas>
+</UserControl>

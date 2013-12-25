@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="SilverlightDemoLiveImage.Page"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="800" Height="400">
+    <Canvas Background="#000000">
+        <Canvas.Resources>
+            <Storyboard x:Name="myStoryboard">
+                <DoubleAnimation
+          Storyboard.TargetName="myTransform"
+          Storyboard.TargetProperty="AngleY"
+          From="0" To="180" Duration="0:0:5" RepeatBehavior="1x"/>
+                <DoubleAnimation
+          Storyboard.TargetName="leftScaleTransform"
+          Storyboard.TargetProperty="ScaleX"
+          From="0" To="1" Duration="0:0:5" RepeatBehavior="1x"/>
+                <DoubleAnimation
+          Storyboard.TargetName="leftScaleTransform"
+          Storyboard.TargetProperty="ScaleY"
+          From="0" To="1" Duration="0:0:5" RepeatBehavior="1x"/>
+                <DoubleAnimation
+          Storyboard.TargetName="rightScaleTransform"
+          Storyboard.TargetProperty="ScaleX"
+          From="0" To="1" Duration="0:0:5" RepeatBehavior="1x"/>
+                <DoubleAnimation
+          Storyboard.TargetName="rightScaleTransform"
+          Storyboard.TargetProperty="ScaleY"
+          From="0" To="1" Duration="0:0:5" RepeatBehavior="1x"/>
+            </Storyboard>
+        </Canvas.Resources>
+        
+        <Image Source="border.png" Canvas.Top="150" Canvas.Left="220"
+               Width="356" Height="226"></Image>
+        <Image x:Name="currentImg" Source="5.png" Width="340" Height="175"
+               Canvas.Top="154" Canvas.Left="228">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <SkewTransform x:Name="myTransform" AngleX="0" AngleY="0"
+                               CenterX="170" CenterY="87.5"></SkewTransform>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Image Source="border.png" Canvas.Top="180" Canvas.Left="20"
+               Width="178" Height="113"></Image>
+        <Image x:Name="leftImg" Source="4.png" Canvas.Top="182" Canvas.Left="24"
+               Width="170" Height="87.5" Opacity="0.6"
+               MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave"
+               MouseLeftButtonDown="leftImg_MouseLeftButtonDown">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="leftScaleTransform" ScaleX="1" ScaleY="1"
+                            CenterX="85" CenterY="34"></ScaleTransform>
+            </Image.RenderTransform>
+        </Image>
+
+        <Image Source="border.png" Canvas.Top="180" Canvas.Left="600"
+               Width="178" Height="113"></Image>
+        <Image x:Name="rightImg" Source="6.png" Canvas.Top="182" Canvas.Left="604"
+               Width="170" Height="87.5" Opacity="0.6"
+               MouseEnter="OnMouseEnter" MouseLeave="OnMouseLeave"
+               MouseLeftButtonDown="rightImg_MouseLeftButtonDown">
+            <Image.RenderTransform>
+                <ScaleTransform x:Name="rightScaleTransform" ScaleX="1" ScaleY="1"
+                            CenterX="85" CenterY="34"></ScaleTransform>
+            </Image.RenderTransform>
+        </Image>
+    </Canvas>
+</UserControl>
